@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+  
+</head>
+
+<body>
+    <script>
+        var iOS = navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+        var ua = navigator.userAgent.toLowerCase();
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        var macLap = userAgent.match(/Macintosh/i);
+       var isAndroid = ua.indexOf("android") > -1;
+        if (isAndroid) {
+            window.location.href = "images/Phone displace.png"
+        } else if (iOS) {
+            window.location.href = "images/Phone displace.png"
+        } 
+        else if (macLap == "Macintosh") {
+            window.location.href = "images/Laptop displace.png"
+        } 
+        else {
+            window.location.href = "images/Laptop displace.png"
+        }
+    </script>
+</body>
+
+</html>

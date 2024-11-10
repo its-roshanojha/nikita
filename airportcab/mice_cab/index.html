@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="img/fav.png">
+	<!-- Author Meta -->
+	<meta name="author" content="colorlib">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<script src="js/apicall.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+	<title>Book Airport Cab</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_green.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+		rel="stylesheet">
+	<!--CSS ============================================= -->
+	<link rel="stylesheet" href="css/linearicons.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/nice-select.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+	<!-- #header -->
+	<header id="header">
+		<div class="container main-menu">
+			<div class="row align-items-center justify-content-between d-flex">
+				<a href='index.html' style="color:white;">
+					<img src="https://i.ibb.co/J34Y0kk/b0682728-7f77-4b2c-9dd5-b3f5ffe4b3c9.jpg" alt="bookairportcab" style="top: 0;">
+				</a>
+				<!-- Optional: Add navigation for different categories like Flights, Hotels, etc. -->
+				<nav>
+					<ul>
+						<!-- <li><a href="#">Flights</a></li>
+						<li><a href="#">Hotels</a></li>
+						<li><a href="#">Cabs</a></li> -->
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+
+
+	<!-- start banner Area -->
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="booking-form col-12">
+					<div id="mapBox" style="display: none;">
+						<div id="map"></div>
+					</div>
+					<form id="ctn">
+						<!-- Trip Type Selection -->
+						<div class="form-group">
+							<div class="form-checkbox">
+								<div>
+
+								</div>
+								<label for="Airport Transfers">
+									<input type="radio" id="Airport Transfers" name="trip-type" checked
+										onclick="updateForm()">
+									<span class="custom-radio"></span>Airport Ride
+								</label>
+
+								<label for="Outstation Round-Trip">
+									<input type="radio" id="Outstation Round-Trip" name="trip-type"
+										onclick="updateForm()" disabled>
+									<span class="custom-radio"></span>Outstation
+								</label>
+								<label for="Outstation One-Way">
+									<input type="radio" id="Outstation One-Way" name="trip-type" onclick="updateForm()"
+										disabled>
+									<span class="custom-radio"></span>City Ride
+								</label>
+								<label for="Hourly Rentals">
+									<input type="radio" id="Hourly Rentals" name="trip-type" onclick="updateForm()"
+										disabled>
+									<span class="custom-radio"></span>Package
+									<span class="new-label">new</span>
+								</label>
+
+							</div>
+						</div>
+						<div class="row form-major-box">
+							<!-- From Section -->
+							<div class="col-md-3 form-box">
+								<label for="from-label" class="form-label regular">FROM</label>
+								<div class="form-select-wrapper">
+									<div id="from-label" class="form-label-text">
+										<div class="main-text" id="from-main">Pick Up Location</div>
+										<div class="sub-text" id="from-sub"></div>
+									</div>
+									<input id="from-input" class="form-control" type="text"
+										placeholder="Pick Up Location (Minimum 4 characters)" autocomplete="off"
+										style="display: none;">
+									<ul class="autocomplete-results"></ul>
+								</div>
+							</div>
+
+							<div class="flip-btn-wrapper" id='flip-btn-wrapper'>
+								<button id="flip-btn" class="flip-btn">
+									<i class="fa-solid fa-exchange-alt"></i>
+								</button>
+							</div>
+
+							<!-- To Section -->
+							<div class="col-md-3 form-box" id="to-loc">
+								<label for="to-label" class="form-label regular">TO</label>
+								<div class="form-select-wrapper" onclick="toggleDropdown()">
+									<div id="to-label" class="form-label-text">
+										<div class="main-text" id="to-main">Drop Location</div>
+										<div class="sub-text" id="to-sub"></div>
+									</div>
+									<input type="text" id="to-input" class="form-control" placeholder="Search Nearest Airport"
+										oninput="filterOptions()" style="display: none;" />
+									<ul id="to-options" class="autocomplete-results"></ul>
+								</div>
+							</div>
+
+
+							<!-- <div class="col-md-3 form-box" id="to-loc"></div>
+								<label for="to-label" class="form-label regular">TO</label>
+								<div class="form-select-wrapper">
+									<input type="text" id="to-input" class="form-control" placeholder="Drop Location" oninput="filterOptions()" />
+									<ul id="to-options" class="autocomplete-results" style="display:none;"></ul>
+								</div>
+							</div> -->
+
+
+							<!-- Departure Date Section -->
+							<div class="col-md-2 form-box">
+								<label for="departure-date" class="regular">Departure</label>
+								<div class="date-container" id="display-date"
+									onclick="document.getElementById('hidden-date-input').showPicker()">
+									<span class="date-text">
+										<span class="day-part" id="day-part"></span>
+										<span class="month-year-part regular" id="month-year-part"></span>
+									</span>
+									<br>
+									<span class="day-text regular" id="day-text"></span>
+								</div>
+								<input type="date" id="hidden-date-input" style="opacity: 0; position: absolute;" />
+							</div>
+
+
+							<!-- Return Date Section -->
+							<div class="col-md-2 form-box" id='return-datediv'>
+								<label for="return-date">Return Date</label>
+								<div class="date-container" id="display-date"
+									onclick="document.getElementById('hidden-date-input1').showPicker()">
+									<span class="date-text1">
+										<span class="day-part1" id="day-part1"></span>
+										<span class="month-year-part1" id="month-year-part1"></span>
+									</span>
+									<br>
+									<span class="day-text1" id="day-text1"></span>
+								</div>
+								<input type="date" id="hidden-date-input1" style="opacity: 0; position: absolute;"
+									disabled />
+							</div>
+
+
+							<!-- Pickup Time -->
+							<div class="col-md-2 form-box">
+								<label for="pickup-time" class="regular"
+									style="font-size: 14px; color: #333;">Pickup-Time</label>
+								<div class="time-container"
+									style="cursor: pointer; text-align: left; max-width: 150px;">
+									<div class="time-display" style="font-size: 24px; font-weight: bold;"
+										id="displayed-time">
+									</div>
+									<div class="timezone-info"
+										style="font-size: 11px; font-style: italic; color: #777; line-height: 10px; padding-top: 10px;">
+										pick up time as per journey city timezone
+									</div>
+								</div>
+								<input type="time" id="pickup-time" style="opacity: 0;" />
+							</div>
+						</div>
+
+						<!-- Submit Button -->
+						<div class="form-btn">
+							<button class="submit-btn" id="submit-btn" type="button"
+								onclick="handleSearchClick()">SEARCH</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<iframe id="myFrame" src="https://bookairportcab.com/bac2" width="100%"
+		style="border:none; height: 6543px; overflow: hidden; z-index: 999; overflow-y: hidden;"
+		scrolling="no"></iframe>
+
+
+
+
+	<script src="js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+
+	<!-- // OLD SCRIPT START-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+	<script src="js/swiper-bundle.min.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="js/tracking.js"></script>
+	<!-- <script src="js/indexmain.js"></script> -->
+	<!-- // OLD SCRIPT END-->
+
+	<script src="js/easing.min.js"></script>
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/superfish.min.js"></script>
+	<script src="js/jquery.ajaxchimp.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery.nice-select.min.js"></script>
+	<script src="js/mail-script.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/form.js"></script>
+	<!-- <script src="js/offer_section.js"></script> -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <script src="js/apicall.js"></script>
+  <title>Payment</title>
+  <link rel="stylesheet" href="css/payNow.css" />
+  <style>
+    #paytmrowl {
+      border: 2px solid #ddd;
+      /* Default border color */
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    #paytmrowl.selected {
+      border-color: #007bff;
+      /* Border color for selected state */
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+      /* Box shadow for selected state */
+    }
+
+    #paytmrowl img {
+      width: 100%;
+      height: auto;
+    }
+
+    #paytmrowl:hover {
+      border-color: #6c757d;
+      /* Border color for hover state */
+    }
+
+    /* Optional: Add a subtle background color to the selected state */
+    #paytmrowl.selected .imgfare {
+      background-color: #f0f0f0;
+      /* Background color for the selected state */
+    }
+
+    #paytmrow {
+      border: 2px solid #ddd;
+      /* Default border color */
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    #paytmrow.selected {
+      border-color: #007bff;
+      /* Border color for selected state */
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+      /* Box shadow for selected state */
+    }
+
+    #paytmrow img {
+      width: 100%;
+      height: auto;
+    }
+
+    #paytmrow:hover {
+      border-color: #6c757d;
+      /* Border color for hover state */
+    }
+
+    /* Optional: Add a subtle background color to the selected state */
+    #paytmrow.selected .imgfare {
+      background-color: #f0f0f0;
+      /* Background color for the selected state */
+    }
+    /* Optional: Add a subtle background color to the selected state */
+    #simplrow.selected .imgfare {
+      background-color: #f0f0f0;
+      /* Background color for the selected state */
+    }
+    #razorpayrow {
+      border: 2px solid #ddd;
+      /* Default border color */
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    #razorpayrow.selected {
+      border-color: #007bff;
+      /* Border color for selected state */
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+      /* Box shadow for selected state */
+    }
+
+    #razorpayrow img {
+      width: 100%;
+      height: auto;
+    }
+
+    #razorpayrow:hover {
+      border-color: #6c757d;
+      /* Border color for hover state */
+    }
+
+    /* Optional: Add a subtle background color to the selected state */
+    #razorpayrow.selected .imgfare {
+      background-color: #f0f0f0;
+      /* Background color for the selected state */
+    }
+
+    #simplrow {
+      border: 2px solid #ddd;
+      /* Default border color */
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    #simplrow.selected {
+      border-color: #007bff;
+      /* Border color for selected state */
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+      /* Box shadow for selected state */
+    }
+
+    #simplrow img {
+      width: 100%;
+      height: auto;
+    }
+
+    #simplrow:hover {
+      border-color: #6c757d;
+      /* Border color for hover state */
+    }
+
+    /* Optional: Add a subtle background color to the selected state */
+    #simplrow.selected .imgfare {
+      background-color: #f0f0f0;
+      /* Background color for the selected state */
+    }
+  </style>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '134831566224001');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=134831566224001&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+</head>
+
+<body>
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <div class="confirmation_boxCabDiv"></div>
+
+  <!-- <div id="snackbar"></div> -->
+  <!-- <div id="loader"></div> -->
+  <div class="spinnerBack"></div>
+  <div class="spinner" id="spinner">
+    <img id="loader_img" src="img/loader-3.gif" style="width: 100%;">
+    <p style="font-size: 12px;">Please wait...</p>
+
+  </div>
+  <div class="confirmation_boxCab4" style="display:none">
+    <div class="thank_msg">
+      <i class="fa fa-check-circle" style="font-size:48px;color:red;background: transparent"></i>
+    </div>
+    <div class="call_msgCab">
+      <p id="cmmsg3" style="font-size: 18px;">
+      </p>
+    </div>
+    <!-- <div class="status" id="status4">OK</div> -->
+  </div>
+  <div class="confirmation_boxCabsimpl" style="display:none">
+    <p class="show">Simpl,Lazypay,Zestmoney & more</p>
+    <img src="img/70-703356_cross-sign-comments-thin-x-sign-png.png" class="crossicon" alt="crossicon" id="crossicon">
+    <span class="number">
+      Proceed to check eligibilty of mobile no.for Pay Later
+    </span>
+    <div class="mobile">
+      <input type="tel" class="form" id="mobileauto" pattern="[6-9]{1}[0-9]{4}[0-9]{5}" maxlength="10"
+        oninvalid="this.setCustomValidity('Please enter your valid phone number')" oninput="this.setCustomValidity('')"
+        required>
+      <img src="img/micon.PNG" alt="ino" class="micon">
+    </div>
+    <div class="confirmation_boxCab">
+
+      <div class="call_msgCab">
+        <p id="cmmsg"></p>
+        <!-- <img src="/new payment uiii/img/cross-mark_274c.png" alt="close" id="cross." class="cross"> -->
+      </div>
+      <div class="status" id="status">OK</div>
+    </div>
+    <div class="confirmation_boxCab2">
+      <div class="call_msgCab">
+        <p id="cmmsg2" style="    margin-top: -12px;"></p>
+        <!-- <img src="/new payment uiii/img/cross-mark_274c.png" alt="close" id="cross" class="cross"> -->
+      </div>
+
+      <div class="call_msgCab">
+        <p id="checkEligibilityMessage" style="margin-top:0px"></p>
+      </div>
+
+      <div class="status" id="status2">Book Now</div>
+    </div><br><br><br>
+    <hr class="payLine">
+    <div class="confirmation_boxCab3" style="height: 140px;
+        margin-top: -20px;
+        width: 394px;
+        margin-left: -42px;
+        position:fixed;">
+
+      <div class="call_msgCab" style="    margin-top: 12px;">
+        <p id="confirmTxt"></p>
+      </div>
+
+      <div class="status" style="width: 50%;
+  margin-top: -29px;" id="status3">Link Now</div>
+    </div>
+    <div class="checking">
+      <button class="button1" id="button1">Check Eligibity</button>
+
+    </div>
+  </div>
+
+
+
+  <div class="top_img">
+    <img src="img/yatra.png" alt="Yatra-India-Logo" style="margin-left: 10px; height: 4rem;">
+  </div>
+  <div class="ridedit">
+    <p style="font-size: 18px;"><strong>Your ride is scheduled for:</strong></p>
+  </div>
+  <div class="custdetail">
+    <div class="calendar">
+      <div class="detail"><img class="calendarimg" src="img/calendar.png"></div>
+      <div class="datetime">
+        <div class="showD" style="display: flex; align-items: center;">
+          <!-- <p id="currentmobile">Please wait</p> -->
+          <!-- <p id="cab_type">...</p> -->
+        </div>
+        <spna class="datetime"><span id="currentdate">Please wait</span>,<span id="currenttime">Please wait</span>
+        </spna>
+      </div>
+
+    </div>
+    <div class="currentaddress">
+      <div class="imagesline">
+        <img src="img/recbox.png" alt="rec"><br>
+        <img src="img/midline.png" alt="line" style="margin-left: 6px;
+                margin-top: -20px;"><br>
+        <img src="img/circle.png" alt="onlo" style="margin-top: -32px;
+                margin-left: 2px;">
+      </div>
+      <div class="pickdrop">
+        <p id="currentpick" maxlength="20">Please Wait</p>
+        <p id="currentdrop" maxlength="20">Please Wait</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ///////// Modal for Rental ride timing //////// -->
+  <div class="Rentalcard-deck">
+    <div class="Rentalcard-body">
+      <p class="RentalHour ActiveHour" value="8"> 8 HR</p>
+      <p class="RentalHour" value="12"> 12 HR</p>
+    </div>
+  </div>
+
+
+  <div class="card-deck">
+    <div class="card miniCard">
+      <img class="card-img-top" src='img/new_Mini.png' alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">Mini</p>
+        <h5 class="card-title" id="miniFare">Click for Fare</h5>
+      </div>
+    </div>
+    <div class="card sedanCard active-card">
+      <img class="card-img-top" src='img/new_Sedan.png' alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">Sedan</p>
+        <h5 class="card-title active-title" id="sedanFare">₹00</h5>
+      </div>
+    </div>
+    <div class="card suvCard">
+      <img class="card-img-top" src='img/new_MUV.png' alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">SUV</p>
+        <h5 class="card-title" id="suvFare">Click for Fare</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="card_container">
+    <div class="card_details">
+      <div class="km_details cardLayout">
+        <img src="img/km_icon.png" alt="">
+        <p id="DistanceKm">-- kms</p>
+      </div>
+      <div class="seat_details cardLayout">
+        <img src="img/people_icon.png" alt="">
+        <p id="people_count">1-4 pax</p>
+      </div>
+      <div class="beg_details cardLayout">
+        <img src="img/luggage_icon.png" alt="">
+        <p id="begs_count">3 bags</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="noteParent" style="margin-left: 8px;">
+    <div class="ride">
+      <p class="note">* Toll and Parking Extra</p>
+    </div>
+    <div class="rental">
+      <p class="note">* Extra Kilometer- Rs 25 per Km</p>
+    </div>
+    <div class="rental">
+      <p class="note">* Extra Hour - 150 Per Hr</p>
+    </div>
+  </div>
+
+  <div class="input-group mb-3 couponBtn">
+    <input type="text" class="form-control pay-now-form-control" style="font-size: 14px; border: 1px solid #ced4da;
+    border-radius: 0.25rem; border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;" id="coupon" placeholder="Have a coupon code ?" aria-label="Have a coupon code ?"
+      aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary apply-btn" id="applyCoupon" type="button" id="button-addon2">Apply</button>
+    <input type="hidden" id="CouponCode">
+  </div>
+  <p class="couponSuccessMsg" id="couponSuccessMsg"></p>
+
+  <h2 style="margin: 12px 15px;
+        font-size: 18px;
+        "><strong>Payment options</strong></h2>
+
+  <div class="paymentoptionnew">
+    <button type="button" class="ActiveBtn paymentButton payment-options-button" id="fullbutton">Full
+
+      <!-- <p id="showfull"></p> -->
+    </button>
+
+    <button type="button" class="paymentButton payment-options-button" id="partbutton" style="display: none;">Part
+
+      <!-- <p id="showpart"></p> -->
+    </button>
+
+    <button type="button" class="paymentButton" id="laterbutton">Pay Later
+      <p id="showlater"></p>
+    </button>
+
+  </div>
+  <!-- <div class="triangle">
+    <img src="img/Triangle.png" alt="" id="tri1" class="triangle-icon">
+    <img src="img/Triangle.png" alt="" id="tri2" style="display: none;">
+    <img src="img/Triangle.png" alt="" id="tri3" style="display: none; position: relative;left: 90px; scale:80%;">
+  </div> -->
+
+  <div class="divtop" id="divpay">
+    <div class="opener mt-4">
+
+      <!-- // Paytm -->
+      <div id="paytmrow" class="pt-4">
+        <div class="d-flex PaymentBox">
+          <label class="d-flex">
+            <input type="radio" name="fav_language" id="fullpaymt" class="radioBtn" value="Paytm" />
+            <img src="img/paytm.png" alt="paytm">
+          </label>
+          <div class="imgfare" style="display: flex;">
+            <h4 class="fw-bold" id="PayNow">₹...<br> </h4>
+          </div>
+        </div>
+        <!-- <p class="textstyle"><strong>Pay through : </strong>UPI/Credit Card/Debit Card -->
+      </div>
+      <!-- <hr class="payLine" id="payline2"> -->
+
+
+      <!-- // Razorpay -->
+      <div id="razorpayrow" class="pt-4" style="padding-top: 0rem!important; margin-bottom: 2px;"
+        onclick="selectPaymentOption()">
+        <div class="d-flex PaymentBox">
+          <label class="d-flex">
+            <input type="radio" name="fav_language" id="razorpayment" class="radioBtn" value="Razorpay" />
+            <img src="img/Payment.png" alt="razorpay">
+          </label>
+          <div class="imgfare" style="display: flex;">
+            <h4 class="fw-bold" id="RazorPayAmount" style="display: none;">₹...<br> </h4>
+          </div>
+        </div>
+        <!-- <p class="textstyle"><strong>Pay through : </strong>UPI/Credit Card/Debit Card -->
+      </div>
+      <!-- <hr class="payLine" id="payline2"> -->
+
+      <!-- // Simpl -->
+      <div id="simplrow" class="pt-4" onclick="selectSimplPaymentOption()">
+        <div class="d-flex PaymentBox">
+          <label class="d-flex">
+            <input type="radio" name="fav_language" id="simplpaymt" class="radioBtn" value="Simpl" />
+            <img src="img/Simpl_Logo 1.png" alt="simpl" class="simplImg">
+          </label>
+          <div class="imgfare" style="display: flex; display: none;">
+            <h4 class="fw-bold" id="SimplAmount">₹...<br> </h4>
+          </div>
+        </div>
+        <p class="textstyle"><strong>Get 5% Cashback up to Rs. 100</strong>
+        <P class="simplStatus"> YOU ARE NOT ELIGIBLE</P>
+
+      </div>
+
+      <!-- <hr class="payLine" id="payline2"> -->
+    </div>
+
+    <div id="laterrow" class="pt-3" style="margin-top: 7%;
+    background-color: rgb(234, 245, 241);
+    border: 2px solid rgb(221, 221, 221);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease 0s, box-shadow 0.3s ease 0s;
+    cursor: pointer;
+    display: block;">
+      <input type="radio" style="height: 3em;" name="cashpayment" id="cashpaymt" class="paymentbtn" value="CASH"
+        checked />
+      <label class="paymentType" for="cashpaymt">
+        <div style="margin-left: 1rem;">
+          <h3 class="headingh3" style="    font-size: 15px;
+        font-weight: 700;">Pay after trip completion</h3>
+          <h4 class="discountedamount" id="PayNow1">₹...<br>
+          </h4>
+          <h3 class="amountstyle"></h3>
+          <p class="textstyle" style="top: 5px;  margin-left: 0px;">Price subject to change<br>
+          </p>
+        </div>
+      </label>
+    </div>
+  </div>
+
+  </div>
+
+  <input type="button" id="flush-disable" disabled value="Pay Now" />
+  </div>
+
+  <footer>
+    <p>For any query contact-</p>
+    <p>care@bookairportcab.com | 080-46800969</p>
+  </footer>
+
+  <div class="popupDiv">
+    <div class="popupBox">
+      <!-- <i class="fas fa-exclamation-circle exclamation"></i> -->
+      <h3 class="coupon-popup">Congratulations!</h3>
+      <p class="redeem1">Your coupon code is applied successfully.</p>
+      <p class="redeem">Redeem your <span id="cpndiscnt" style="color: #000; font-weight: bold;"></span> cashback
+        through
+        <br>Cashback link on trip start.
+      </p>
+      <div class="buttonText" id="okay">Okay</div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="toast" tabindex="-1" role="dialog" aria-labelledby="toastTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body" id="toastBody">
+          Please agree to terms and conditions
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary closebtn" data-dismiss="modal">ok</button>
+          <!-- <button type="button" class="btn btn-primary">OK</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="Framer" style="display: none;">
+    <iframe src="https://bookairportcab.com/yatra2" style="width: 100%;
+      height: 1200vh;">
+    </iframe>
+  </div>
+
+  <div class="modal fade" id="exampleModal" aria-hidden="true">
+    <div class="modal-dialog modal-details" role="document">
+      <div class="modal-content" style="border-radius: 25px;">
+        <div class="modal-header">
+          <h5 class="user-details-heading">Kindly Fill in the details:</h5>
+          <button type="button" class="close closebtn" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="nameform">
+            <div class="form-group">
+              <label for="userName" class="labelfont">Enter Your Name</label>
+              <input type="text" class="form-control user-form" id="userName" placeholder="Elon Musk" required>
+            </div>
+
+            <div class="form-group">
+              <label for="mb_number" class="labelfont">Enter Your Mobile Number</label>
+              <input type="tel" class="form-control user-form" id="mb_number" name="userNumber" placeholder="xxxxxxxxxx"
+                pattern="[6-9]{1}[0-9]{4}[0-9]{5}" maxlength="10"
+                oninvalid="this.setCustomValidity('Please enter your valid phone number')"
+                oninput="this.setCustomValidity('')" required>
+            </div>
+
+            <div class="form-group">
+              <label for="userEmail" class="labelfont">Enter Your Email address</label>
+              <input type="email" class="form-control user-form" id="userEmail" aria-describedby="emailHelp"
+                placeholder="elon@musk.com" required>
+              <!-- <p class="recommended"><i>For Ride Invoice</i></p style="recommended"> -->
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="book--btn">Proceed to Book</button>
+            <!-- <button class="btn btn-primary" id="zoom--btn" style="padding: 8px;" onclick="zoomSubmit()">Find
+              Cars</button> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="js/tracking.js"></script>
+  <script src="js/jspdf.min.js "></script>
+  <script src="js/moment.js"></script>
+  <script src="js/html2canvas.js "></script>
+  <script src="js/canvas2image.js "></script>
+  <script src="js/payNow.js"></script>
+  <script src="js/paytm_cabbooking.js">
+
+  </script>
+  <script>
+    function selectPaymentOption() {
+      document.getElementById('fullpaymt').checked = true;
+    }
+    function selectSimplPaymentOption() {
+      document.getElementById('simplpaymt').checked = true;
+    }
+  </script>
+
+  <script>
+    if (!/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) {
+      $("#simplrow").css("display", "none");
+      $("#payline2").css("display", "none");
+    }
+  </script>
+
+</body>
+
+</html>

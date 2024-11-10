@@ -1,0 +1,11 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="vaadin:date-input" clip-path="url(#clip0_38_71)">
+<path id="Vector" d="M14 1V4H11V1H5V4H2V1H0V16H16V1H14ZM15 15H1V6H15V15Z" fill="#ED1C24"/>
+<path id="Vector_2" d="M3 0H4V3H3V0ZM12 0H13V3H12V0ZM3 8H4V13H3V8Z" fill="#ED1C24"/>
+</g>
+<defs>
+<clipPath id="clip0_38_71">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

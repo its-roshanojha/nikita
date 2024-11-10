@@ -1,0 +1,1177 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="x-icon" href="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/OLA.svg">
+    <title>Book Cabs Nearby at Best Price | Hire Taxi Nearby Online at bookairportcab.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords"
+        content="Car rentals india, book cabs online, book taxi online, airport taxi india, cabs in india, taxi in india, cabs services in India, taxi services in India, car rental services in india, car rentals, taxi, cabs, hire, rent">
+    <meta name="keyphrase"
+        content="low cost car rental, car hire in India,  cab hire, airport car rental, cheap cab for hire, radio taxi cab, radio taxi services" />
+    <meta name="description"
+        content="Ola Cabs offers to book cabs nearby your location for best fares. For best taxi service at lowest fares, say Ola!">
+    <link rel="stylesheet" href="./webstatic/css/new-style-fonts.css">
+    <link rel="stylesheet" href="./webstatic/css/new-style.css">
+    <link rel="stylesheet" href="./webstatic/css/slick.css">
+    <link rel="stylesheet" href="./webstatic/css/styles-download-index.css">
+    <link rel="stylesheet" href="cabs/css/CabNewSearch.css">
+    <link rel="stylesheet" href="cabs/css/SelfDriveSearch.css">
+
+
+
+    <script src="./webstatic/js/components/header.js" type="text/javascript" defer></script>
+    <!-- <script src="./webstatic/js/components/section-skewed.js" type="text/javascript" defer></script> -->
+    <script src="./webstatic/js/components/booking-widget.js" type="module" defer></script>
+    <!-- <script src="./webstatic/js/components/popup.js" type="text/javascript" defer></script> -->
+    <!-- <script src="./webstatic/js/components/header-component.js" type="text/javascript" defer></script> -->
+    <!-- <script src="./webstatic/js/components/slider-component.js" type="text/javascript" defer></script> -->
+    <!-- <script src="./webstatic/js/components/stories-component.js" type="text/javascript" defer></script> -->
+    <!-- <script src="./webstatic/js/components/video-component.js" type="text/javascript" defer></script> -->
+    <script src="./webstatic/js/components/footer.js" type="text/javascript" defer></script>
+
+</head>
+
+<body id="main-body">
+    <div class="snackbar font-16 lh-20" id="snackbar"></div>
+    <header-component></header-component>
+    <div style="position: relative;">
+        <section-skewed skew="end" background="#000000" name="header">
+            <div slot="outer-wrapper-children">
+                <div class="hero-banner desktop-only">
+                </div>
+                <div class="hero-banner mobile-only">
+                    <video-component
+                        video-src="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/banner-video-mob.mp4"
+                        video-type="video/mp4" height="auto" width="100%"></video-component>
+                </div>
+            </div>
+        </section-skewed>
+    </div>
+    <section-skewed>
+        <div slot="outer-wrapper-children" class="pad-y-50">
+            <!-- <booking-widget class="booking-widget-root"></booking-widget> -->
+           
+
+            <section class="max-width">
+
+                <section class="cab-n-s">
+                    <div class="banner_inner">
+                        <!-- Common Search HTML start -->
+                        <div class="in-box-flx" style=" margin-top: 10px;">
+                            <div class="cflx">
+                                <ul class="cab_typ_c">
+                                    <li>
+                                        <input type="radio" id="rdbTravelTypeAirport" name="TravelType" value="airport"
+                                            checked>
+                                        <label for="rdbTravelTypeAirport" id="li1" onclick="GetNewCabSection('1')">Airport
+                                            Transfer </label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="rdbTravelTypeOther" name="TravelType" value="other">
+                                        <label for="rdbTravelTypeOther" id="li2" onclick="GetNewCabSection('2')">Outstation
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="rdbTravelTypeHourly" name="TravelType" value="hourly">
+                                        <label for="rdbTravelTypeHourly" id="li3" onclick="GetNewCabSection('3')">Hourly
+                                        </label>
+                                    </li>
+                                 
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <div class="wht-box" id="CommonSearch">
+                            <div class="in-box-flx">
+                                <div class="box-a_typ rel" id="airportdiv" style="display:block">
+                                    <div class="f12 gry">Airport Transfer</div>
+                                    <div class="blk overflw_txt ftn22" id="airport">Airport</div>
+                                    <div class="f12 gry overflw_txt mrg2" id="shwpickoptn">Pick Up</div>
+                                    <i class="down_arw_atyp" id="airprtdrpdwn"></i>
+    
+                                    <div class="airppicker" id="airportpickdrop">
+                                        <div class="airp_typ">
+                                            <div class="airp xp100">
+                                                <ul>
+                                                    <li class="actv_air" id="pickup" onclick="pick()">Airport Pick Up</li>
+                                                    <li id="drop" onclick="drop()">Airport Drop</li>
+                                                </ul>
+                                            </div>
+    
+                                        </div>
+    
+                                    </div>
+                                </div>
+                                <div class="box-srch rel srcShow" id="hrlysrc">
+                                    <div>
+                                        <div class="f12 gry srcShow"> From</div>
+                                        <div class="blk overflw_txt ftn22 srcShow" id="sourceName"> Delhi </div>
+                                        <div class="f12 gry overflw_txt mrg2 srcShow" id="sourceAddress">Indira Gandhi
+                                            Internal Airport, Delhi</div>
+    
+                                    </div>
+                                    <div class="citysearch" id="showSource" style="display:none">
+                                        <div class="searcityCol" id="fromsrc"><i class="searcIcn"></i><input
+                                                id="a_FromSector_show" onkeyup="AddautosuggClassForSource()" type="text"
+                                                class="srctinput autoFlll" placeholder="From" autocomplete="off" autofocus>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="auto_sugg" id="StartCity" style="display:none">
+    
+                                            <ul>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="auto_sugg" id="citiesWhenKeyIsLessForSrc" style="display:block">
+                                            <ul>
+                                                <li class="auto_sugg_list" onclick="ShowStaticAutoSuggForSrc('1')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/locality.png"
+                                                                alt="locality"></div>
+                                                        <div class="auto_sugg_add">Region</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">delhi cantonment </div>
+                                                        <div class="auto_sugg_add_nw">new delhi,new delhi,delhi </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list" onclick="ShowStaticAutoSuggForSrc('2')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">City</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">delhi darbar </div>
+                                                        <div class="auto_sugg_add_nw">colaba causeway </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list" onclick="ShowStaticAutoSuggForSrc('3')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/locality.png"
+                                                                alt="locality"></div>
+                                                        <div class="auto_sugg_add">School</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">delhi university area </div>
+                                                        <div class="auto_sugg_add_nw">new delhi,central delhi,delhi </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list" onclick="ShowStaticAutoSuggForSrc('4')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">School</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">delhi public school - south </div>
+                                                        <div class="auto_sugg_add_nw">11th, k m , kanakpura road (behind
+                                                            metro) </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list" onclick="ShowStaticAutoSuggForSrc('5')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">School</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">delhi darbar </div>
+                                                        <div class="auto_sugg_add_nw">shop no 4 & 5, shivshakti complex
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="auto_sugg" id="citiesForAirprtPickup" style="display:none">
+                                            <ul>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForAirprtUpSrc('Indira Gandhi International Airport, Terminal 1','1')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/locality.png"
+                                                                alt="locality"></div>
+                                                        <div class="auto_sugg_add">AIRPORT</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">Indira Gandhi International Airport,
+                                                            Terminal 1 </div>
+                                                        <div class="auto_sugg_add_nw"></div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForAirprtUpSrc('Indira Gandhi International Airport, Terminal 2','2')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">Airport</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">Indira Gandhi International Airport,
+                                                            Terminal 2</div>
+                                                        <div class="auto_sugg_add_nw"> </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForAirprtUpSrc('Indira Gandhi International Airport, Terminal 3','3')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/locality.png"
+                                                                alt="locality"></div>
+                                                        <div class="auto_sugg_add">Airport</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">Indira Gandhi International Airport,
+                                                            Terminal 3</div>
+                                                        <div class="auto_sugg_add_nw"></div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="auto_sugg" id="citiesWhenKeyIsLessForSrcAfterSwap" style="display:none">
+                                            <ul>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForSwapSrc('Agra Fort', 'near taj mahal', '1')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/locality.png"
+                                                                alt="locality"></div>
+                                                        <div class="auto_sugg_add">Region</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">Agra Fort</div>
+                                                        <div class="auto_sugg_add_nw"> near taj mahal </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForSwapSrc( 'Agra Cantonment Railway Station (Agc)', 'agra,agra,uttar pradesh ' ,'2')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">City</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Agra Cantonment Railway Station
+                                                            (Agc) </div>
+                                                        <div class="auto_sugg_add_nw"> agra,agra,uttar pradesh </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForSwapSrc('Agra Fort Railway Station','bijli ghar, pipal mandi', '3')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/locality.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">Region</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Agra Fort Railway Station </div>
+                                                        <div class="auto_sugg_add_nw"> bijli ghar, pipal mandi </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForSwapSrc('Agrawal Restaurant','surat,surat,gujarat','4')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">City</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Agrawal Restaurant </div>
+                                                        <div class="auto_sugg_add_nw"> surat,surat,gujarat </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForSwapSrc('Agrawal Nagar','dhule,dhule,maharashtra','5')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">City</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Agrawal Nagar </div>
+                                                        <div class="auto_sugg_add_nw"> dhule,dhule,maharashtra </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForSwapSrc('Agrahara','mysuru,mysuru,karnataka','6')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add"> City </div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Agrahara </div>
+                                                        <div class="auto_sugg_add_nw"> mysuru,mysuru,karnataka </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForSwapSrc('A T Agraharam','guntur','7')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add"> City </div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> A T Agraharam </div>
+                                                        <div class="auto_sugg_add_nw"> guntur </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForSwapSrc('Guntur','guntur','8')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add"> City </div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Guntur </div>
+                                                        <div class="auto_sugg_add_nw"> guntur </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForSwapSrc('Agraharam','west godavari' ,'9')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add"> City </div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Agraharam </div>
+                                                        <div class="auto_sugg_add_nw"> west godavari </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForSwapSrc('Ch Agraharam','west godavari', '10')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add"> City </div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Ch Agraharam </div>
+                                                        <div class="auto_sugg_add_nw"> west godavari </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="auto_sugg" id="citiesForAirprtPickUpAfterSwap" style="display:none">
+                                            <ul>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForAirprtpickUpSwapSrc('Agra, Agra Airport','1')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/locality.png"
+                                                                alt="locality"></div>
+                                                        <div class="auto_sugg_add">AIRPORT</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">Agra, Agra Airport </div>
+                                                        <div class="auto_sugg_add_nw"></div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForAirprtpickUpSwapSrc('Camagüey, Ignacio Agramonte Int. Airport','2')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">Airport</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">Camagüey, Ignacio Agramonte Int.
+                                                            Airport</div>
+                                                        <div class="auto_sugg_add_nw"> </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+    
+                                    </div>
+                                    <div class="errorbox" id="srcErrBx" style="display: none;">
+                                        <div class="errorfrm" id="srcErrMxMessge"></div>
+                                    </div>
+                                </div>
+    
+                                <div class="box-srch rel" id="to" style="padding-left:25px;">
+                                    <span onclick="swap()" class="swipe-cab"></span>
+                                    <div onclick="ShowAutoSuggForDest()">
+                                        <div class="f12 gry destShow">To</div>
+                                        <div class="blk overflw_txt ftn22 destShow" id="destinationName">Greater Kailash
+                                        </div>
+                                        <div class="f12 gry overflw_txt mrg2 destShow" id="destinationAddress">New Delhi,
+                                            South East Delhi</div>
+    
+                                    </div>
+                                    <div class="citysearch" id="showDestination" style="display:none">
+                                        <div class="searcityCol" id="fromdest"><i class="searcIcn"></i><input
+                                                id="a_ToSector_show" onkeyup="AddautosuggClassForDestination()" type="text"
+                                                class="srctinput autoFlll" placeholder="To" autocomplete="off" autofocus>
+                                        </div>
+                                        <div class="clr"></div>
+                                        <div class="auto_sugg" id="EndCity" style="display:none">
+                                            <ul>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="auto_sugg" id="citiesWhenKeyIsLessForDest">
+                                            <ul>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForDest('Agra Fort', 'near taj mahal', '1')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/locality.png"
+                                                                alt="locality"></div>
+                                                        <div class="auto_sugg_add">Region</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">Agra Fort</div>
+                                                        <div class="auto_sugg_add_nw"> near taj mahal </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForDest( 'Agra Cantonment Railway Station (Agc)', 'agra,agra,uttar pradesh ' ,'2')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">City</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Agra Cantonment Railway Station
+                                                            (Agc) </div>
+                                                        <div class="auto_sugg_add_nw"> agra,agra,uttar pradesh </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForDest('Agra Fort Railway Station','bijli ghar, pipal mandi', '3')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/locality.png"
+                                                                alt="locality"></div>
+                                                        <div class="auto_sugg_add">Region</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Agra Fort Railway Station </div>
+                                                        <div class="auto_sugg_add_nw"> bijli ghar, pipal mandi </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForDest('Agrawal Restaurant','surat,surat,gujarat','4')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">City</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Agrawal Restaurant </div>
+                                                        <div class="auto_sugg_add_nw"> surat,surat,gujarat </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForDest('Agrawal Nagar','dhule,dhule,maharashtra','5')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">City</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Agrawal Nagar </div>
+                                                        <div class="auto_sugg_add_nw"> dhule,dhule,maharashtra </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForDest('Agrahara','mysuru,mysuru,karnataka','6')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add"> City </div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Agrahara </div>
+                                                        <div class="auto_sugg_add_nw"> mysuru,mysuru,karnataka </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForDest('A T Agraharam','guntur','7')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add"> City </div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> A T Agraharam </div>
+                                                        <div class="auto_sugg_add_nw"> guntur </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForDest('Guntur','guntur','8')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add"> City </div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Guntur </div>
+                                                        <div class="auto_sugg_add_nw"> guntur </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForDest('Agraharam','west godavari' ,'9')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add"> City </div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Agraharam </div>
+                                                        <div class="auto_sugg_add_nw"> west godavari </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForDest('Ch Agraharam','west godavari', '10')"
+                                                    alt="poi">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png">
+                                                        </div>
+                                                        <div class="auto_sugg_add"> City </div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw"> Ch Agraharam </div>
+                                                        <div class="auto_sugg_add_nw"> west godavari </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="auto_sugg" id="citiesForAirprtPickDrop" style="display:none">
+                                            <ul>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForAirprtpickUpDest('Agra, Agra Airport','1')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/locality.png"
+                                                                alt="locality"></div>
+                                                        <div class="auto_sugg_add">AIRPORT</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">Agra, Agra Airport </div>
+                                                        <div class="auto_sugg_add_nw"></div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForAirprtpickUpDest('Camagüey, Ignacio Agramonte Int. Airport','2')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">Airport</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">Camagüey, Ignacio Agramonte Int.
+                                                            Airport</div>
+                                                        <div class="auto_sugg_add_nw"> </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="auto_sugg" id="citiesWhenKeyIsLessForDestAfterSwap"
+                                            style="display:none">
+                                            <ul>
+                                                <li class="auto_sugg_list" onclick="ShowStaticAutoSuggForSwapDest('1')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/locality.png"
+                                                                alt="locality"></div>
+                                                        <div class="auto_sugg_add">Region</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">delhi cantonment </div>
+                                                        <div class="auto_sugg_add_nw">new delhi,new delhi,delhi </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list" onclick="ShowStaticAutoSuggForSwapDest('2')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">City</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">delhi darbar </div>
+                                                        <div class="auto_sugg_add_nw">colaba causeway </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list" onclick="ShowStaticAutoSuggForSwapDest('3')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/locality.png"
+                                                                alt="locality"></div>
+                                                        <div class="auto_sugg_add">School</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">delhi university area </div>
+                                                        <div class="auto_sugg_add_nw">new delhi,central delhi,delhi </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list" onclick="ShowStaticAutoSuggForSwapDest('4')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">School</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">delhi public school - south </div>
+                                                        <div class="auto_sugg_add_nw">11th, k m , kanakpura road (behind
+                                                            metro) </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list" onclick="ShowStaticAutoSuggForSwapDest('5')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">School</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">delhi darbar </div>
+                                                        <div class="auto_sugg_add_nw">shop no 4 & 5, shivshakti complex
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+    
+                                        <div class="auto_sugg" id="citiesForAirprtPickDropAfterSwap" style="display:none">
+                                            <ul>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForAirprtDropSwapDest('Indira Gandhi International Airport, Terminal 1','1')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/locality.png"
+                                                                alt="locality"></div>
+                                                        <div class="auto_sugg_add">AIRPORT</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">Indira Gandhi International Airport,
+                                                            Terminal 1 </div>
+                                                        <div class="auto_sugg_add_nw"></div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForAirprtDropSwapDest('Indira Gandhi International Airport, Terminal 2','2')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/poi.png"
+                                                                alt="poi"></div>
+                                                        <div class="auto_sugg_add">Airport</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">Indira Gandhi International Airport,
+                                                            Terminal 2</div>
+                                                        <div class="auto_sugg_add_nw"> </div>
+                                                    </div>
+                                                </li>
+                                                <li class="auto_sugg_list"
+                                                    onclick="ShowStaticAutoSuggForAirprtDropSwapDest('Indira Gandhi International Airport, Terminal 3','3')">
+                                                    <div class="w_10">
+                                                        <div class="auto_sugg_img"><img
+                                                                src="https://www.easemytrip.com/images/auto-sugg-icon/locality.png"
+                                                                alt="locality"></div>
+                                                        <div class="auto_sugg_add">Airport</div>
+                                                    </div>
+    
+                                                    <div class="w_85">
+                                                        <div class="auto_sugg_tttl_nw">Indira Gandhi International Airport,
+                                                            Terminal 3</div>
+                                                        <div class="auto_sugg_add_nw"></div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+    
+                                    </div>
+    
+                                </div>
+    
+                                <div class="box-dt">
+                                    <div class="in-bx-d showPickCalender" id="pickCalender">
+                                        <div class="f12 gry"> Pick-Up Date & Time</div>
+                                        <i class="Cal-ico"></i>
+                                        <div class="rel">
+                                            <span class="ftn20">
+                                                <input id="datepicker" value="" class="ftn20 mgr5 _inp showPickCalender"
+                                                    readonly>
+                                            </span>
+                                            <span id="dmonthyear" class="f12"></span>
+                                        </div>
+    
+                                        <div class="rel" id="showtime">
+                                            <span id="time" class="f16t">Select Time</span>
+    
+                                        </div>
+    
+                                        <div class="timepicker" id="timepicker">
+                                            <div class="timec">
+                                                <span></span>
+                                                <div class="radio-toolbar" id="ap">
+                                                    <div onclick="CommonAm()"><input id="am" type="radio" value="AM"
+                                                            name="TitleAdult"><label for="am">AM</label></div>
+                                                    <div onclick="CommonPm()"><input id="pm" type="radio" value="PM"
+                                                            name="TitleAdult"><label for="pm"
+                                                            style="border-right: 0;">PM</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="time_sec">
+                                                <div class="wtsk" id="hr">
+                                                    <ul>
+                                                        <li onclick="Hour(1)">1 Hr.</li>
+                                                        <li onclick="Hour(2)">2 Hr.</li>
+                                                        <li onclick="Hour(3)">3 Hr.</li>
+                                                        <li onclick="Hour(4)">4 Hr.</li>
+                                                        <li onclick="Hour(5)">5 Hr.</li>
+                                                        <li onclick="Hour(6)">6 Hr.</li>
+                                                        <li onclick="Hour(7)">7 Hr.</li>
+                                                        <li onclick="Hour(8)">8 Hr.</li>
+                                                        <li onclick="Hour(9)">9 Hr.</li>
+                                                        <li onclick="Hour(10)">10 Hr.</li>
+                                                        <li onclick="Hour(11)">11 Hr.</li>
+                                                        <li onclick="Hour(12)">12 Hr.</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="wtsk" id="min">
+                                                    <ul>
+                                                        <li onclick="min(1)">00 Min.</li>
+                                                        <li onclick="min(2)">05 Min.</li>
+                                                        <li onclick="min(3)">10 Min.</li>
+                                                        <li onclick="min(4)">15 Min.</li>
+                                                        <li onclick="min(5)">20 Min.</li>
+                                                        <li onclick="min(6)">25 Min.</li>
+                                                        <li onclick="min(7)">30 Min.</li>
+                                                        <li onclick="min(8)">35 Min.</li>
+                                                        <li onclick="min(9)">40 Min.</li>
+                                                        <li onclick="min(10)">45 Min.</li>
+                                                        <li onclick="min(11)">50 Min.</li>
+                                                        <li onclick="min(12)">55 Min.</li>
+                                                    </ul>
+                                                </div>
+    
+                                            </div>
+    
+                                            <a class="done_d" onclick="Done()"> Done </a>
+                                        </div>
+    
+                                        <div class="errorbox" id="pickTime" style="display: none;">
+                                            <div class="errorfrm" id="picktime"></div>
+                                        </div>
+    
+                                    </div>
+                                    <div class="in-bx-t" id="returnDate" style="display:none">
+                                        <div class="f12 gry showReturnCalender" id="ReturnCalender">Return Date & Time</div>
+                                        <i class="Cal-ico showReturnCalender" id="rclandr"></i>
+                                        <p id="rtag" class="rou_noti showReturnCalender" style="" onclick="ReturnDate()">
+                                            Book a round trip<br> to save more</p>
+                                        <div id="returndateTime" style="display:none">
+                                            <div class="rel">
+                                                <span class="ftn20 mgr5"><input id="rdatepicker" value=""
+                                                        class="ftn20 mgr5 _inp showReturnCalender" readonly> </span>
+                                            </div>
+                                            <div class="rel" id="showreturnTime">
+                                                <span id="returntime" class="f16t">Select Time</span>
+    
+                                            </div>
+    
+    
+                                            <div class="timepicker" id="returntimepicker">
+                                                <div class="timec" id="rtimec">
+                                                    <span></span>
+                                                    <div class="radio-toolbar" id="rap">
+                                                        <div onclick="SetreturnAm()"><input id="ram" type="radio" value="AM"
+                                                                name="TitleAdult"><label for="ram">AM</label></div>
+                                                        <div onclick="SetreturnPm()"><input id="rpm" type="radio" value="PM"
+                                                                name="TitleAdult"><label for="rpm"
+                                                                style="border-right: 0;">PM</label></div>
+                                                    </div>
+                                                </div>
+                                                <div class="time_sec" id="hrmin">
+                                                    <div class="wtsk" id="rhr">
+                                                        <ul>
+                                                            <li onclick="ReturnHour(1)">1 Hr.</li>
+                                                            <li onclick="ReturnHour(2)">2 Hr.</li>
+                                                            <li onclick="ReturnHour(3)">3 Hr.</li>
+                                                            <li onclick="ReturnHour(4)">4 Hr.</li>
+                                                            <li onclick="ReturnHour(5)">5 Hr.</li>
+                                                            <li onclick="ReturnHour(6)">6 Hr.</li>
+                                                            <li onclick="ReturnHour(7)">7 Hr.</li>
+                                                            <li onclick="ReturnHour(8)">8 Hr.</li>
+                                                            <li onclick="ReturnHour(9)">9 Hr.</li>
+                                                            <li onclick="ReturnHour(10)">10 Hr.</li>
+                                                            <li onclick="ReturnHour(11)">11 Hr.</li>
+                                                            <li onclick="ReturnHour(12)">12 Hr.</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="wtsk" id="rmin">
+                                                        <ul>
+                                                            <li onclick="Returnmin(1)">00 Min.</li>
+                                                            <li onclick="Returnmin(2)">05 Min.</li>
+                                                            <li onclick="Returnmin(3)">10 Min.</li>
+                                                            <li onclick="Returnmin(4)">15 Min.</li>
+                                                            <li onclick="Returnmin(5)">20 Min.</li>
+                                                            <li onclick="Returnmin(6)">25 Min.</li>
+                                                            <li onclick="Returnmin(7)">30 Min.</li>
+                                                            <li onclick="Returnmin(8)">35 Min.</li>
+                                                            <li onclick="Returnmin(9)">40 Min.</li>
+                                                            <li onclick="Returnmin(10)">45 Min.</li>
+                                                            <li onclick="Returnmin(11)">50 Min.</li>
+                                                            <li onclick="Returnmin(12)">55 Min.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+    
+                                                <a class="done_d" onclick="rDone()"> Done </a>
+                                            </div>
+    
+    
+                                            <i class="roundcross" id="round" onclick="HideReturn()"
+                                                style="display:none"></i>
+    
+                                            <div class="errorbox" id="rTime" style="display: none;">
+                                                <div class="errorfrm" id="rtime"></div>
+                                            </div>
+    
+                                        </div>
+                                        <div class="errorbox" id="returndTime" style="display: none;">
+                                            <div class="errorfrm" id="returndatetime"></div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                                <div class="box-trv rel" id="timePicker" style="display:none">
+                                    <div class="f12 gry">Rent For</div>
+                                    <div class="blk trvflx" id="rtimes"><span class=""><span class="fnt30"
+                                                id="guestroom">04</span> <span> Hr.</span></span><i id="HoursForRent"
+                                            class="down_arw_htl"></i></div>
+                                    <div class="timepicker hr_c" id="hrforRent">
+                                        <p>Select Hours</p>
+                                        <div class="time_sec">
+                                            <div class="wtsk xp100" id="addclsForRent">
+                                                <ul>
+                                                    <li class="actvtab" onclick="RentFor(0)">2 Hr.</li>
+                                                    <li onclick="RentFor(1)">4 Hr.</li>
+                                                    <li onclick="RentFor(2)">6 Hr.</li>
+                                                    <li onclick="RentFor(3)">8 Hr.</li>
+                                                    <li onclick="RentFor(4)">10 Hr.</li>
+                                                    <li onclick="RentFor(5)">12 Hr.</li>
+                                                </ul>
+                                            </div>
+    
+                                        </div>
+    
+                                    </div>
+                                </div>
+                                <div class="srch-btn-c" onclick="GetList()">SEARCH</div>
+    
+                            </div>
+    
+                        </div>
+    
+                        <!-- Common Search HTML end -->
+                    </div>
+                </section>
+
+                <!-- <a class="content-wrapper event-elem" event-name="desktop_feed_card_ola_s1">
+                    <img src="./webstatic/img/Uppar_BookAirportCab.jpg" height="100%" width="100%"
+                        class="desktop-only cursor-pointer" />
+                </a> -->
+                <!-- <a class="content-wrapper event-elem" event-name="desktop_feed_card_ola_s1" event-value="{'event_value':'offer_heading', 'route_name':'{{route_source}}_to_{{route_destination}}'}" onclick="window.open('https://tr.olaelectric.com', '_blank');return false;">
+                    <img src="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/index_banner_mobile.png" height="100%" width="100%" class="mobile-only cursor-pointer"/>
+                    </a> -->
+                <section class="text-center first-fold-text-push">
+                    <h1 class="electrified-title font-48 mar-bot-50 black fw-500 desktop-only">Global mobility ecosystem
+                        driving communities forward</h1>
+                    <h1 class="non-electrified-title text-black font-24 lh-28 fw-500 mobile-only">Global mobility
+                        ecosystem driving communities forward</h1>
+                </section>
+                <section name="statistics">
+                    <div class="flex-space-between statistics-flex-mb">
+                        <div class="flex-column-center statistics-row-mb">
+                            <object type="image/svg+xml" class="cities-covered-img"
+                                data="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/cts-covered.svg"
+                                name="cities-covered"></object>
+                            <div class="desktop-only">
+                                <p class="title-1 fw-500 font-40 lh-48 text-center">250+</p>
+                                <p class="title-2 font-28 lh-32 fw-500 text-center">Cities covered</p>
+                                <p class="title-3 font-16 fw-400 lh-24 text-center">Across India, Australia, New Zealand
+                                    and the UK</p>
+                            </div>
+                            <div class="mobile-only">
+                                <p class="title-1 fw-500 font-40 lh-48 text-center">250+ cities</p>
+                                <p class="title-3 font-16 fw-400 lh-24 text-center">Across India, Australia, New Zealand
+                                    and the UK</p>
+                            </div>
+                        </div>
+                        <div class="flex-column-center statistics-row-mb">
+                            <object type="image/svg+xml" class="cities-covered-img"
+                                data="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/year-rides.svg"
+                                name="yearly-rides"></object>
+                            <div class="desktop-only">
+                                <p class="title-1 fw-500 font-40 lh-48 text-center">55 Cr+</p>
+                                <p class="title-2 font-28 lh-32 fw-500 text-center">Yearly rides</p>
+                                <p class="title-3 font-16 fw-400 lh-24 text-center">Booked by our customers every year
+                                </p>
+                            </div>
+                            <div class="mobile-only">
+                                <p class="title-1 fw-500 font-40 lh-48 text-center">55 Crore+ yearly rides</p>
+                                <p class="title-3 font-16 fw-400 lh-24 text-center">Booked by our customers every year
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex-column-center statistics-row-mb">
+                            <object type="image/svg+xml" class="cities-covered-img"
+                                data="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/kms-covered.svg"
+                                name="kms-covered"></object>
+                            <div class="desktop-only">
+                                <p class="title-1 fw-500 font-40 lh-48 text-center">12 Cr+</p>
+                                <p class="title-2 font-28 lh-32 fw-500 text-center">Kilometers on S1</p>
+                                <p class="title-3 font-16 fw-400 lh-24 text-center">Distance covered on Ola S1 scooters
+                                    within a year of launch</p>
+                            </div>
+                            <div class="mobile-only">
+                                <p class="title-1 fw-500 font-40 lh-48 text-center">12 crore+ km on S1</p>
+                                <p class="title-3 font-16 fw-400 lh-24 text-center">Distance covered on Ola S1 scooters
+                                    within a year of launch</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </section-skewed>
+    <section-skewed>
+        <div slot="outer-wrapper-children" class="pad-y-100 max-width">
+            <h1 class="electrified-title font-48 mar-bot-50 fw-500 black">There's an Ola ride for everyone</h1>
+            <div class="ride-grid">
+                <img class="ride-item-a" src="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/ride-budget.svg"
+                    alt="">
+                <div class="ride-item-b">
+                    <p class="ride-header font-24 fw-500 lh-48">For any budget</p>
+                    <p class="ride-desc">
+                        From <b>Bikes</b> and <b>Autos</b> to <b>Prime Sedans</b> and <b>Prime SUVs</b>, you will find a
+                        ride in your budget at your convenience any time.
+                    </p>
+                </div>
+                <div class="ride-item-c">
+                    <img src="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/ride-distance.svg" alt="">
+                </div>
+                <div class="ride-item-d">
+                    <p class="ride-header font-24 fw-500 lh-48">For any distance</p>
+                    <p class="ride-desc">
+                        Book rides within the city with <b>Daily</b>, or take a trip to your favourite destinations
+                        outside the city with <b>Outstation</b>.
+                    </p>
+                </div>
+                <div class="ride-item-e">
+                    <img src="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/ride-duration.svg" alt="">
+                </div>
+                <div class="ride-item-f">
+                    <p class="ride-header font-24 fw-500 lh-48">For any duration</p>
+                    <p class="ride-desc">
+                        Easily plan a day out without having to worry about conveyance with an hour-based package from
+                        <b>Rental</b>.
+                    </p>
+                </div>
+            </div>
+            <section id="making-innovations" class="desktop-only">
+                <stories-component></stories-component>
+            </section>
+            <section id="making-innovations" class="mobile-only">
+                <slider-component sectionName="making-innovations" showBgColor="false"></slider-component>
+            </section>
+        </div>
+    </section-skewed>
+    <section-skewed skew="both" background="#EA2330">
+        <div slot="outer-wrapper-children" class="pad-y-100 max-width">
+            <h1 class="electrified-title font-48 mar-bot-50 fw-500 black smarter-way-text">Experience the smarter way to
+                pay</h1>
+            <div>
+                <div class="postpaid-grid">
+                    <img class="postpaid-item-a"
+                        src="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/insurance-shop-img.png" alt="">
+                    <div class="postpaid-item-b">
+                        <div class="flex align-baseline pp-mar">
+                            <p class="text-black lh-28 fw-200 font-24 pp-text">Postpaid +</p>
+                            <p class="green-box-title font-14 lh-20 fw-500">Trusted by 40 lakh+ users</p>
+                        </div>
+                        <p class="pp-head-text pp-head-text-dT pp-mar">Buy now, pay later for all spends once a month
+                        </p>
+                    </div>
+                    <div class="postpaid-item-c flex">
+                        <div class="pp-img-desc flex-space-between">
+                            <img src="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/insurance-1.svg" alt=""
+                                width="58px" height="58px">
+                            <p>Buy now, pay after 30 days</p>
+                        </div>
+                        <div class="pp-img-desc flex-space-between">
+                            <img src="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/insurance-3.svg" alt=""
+                                width="58px" height="58px">
+                            <p>Shop across 20,000 apps</p>
+                        </div>
+                        <div class="pp-img-desc flex-space-between">
+                            <img src="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/insurance-2.svg" alt=""
+                                width="58px" height="58px">
+                            <p>Credit limit upto ₹100,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-only dassh"></div>
+                <div class="insure-grid">
+                    <div class="i-grid-a">
+                        <p class="text-black lh-28 fw-200 font-24">Insurance</p>
+                        <p class="pp-head-text">Effective insurances for all your risks</p>
+                    </div>
+                    <div class="i-grid-b">
+
+                        <object type="image/svg+xml" class="insurance-banner-image"
+                            data="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/insure-daily.svg" name="">
+                        </object>
+                        <object type="image/svg+xml" class="insurance-banner-image"
+                            data="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/insure-hospicash.svg"
+                            name="">
+                        </object>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section-skewed>
+
+    <section-skewed>
+        <div slot="outer-wrapper-children" class="pad-y-100 max-width">
+            <div>
+                <h2
+                    class="electrified-title black font-48 mar-bot-50 fw-500 downloadMainTitle mobile-font making-diff-mar">
+                    Making a difference
+                </h2>
+                <div class="mad-grid-container">
+                    <div class="grid-item-a">Ola Foundation, the social welfare arm of Ola, is an outcome of a belief
+                        based on real interactions, research, and extensive study on the far-reaching impact of enabling
+                        and equipping people.</div>
+                    <div class="grid-item-b">
+                        <h3>1 Lakh+</h3>
+                        <p>Families impacted in FY 2020-21</p>
+                    </div>
+                    <div class="grid-item-c">
+                        <h3>93 Lakh+</h3>
+                        <p>Meals enabled across India in FY 2020-21</p>
+                    </div>
+                    <div class="grid-item-d">
+                        <img src="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/womens.png" alt="">
+                    </div>
+                    <div class="grid-item-e">
+                        <img src="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/donating.png" alt="">
+                    </div>
+                    <div class="grid-item-f">
+                        <img src="https://s3-ap-southeast-1.amazonaws.com/ola-prod-website/mother-son.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section-skewed>
+
+
+    <section-skewed skew="both" background="#F2F4F0">
+        <div slot="outer-wrapper-children" class="pad-y-100 max-width">
+            <slider-component sectionName="recent-from-blogs" showBgColor="false"></slider-component>
+        </div>
+    </section-skewed>
+
+    <footer-component></footer-component>
+    <div class="body-overlay overlay-hide">
+    </div>
+    <div class="orientation-box">
+        <svg viewbox="0 0 24 24">
+            <g>
+                <path
+                    d="M23.25 12.77l-2.57-2.57-1.41 1.41 2.22 2.22-5.66 5.66L4.51 8.17l5.66-5.66 2.1 2.1 1.41-1.41L11.23.75c-.59-.59-1.54-.59-2.12 0L2.75 7.11c-.59.59-.59 1.54 0 2.12l12.02 12.02c.59.59 1.54.59 2.12 0l6.36-6.36c.59-.59.59-1.54 0-2.12zM8.47 20.48C5.2 18.94 2.86 15.76 2.5 12H1c.51 6.16 5.66 11 11.95 11l.66-.03-3.81-3.82-1.33 1.33zM16 9h5c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1v-.5C21 1.12 19.88 0 18.5 0S16 1.12 16 2.5V3c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1zm.8-6.5c0-.94.76-1.7 1.7-1.7s1.7.76 1.7 1.7V3h-3.4v-.5z">
+                </path>
+            </g>
+        </svg>
+        <div class="font-16">
+            We don't currently support landscape mode. Please switch to portrait mode.
+        </div>
+    </div>
+    <!--script -->
+    <script src="./webstatic/js/jquery-3.2.1.min.js"></script>
+    <script src="./webstatic/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

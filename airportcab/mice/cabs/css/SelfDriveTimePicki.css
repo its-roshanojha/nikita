@@ -1,0 +1,93 @@
+.ti_tx,
+.mi_tx,
+.mer_tx {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.time,
+.mins,
+.meridian {
+    width: 60px;
+    float: left;
+    margin: auto;
+    font-size: 18px;
+    color: #2d2e2e;
+    font-family: arial;
+    font-weight: 700;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    padding: 16px;
+    width: 24%;
+    border: 1px solid #ccc;
+    margin: auto;
+    background: url(https://www.easemytrip.com/transfercontent/img/arrow.png) no-repeat;
+    background-size: 20px 50px;
+    border-radius: 5px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: #ccc;
+}
+
+.next {
+    background-position: 50% 150%;
+}
+
+.prev {
+    background-position: 50% -50%;
+}
+
+.time_pick {
+    position: relative;
+}
+
+.timepicker_wrap {
+    padding: 10px 5px;
+    border-radius: 4px;
+    z-index: 9;
+    width: 192px;
+    display: none;
+    box-shadow: 2px 2px 5px 0 rgb(50 50 50 / 35%);
+    background: #ffffff;
+    border: 1px solid #ccc;
+    float: left;
+    position: absolute;
+    top: 25px !important;
+    left: -92px !important;
+}
+
+.arrow_top {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    /*	background: url(../images/top_arr.png) no-repeat; */
+    width: 18px;
+    height: 10px;
+    z-index: 999;
+}
+
+input.timepicki-input {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    float: none;
+    outline: 0;
+    font-size: 18px;
+    margin: 0;
+    font-weight: 400;
+    text-align: center;
+    width: 70%;
+    height: 40px;
+}
+
+a.reset_time {
+    float: left;
+    margin-top: 5px;
+    color: #000;
+}

@@ -1,0 +1,390 @@
+<div class="row form-major-box">
+    <!-- From Section -->
+    <div class="col-md-4 form-box">
+        <label for="from-label" class="form-label">FROM</label>
+        <div class="form-select-wrapper">
+            <div id="from-label" class="form-label-text">
+                <div class="main-text" id="from-main">Pick Up Location</div>
+                <div class="sub-text" id="from-sub"></div>
+            </div>
+            <select id="from-dropdown" class="form-control" style="display:none;">
+                <option value="Kempegowda International Airport, Bengaluru">Kempegowda International Airport, Bengaluru</option>
+                <option value="Rajiv Gandhi International Airport, Hyderabad">Rajiv Gandhi International Airport, Hyderabad</option>
+                <!-- Add more options here -->
+            </select>
+        </div>
+    </div>
+
+    <!-- To Section -->
+    <div class="col-md-4 form-box">
+        <label for="to-label" class="form-label">TO</label>
+        <div class="form-select-wrapper">
+            <div id="to-label" class="form-label-text">
+                <div class="main-text" id="to-main">Drop Location</div>
+                <div class="sub-text" id="to-sub"></div>
+            </div>
+            <select id="to-dropdown" class="form-control" style="display:none;">
+                <option value="Terminal 1C - Arrival, Indira Gandhi International Airport, Delhi">Terminal 1C - Arrival, Indira Gandhi International Airport, Delhi</option>
+                <option value="Terminal 1D - Departure, Indira Gandhi International Airport, Delhi">Terminal 1D - Departure, Indira Gandhi International Airport, Delhi</option>
+                <!-- Add more options here -->
+            </select>
+        </div>
+    </div>
+
+    <!-- Departure Date Section -->
+    <div class="col-md-2 form-box">
+        <label for="departure-date">Departure</label>
+        <div class="date-container" id="display-date" onclick="document.getElementById('hidden-date-input').showPicker()">
+            <span class="date-text">
+                <span class="day-part" id="day-part"></span>
+                <span class="month-year-part" id="month-year-part"></span>
+            </span>
+            <br>
+            <span class="day-text" id="day-text"></span>
+        </div>
+        <input type="date" id="hidden-date-input" style="opacity: 0; position: absolute;" />
+    </div>
+    
+
+    <!-- Pickup Time -->
+    <div class="col-md-2 form-box">
+        <label for="pickup-time" style="font-size: 14px; color: #333;">Pickup-Time</label>
+        <div class="time-container" style="cursor: pointer; text-align: left; max-width: 150px;">
+            <div class="time-display" style="font-size: 24px; font-weight: bold;" id="displayed-time">
+            </div>
+            <div class="timezone-info" style="font-size: 9px; font-style: italic; color: #777;">
+                pick up time as per journey city timezone
+            </div>
+        </div>
+        <input type="time" id="pickup-time" style="opacity: 0;" />
+    </div>
+</div>
+
+	<!-- Start home-about Area -->
+	<section class="home-about-area section-gap">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6 about-left">
+					<img class="img-fluid" src="img/about-img.jpg" alt="">
+				</div>
+				<div class="col-lg-6 about-right">
+					<h1>Globally Connected
+						by Large Network</h1>
+					<h4>We are here to listen from you deliver exellence</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore et dolore magna aliqua.Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur
+						adipisicing elit, sed do eiusmod tempor.
+					</p>
+					<a class="text-uppercase primary-btn" href="#">Get Details</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End home-about Area -->
+
+	<!-- Start services Area -->
+	<section class="services-area pb-120">
+		<div class="container">
+			<div class="row section-title">
+				<h1>What Services we offer to our clients</h1>
+				<p>Who are in extremely love with eco friendly system.</p>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 single-service">
+					<span class="lnr lnr-car"></span>
+					<a href="#">
+						<h4>Taxi Service</h4>
+					</a>
+					<p>
+						Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+					</p>
+				</div>
+				<div class="col-lg-4 single-service">
+					<span class="lnr lnr-briefcase"></span>
+					<a href="#">
+						<h4>Office Pick-ups</h4>
+					</a>
+					<p>
+						Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+					</p>
+				</div>
+				<div class="col-lg-4 single-service">
+					<span class="lnr lnr-bus"></span>
+					<a href="#">
+						<h4>Event Transportation</h4>
+					</a>
+					<p>
+						Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End services Area -->
+
+	<!-- Start image-gallery Area -->
+	<section class="image-gallery-area section-gap">
+		<div class="container">
+			<div class="row section-title">
+				<h1>Image Gallery that we like to share</h1>
+				<p>Who are in extremely love with eco friendly system.</p>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 single-gallery">
+					<a href="img/g1.jpg" class="img-gal"><img class="img-fluid" src="img/g1.jpg" alt=""></a>
+					<a href="img/g4.jpg" class="img-gal"><img class="img-fluid" src="img/g4.jpg" alt=""></a>
+				</div>
+				<div class="col-lg-4 single-gallery">
+					<a href="img/g2.jpg" class="img-gal"><img class="img-fluid" src="img/g2.jpg" alt=""></a>
+					<a href="img/g5.jpg" class="img-gal"><img class="img-fluid" src="img/g5.jpg" alt=""></a>
+				</div>
+				<div class="col-lg-4 single-gallery">
+					<a href="img/g3.jpg" class="img-gal"><img class="img-fluid" src="img/g3.jpg" alt=""></a>
+					<a href="img/g6.jpg" class="img-gal"><img class="img-fluid" src="img/g6.jpg" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End image-gallery Area -->
+
+	<!-- Start reviews Area -->
+	<section class="reviews-area section-gap">
+		<div class="container">
+			<div class="row section-title">
+				<h1>Client’s Reviews</h1>
+				<p>Who are in extremely love with eco friendly system.</p>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="single-review">
+						<h4>Cody Hines</h4>
+						<p>
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer,
+							scanner, speaker.
+						</p>
+						<div class="star">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="single-review">
+						<h4>Chad Herrera</h4>
+						<p>
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer,
+							scanner, speaker.
+						</p>
+						<div class="star">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="single-review">
+						<h4>Andre Gonzalez</h4>
+						<p>
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer,
+							scanner, speaker.
+						</p>
+						<div class="star">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="single-review">
+						<h4>Jon Banks</h4>
+						<p>
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer,
+							scanner, speaker.
+						</p>
+						<div class="star">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="single-review">
+						<h4>Landon Houston</h4>
+						<p>
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer,
+							scanner, speaker.
+						</p>
+						<div class="star">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="single-review">
+						<h4>Nelle Wade</h4>
+						<p>
+							Accessories Here you can find the best computer accessory for your laptop, monitor, printer,
+							scanner, speaker.
+						</p>
+						<div class="star">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End reviews Area -->
+
+	<!-- Start home-calltoaction Area -->
+	<section class="home-calltoaction-area relative">
+		<div class="container">
+			<div class="overlay overlay-bg"></div>
+			<div class="row align-items-center section-gap">
+				<div class="col-lg-8">
+					<h1>Experience Great Support</h1>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+					</p>
+				</div>
+				<div class="col-lg-4 btn-left">
+					<a href="#" class="primary-btn">Reach Our Support Team</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End home-calltoaction Area -->
+
+	<!-- Start latest-blog Area -->
+	<section class="latest-blog-area section-gap">
+		<div class="container">
+			<div class="row section-title">
+				<h1>Latest News from our Blog</h1>
+				<p>Who are in extremely love with eco friendly system.</p>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="single-latest-blog">
+						<div class="thumb">
+							<img class="img-fluid" src="img/b1.jpg" alt="">
+						</div>
+						<ul class="tags">
+							<li><a href="#">Travel</a></li>
+							<li><a href="#">Life Style</a></li>
+						</ul>
+						<a href="#">
+							<h4>Portable latest Fashion for young women</h4>
+						</a>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+							ut labore et dolore.
+						</p>
+						<p class="date">31st January, 2018</p>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="single-latest-blog">
+						<div class="thumb">
+							<img class="img-fluid" src="img/b2.jpg" alt="">
+						</div>
+						<ul class="tags">
+							<li><a href="#">Travel</a></li>
+							<li><a href="#">Life Style</a></li>
+						</ul>
+						<a href="#">
+							<h4>Portable latest Fashion for young women</h4>
+						</a>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+							ut labore et dolore.
+						</p>
+						<p class="date">31st January, 2018</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End latest-blog Area -->
+
+	<!-- start footer Area -->
+	<footer class="footer-area section-gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h6>Quick links</h6>
+						<ul>
+							<li><a href="#">Jobs</a></li>
+							<li><a href="#">Brand Assets</a></li>
+							<li><a href="#">Investor Relations</a></li>
+							<li><a href="#">Terms of Service</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h6>Features</h6>
+						<ul>
+							<li><a href="#">Jobs</a></li>
+							<li><a href="#">Brand Assets</a></li>
+							<li><a href="#">Investor Relations</a></li>
+							<li><a href="#">Terms of Service</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h6>Resources</h6>
+						<ul>
+							<li><a href="#">Guides</a></li>
+							<li><a href="#">Research</a></li>
+							<li><a href="#">Experts</a></li>
+							<li><a href="#">Agencies</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6 social-widget">
+					<div class="single-footer-widget">
+						<h6>Follow Us</h6>
+						<p>Let us be social</p>
+						<div class="footer-social d-flex align-items-center">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-dribbble"></i></a>
+							<a href="#"><i class="fa fa-behance"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<p class="mt-80 mx-auto footer-text col-lg-12">
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					Copyright &copy;
+					<script>document.write(new Date().getFullYear());</script> All rights reserved
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				</p>
+			</div>
+		</div>
+		<img class="footer-bottom" src="img/footer-bottom.png" alt="">
+	</footer>
+	<!-- End footer Area -->

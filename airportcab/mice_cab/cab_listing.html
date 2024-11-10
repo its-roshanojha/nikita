@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="img/fav.png">
+	<!-- Author Meta -->
+	<meta name="author" content="colorlib">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<script src="js/apicall.js"></script>
+
+	<title>Book Airport Cab</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_green.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+		rel="stylesheet">
+	<!--CSS ============================================= -->
+	<link rel="stylesheet" href="css/linearicons.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/nice-select.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/main.css">
+	<!-- <link rel="stylesheet" href="css/custom.css"> -->
+	<link rel="stylesheet" href="css/cab_listing.css">
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			// Retrieve the stored formData from sessionStorage
+			const storedFormData = sessionStorage.getItem('formData');
+
+			if (storedFormData) {
+				const formData = JSON.parse(storedFormData);
+
+				// Wrap the setting of values in a setTimeout to ensure elements are rendered
+				setTimeout(function () {
+					// Set trip type value
+					const tripTypeElem = document.getElementById('trip-type');
+					if (tripTypeElem) {
+						tripTypeElem.value = formData.tripType || '';
+					}
+
+					// Set 'from' dropdown value
+					const fromDropdown = document.getElementById('from-dropdown');
+					if (fromDropdown) {
+						fromDropdown.value = formData.source || '';
+						// Trigger change event
+						fromDropdown.dispatchEvent(new Event('change'));
+					}
+
+					// Set 'to' dropdown value
+					const toDropdown = document.getElementById('to-dropdown');
+					if (toDropdown) {
+						toDropdown.value = formData.destination || '';
+						// Trigger change event
+						toDropdown.dispatchEvent(new Event('change'));
+					}
+
+					// Set pickup date
+					const pickupDateInput = document.getElementById('pickup-date-input');
+					if (pickupDateInput) {
+						pickupDateInput.value = formData.pickup_date || '';
+					}
+
+					// Set pickup time
+					const pickupTimeInput = document.getElementById('pickup-time-input');
+					if (pickupTimeInput) {
+						pickupTimeInput.value = formData.pickup_time || '';
+					}
+				}, 200);  // Small delay to ensure DOM is fully loaded
+			} else {
+				console.log("No form data found in sessionStorage.");
+			}
+		});
+
+
+	</script>
+
+</head>
+
+<body>
+	<!-- #header -->
+	<header id="header">
+		<div class="container main-menu">
+			<div class="row align-items-center justify-content-between d-flex">
+				<a href='index.html' style="color:white;">
+					<img src="https://i.ibb.co/J34Y0kk/b0682728-7f77-4b2c-9dd5-b3f5ffe4b3c9.jpg" alt="bookairportcab"
+						style="top: 0;">
+				</a>
+				<!-- Optional: Add navigation for different categories like Flights, Hotels, etc. -->
+				<nav>
+					<ul>
+						<!-- <li><a href="#">Flights</a></li>
+						<li><a href="#">Hotels</a></li>
+						<li><a href="#">Cabs</a></li> -->
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<div class="form-section">
+		<div class="container">
+			<div id="booking" class="section">
+				<div class="section-center">
+
+					<div class="booking-form col-12">
+						<form id="ctn">
+							<div class="row form-major-box">
+								<div class="custom-dropdown col-md-4 form-box">
+									<!-- Updated class to match form structure -->
+									<div class="dropdown-label form-label" onclick="toggleDropdown2(event)">
+										<span>Select Trip Type</span>
+										<span class="arrow">▼</span>
+									</div>
+									<ul class="dropdown-menu">
+										<li>
+											<label for="Airport Transfers">
+												<input type="radio" id="Airport Transfers" name="trip-type" checked
+													onclick="updateForm('Airport Ride')">
+												<span class="custom-radio"></span>Airport Ride
+											</label>
+										</li>
+										<li>
+											<label for="Outstation Round-Trip">
+												<input type="radio" id="Outstation Round-Trip" name="trip-type"
+													onclick="updateForm('Outstation')">
+												<span class="custom-radio"></span>Outstation
+											</label>
+										</li>
+										<li>
+											<label for="Outstation One-Way">
+												<input type="radio" id="Outstation One-Way" name="trip-type"
+													onclick="updateForm('City Ride')">
+												<span class="custom-radio"></span>City Ride
+											</label>
+										</li>
+										<li>
+											<label for="Hourly Rentals">
+												<input type="radio" id="Hourly Rentals" name="trip-type"
+													onclick="updateForm('Package')">
+												<span class="custom-radio"></span>Package
+												<span class="new-label">new</span>
+											</label>
+										</li>
+									</ul>
+									<div class="selected-trip" id="selected-trip"></div>
+								</div>
+
+
+								<!-- From Section -->
+								<div class="col-md-3 form-box">
+									<label for="from-label" class="form-label ">FROM</label>
+									<div class="form-select-wrapper">
+										<div id="from-label" class="form-label-text">
+											<div class="main-text" id="from-main">Pick Up Location</div>
+											<!-- <div class="sub-text" id="from-sub"></div> -->
+										</div>
+										<input id="from-input" class="form-control" type="text"
+											placeholder="Pick Up Location (Minimum 4 characters)" autocomplete="off"
+											style="display: none;">
+										<ul class="autocomplete-results"></ul>
+									</div>
+								</div>
+
+								<!-- Flip Button -->
+								<div class="flip-btn-wrapper" id='flip-btn-wrapper'>
+									<button id="flip-btn" class="flip-btn no-margin">
+										<i class="fa-solid fa-exchange-alt" style="margin-left: 0px !important;"></i>
+									</button>
+								</div>
+
+								<!-- To Section -->
+								<div class="col-md-3 form-box" id="to-loc">
+									<label for="to-label" class="form-label ">TO</label>
+									<div class="form-select-wrapper">
+										<div id="to-label" class="form-label-text" onclick="toggleDropdown()">
+											<div class="main-text" id="to-main">Drop Location</div>
+											<!-- <div class="sub-text" id="to-sub"></div> -->
+										</div>
+										<input type="text" id="to-input" class="form-control"
+											placeholder="Drop Location" oninput="filterOptions()"
+											style="display: none;" />
+										<ul id="to-options" class="autocomplete-results"></ul>
+									</div>
+								</div>
+
+								<!-- Departure Date Section -->
+								<div class="col-md-2 form-box">
+									<label for="departure-date" class="form-label">Departure</label>
+									<div class="date-container" id="display-date"
+										onclick="document.getElementById('hidden-date-input').showPicker()">
+										<span class="date-text">
+											<span class="day-part" id="day-part">Select Date</span>
+											<span class="month-year-part regular" id="month-year-part"></span>
+											<span class="day-text regular" id="day-text"></span>
+										</span>
+									</div>
+									<input type="date" id="hidden-date-input" style="opacity: 0; position: absolute;"
+										onchange="" />
+								</div>
+
+
+								<!-- Return Date Section -->
+								<div class="col-md-2 form-box" id='return-datediv'>
+									<label for="return-date" class="form-label ">Return Date</label>
+									<div class="date-container" id="display-date"
+										onclick="document.getElementById('hidden-date-input1').showPicker()">
+										<span class="date-text1">
+											<span class="day-part1" id="day-part1"></span>
+											<span class="month-year-part1" id="month-year-part1"></span>
+											<span class="day-text1" id="day-text1"></span>
+										</span>
+									</div>
+									<input type="date" id="hidden-date-input1" style="opacity: 0; position: absolute;"
+										disabled />
+								</div>
+
+								<!-- Pickup Time -->
+								<div class="col-md-2 form-box">
+									<label for="pickup-time" class="form-label ">Pickup-Time</label>
+									<div class="time-container"
+										style="cursor: pointer; text-align: left; max-width: 150px;">
+										<div class="time-display" id="displayed-time"></div>
+									</div>
+									<input type="time" id="pickup-time" style="opacity: 0;" />
+								</div>
+
+								<!-- Submit Button -->
+								<div class="form-btn submit-btn-wrapper" style="margin-left: auto;">
+									<button class="submit-btn" type="submit">SEARCH</button>
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- SORTING CONTAINER -->
+	<div class="sorting-container">
+		<div class="sorting-text container">
+			<span>Sorted By</span>
+			<span class="sort-option" id="sortDropdown">
+				Price (Lowest to Highest) <i class="fa fa-caret-down"></i>
+			</span>
+			<span class="separator">|</span>
+			<span class="route-info" id="route-info"></span>
+		</div>
+
+		<div class="dropdown-content" id="dropdownContent">
+			<p class="dropdown-item" data-value="price-low-high">Price (Lowest to Highest)</p>
+			<p class="dropdown-item" data-value="ratings-high-low">Ratings (Highest to Lowest)</p>
+		</div>
+	</div>
+
+
+	<div class="container-fluid container">
+		<div class="row">
+			<!-- Left: Filter Section -->
+			<div class="col-md-3 filter-section">
+				<form id="filter-form">
+					<span>SELECT CAB TYPES</span>
+					<div class="cabType">
+						<input type="radio" id="sedan" name="cabType" value="Sedan">
+						<label for="sedan"><img src="img/new_Sedan.png" height="50" width="50" />
+							&nbsp;&nbsp;Sedan</label>
+					</div>
+					<div class="cabType">
+						<input type="radio" id="hatchback" name="cabType" value="Hatchback">
+						<label for="hatchback"><img src="img/new_Mini.png" height="50" width="50" />
+							&nbsp;&nbsp;Hatchback</label>
+					</div>
+					<div class="cabType">
+						<input type="radio" id="suv" name="cabType" value="SUV">
+						<label for="suv"><img src="img/new_MUV.png" height="50" width="50" /> &nbsp;&nbsp;SUV</label>
+					</div>
+				</form>
+			</div>
+
+			<!-- Middle: Cab Listings Section -->
+			<div class="col-md-9 cab-listings"></div>
+
+			<div class="loader" style="display: none;" id='loader'></div>
+		</div>
+	</div>
+
+	<script src="js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+
+	<!-- // OLD SCRIPT START-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+	<script src="js/swiper-bundle.min.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="js/tracking.js"></script>
+	<!-- // OLD SCRIPT END-->
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+	<script src="js/easing.min.js"></script>
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/superfish.min.js"></script>
+	<script src="js/jquery.ajaxchimp.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery.nice-select.min.js"></script>
+	<script src="js/mail-script.js"></script>
+	<script src="js/main.js"></script>
+
+	<script src="js/form.js"></script>
+	<script src="js/populate_data.js"></script>
+	<script src="js/custom.js"></script>
+	<!-- <script src="js/offer_section.js"></script> -->
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const pickUpLocation = document.querySelector('#from-main');
+			if (pickUpLocation.textContent.length > 25) {
+				pickUpLocation.textContent = pickUpLocation.textContent.substring(0, 25) + '...';
+			}
+		});
+
+		function toggleDropdown2(event) {
+			const dropdownMenu = document.querySelector('.dropdown-menu');
+			dropdownMenu.classList.toggle('show');
+		}
+
+		// Function to update selected trip and close dropdown
+		function updateForm(selectedTrip) {
+			document.getElementById('selected-trip').innerText = selectedTrip;
+			const dropdownMenu = document.querySelector('.dropdown-menu');
+			dropdownMenu.classList.remove('show');
+		}
+
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function (event) {
+			if (!event.target.matches('.dropdown-label')) {
+				const dropdowns = document.getElementsByClassName('dropdown-menu');
+				for (let i = 0; i < dropdowns.length; i++) {
+					dropdowns[i].classList.remove('show');
+				}
+			}
+		};
+
+
+	</script>
+	<script>
+		function toggleDropdown2(event) {
+			const dropdownMenu = document.querySelector('.dropdown-menu');
+			dropdownMenu.classList.toggle('show');
+			event.stopPropagation();
+		}
+
+		window.onclick = function (event) {
+			const dropdownMenu = document.querySelector('.dropdown-menu');
+			if (!event.target.closest('.custom-dropdown')) {
+				dropdownMenu.classList.remove('show');
+			}
+		};
+	</script>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', async function () {
+			let cabData = [];
+
+			const storedFormData = sessionStorage.getItem('formData');
+			if (storedFormData) {
+				const formData = JSON.parse(storedFormData);
+				const city = formData.cityCode;
+				const tripType = "Ride";
+
+				if (city && tripType) {
+					document.getElementById("loader").style.display = "block";
+					const apiUrl = `https://prodapi.mojoboxx.com/spicescreen/webapi/getMultiplePartner?city=${encodeURIComponent(city)}&category=${encodeURIComponent(tripType)}`;
+
+					try {
+						const response = await fetch(apiUrl);
+						if (response.ok) {
+							cabData = await response.json(); // Store cabData globally
+							document.getElementById("loader").style.display = "none";
+							renderCabs(cabData);
+						} else {
+							console.error('API call failed with status:', response.status, response.statusText);
+							document.getElementById("loader").style.display = "none";
+						}
+					} catch (error) {
+						console.error('Error during fetch:', error);
+						document.getElementById("loader").style.display = "none";
+					}
+				} else {
+					console.error('Missing city or tripType in formData');
+				}
+			} else {
+				console.error('No formData found in sessionStorage');
+			}
+
+			// Event listener for cab type change
+			document.querySelectorAll('input[name="cabType"]').forEach(cabType => {
+				cabType.addEventListener('change', function () {
+					renderCabs(cabData);
+				});
+			});
+		});
+
+		function setupCabTypeSelection() {
+			const cabTypes = document.querySelectorAll('input[name="cabType"]');
+			let selectedCabType = 'Sedan';
+
+			cabTypes.forEach(cabType => {
+				if (cabType.checked) {
+					selectedCabType = cabType.value;
+				}
+			});
+
+			return selectedCabType;
+		}
+
+		// Function to determine seats based on selected cab type
+		function getSeatsByCabType(cabType) {
+			switch (cabType) {
+				case 'Sedan':
+					return 4;
+				case 'SUV':
+					return 6;
+				case 'Hatchback':
+					return 4;
+				default:
+					return 4;
+			}
+		}
+
+		function getFareByPartner(partnerName, data, callback) {
+			let url = "";
+
+			switch (partnerName) {
+				case "GOZO CABS":
+					url = "https://prodapi.mojoboxx.com/spicescreen/webapi/getGozoFares";
+					break;
+				case "QUICKRIDE":
+					url = "https://prodapi.mojoboxx.com/spicescreen/webapi/getQuickRideFare";
+					break;
+				case "SIGNATURE":
+					url = `https://prodcaroma.mojoboxx.com/api/v1/prod/thirdparty/getActualFare?partner=SIGNATURE&city=${data.city}&km=${data.km}&cab_type=${data.cab_type}&trip_type=${data.trip_type}`;
+					break;
+				case "EEE TAXI":
+					url = `https://prodcaroma.mojoboxx.com/api/v1/prod/thirdparty/getActualFare?partner=EEE%20TAXI&city=${data.city}&km=${data.km}&cab_type=${data.cab_type}&trip_type=${data.trip_type}`;
+					break;
+				case "TAXIBAZAAR":
+					url = `https://prodapi.mojoboxx.com/spicescreen/webapi/getTaxiBazaarFare`;
+					break;
+				case "MEGA":
+					url = `https://prodapi.mojoboxx.com/spicescreen/webapi/getMegaFare`;
+					break;
+				case "MERU":
+					url = `https://prodapi.mojoboxx.com/spicescreen/webapi/getMeruFarePrice`;
+					break;
+				case "BLUSMART":
+					url = `https://prodapi.mojoboxx.com/spicescreen/webapi/getBlusmartFare`;
+					break;
+				default:
+					console.error("Unsupported partner:", partnerName);
+					return;
+			}
+
+			const settings = partnerName === "SIGNATURE" || partnerName === "EEE TAXI" ? {
+				"url": url,
+				"method": "GET",
+			} : {
+				"url": url,
+				"method": "POST",
+				"headers": {
+					"Content-Type": "application/json"
+				},
+				"data": JSON.stringify(data)
+			};
+
+			$.ajax(settings)
+				.done(function (response) {
+					callback(response);
+				})
+				.fail(function (jqXHR, textStatus) {
+					console.error("API call failed:", textStatus);
+				});
+		}
+
+
+		function renderCabs(cabs) {
+			const cabListContainer = document.querySelector('.cab-listings');
+			cabListContainer.innerHTML = '';
+
+			const selectedCabType = setupCabTypeSelection(); // Get the selected cab type
+
+			cabs.forEach((cab, index) => {
+				const seats = getSeatsByCabType(selectedCabType); // Get seats based on the selected cab type
+
+				cabListContainer.innerHTML += `
+					<div class="cancellation-banner">
+						<i class="fas fa-check-circle"></i>
+						Free cancellation is available, and time details will be provided after booking, ensuring minimum rates.
+					</div>
+					<div class="cab-listing-item">
+						<div class="car-details">
+							<img src="${cab.Logo_URL || './img/car.webp'}" alt="Car Image" class="car-image" />
+							<div class="car-info">
+								<h5>
+									${cab.partner_name || 'N/A'}
+									<span class="rating">
+										<span class="rating-value">${cab.Rating}/5</span>
+										<span class="rating-count">(${cab.Review} reviews)</span>
+									</span>
+								</h5>
+								<p class="car-features">• ${selectedCabType} &nbsp;• AC &nbsp;• ${seats} Seats </p>
+								<p class="spacious"></p>
+								<p class="extra-km-fare"><i class="fas fa-route"></i> Extra km fare: Extra charges may apply after a certain distance</p>
+								<p class="fuel-type"><i class="fas fa-gas-pump"></i> Fuel Type: Fuel type not specified</p>
+								<p class="cancellation"><i class="fas fa-times-circle"></i> Cancellation: Free cancellation available until a specified time before departure</p>
+							</div>
+						</div>
+						<div class="price-details">
+							<p class="discounted-price" id="baseFare-${index}">loading...</p> 
+							<p class="taxes">+ Taxes & Charges</p>
+							<button class="submit-btn book-btn" 
+								data-partner="${cab.partner_name || 'N/A'}" 
+								data-seat="${seats}" 
+								data-type="${selectedCabType}" 
+								data-index="${index}" 
+								data-image="${cab.Logo_URL || './img/car.webp'}" 
+								data-seats="${seats}" 
+								data-rating="${cab.Rating || 'N/A'}" 
+								data-review="${cab.Review || '0'}">
+								<i class="fas fa-shopping-cart"></i> Book Now
+							</button>
+						</div>
+					</div>
+				`;
+
+				const storedFormData = sessionStorage.getItem('formData');
+				const formData = JSON.parse(storedFormData);
+				const pickupTimeFormatted = moment(formData.pickup_time, "HH:mm").format("HH:mm:ss");
+
+				// for mega cabs
+				function generateSearchId() {
+					const chars = '0123456789abcdefghijklmnopqrstuvwxyz';
+					let searchId = '';
+					for (let i = 0; i < 13; i++) {
+						searchId += chars[Math.floor(Math.random() * chars.length)];
+					}
+					return searchId;
+				}
+
+				// used in mega cabs as need to pass specific date format
+				function formatDateToYMD(dateString) {
+					const date = new Date(dateString);
+					const year = date.getFullYear();
+					const month = (`0${date.getMonth() + 1}`).slice(-2);
+					const day = (`0${date.getDate()}`).slice(-2);
+					return `${year}-${month}-${day}`;
+				}
+
+
+
+				let apiData;
+
+				// Switch case to handle different partners and pass appropriate data
+				switch (cab.partner_name) {
+					case 'GOZO CABS':
+						apiData = {
+							"startDate": formData.pickup_date,
+							"startTime": pickupTimeFormatted,
+							"cab_type": selectedCabType,
+							"mobile": formData.mobile || "",
+							"source_address": formData.source,
+							"source_latitude": formData.source_lat,
+							"source_longitude": formData.source_long,
+							"destination_address": formData.destination,
+							"destination_latitude": formData.destination_lat,
+							"destination_longitude": formData.destination_long,
+							"tripType": "Local"
+						};
+						break;
+					case 'QUICKRIDE':
+						apiData = {
+							"key": "MojoBox-Klm9.45j",
+							"vendor_id": "MOJO_BOXX_ZORY",
+							"destination_name": formData.destination,
+							"destination_city": formData.destination_city,
+							"destination_latitude": formData.destination_lat,
+							"destination_longitude": formData.destination_long,
+							"source_name": formData.source,
+							"source_city": formData.source_city,
+							"source_latitude": formData.source_lat,
+							"source_longitude": formData.source_long,
+							"start_time": `${formData.pickup_date} ${pickupTimeFormatted}`,
+							"tripType": "Local"
+						};
+						break;
+					case 'SIGNATURE':
+						apiData = {
+							"city": 'Delhi',
+							"km": formData.distance,
+							"cab_type": selectedCabType,
+							"trip_type": "departure"
+						};
+						break;
+					case 'EEE TAXI':
+						apiData = {
+							"city": 'Delhi',
+							"km": formData.distance,
+							"cab_type": selectedCabType,
+							"trip_type": "departure"
+						};
+						break;
+					case 'TAXIBAZAAR':
+						apiData = {
+							"distance": formData.distance,
+							"fromCity": "New Delhi",
+							"fromLat": formData.source_lat,
+							"fromLon": formData.source_long,
+							"fromState": "",
+							"iataCode": formData.cityCode,
+							"returnDate": null,
+							"startDate": formData.pickup_date,
+							"toCity": "",
+							"toLat": formData.destination_lat,
+							"toLon": formData.destination_long,
+							"toState": "",
+							"type": 6
+						};
+						break;
+					case 'MEGA':
+						// Since need to pass drop time in mega cabs
+						function addHoursToTime2(dateString, timeString, hours) {
+							// Ensure hoursPart and minutesPart are valid numbers
+							const [hoursPart, minutesPart] = timeString.split(':').map(Number);
+							const date = new Date(`${dateString}T${(`0${hoursPart}`).slice(-2)}:${(`0${minutesPart}`).slice(-2)}:00`);
+							date.setHours(date.getHours() + hours);
+							return `${(`0${date.getHours()}`).slice(-2)}:${(`0${date.getMinutes()}`).slice(-2)}:00`;
+						}
+						const defaultDropTime = addHoursToTime2(formData.pickup_date, formData.pickup_time, 4);
+						const endTime = formData.returnTime || defaultDropTime;
+
+						// console.log(formData.pickup_time, '------', defaultDropTime)
+						// const formattedDropTime = defaultDropTime.split(' ')[1];;
+						apiData = {
+							"destination": {
+								"place_id": null,
+								"address": formData.destination,
+								"latitude": formData.destination_lat,
+								"longitude": formData.destination_long,
+								"city": "Delhi"
+							},
+							"source": {
+								"place_id": null,
+								"address": formData.source,
+								"latitude": formData.source_lat,
+								"longitude": formData.source_long,
+								"city": "Delhi"
+							},
+							"trip_type": "ONE_WAY",
+							"start_time": `${formData.pickup_date}T${formData.pickup_time}`,
+							"end_time": `${formData.returnDate}T${endTime}`,
+							"search_id": generateSearchId(),
+							"one_way_distance": formData.distance,
+							"package_distance": 0,
+							"is_instant_search": false
+						};
+						console.log('formData', formData)
+						console.log('MEGA CABS API DATA', apiData)
+
+
+						function formatDateTime(time) {
+							const date = new Date(time); // Convert to Date object
+							const hours = String(date.getHours()).padStart(2, '0');
+							const minutes = String(date.getMinutes()).padStart(2, '0');
+							return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')} ${hours}:${minutes}:00`;
+						}
+						break;
+					case 'MERU':
+						const meruDefaultDropTime = addHoursToTime(formData.pickup_time, 4);
+						const meruFormattedDropTime = meruDefaultDropTime.split(' ')[1];
+						apiData = {
+							"destination": {
+								"place_id": null,
+								"address": formData.destination,
+								"latitude": formData.destination_lat,
+								"longitude": formData.destination_long,
+								"city": "Delhi"
+							},
+							"source": {
+								"place_id": '',
+								"address": formData.source,
+								"latitude": formData.source_lat,
+								"longitude": formData.source_long,
+								"city": "Delhi"
+							},
+							"trip_type": "ONE_WAY",
+							"start_time": `${formatDateToYMD(formData.pickup_date)}T${formData.pickup_time}`,
+							"end_time": `${formData.returnDate}T${meruFormattedDropTime}`,
+							"search_id": generateSearchId(),
+							"one_way_distance": Math.floor(formData.distance),
+							"package_distance": 0,
+							"is_instant_search": false
+						};
+						function formatTime(time) {
+							return time;
+						}
+						break;
+					case 'BLUSMART':
+						function addHoursToTime(time, hoursToAdd) {
+							const dateTime = new Date(`${formData.pickup_date}T${time}`);
+							dateTime.setHours(dateTime.getHours() + hoursToAdd);
+							return dateTime.toISOString().slice(0, 19).replace('T', ' ');
+						}
+						const BLUSMART_DefaultDropTime = addHoursToTime(formData.pickup_time, 4); // Set drop time as pickup time + 4 hours
+						apiData = {
+							"place_id": "",
+							"src_address": formData.source,
+							"src_latitude": formData.source_lat,
+							"src_longitude": formData.source_long,
+							"src_city": "New Delhi",
+							"dest_address": formData.destination,
+							"dest_latitude": formData.destination_lat,
+							"dest_longitude": formData.destination_long,
+							"dest_city": "Delhi",
+							"trip_type": "ONE_WAY",
+							"search_id": generateSearchId(),
+							"start_time": `${formData.pickup_date} ${formData.pickup_time}:00`,
+							"end_time": BLUSMART_DefaultDropTime,
+							"one_way_distance": Math.floor(formData.distance)
+						};
+
+						// console.log('BLUSMART API DATA',apiData);
+						break;
+
+					default:
+						console.error("Unsupported partner:", cab.partner_name);
+						return;
+				}
+
+
+				getFareByPartner(cab.partner_name, apiData, function (response) {
+					let baseFare = 'N/A';
+
+					if (cab.partner_name === 'GOZO CABS') {
+						baseFare = response.data.cabRate[0].fare.baseFare;
+					} else if (cab.partner_name === 'QUICKRIDE') {
+						if (response && response.fareForTaxis && Array.isArray(response.fareForTaxis)) {
+							baseFare = null;
+							response.fareForTaxis.forEach(taxi => {
+								taxi.fares.forEach(fare => {
+									if (fare.vehicleClass.trim().toLowerCase() === selectedCabType.trim().toLowerCase()) {
+										baseFare = fare.totalFare;
+									}
+								});
+							});
+						}
+					} else if (cab.partner_name === 'SIGNATURE') {
+						if (response && response.data) {
+							baseFare = response.data;
+						}
+					} else if (cab.partner_name === 'TAXIBAZAAR') {
+						if (response && response.data.sedanPrice) {
+							const { sedanPrice, suvPrice, hatchbackPrice } = response.data;
+							switch (selectedCabType.trim().toLowerCase()) {
+								case 'sedan':
+									baseFare = sedanPrice;
+									break;
+								case 'suv':
+									baseFare = suvPrice;
+									break;
+								case 'hatchback':
+									baseFare = hatchbackPrice;
+									break;
+								default:
+									baseFare = 'N/A';
+									break;
+							}
+						}
+					} else if (cab.partner_name === 'BLUSMART') {
+						if (response && response.response.car_types) {
+							const carTypes = response.response.car_types;
+							for (const car of carTypes) {
+								// console.log(car.type.trim().toLowerCase() === selectedCabType.trim().toLowerCase(), car.type.trim().toLowerCase(), selectedCabType.trim().toLowerCase())
+								if (car.type.trim().toLowerCase() === selectedCabType.trim().toLowerCase()) {
+									baseFare = car.fare_details.grand_total;
+									break;
+								}
+							}
+
+							if (baseFare === 0) {
+								baseFare = 'N/A';
+							}
+							// console.log(`Base fare for ${selectedCabType}:`, baseFare);
+						}
+					} else if (cab.partner_name === 'MEGA') {
+						console.log('MEGA CABS RESPONSE', response)
+						if (response && response.data && response.data.response && response.data.response.car_types) {
+							const carType = response.data.response.car_types.find(car => car.type.toLowerCase() === selectedCabType.trim().toLowerCase());
+							if (carType && carType.fare_details) {
+								baseFare = carType.fare_details.grand_total; // Set the base fare to the grand total
+							}
+
+						}
+					} else if (cab.partner_name === 'MERU') {
+						if (response && response.data && response.data.response && response.data.response.car_types) {
+							const carType = response.data.response.car_types.find(car => car.type.toLowerCase() === selectedCabType.trim().toLowerCase());
+							if (carType && carType.fare_details) {
+								const { base_fare, per_km_charge, min_fare, min_fare_distance_km, distance_booked } = carType.fare_details;
+								let grandTotal = base_fare;
+								if (distance_booked > min_fare_distance_km) {
+									const extraDistance = distance_booked - min_fare_distance_km;
+									grandTotal += extraDistance * per_km_charge;
+								}
+								grandTotal = Math.max(grandTotal, min_fare);
+								baseFare = grandTotal;
+							}
+						}
+					} else if (cab.partner_name === 'EEE TAXI') {
+						// console.log('EEE TAXI RES', response)
+						if (response && response.data) {
+							baseFare = response.data;
+						}
+					}
+
+					const fareElement = document.getElementById(`baseFare-${index}`);
+
+					if (fareElement) {
+						if (baseFare === 'N/A' || baseFare === null) {
+							const bookBtn = document.querySelector(`button.book-btn[data-index="${index}"]`);
+							if (bookBtn) {
+								bookBtn.classList.add('disabled');
+								if (fareElement && fareElement.innerHTML === 'loading...') {
+									fareElement.innerHTML = 'N/A';
+								}
+							}
+						} else {
+							fareElement.innerHTML = `₹${baseFare}`;
+						}
+					}
+				});
+
+
+			});
+
+
+			// Add event listeners to "Book Now" buttons after rendering
+			document.querySelectorAll('.book-btn').forEach(button => {
+				button.addEventListener('click', function () {
+					const index = this.getAttribute('data-index');
+					const partnerName = this.getAttribute('data-partner');
+					const cabType = this.getAttribute('data-type');
+					const priceElement = document.getElementById(`baseFare-${index}`);
+					const price = priceElement ? priceElement.innerHTML : "Loading...";
+					const image = this.getAttribute('data-image');
+					const seats = this.getAttribute('data-seats');
+					const rating = this.getAttribute('data-rating');
+					const reviews = this.getAttribute('data-review');
+
+					const bookingDetails = {
+						partnerName,
+						cabType,
+						price,
+						image,
+						seats,
+						rating,
+						reviews
+					};
+
+					// Log for debugging
+					console.log('Booking Details:', bookingDetails);
+
+					// Update session storage
+					sessionStorage.setItem('cabBookingDetails', JSON.stringify(bookingDetails));
+					// console.log(sessionStorage.getItem('cabBookingDetails'));
+
+					window.location.href = "http://localhost:8963/mice_cab/cab_review.html";
+					// window.location.href = "https://mice.bookairportcab.com/mice_cab/cab_review.html";
+
+
+				});
+			});
+
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Air Asia Airport CAB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        
+         ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        html {
+            scrollbar-width: none;
+            /* For Firefox */
+            -ms-overflow-style: none;
+            /* For Internet Explorer and Edge */
+        }
+        
+        html::-webkit-scrollbar {
+            width: 0px;
+            /* For Chrome, Safari, and Opera */
+        }
+        
+        html {
+            scrollbar-width: none;
+            /* For Firefox */
+            -ms-overflow-style: none;
+            /* For Internet Explorer and Edge */
+        }
+        
+        html::-webkit-scrollbar {
+            width: 0px;
+            /* For Chrome, Safari, and Opera */
+        }
+        
+        #mobileDesktop {
+            display: block;
+            width: 42%;
+            height: 100vh;
+            margin: 0 auto;
+            position: absolute;
+            top: 0%;
+            left: 5%;
+        }
+        
+        #img {
+            background: url("giphy_s.gif");
+            background-repeat: no-repeat;
+            background-position: top center;
+            position: relative;
+            /* overflow: hidden; */
+            height: 100vh;
+            width: 65%;
+        }
+        
+        #img img {
+            position: absolute;
+            width: 117%;
+            height: 100vh;
+        }
+        
+        #ifd {
+            border: 1px solid black;
+            width: 100%;
+            height: 89vh;
+            position: absolute;
+            z-index: 1;
+            top: 8%;
+            left: 7%;
+            border-bottom-left-radius: 8%;
+            border-bottom-right-radius: 4%;
+        }
+        
+        body {
+            overflow-y: auto;
+            /* background: url("giphy_s.gif");
+	background-repeat: no-repeat; */
+            /* background-position: top; */
+            padding-top: 2%;
+        }
+        
+        #img22 {
+            position: absolute;
+            right: 5%;
+            top: 5%;
+            width: 55%;
+            display: none;
+        }
+        
+        #img22 img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body id="bdt">
+    <!-- <a id="openpage" href="website/index.html"></a> -->
+    <a id="openpage" href="#"></a>
+    <script>
+        // function getURLParameter(url, name) {
+        // 	return (RegExp(name + '=' + '(.+?)(&|$)').exec(url) || [, null])[1];
+        // }
+        // localStorage["booking_id"] = getURLParameter(location.href, 'pnr');
+        // alert(localStorage["booking_id"]);
+        var iOS = navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+        var ua = navigator.userAgent.toLowerCase();
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        var macLap = userAgent.match(/Macintosh/i);
+        // alert(userAgent);
+        localStorage.removeItem("bookairportcab")
+            // alert(macLap);
+        var isAndroid = ua.indexOf("android") > -1;
+        if (isAndroid) {
+            localStorage.setItem("bookairportcab", true)
+            window.location = "website/cabs/cab/index.html"
+                // document.getElementById("openpage").setAttribute("href","website/cabs/cab/index.html")
+        } else if (iOS) {
+            localStorage.setItem("bookairportcab", true)
+            window.location = "website/cabs/cab/index.html"
+        } else if (macLap == "Macintosh") {
+            window.location = "website/index.html"
+        } else {
+            window.location = "website/index.html"
+        }
+    </script>
+</body>
+
+</html>

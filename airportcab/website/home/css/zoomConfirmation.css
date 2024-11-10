@@ -1,0 +1,909 @@
+@font-face {
+    font-family: 'NetflixSansLight';
+    src: url(../font/NetflixSansLight.ttf);
+  }
+  
+  @font-face {
+    font-family: 'NetflixSansMedium';
+    src: url(../font/NetflixSansMedium.ttf);
+  }
+  
+  @font-face {
+    font-family: 'NetflixSansRegular';
+    src: url(../font/NetflixSansRegular.ttf);
+  }
+  
+  #paymentButton {
+    width: 40%;
+    text-align: center;
+    background: rgb(55, 136, 177);
+    overflow: hidden;
+    padding: 10px 0px;
+    color: white;
+    border-radius: 7px;
+    font-family: 'NetflixSansRegular';
+    float: right;
+    position: relative;
+    /* display: none; */
+    right: -70%;
+    transition-duration: 1000ms;
+  }
+  
+  #razor_payment {
+    width: 40%;
+    text-align: center;
+    background: rgb(55, 136, 177);
+    overflow: hidden;
+    padding: 10px 0px;
+    color: white;
+    border-radius: 7px;
+    font-family: 'NetflixSansRegular';
+    float: right;
+    position: relative;
+    /* top: 71%; */
+    right: -100%;
+    transition-duration: 1000ms;
+  }
+  
+  .confirmation_boxCab {
+    position: fixed;
+    width: 80%;
+    top: 30vh;
+    left: 5vw;
+    background-color: white;
+    z-index: 12;
+    text-align: center;
+    padding: 5%;
+    display: none;
+  }
+  
+  .confirmation_boxCabDiv {
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    z-index: 11;
+    text-align: center;
+    padding: 5%;
+  
+  }
+  
+  .status {
+    background: RGB(224, 11, 37);
+    color: White;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 20%;
+    font-size: 1.2em;
+    margin: 0 auto;
+    background-color: #000;
+    margin-bottom: 0%;
+    margin-top: -87px;
+    border-radius: 5px;
+  }
+  
+  .show1 {
+    display: block;
+    left: 27% !important;
+    transition-duration: 0.5s;
+  }
+  
+  .show2 {
+    display: block;
+    left: 5% !important;
+    transition-duration: 0.5s;
+  }
+  
+  .show3 {
+    display: block;
+    left: 45% !important;
+    transition-duration: 0.5s;
+  }
+  
+  .show4 {
+    display: block;
+    left: 34% !important;
+    transition-duration: 0.5s;
+  }
+  
+  .show5 {
+    display: block;
+    left: 15% !important;
+    transition-duration: 0.5s;
+  }
+  
+  .show6 {
+    display: block;
+    left: 3% !important;
+    transition-duration: 0.5s;
+  }
+  
+  #cmmsg {
+    color: black;
+    font-weight: 600;
+    margin-top: -10px;
+  }
+  
+  .pay_now {
+    overflow: hidden;
+    background: white;
+    color: red;
+    font-family: 'NetflixSansRegular';
+    text-align: center;
+    width: 31%;
+    border-radius: 3px;
+    padding: 5px;
+    position: relative;
+    left: 90%;
+    margin-top: 0%;
+    /* display: none; */
+    cursor: pointer;
+  }
+  
+  .pay_now:hover {
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .simpl_img {
+    width: 25%;
+    float: left;
+  }
+  
+  .lazy_img {
+    width: 30%;
+    float: left;
+  }
+  
+  .cred_img {
+    width: 30%;
+    float: left;
+  }
+  
+  .cred_im,
+  .lazy_im,
+  .simpl_im {
+    width: 40%;
+    float: left;
+    margin-bottom: 3%;
+  }
+  
+  
+  .confirmation_boxCabDiv {
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    z-index: 11;
+    text-align: center;
+    padding: 5%;
+  
+  }
+  
+  .logostyle {
+    border-radius: 0.3rem;
+    font-size: 0.8rem;
+    background-color: rgb(238, 238, 238);
+    padding: 0.3rem 1rem 0.3rem 0.4rem;
+  }
+  
+  .divtop {
+    background-color: #F3F7F8;
+    border-radius: 8px;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-top: -10px;
+    border: 1px solid #ccc;
+    margin-bottom: 5%;
+  }
+  
+  .divtop h2 {
+    font-size: 1rem;
+    margin-left: 1rem;
+    padding-top: 0.5rem;
+  }
+  
+  .paymentbtn {
+    margin-left: 1rem;
+    height: 7em;
+    margin-top: -1.5rem;
+    width: 21px;
+  }
+  
+  .headingh3 {
+    font-size: 0.8rem;
+  }
+  
+  .amountstyle {
+    position: absolute;
+    right: 1rem;
+    margin-top: -1.5rem;
+    text-decoration: line-through;
+  }
+  
+  .discountedamount {
+    position: absolute;
+    right: 1rem;
+    margin-top: -34px;
+    font-size: 30px;
+  
+    font-family: 'NetflixSansMedium';
+  }
+  
+  .textstyle {
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+    font-family: 'NetflixSansRegular';
+    position: relative;
+    top: -22px;
+  }
+  
+  .righttick {
+    width: 0.6rem;
+  }
+  
+  .rightticktext {
+    margin-left: 0.2rem;
+    font-size: 0.5rem;
+  }
+  
+  .discounttext {
+    margin-top: -2rem;
+    font-size: 0.6rem;
+    background-color: rgb(245, 199, 83);
+    padding: 0.3rem 1rem 0.3rem 0.4rem;
+  }
+  
+  .paymentmethodtext {
+    margin-top: 1rem;
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+  
+  .carddetail {
+    width: 40%;
+    margin-top: 1rem;
+    margin-right: 3%;
+    margin-left: 1rem;
+  }
+  
+  .centerwithtopmargin {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+  
+  .simicon {
+    height: 29px;
+    margin: 10px;
+  }
+  
+  .simple {
+    display: flex;
+    width: 100%;
+    height: 64px;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    border-radius: 10px;
+    margin-top: 21px;
+    padding-top: 12px;
+  }
+  
+  .body {
+    background-color: #E5E5E5;
+  }
+  
+  .simp {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+  
+  .cashback {
+    color: #212529;
+  }
+  
+  .form {
+    width: 100%;
+    height: 50px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 16px;
+    font-weight: 600;
+    padding-left: 20px;
+  }
+  
+  .micon {
+    height: 23px;
+    position: absolute;
+    right: 40px;
+    height: 23px;
+    margin-top: 28px;
+  }
+  
+  #flush-disable {
+    background: black;
+    color: white;
+    width: 95%;
+    border-radius: 7px;
+    text-align: center;
+    padding: 9px 0;
+    -webkit-appearance: none;
+    cursor: pointer;
+    clear: both;
+    font-size: 20px;
+    border: none;
+    margin: 0 2%;
+  }
+  .activeBookbtn{
+    background: black !important;
+    opacity: 100% !important;
+  }
+  footer {
+    text-align: center;
+    font-size: 11px;
+    margin: 2% 0;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  footer P:nth-child(2) {
+    color: #6A6A6A;
+  }
+  
+  .confirmation_boxCab {
+    top: 82vh;
+    left: 10vw;
+    width: 390px;
+    margin-left: -45px;
+  }
+  
+  .confirmation_boxCab2 {
+    position: fixed;
+    width: 80%;
+    top: 80vh;
+    left: 10vw;
+    background-color: white;
+    /* z-index: 1000; */
+    text-align: center;
+    /* padding: 5%; */
+    display: none;
+    /* border-radius: 10px; */
+    font-size: 18px;
+  }
+  
+  .confirmation_boxCab3 .call_msgCab {
+    height: 67px;
+  }
+  
+  .confirmation_boxCab3,
+  .confirmation_boxCab4,
+  .confirmation_boxCab5 {
+    position: fixed;
+    width: 80%;
+    top: 83vh;
+    left: 10vw;
+    background-color: white;
+    /* z-index: 1000; */
+    text-align: center;
+    /* padding: 5%; */
+    display: none;
+    /* border-radius: 10px; */
+    font-size: 18px;
+  }
+  
+  .confirmation_boxCab3 .call_msgCab {
+    height: 67px;
+  }
+  
+  .confirmation_boxCab .call_msgCab {
+    height: 130px;
+  }
+  
+  .okbutton {
+    background: RGB(224, 11, 37);
+    color: White;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 20%;
+    font-size: 1.2em;
+    margin: 0 auto 3%;
+    background-color: red;
+    border-radius: 5px;
+    font-family: "NetflixSansRegular";
+  }
+  
+  .cross {
+    width: 25px;
+    position: relative;
+    left: 109px;
+    top: -44px;
+    background-color: rgb(225, 225, 225);
+    border-radius: 10px;
+  }
+  
+  .confirmation_boxCabsimpl {
+    position: fixed;
+    width: 100%;
+    top: 59vh;
+    left: 0vw;
+    background-color: white;
+    z-index: 1000;
+    text-align: center;
+    padding: 5%;
+    display: none;
+    /* border-radius: 10px; */
+    font-size: 18px;
+    height: 263px;
+  }
+  
+  .checking {
+    margin-top: 35px;
+  }
+  
+  .show {
+    font-size: 13px;
+    text-align: left;
+    font-weight: 500;
+  }
+  
+  .number {
+    font-size: 12px;
+  
+    margin-right: 25px;
+  }
+  
+  .button1 {
+    color: #fff;
+    background: #000;
+    border: none;
+    border-radius: 7px;
+    /* font-size: 16px; */
+    padding: 10px;
+  }
+  
+  .button2 {
+    color: #fff;
+    background: #000;
+    border: none;
+    border-radius: 7px;
+    /* font-size: 16px; */
+    padding: 10px;
+  }
+  
+  .crossicon {
+    width: 15px;
+    position: relative;
+    left: 300px;
+    top: -41px;
+  }
+  
+  .status22 {
+    display: none;
+  }
+  
+  .top_img {
+    display: flex;
+  }
+  
+  .ridedit {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 12PX 16PX;
+  }
+  
+  .pararide {
+    font-size: 16px;
+  
+    font-family: 'NetflixSansMedium';
+  }
+  
+  
+  .custdetail {
+    background-color: #F3F7F8;
+    border-radius: 8px;
+    width: 95%;
+    margin-left: 8px;
+    margin-top: -20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+
+  .price-tag{
+      font-size: 0.6rem;
+  }
+  
+  .detail {
+    margin: 1px;
+    margin-left: 6px;
+    margin-top: 10px;
+  }
+  
+  .calendar {
+    display: flex;
+  }
+  
+  .calendarimg {
+    height: 44px;
+  }
+  
+  #cab_type {
+    margin-top: 23px;
+    font-size: 14px;
+    margin-left: 5px;
+    line-height: 0px;
+    font-family: 'NetflixSansRegular';
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .datetime {
+    font-size: 10px;
+    margin-left: -2px;
+    line-height: 0.5;
+    font-family: 'NetflixSansRegular';
+  }
+  
+  .currentaddress {
+    display: flex;
+    margin: 20px;
+    margin-top: 12px;
+    font-family: 'NetflixSansRegular';
+  }
+  
+  
+  #currentpick {
+    font-size: 14px;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 316px;
+    font-family: 'NetflixSansRegular';
+  
+  }
+  
+  #currentdrop {
+    font-size: 14px;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 315px;
+    font-family: 'NetflixSansRegular';
+  
+  }
+  
+  .accordion-flush .accordion-item {
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    border: none;
+  }
+  
+  .paymentoptionnew {
+    /* display: flex;
+    justify-content: space-around;
+    height: 60px;
+    width: 94%;
+    margin-left: 12px; */
+    display: flex;
+    justify-content: flex-start;
+    height: 60px;
+    width: 94%;
+    margin-left: 15px;
+  }
+  
+  .paymentoptionnew button {
+    font-size: 15px;
+  }
+  
+  .confirmation_boxCab2 {
+    height: 175px;
+    margin-top: -20px;
+    position: fixed;
+    margin-left: -36px;
+    width: 397px;
+  }
+  
+  #status2 {
+    width: 62%;
+    margin-top: 10px;
+    height: 46px;
+  }
+  
+  #laterrow {
+    display: none;
+  }
+  
+  #PartNow {
+    display: none;
+  }
+  
+  .triangle {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+  }
+  
+  #loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 999;
+    margin: -40px 0 0 -40px;
+    -webkit-border: 16px solid #f3f3f3;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border-top: 16px solid #e40f0f;
+    -webkit-border-top: 16px solid #e40f0f;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  .spinner {
+    position: absolute;
+    top: 35%;
+    left: 37%;
+    width: 28%;
+    color: white;
+    display: none;
+    z-index: 99;
+  }
+  
+  .spinnerBack {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    display: none;
+    z-index: 99;
+  }
+  
+  .card-deck {
+    display: flex
+  }
+  
+  .card {
+    border-radius: 12px;
+    margin-left: 4%;
+    border: none;
+    font-size: 12px;
+  }
+  
+  .active-card {
+    border: 2px solid rgba(0, 0, 0, 0.4)
+  }
+  
+  .card-body {
+    padding: 3px;
+    text-align: center;
+    line-height: 1;
+    margin-top: -15px;
+  }
+  
+  .card-title {
+    text-align: center;
+    font-size: 11px;
+  }
+  .active-title{
+    font-size: 20px;
+  }
+  
+  .card img {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .card p {
+    margin-bottom: 8px;
+    font-family: 'NetflixSansRegular';
+  }
+  .paymentButton{
+      background-color: #F3F7F8;
+        color: #000;
+        font-family: 'NetflixSansMedium';
+        border: none;
+        border-radius: 5px;
+        width: 32%;
+    }
+  .ActiveBtn{
+      background-color: #2389E8;
+      color: white;
+      font-family: 'NetflixSansMedium';
+      border: none;
+    }
+    .card_details {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0px 17px;
+  }
+  
+  .card_container {
+      /* margin-top: 10px; */
+      margin-bottom: 5%;
+  }
+  .tax{
+  
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 10px;
+    position: relative;
+    top: 0px;
+    left: 19px;
+    font-family: 'NetflixSansRegular';
+    margin-bottom: 0px;
+  
+  }
+  
+  .card_details .cardLayout {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+  }
+  
+  .card_details .cardLayout img {
+      width: 25%;
+  }
+  
+  .card_details .cardLayout p {
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: -1%;
+  }
+  
+  .cityClass {
+      font-weight: 700;
+      font-size: 20px;
+      margin: 10px 0px 5px;
+  }
+  
+  .down_line {
+      border-bottom: 1.2561px solid rgba(0, 0, 0, 0.1);
+      width: 93%;
+      margin-left: 20px;
+      margin: 10px;
+  }
+  .couponBtn{
+    width: 93%;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+  }
+  
+  .couponBtn input[type='text']:focus {
+    outline: none;
+  }
+  .popupBox {
+      position: fixed;
+      top: 25%;
+      width: 96%;
+      margin: 0 auto;
+      color: black;
+      background: white;
+      box-shadow: -1px 0px 8px 1px black;
+      /* padding: 2%; */
+      font-family: 'NetflixSansRegular';
+      left: 2%;
+      border-radius: 6px;
+      text-align: center;
+      padding-bottom: 0;
+      display: none;
+  }
+  
+  .popupDiv {
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.85);
+      position: fixed;
+      top: 0;
+      position: fixed;
+      z-index: 9;
+      display: none;
+  }
+  
+  .popupBox h3 {
+      margin-top: 5%;
+  }
+  
+  .coupon_block {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #C7C7C7;
+    outline: none;
+    margin-top: 12%;
+    /* margin-bottom: 10%; */
+  }
+  
+  .coupon_block input[type="text"] {
+    width: 70%;
+    padding: 2%;
+    font-family: 'NetflixSansRegular';
+    border: none;
+    outline: none;
+    color: gray;
+    /* border-top: 0.1px solid black; */
+    /* border-left: 0.5px solid black; */
+    /* border-bottom: 0.5px solid black; */
+    height: 23px;
+    font-size: 14px;
+    padding: 0.6em 0.4em 0.6em 0.8em;
+  }
+  
+  .coupon_block input[type="text"]::placeholder {
+    color: gray;
+  }
+  
+  .coupon_block span {
+    font-size: 14px;
+    /* color: red; */
+    color: grey;
+    margin-left: 3%;
+    font-weight: bold;
+  }
+  
+  .couponSuccessMsg {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 13px;
+    color: grey;
+    margin-top: 2%;
+  }
+  
+  .buttonText {
+    width: 100%;
+    float: left;
+    background: rgb(234, 33, 39);
+    color: white;
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  #okay {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  #laterbutton,#partbutton{
+    display: none;
+  }
+  .spicejet {
+    color: #000;
+    text-align: left;
+    margin: 12PX 12PX 0PX 12PX;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: "NetflixSansMedium";
+  }
+  
+  .spicejet1 {
+    color: #EB1C23;
+    text-align: left;
+    margin-bottom: 18PX;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: "NetflixSansMedium";
+  }
+
+  .zoom_logo{
+    font-family: 'NetflixSansMedium';
+    padding: 10px;
+  }

@@ -1,0 +1,1351 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Become Seller</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <style>
+        #body {
+            background-color: black;
+        }
+
+        .title {
+            color: #fff;
+            margin-top: 100px;
+            text-align: center;
+            font-family: 'NetflixSansMedium';
+            font-weight: 700;
+            font-size: 79px;
+        }
+
+        .bottomtitle {
+            color: #fff;
+            margin-top: 100px;
+            font-family: 'NetflixSansMedium';
+            font-weight: 700;
+            font-size: 39px;
+        }
+
+        .bottompara {
+            color: #fff;
+            margin-top: 20px;
+            font-family: 'NetflixSansMedium';
+            font-weight: 400;
+            font-size: 30px;
+        }
+
+        .titleh1 {
+            color: #fff;
+            margin-top: 100px;
+            text-align: center;
+            font-family: 'NetflixSansMedium';
+            font-weight: 700;
+            font-size: 70px;
+        }
+
+        .bottom-title {
+            color: #fff;
+            text-align: center;
+            font-family: 'NetflixSansMedium';
+            font-weight: 700;
+            font-size: 79px;
+            background-image: url(./images/Vector\ 47.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-position-y: 50px;
+            height: 130px;
+        }
+
+        .line {
+            width: 800px;
+        }
+
+        @font-face {
+            font-family: 'NetflixSansLight';
+            src: url(font/NetflixSansLight.ttf);
+        }
+
+        @font-face {
+            font-family: 'NetflixSansMedium';
+            src: url(font/NetflixSansMedium.ttf);
+        }
+
+        @font-face {
+            font-family: 'NetflixSansRegular';
+            src: url(font/NetflixSansRegular.ttf);
+        }
+
+        .lineimg {
+            text-align: center;
+            margin-top: -20px;
+        }
+
+        .content_p {
+            color: #fff;
+            font-family: 'NetflixSansLight';
+            margin-top: 20px;
+            font-weight: 400px;
+            font-size: 18px;
+            width: 592px;
+            text-align: justify;
+        }
+
+        .iconpara {
+            color: #fff;
+            font-family: 'NetflixSansLight';
+            font-weight: 400px;
+            font-size: 17px;
+            margin-left: 10px;
+            text-align: left;
+        }
+
+        .content {
+            margin-top: 60px;
+        }
+
+        .button {
+            background-color: #E30052;
+            color: #fff;
+            border: none;
+            font-family: 'NetflixSansMedium';
+            border-radius: 55px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            height: 75px;
+            font-size: 22px;
+        }
+
+        .button:hover {
+            background-color: #0F59F7;
+        }
+
+        .read {
+            color: #EC6D37;
+        }
+
+        .leftbox {
+            background-color: #5E5E5E;
+            width: 210px;
+            height: 50px;
+            margin-top: 120px;
+        }
+
+        .rightbox {
+            background-color: #5E5E5E;
+            width: 210px;
+            height: 50px;
+            margin-top: 120px;
+        }
+
+        .question {
+            display: flex;
+        }
+
+        .icon1 {
+            width: 30px;
+            height: 30px;
+        }
+
+        .imagess {
+            width: 540px;
+            height: 309px;
+        }
+
+        .toppart {
+            background-color: #000;
+        }
+
+        .downpart {
+            background-color: #000;
+        }
+
+        .client {
+            text-align: center;
+            font-weight: 700;
+            font-family: 'NetflixSansMedium';
+            font-size: 72px;
+            color: #fff;
+        }
+
+        .clientpara {
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'NetflixSansMedium';
+        }
+
+        .clientimg {
+            margin-top: 30px;
+        }
+
+        .cli {
+            width: 600px;
+        }
+
+        .down {
+            margin-bottom: 70px;
+        }
+
+        .animation {
+            box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+            background-color: #26E989;
+            border-radius: 15px;
+            width: 159px;
+            height: 269px;
+            margin-left: 20px;
+            animation: shake 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .anipara {
+            color: #000;
+            text-align: center;
+            font-weight: 500;
+            font-family: 'NetflixSansMedium';
+            margin-top: 60px;
+            padding: 13px;
+            padding-top: 82px;
+        }
+
+        .anipara1 {
+            color: #000;
+            text-align: center;
+            font-weight: 500;
+            font-family: 'NetflixSansMedium';
+            margin-top: 60px;
+            padding: 13px;
+            padding-top: 50px;
+        }
+
+        .anipara2 {
+            color: #fff;
+            text-align: center;
+            font-weight: 500;
+            font-family: 'NetflixSansMedium';
+            margin-top: 60px;
+            padding: 38px;
+            padding-top: 82px;
+        }
+
+        .anipara3 {
+            color: #fff;
+            text-align: center;
+            font-weight: 500;
+            font-family: 'NetflixSansMedium';
+            margin-top: 60px;
+            padding: 13px;
+            padding-top: 37px;
+        }
+
+        .animation1 {
+            box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+            background-color: #D9D9D9;
+            border-radius: 15px;
+            width: 159px;
+            height: 269px;
+            margin-left: 51px;
+            position: relative;
+            left: 95px;
+            animation: shake 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .animation2 {
+            box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+            background-color: #E30052;
+            border-radius: 15px;
+            width: 159px;
+            height: 269px;
+            margin-left: 51px;
+            position: relative;
+            left: -83px;
+            top: -255px;
+            animation: shake 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .animation3 {
+            box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+            background-color: #0F59F7;
+            border-radius: 15px;
+            width: 259px;
+            height: 148px;
+            margin-left: 20px;
+            animation: shake 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .animation4 {
+            box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+            background-color: #D9D9D9;
+            border-radius: 15px;
+            width: 200px;
+            height: 148px;
+            margin-left: 20px;
+            position: relative;
+            left: 83px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            /* animation: shake 0.5s;
+  animation-iteration-count: infinite; */
+        }
+
+        .anipara4 {
+            color: #000;
+            text-align: center;
+            font-weight: 500;
+            font-family: 'NetflixSansMedium';
+            margin-top: 60px;
+            padding: 13px;
+            padding-top: 37px;
+
+        }
+
+        .animation5 {
+            position: relative;
+            left: -66px;
+            box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+            background-color: #5E5E5E;
+            border-radius: 15px;
+            width: 259px;
+            height: 148px;
+            margin-left: 20px;
+            animation: shake 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .eab {
+            margin-top: -200px;
+        }
+
+        .black {
+            background-color: #000;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translate(1px, 1px) rotate(0deg);
+            }
+
+            10% {
+                transform: translate(-1px, -2px) rotate(-1deg);
+            }
+
+            20% {
+                transform: translate(-3px, 0px) rotate(1deg);
+            }
+
+            30% {
+                transform: translate(3px, 2px) rotate(0deg);
+            }
+
+            40% {
+                transform: translate(1px, -1px) rotate(1deg);
+            }
+
+            50% {
+                transform: translate(-1px, 2px) rotate(-1deg);
+            }
+
+            60% {
+                transform: translate(-3px, 1px) rotate(0deg);
+            }
+
+            70% {
+                transform: translate(3px, 1px) rotate(-1deg);
+            }
+
+            80% {
+                transform: translate(-1px, -1px) rotate(1deg);
+            }
+
+            90% {
+                transform: translate(1px, 2px) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(1px, -2px) rotate(-1deg);
+            }
+        }
+
+        .partner {
+            width: 430px;
+            margin-top: 50px;
+        }
+
+        .india {
+            width: 550px;
+            margin-top: 20px;
+        }
+
+        .citi {
+            color: #fff;
+            font-size: 13px;
+            margin-top: -69px;
+            font-family: 'NetflixSansRegular';
+            margin-left: -18px;
+        }
+
+        .form-popup-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .form-popup-bg {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(94, 110, 141, 0.9);
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+            -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+            transition: opacity 0.3s 0s, visibility 0s 0.3s;
+            overflow-y: auto;
+            z-index: 10000;
+        }
+
+        .form-popup-bg.is-visible {
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+            -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+            transition: opacity 0.3s 0s, visibility 0s 0s;
+        }
+
+        .form-container {
+            background-color: #2d3638;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            padding: 40px;
+            color: #fff;
+        }
+
+        .close-button {
+            background: none;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: solid 1px #fff;
+        }
+
+        .form-popup-bg:before {
+            content: '';
+            background-color: #fff;
+            opacity: .25;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .name {
+            background-color: #D9D9D9;
+            width: 191px;
+        }
+
+        .number {
+            background-color: #D9D9D9;
+            margin-top: 0px;
+            margin-left: 7px;
+            width: 196px;
+        }
+
+        .pin {
+            background-color: #D9D9D9;
+            margin-top: 8px;
+            margin-left: 10px;
+            width: 161px;
+        }
+
+        .state {
+            background-color: #D9D9D9;
+            margin-top: 8px;
+            width: 225px;
+        }
+
+        .email {
+            background-color: #D9D9D9;
+            margin-top: 8px;
+        }
+
+        .city {
+            background-color: #D9D9D9;
+            margin-top: 8px;
+        }
+
+        .address {
+            background-color: #D9D9D9;
+            margin-top: 8px;
+        }
+
+        .whitea {
+            background-color: #fff;
+            width: 475px;
+        }
+
+        .common {
+            display: flex;
+        }
+
+        .common1 {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .fsum {
+            height: 39px;
+            margin-left: 296px;
+            margin-top: 23px;
+            border-radius: 10px;
+            background-color: #000;
+            color: #fff;
+            width: 100px;
+        }
+
+        .fsums1 {
+            height: 39px;
+            margin-top: 23px;
+            border-radius: 10px;
+            background-color: #f1f1f1;
+            outline: none;
+            width: 135px;
+        }
+
+        .fsums2 {
+            height: 39px;
+            margin-top: 23px;
+            border-radius: 10px;
+            background-color: #f1f1f1;
+            outline: none;
+
+            width: 200px;
+        }
+
+        .fsums3 {
+            height: 39px;
+            margin-top: 23px;
+            border-radius: 10px;
+            background-color: #000;
+            color: #fff;
+            width: 157px;
+            margin-left: 35px;
+        }
+
+        .samebut {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: -30px;
+        }
+
+        .about {
+            margin-top: 12px;
+            width: 393px;
+            margin-left: 1px;
+            height: 100px;
+            background-color: #D9D9D9;
+        }
+
+        .atext {
+            background-color: #D9D9D9;
+        }
+
+        .btn {
+            border: none;
+            outline: none;
+            padding: 10px 16px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        /* Style the active class, and buttons on mouse-over */
+        .btn:hover {
+            background-color: #000;
+            color: white;
+        }
+
+        .active {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+
+        .contentt {
+            margin-top: 60px;
+        }
+
+        .buttont {
+            background-color: #E30052;
+            color: #fff;
+            border: none;
+            font-family: 'NetflixSansMedium';
+            border-radius: 55px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            height: 75px;
+            font-size: 22px;
+        }
+
+        .buttont:hover {
+            background-color: #0F59F7;
+        }
+
+
+
+
+
+
+        .form-popup-bgt {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .form-popup-bgt {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(94, 110, 141, 0.9);
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+            -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+            transition: opacity 0.3s 0s, visibility 0s 0.3s;
+            overflow-y: auto;
+            z-index: 10000;
+        }
+
+        .form-popup-bgt.is-visible {
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+            -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+            transition: opacity 0.3s 0s, visibility 0s 0s;
+        }
+
+        .form-containert {
+            background-color: #2d3638;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            padding: 40px;
+            color: #fff;
+        }
+
+        .close-buttont {
+            background: none;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: solid 1px #fff;
+        }
+
+        .form-popup-bgt:before {
+            content: '';
+            background-color: #fff;
+            opacity: .25;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+
+
+        .whiteat {
+            background-color: #fff;
+            width: 475px;
+        }
+
+
+
+        .btnt {
+            border: none;
+            outline: none;
+            padding: 10px 16px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+
+        .thanks {
+            justify-content: center;
+            display: flex;
+        }
+
+        .thankscont {
+            color: #000;
+            font-family: 'NetflixSansRegular';
+            text-align: center;
+        }
+
+        .closeform {
+            background-color: #000;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            margin-left: 116px;
+            margin-right: 120px;
+            border-radius: 12px;
+            height: 40px;
+        }
+        footer a {
+    color: #fff;
+}
+
+footer ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.footer {
+    font-size: 12px;
+    line-height: 24px;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    clear: both;
+    color: #fff;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top;
+    background-color: #111;
+    position: relative;
+}
+
+.footer-content {
+    width: 96%;
+}
+
+.footer-logo {
+    width: 35%;
+    height: 21vh;
+    margin-left: 37%;
+
+}
+
+img {
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 30px;
+}
+
+.footer-logo-divider {
+    position: relative;
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+.footer-logo-divider:before {
+    content: "";
+    width: 2px;
+    height: 60px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 1px);
+}
+
+.footer-mail {
+    font-size: 32px;
+    margin-bottom: 35px;
+    line-height: 100%;
+    font-weight: 700;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.footer-social-divider {
+    position: relative;
+    height: 62px;
+    margin-bottom: 35px;
+}
+
+footer .footer-social-divider:after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 2px;
+    background-color: white;
+    left: calc(50% - 135px);
+    bottom: 0;
+}
+
+
+footer .footer-social-divider:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 60px;
+    background-color: white;
+    left: calc(50% - 1px);
+    top: 0;
+}
+
+
+
+
+.social-holder {
+    margin-bottom: 35px;
+}
+
+.social-holder a {
+    font-size: 28px;
+    margin-right: 25px;
+}
+
+.social-holder a:last-of-type {
+    margin: 0;
+}
+.footerwrapper {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footerContent1 {
+    flex-basis: 65%;
+    text-align: left;
+}
+
+.social-media-link {
+    word-spacing: 10px;
+    font-size: 22px;
+}
+
+.footerContent2 {
+    flex-basis: 35%;
+}
+
+.footer_logo {
+    width: 100%;
+    height: 9vh;
+}
+
+.copyrigth {
+    line-height: 15px;
+}
+
+.pressImgMobile {
+    display: block;
+}
+footer a {
+        color: #fff;
+    }
+
+    footer ul {
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .footer {
+        font-size: 16px;
+        line-height: 36px;
+        padding-top: 75px;
+        padding-bottom: 60px;
+        clear: both;
+        color: #fff;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center top;
+        background-color: #111;
+    }
+
+    .footer-content {
+        width: 92%;
+    }
+
+    .footer-logo {
+        width: 14%;
+        height: 15vh;
+        margin-left: 44.5%;
+
+    }
+
+    img {
+        width: 100%;
+        height: 100vh;
+        margin-bottom: 30px;
+    }
+
+    .mojo_img_tag {
+        margin-bottom: 0px;
+    }
+
+    .footer-logo-divider {
+        position: relative;
+        height: 60px;
+        margin-bottom: 30px;
+    }
+
+    .footer-logo-divider:before {
+        content: "";
+        width: 2px;
+        height: 60px;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: calc(50% - 1px);
+    }
+
+    .footer-mail {
+        font-size: 46px;
+        margin-bottom: 35px;
+        line-height: 100%;
+        font-weight: 700;
+    }
+
+    .footer-social-divider {
+        position: relative;
+        height: 62px;
+        margin-bottom: 35px;
+    }
+
+    footer .footer-social-divider:after {
+        content: "";
+        position: absolute;
+        width: 335px;
+        height: 2px;
+        background-color: white;
+        left: calc(50% - 150px);
+        bottom: 0;
+    }
+
+  
+
+    footer .footer-social-divider:before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 60px;
+        background-color: white;
+        left: calc(50% - 1px);
+        top: 0;
+    }
+
+   
+    .social-holder {
+        margin-bottom: 35px;
+    }
+
+    .social-holder a {
+        font-size: 28px;
+        margin-right: 25px;
+    }
+
+    .social-holder a:last-of-type {
+        margin: 0;
+    }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="toppart">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="banner">
+                    <h1 class="title">
+                        Become Our
+                    </h1>
+                    <h1 class="bottom-title">
+                        Airport Cab Partner
+                    </h1>
+                    <div class=lineimg>
+                        <!-- <img src="images/Vector 47.png" alt="bottom line" class="line"> -->
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="animation">
+                        <p class="anipara">Featured on our platform by brand your car with our stickers</p>
+                    </div>
+                    <div class="animation1">
+                        <p class="anipara1">Stay busy in all seasons.<br><br>Good service <br>=<br> More business</p>
+                    </div>
+                    <div class="animation2">
+                        <p class="anipara2">You simply provide top quality service</p>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="content">
+                        <p class="content_p">
+                            To be eligible for this offer you must be a new driver on the Uber app and have signed up to
+                            the
+                            Uber app on or after April 4, 2022. The offer is not available to people who have previously
+                            signed
+                            up to be a driver on the Uber app, or to people who have previously commenced but not
+                            completed
+                            the
+                            process of signing up to become a driver on the Uber app. Uber reserves the right to
+                            withhold or
+                            deduct
+                            payments that we determine or believe were made in error, fraudulent, illegal, or in
+                            violation
+                            of our
+                            driver terms and/or these T&Cs. The offer will be available for a limited time only at our
+                            sole
+                            discretion.
+                            Uber reserves the right to hold void, cancel, suspend, or amend the offer where it becomes
+                            necessary to do so.
+                            <br> <a class="read" href="">Read more.</a>
+                        </p>
+
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-primary button" id="btnOpenForm" type="button"
+                                style="background-color: #E30052;">Join Now</button>
+                        </div>
+                        <div class="form-popup-bg">
+                            <div class="form-container whitea">
+                                <button id="btnCloseForm" class="close-button" style="color: #000;">X</button>
+                                <div id="url_type" class="samebut ">
+
+                                    <button class="btn one" id="owner">Cab Owner</button>
+                                    <button class="btn one" id="aggre">Cab Aggregator</button>
+
+                                </div>
+                                <form action="" style="margin-top: 20px;" id="form">
+                                    <div class="common">
+                                        <div class="form-group">
+                                            <input class="form-control name" id="name" required placeholder="Name*"
+                                                type="text" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control number" id="phone" required
+                                                placeholder="Phone Number*" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control email" id="email" required placeholder="Email ID*"
+                                            type="text" />
+                                    </div>
+                                    <div class="common1">
+                                        <div class="form-group">
+                                            <input class="form-control name" id="city" required placeholder="City*"
+                                                type="text" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control number" id="no_of_cabs" required
+                                                placeholder="Number of Cabs*" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group about">
+                                        <input class="form-control atext" id="message" required
+                                            placeholder="About your Company*" type="text" />
+                                    </div>
+                                    <button type="submit" class="fsum" id="btnOpenFormt">Submit</button>
+
+                                </form>
+                                <!-- <div class="form-popup-bgt">
+                                    <div class="form-containert whiteat">
+                                        <button id="btnCloseFormt" class="close-buttont" style="color: #000;">X</button>
+                                        <div class="container thanks">
+                                            <img src="images/Screenshot 2022-11-04 at 12.24 1.png" alt="thank">
+
+                                        </div>
+                                        <p class="thankscont">
+                                            Your details have been received successfully.<br>
+                                            Our executive will connect with you shortly
+                                        </p>
+                                        <a href="/mojoboxx/index.html" class="closeform">Go Home</a>
+
+
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p class="content_p">
+                            Join the India's leading In-Flight company since the year 2020, now in the
+                            Airport Transfers Segment.<br>
+                            You can anticipate the best possible online booking experience when your
+                            Cabs are booked with Book Airport Cab. Book Airport Cab takes great pleasure in
+                            allowing customer satisfaction with premium customer care, a dedicated
+                            helpline for support that is available around-the-clock, and over millions
+                            of happy customers.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="animation3">
+                        <p class="anipara3">Featured on our platform by brand your car with our stickers</p>
+                    </div>
+                    <div class="animation4">
+                        <p class="anipara4">24/7<br>Business service support</p>
+                    </div>
+                    <div class="animation5">
+                        <p class="anipara3">Start of business same day</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container-fluid eab">
+            <div class="row">
+                <div class=" col-md-2 leftbox"></div>
+                <div class=" col-md-8 centerpart">
+                    <h2 class="titleh1">Excellence and Beyond.</h2>
+                </div>
+                <div class=" col-md-2 rightbox"></div>
+            </div>
+        </div>
+        <div class="container">
+            <h6 class="bottomtitle">How to ensure good ride experience with customers</h6>
+            <p class="bottompara">Please follow below tips to get repeated rides.</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="question">
+                        <img src="images/image 3.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Be ontime & Inform passenger once you reached</p>
+                    </div>
+                    <div class="question">
+                        <img src="images/image 5.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Avoid calls during the trip. Follow traffic rules</p>
+                    </div>
+                    <div class="question">
+                        <img src="images/image 4.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Don’t cancel trip after accepting; Cancellation charges may apply</p>
+                    </div>
+                    <div class="question">
+                        <img src="images/image 6.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Greet passenger when they board the taxi</p>
+                    </div>
+                    <div class="question">
+                        <img src="images/image 7.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Don’t collect cash from the passengers. Tolls & taxes are included</p>
+                    </div>
+                    <div class="question">
+                        <img src="images/image 8.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Keep the car clean, passengers give high ratings to such trips</p>
+                    </div>
+                    <div class="question">
+                        <img src="images/image 9.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Avoid in-between trip stops</p>
+                    </div>
+                    <div class="question">
+                        <img src="images/image 10.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Don't drink and drive. It cancels your driver account</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/image 11.png" alt="image" class="imagess">
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+    <div class="downpart">
+        <h2 class="client">OUR B2B CAB PARTNERS</h2>
+        <p class="clientpara">82,000 PREMIUM CABS, 216 CITIES AND 106 SPECIALISED PARTNERS</p>
+
+        <div class="container text-center black">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="images/Screenshot 2022-11-15 at 11.52 1.png" alt="india map" class="india">
+                </div>
+                <div class="col-md-6">
+                    <img src="images/Screenshot 2022-11-15 at 11.55 1.png" alt="partner" class="partner">
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8">
+                        <p class="citi">DELHI, PUNE, GOA, MUMBAI, KOLKATA, CHENNAI, HYDERABAD, BANGALORE, JAIPUR,
+                            VARANASI, AMRITSAR,
+                            PATNA, DEHRADUN, JODHPUR, BAGDOGRA, AHMEDABAD, GUWAHATI & 200 MORE CONNECTED LOCATIONS
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        function closeForm() {
+            $('.form-popup-bg').removeClass('is-visible');
+        }
+
+        $(document).ready(function ($) {
+
+            /* Contact Form Interactions */
+            $('#btnOpenForm').on('click', function (event) {
+                event.preventDefault();
+
+                $('.form-popup-bg').addClass('is-visible');
+            });
+
+            //close popup when clicking x or off popup
+            $('.form-popup-bg').on('click', function (event) {
+                if ($(event.target).is('.form-popup-bg') || $(event.target).is('#btnCloseForm')) {
+                    event.preventDefault();
+                    $(this).removeClass('is-visible');
+                }
+            });
+
+
+
+        });
+
+
+        var header = document.getElementById("url_type");
+        var btns = header.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                if (current.length > 0) {
+                    current[0].className = current[0].className.replace(" active", "");
+                }
+                this.className += " active";
+            });
+        }
+        //////////////////////////////////////////////////////get info/////////////////////////////////////////////////
+        var cabb
+        $('.one').click(function () {
+            cabb = $(this).text()
+
+        })
+
+        var form = document.getElementById('form')
+        form.addEventListener('submit', function (e) {
+            e.preventDefault()
+            console.log(cabb);
+            var name = document.getElementById('name').value
+            var phone = document.getElementById('phone').value
+            var email = document.getElementById('email').value
+            var message = document.getElementById('message').value
+            var city = document.getElementById('city').value
+
+            var no_of_cabs = document.getElementById('no_of_cabs').value
+
+
+
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "name": name,
+                "email": email,
+                "message": message,
+                "phone": phone,
+                "city": city,
+                "no_of_cabs": no_of_cabs,
+                "url_type": cabb
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch("https://preprodapi.mojoboxx.com/preprod/webapi/becomeapartner", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
+
+
+        })
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+    <!-- <script>
+        function closeFormt() {
+            $('.form-popup-bgt').removeClass('is-visible');
+        }
+
+        $(document).ready(function ($) {
+
+            /* Contact Form Interactions */
+            $('#btnOpenFormt').on('click', function (event) {
+                event.preventDefault();
+
+                $('.form-popup-bgt').addClass('is-visible');
+            });
+
+            //close popup when clicking x or off popup
+            $('.form-popup-bgt').on('click', function (event) {
+                if ($(event.target).is('.form-popup-bgt') || $(event.target).is('#btnCloseFormt')) {
+                    event.preventDefault();
+                    $(this).removeClass('is-visible');
+                }
+            });
+
+
+
+        });
+
+
+
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Paytm</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <script src="js/apicall.js"></script>
+
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+            margin: 0;
+            background: #fff;
+        }
+
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            scrollbar-width: none;
+            /* For Firefox */
+            -ms-overflow-style: none;
+            /* For Internet Explorer and Edge */
+        }
+
+        html::-webkit-scrollbar {
+            width: 0px;
+            /* For Chrome, Safari, and Opera */
+        }
+
+        html {
+            scrollbar-width: none;
+            /* For Firefox */
+            -ms-overflow-style: none;
+            /* For Internet Explorer and Edge */
+        }
+
+        html::-webkit-scrollbar {
+            width: 0px;
+            /* For Chrome, Safari, and Opera */
+        }
+
+        @font-face {
+            font-family: 'NetflixSansLight';
+            src: url(font/NetflixSansLight.ttf);
+        }
+
+        @font-face {
+            font-family: 'NetflixSansMedium';
+            src: url(font/NetflixSansMedium.ttf);
+        }
+
+        @font-face {
+            font-family: 'NetflixSansRegular';
+            src: url(font/NetflixSansRegular.ttf);
+        }
+
+        p,
+        span {
+            font-family: NetflixSansRegular;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: NetflixSansRegular;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #brand-logo {
+            overflow: hidden;
+            clear: both;
+            margin: 0;
+            background-color: black;
+            text-align: center;
+        }
+
+        .left_logo {
+            width: 40%;
+            margin: 2% auto;
+        }
+
+        .order_no {
+            text-align: center;
+        }
+
+        .order_no p {
+            width: 70%;
+            margin: 3% auto;
+            font-weight: 600;
+        }
+
+        .order_info h3 {
+            margin: 2% 0;
+        }
+
+        .order_info p {
+            margin: 4% 0;
+            font-size: 15px;
+        }
+
+        .order_info {
+            width: 90%;
+            margin: 8% auto;
+        }
+
+        .product_info {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .product_info h3 {
+            margin: 2% 0;
+        }
+
+        .product_info p {
+            font-size: 15px;
+
+        }
+
+        #price {
+            width: 35%;
+            float: left;
+            text-align: right;
+            margin: 0% 0 2% 0;
+        }
+
+        #product {
+            float: left;
+            margin: 0% 0 2% 0;
+            width: 65%;
+            /* font-weight: 600; */
+        }
+
+        #total_bill {
+            float: right;
+            margin: 2% 0;
+            font-weight: 600;
+        }
+
+        #pay_bill {
+            clear: both;
+            background-color: red;
+            color: #fff;
+            font-size: 20px;
+            padding: 10px 0px;
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            border: navajowhite;
+            cursor: pointer;
+            margin-left: 10%;
+            position: fixed;
+            bottom: 5%;
+            -webkit-appearance: none;
+        }
+
+        .confirm_button {
+            width: 95%;
+            background-color: red;
+            text-align: center;
+            border-radius: 7px;
+            margin-top: 6%;
+            -webkit-appearance: none;
+            overflow: hidden;
+            cursor: pointer;
+
+        }
+
+        .confirm_button input[type="submit"] {
+            width: 100%;
+            float: left;
+            background-color: red;
+            text-align: center;
+            height: 50px;
+            border: none;
+            padding-top: 1%;
+            font-size: 20px;
+            color: white;
+            font-family: "NetflixSansRegular";
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+
+        .confirmation_boxCab {
+            position: fixed;
+            width: 80%;
+            top: 30vh;
+            left: 5vw;
+            background-color: white;
+            z-index: 12;
+            text-align: center;
+            padding: 5%;
+            display: none;
+            border-radius: 5px;
+        }
+
+        .confirmation_boxCabDiv {
+            position: fixed;
+            width: 100%;
+            top: 0%;
+            left: 0%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .5);
+            display: none;
+            z-index: 11;
+            text-align: center;
+            padding: 5%;
+
+        }
+
+        .status {
+            background: RGB(224, 11, 37);
+            color: White;
+            text-align: center;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            width: 20%;
+            font-size: 1.2em;
+            margin: 0 auto;
+            background-color: red;
+            margin-bottom: 3%;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: NetflixSansRegular;
+        }
+
+
+        #loader {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            z-index: 999;
+            margin: -40px 0 0 -40px;
+            -webkit-border: 16px solid #f3f3f3;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            border-top: 16px solid #e40f0f;
+            -webkit-border-top: 16px solid #e40f0f;
+            width: 30px;
+            height: 30px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+            display: none;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #paytm-app.paytm-wrapper {
+            height: 94vh !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="loader"></div>
+    <div class="confirmation_boxCabDiv"></div>
+    <div class="confirmation_boxCab">
+        <div class="thank_msg">
+            <i class="fa fa-check-circle" style="font-size:48px;color:red;background: transparent"></i>
+        </div>
+        <div class="call_msgCab">
+            <p id="cmmsg"></p>
+        </div>
+        <div class="status" id="status">OK</div>
+    </div>
+
+    <p>Please wait ......</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- <script src="js/paytm.js"> -->
+
+
+    </script>
+    <script>
+
+        var scriptTag = document.createElement('script');
+        scriptTag.setAttribute('type', 'application/javascript');
+        scriptTag.setAttribute('src', 'https://securegw.paytm.in/merchantpgpui/checkoutjs/merchants/'+localStorage["PayMID"]+'.js');
+        scriptTag.setAttribute('crossorigin', 'anonymous');
+        document.head.appendChild(scriptTag);
+        scriptTag.addEventListener('load', () => {
+            onScriptLoad();
+        })
+
+
+        // document.getElementById("loader").style.display = "block";
+
+        function onScriptLoad() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const cabOrderId = urlParams.get("cabOrderId");
+            const cancelPage = urlParams.get("cancelPage");
+            const bookingData = JSON.parse(localStorage["initaiteJSPayment"]);
+            let registerClubMember = JSON.parse(localStorage.cabbookingData);
+
+            console.log(bookingData);
+            var config = {
+                "root": "",
+                "flow": "DEFAULT",
+                "data": {
+                    "orderId": bookingData.paytmTransId, /* update order id */
+                    "token": bookingData.txnToken, /* update token value */
+                    "tokenType": "TXN_TOKEN",
+                    "amount": Number(bookingData.totalAmount),/* update amount */
+                    "userDetail": {
+                        "mobileNumber": registerClubMember.clubMember[0].mobile,
+                        "name": "Airport Customer"
+                    }
+                },
+                "handler": {
+                    "notifyMerchant": function (eventName, data) {
+                        console.log("notifyMerchant handler function called");
+                        console.log("eventName => ", eventName);
+                        console.log("data => ", data);
+                        if (data.message == "App closed from the header icon") {
+                            const returnUrl = cabOrderId != undefined ? `${cancelPage}.html?orderId=${cabOrderId}` : `${cancelPage}.html`;
+                            window.location = returnUrl;
+                        }
+                    }
+                }
+            };
+
+            console.log(config.data)
+            document.getElementById("loader").style.display = "none";
+            if (window.Paytm && window.Paytm.CheckoutJS) {
+                window.Paytm.CheckoutJS.onLoad(function excecuteAfterCompleteLoad() {
+                    // initialze configuration using init method 
+                    window.Paytm.CheckoutJS.init(config).then(function onSuccess() {
+                        // after successfully updating configuration, invoke JS Checkout
+                        window.Paytm.CheckoutJS.invoke();
+                    }).catch(function onError(error) {
+                        console.log("error => ", error);
+                        window.location = "payNow.html"
+                    });
+                });
+            }
+        }
+    </script>
+
+
+    <!-- PayMID -->
+
+    <!-- src="https://securegw.paytm.in/merchantpgpui/checkoutjs/merchants/ntlIPC47016235168630.js" -->
+    <!-- <script type="application/javascript"
+    src="https://securegw.paytm.in/merchantpgpui/checkoutjs/merchants/MOBISI36321497545881.js"
+        onload="onScriptLoad();" crossorigin="anonymous"></script> -->
+
+</body>
+
+</html>

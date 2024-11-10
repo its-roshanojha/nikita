@@ -1,0 +1,428 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003580;
+    padding: 10px 20px;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.header-message p {
+    font-size: 16px;
+}
+
+.header-message .highlight {
+    font-weight: bold;
+}
+
+.login-btn button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.login-btn button:hover {
+    background-color: #0056b3;
+}
+
+/* Main Container Layout */
+.container {
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Left Section: Payment Section */
+.left-section {
+    width: 71%;
+    margin-top: -25px;
+}
+
+/* Flexbox for Payment Buttons and Content */
+.payment-options-container {
+    display: flex;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 500px;
+}
+
+/* Payment Options Styles */
+.payment-options {
+    background-color: #f8f9fa; /* Light background for the payment section */
+   
+    border-radius: 5px; /* Rounded corners */
+}
+
+.payment-options h3 {
+    margin-bottom: 15px; /* Space below the header */
+}
+
+.payment-option {
+    display: flex; /* Flexbox for icon and text alignment */
+    align-items: center; /* Center items vertically */
+    background-color: #e8f5ff; /* Default background color */
+    color: #008cff; /* Text color */
+    padding: 10px; /* Padding for each option */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    height: 75px;
+    font-weight: 600;
+    border-top: 1px solid #bbb;
+    width: 250px;
+    padding: 10px;
+    overflow: hidden;
+    text-align: left;
+    justify-content: left;
+}
+
+.payment-text{
+    padding: 10px;
+    line-height: 15px;
+}
+
+.payment-text-details{
+    font-size: 12px; 
+    color: #1f1f1f;
+}
+
+.payment-option:hover {
+    background-color: #d6ebfc; /* Change on hover */
+}
+
+.payment-option.selected {
+    background-color: white; /* Background for selected option */
+    color: #1f1f1f; /* Change text color for selected option */
+}
+
+
+.payment-icon {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.payment-details {
+    width: 70%;
+    border-left: 1px solid #ddd;
+    padding: 15px 20px;
+}
+
+.payment-details h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.payment-details ul {
+    list-style-type: none;
+}
+
+.payment-details li {
+    margin-bottom: 10px;
+}
+
+/* Right Section: Booking Summary */
+.right-section {
+    width: 320px;
+    color: black;
+    font-weight: 600;
+}
+
+.booking-summary,
+.fare-summary {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-summary {
+    border-bottom: 1px solid #ddd; /* Border under the Your Booking section */
+}
+
+.booking-summary h2,
+.fare-summary h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: #1f1f1f; /* Font color as per request */
+}
+
+.details-section {
+    margin-top: 10px;
+    padding-bottom: 10px; /* Padding to make space before border */
+}
+
+.summary-item {
+    display: flex;
+    /* align-items: center; */
+    margin: 15px 0;
+    font-size: 14px; /* Font size adjusted for elements */
+    color: #1f1f1f; /* Darker text color */
+}
+
+.summary-item i {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #0a3b58;
+    flex-shrink: 0;
+}
+
+.date-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #1f1f1f;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 33.3%;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* Connector Line Between Pickup and Dropoff */
+.pickup-dropoff-section {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.pickup-dropoff-section .connector-line {
+    position: absolute;
+    left: 15px; /* Align with icons */
+    top: 25px; /* Adjust top position to connect icons */
+    height: 40px;
+    width: 2px;
+    background-color: #ccc; /* Light gray connecting line */
+}
+
+.summary-item span {
+    font-size: 12px;
+    line-height: 15px;
+    color: #1f1f1f;
+}
+
+/* Styling for the Fare Summary */
+.fare-summary {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* To align "View Details" */
+    margin-bottom: 20px;
+}
+
+.fare-summary h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1f1f1f;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bbb;
+}
+
+.fare-summary .view-details {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 12px;
+    color: #008cff;
+    text-decoration: underline;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.summary-item span {
+    font-weight: 600;
+}
+
+.summary-item.total {
+    font-size: 16px;
+    border-top: 1px solid #bbb;
+    padding-top: 10px;
+    font-weight: 800;
+}
+
+.summary-item.total span {
+    color: #1f1f1f;
+}
+
+.customer-satisfaction {
+    text-align: center;
+    font-size: 12px;
+    color: #00a887;
+    margin-top: 10px;
+}
+
+
+/* Remove inline CSS - Styling for the header (Your Booking + OUTSTATION) */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd; /* Border below heading */
+    padding-bottom: 10px; /* Space before the border */
+}
+
+.header-section span:first-child {
+    font-weight: 800;
+    color: #1f1f1f;
+}
+
+.header-section span:last-child {
+    font-weight: 600;
+    font-size: 12px;
+    color: #1f1f1f;
+}
+
+
+
+/* Body Styling */
+body {
+    background-color: #f9f9f9;
+    scroll-behavior: smooth;
+    overflow: auto;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+    font-family: 'Lato', sans-serif;   
+}
+  
+body::-webkit-scrollbar {
+    display: none;  
+}
+/* Font Weight Classes */
+#booking .thin { font-weight: 100; }
+#booking .light { font-weight: 300; }
+#booking .regular { font-weight: 400; }
+#booking .bold { font-weight: 700; }
+#booking .black { font-weight: 900; }
+#booking .italic { font-style: italic; }
+/* Review Section */
+.checkout-header-section {
+    background-image: linear-gradient(to top, #15457b, #051423);
+    padding: 20px;
+    padding-bottom: 40px;
+    color: #fff;
+    height:210px;
+}
+.checkout-header-section .text-data{
+    font-weight: 600;
+    font-size: 15px;
+    padding-left: 40px;
+    color: #249b95;
+}
+.fa-shield{
+    color: #249b95;
+}
+.text-white{
+    font-weight: 600;
+}
+/* Discount Banner Styles */
+.discount-banner {
+    display: flex; /* Flexbox to align items */
+    justify-content: space-between; /* Space between text and button */
+    align-items: center; /* Center items vertically */
+    background-color: #F0F8FF;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Space between header and banner */
+    position: relative; /* Allow for positioning */
+    top: -100px; /* Move banner upwards to overlap the header */
+    z-index: 5; /* Keep it below the header */
+}
+
+.banner-content {
+    display: flex; /* Flexbox for icon and text alignment */
+    align-items: center; /* Center align icon and text vertically */
+}
+
+.banner-content i {
+    font-size: 24px; /* Size of the icon */
+    margin-right: 10px; /* Space between icon and text */
+    color: #007BFF; /* Icon color */
+}
+
+.banner-text h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.banner-text p {
+    color: #555;
+    margin: 0; /* Remove default margin */
+}
+
+.banner-login-btn {
+    width: 160px;
+    background: linear-gradient(to right, rgb(143, 220, 250) 0%, rgb(97, 159, 240) 50%, rgb(51, 57, 233) 100%);
+    color: #fff;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 800;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.banner-login-btn:hover {
+    background-color: #0056b3;
+}
+
+.payment-btn {
+    float: left;
+    width: 200px;
+    background: linear-gradient(to right, rgb(143, 220, 250) 0%, rgb(97, 159, 240) 50%, rgb(51, 57, 233) 100%);
+    color: #fff;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.payment-btn:hover {
+    background: linear-gradient(to right, rgb(127, 195, 222) 0%, rgb(97, 159, 240) 50%, rgb(51, 57, 233) 100%);
+}
+
+/* Remove the black border on click */
+.payment-btn:focus {
+    outline: none;  
+    box-shadow: none;  
+}

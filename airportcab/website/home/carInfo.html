@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Information</title>
+    <script src="js/apicall.js"></script>
+    <link rel="stylesheet" href="./css/carInfo.css" />
+    <!-- <link rel="stylesheet" href="css/slick.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class='wrapper--title'>
+            <div class="wrapper--title--book">Book</div>
+            <div class="wrapper--title--airport">Airport Cab</div>
+        </div>
+        <br />
+        <div class="zoom_logo">
+            <span style="font-weight: bold;">Powered By</span> <img src="img/ZoomCarLogo.png"
+                style="border-radius: 0%;">
+        </div>
+        <br />
+        <div id="loader"></div>
+        <div class="carPage">
+            <div class="carImages">
+                <div id="carouselContainer" class="carousel">
+                </div>
+            </div>
+            <div class="booking-time">
+                <div class="header-container">
+                    <div class="header">
+                        <div class="title">Booking Time</div>
+                    </div>
+                    <div class="booking-time-data">
+                        <div class="booking-left">
+                            <div class="text">Pickup</div>
+                            <div class="time" id="start_time"></div>
+                        </div>
+                        <div class="booking-mid">
+                            <div class="text middle trapezoid">
+                                <div class="duration"></div>
+                                <i class="z-arrow_right"></i>
+                            </div>
+                        </div>
+                        <div class="booking-right">
+                            <div class="text">Drop</div>
+                            <div class="time" id="end_time"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aboutcar-wrapper">
+                <div class="about-car">
+                    <div class="title"> About the car </div>
+                    <div class="subheader">
+
+                    </div>
+                    <div class="desc">Car is fully loaded Like bucket seat
+                        cover and music system</div>
+                    <div class="features">
+                        <div class="feature">
+                            <span><img src="img/abs-feature.png">Anti-lock
+                                Braking System (ABS)</span>
+                        </div>
+                        <div class="feature">
+                            <span><img src="img/bluetooth-feature.png">Bluetooth</span>
+                        </div>
+                        <div class="feature">
+                            <span><img src="img/abs-feature.png">Power
+                                Windows</span>
+                        </div>
+                        <div class="feature">
+                            <span><img src="img/abs-feature.png">Full
+                                boot space</span>
+                        </div>
+                        <div class="feature">
+                            <span><img src="img/abs-feature.png">Spare
+                                Tyre</span>
+                        </div>
+                        <div class="show-more">
+                            <span class="feat"><img src="img/abs-feature.png">Music
+                                system</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="car-location">
+                <div class="car-location-details">
+                    <span class="car"> Car Location </span>
+
+                    <div class="adress-map-container">
+                        <div class="address-container">
+                            <div style="display: flex;">
+                                <span><img src="./img/zoomlocation.png" alt=""></span>
+                                <div class="address" id="car_location" style="margin-left: 2px; margin-top: 4px;">
+                                </div>
+                            </div>
+                            <div class="location-distance">
+                                <div id="location_distance"></div>
+                                <div class="location-text"></div>
+                            </div>
+                        </div>
+                        <div class="map-container"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="benefits">
+                <div class="header-container">
+                    <div class="header">
+                        <div class="title">
+                            Added benefits
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-data">
+                            <div class="title">
+                                <div style="display: flex;">
+                                    <img src="./img/toll-road.png">
+                                    <div style="margin-left: 2px; margin-top: 10px;">
+                                        Zero toll charges
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="description">We'll pay or reimburse
+                                all the toll charges you incur during your
+                                trip</div>
+                            <!-- <div class="action">
+                                    Know More
+                                </div> -->
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-data">
+                            <div class="title">
+                                <div style="display: flex;">
+                                    <img src="./img/rsa.png">
+                                    <div style="margin-left: 4px; margin-top: 9px;">
+                                        Road side assistance (RSA)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="description">Get 24x7 emergency
+                                support in the event of any breakdown or
+                                traffic accident</div>
+                            <!-- <div class="action">
+                                    Know More
+                                </div> -->
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-data">
+                            <div class="title">
+                                <div style="display: flex;">
+                                    <img src="./img/rock.png" alt=""
+                                        style="height: 30px; width: 30px; border-radius: 0;">
+                                    <div style="margin-left: 4px; margin-top: 6px;">
+                                        Zero security deposit
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="description">Get any car with no
+                                security deposit</div>
+                            <!-- <div class="action">
+                                    Know More
+                                </div> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="pop-up-container benefits">
+                        <div class="bg-transparent"></div>
+                        <div class="pop-up-content-container slide-up">
+                            <div class="close-btn"></div>
+                            <div class="popup-header">
+                                <div class="content">No security Deposit</div>
+                            </div>
+                            <div class="pop-up-content">
+                                <div class="subtitle">
+                                    • We trust you
+                                </div>
+                                <div class="subtitle">
+                                    • You do not need to pay any security
+                                    deposit on any booking
+                                </div>
+                            </div>
+                            <div class="btn-container">
+                                <div class="benefit-btn">
+                                    <div class="button-wrapper">
+                                        <button class="button-primary">
+                                            <span>OK, GOT IT!</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+            </div>
+            <div class="policy_wrapper">
+                <div class="cancellation">
+                    <div class="header-container">
+                        <div class="header">
+                            <div class="title">
+                                Cancellation Policy
+                            </div>
+                            <div class="action">
+                                <!-- <span class="action-text">View
+                                        Policy</span> <svg width="24"
+                                        height="24" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"><path
+                                            d="M18 16.5a2.25 2.25 0 0 1-2.25 2.25h-7.5v.75c0 .385.29.702.663.745L9 20.25h9.75a.75.75 0 0 0 .745-.663l.005-.087v-12a.75.75 0 0 0-.663-.745l-.087-.005H18v9.75zM15.75 3.75H6a.75.75 0 0 0-.745.663L5.25 4.5v12c0 .385.29.702.663.745L6 17.25h9.75a.75.75 0 0 0 .745-.663l.005-.087v-12a.75.75 0 0 0-.663-.745l-.087-.005zm-1.5 9.75a.75.75 0 0 1 .087 1.495L14.25 15H7.5a.75.75 0 0 1-.087-1.495L7.5 13.5h6.75zm0-3.75a.75.75 0 0 1 .087 1.495l-.087.005H7.5a.75.75 0 0 1-.087-1.495L7.5 9.75h6.75zm0-3.75a.75.75 0 0 1 .087 1.495l-.087.005H7.5a.75.75 0 0 1-.087-1.495L7.5 6h6.75zM6 18.75a2.25 2.25 0 0 1-2.25-2.25v-12A2.25 2.25 0 0 1 6 2.25h9.75A2.25 2.25 0 0 1 18 4.5v.75h.75A2.25 2.25 0 0 1 21 7.5v12a2.25 2.25 0 0 1-2.25 2.25H9a2.25 2.25 0 0 1-2.25-2.25v-.75H6z"
+                                            fill="#10A310" fill-rule="evenodd"></path></svg> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cancellation-data">
+                        <div class="title">
+                            <div style="display: flex;">
+                                <img src="./img/Carsafe.svg" alt="">
+                                <div style="margin-left: 4px; margin-top: 6px;">
+                                    Cancellation Charges
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inner inactive">
+                            Cancellation charges will be applied as per the
+                            policy
+                        </div>
+                        <div class="inner">
+                        </div>
+                        <div class="inner">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="agreement_policy_wrapper">
+                <div class="single-action">
+                    <div class="single-action-left">
+                        <div class="title">
+                            <div style="display: flex;">
+                                <img src="./img/agreement.png" alt=""
+                                    style="height: 30px; width: 30px; border-radius: 0;">
+                                <div style="margin-left: 4px; margin-top: 6px;">
+                                    Agreement Policy
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            I hereby agree to the terms and conditions of
+                            the Lease Agreement with Host
+                        </div>
+                        <div class="link"><a href="https://www.zoomcar.com/in/delhi/lease-agreement?locale=en"
+                                target="_blank">
+                                See Details</a></div>
+                    </div>
+                    <div class="single-action-right"><label class="checkbox-container"><input type="checkbox" disabled
+                                id="myCheckbox">
+                            <div class="control-indicator"></div>
+                        </label></div>
+                </div>
+            </div>
+        </div>
+</body>
+<script>
+    const checkbox = document.getElementById('myCheckbox')
+    checkbox.checked = true;
+    $(document).ready(function () {
+        $('#carouselContainer').slick({
+            // Slick Carousel configuration options
+            dots: true,
+            arrows: true
+        });
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="js/carInfo.js"></script>
+</body>
+
+</html>

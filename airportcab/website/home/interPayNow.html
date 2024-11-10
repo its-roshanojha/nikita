@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css" />
+  <script src="js/apicall.js"></script>
+  <title>Payment</title>
+  <link rel="stylesheet" href="css/payNow.css" />
+  <!-- Meta Pixel Code -->
+  <script>
+    !(function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      "script",
+      "https://connect.facebook.net/en_US/fbevents.js"
+    );
+    fbq("init", "134831566224001");
+    fbq("track", "PageView");
+  </script>
+  <noscript><img height="1" width="1" style="display: none"
+      src="https://www.facebook.com/tr?id=134831566224001&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+  <script src="js/moment.js"></script>
+</head>
+
+<body>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <div class="confirmation_boxCabDiv"></div>
+
+  <!-- <div id="snackbar"></div> -->
+  <!-- <div id="loader"></div> -->
+  <div class="spinnerBack"></div>
+  <div class="spinner" id="spinner">
+    <img id="loader_img" src="img/loader-3.gif" style="width: 100%" />
+    <p>Please wait...</p>
+  </div>
+  <div class="confirmation_boxCab4" style="display: none">
+    <div class="thank_msg">
+      <i class="fa fa-check-circle" style="font-size: 48px; color: red; background: transparent"></i>
+    </div>
+    <div class="call_msgCab">
+      <p id="cmmsg3" style="font-size: 18px"></p>
+    </div>
+    <!-- <div class="status" id="status4">OK</div> -->
+  </div>
+  <div class="confirmation_boxCabsimpl" style="display: none">
+    <p class="show">Simpl,Lazypay,Zestmoney & more</p>
+    <img src="img/70-703356_cross-sign-comments-thin-x-sign-png.png" class="crossicon" alt="crossicon" id="crossicon" />
+    <span class="number">
+      Proceed to check eligibilty of mobile no.for Pay Later
+    </span>
+    <div class="mobile">
+      <input type="tel" class="form" id="mobileauto" pattern="[6-9]{1}[0-9]{4}[0-9]{5}" maxlength="10"
+        oninvalid="this.setCustomValidity('Please enter your valid phone number')" oninput="this.setCustomValidity('')"
+        required />
+      <img src="img/micon.PNG" alt="ino" class="micon" />
+    </div>
+    <div class="confirmation_boxCab">
+      <div class="call_msgCab">
+        <p id="cmmsg"></p>
+        <!-- <img src="/new payment uiii/img/cross-mark_274c.png" alt="close" id="cross." class="cross"> -->
+      </div>
+      <div class="status" id="status">OK</div>
+    </div>
+    <div class="confirmation_boxCab2">
+      <div class="call_msgCab">
+        <p id="cmmsg2" style="margin-top: -12px"></p>
+        <!-- <img src="/new payment uiii/img/cross-mark_274c.png" alt="close" id="cross" class="cross"> -->
+      </div>
+
+      <div class="call_msgCab">
+        <p id="checkEligibilityMessage" style="margin-top: 0px"></p>
+      </div>
+
+      <div class="status" id="status2">Book Now</div>
+    </div>
+    <br /><br /><br />
+    <hr class="payLine" />
+    <div class="confirmation_boxCab3" style="
+          height: 140px;
+          margin-top: -20px;
+          width: 394px;
+          margin-left: -42px;
+          position: fixed;
+        ">
+      <div class="call_msgCab" style="margin-top: 12px">
+        <p id="confirmTxt"></p>
+      </div>
+
+      <div class="status" style="width: 50%; margin-top: -29px" id="status3">
+        Link Now
+      </div>
+    </div>
+    <div class="checking">
+      <button class="button1" id="button1">Check Eligibity</button>
+    </div>
+  </div>
+
+  <div class="top_img">
+    <img src="img/yatra.png" alt="Yatra-India-Logo" style="margin-left: 10px; height: 4rem;">
+  </div>
+  <div class="ridedit">
+    <p class="pararide">Your ride is scheduled for:</p>
+  </div>
+  <div class="custdetail">
+    <div class="custwrapper">
+      <div class="calendar">
+        <div class="detail">
+          <img class="calendarimg" src="img/calendar.png" />
+        </div>
+        <div style="font-size: 10px;
+        margin-left: -2px;
+        font-family: 'NetflixSansRegular';">
+          <div class="showD" style="display: flex; align-items: center">
+            <p id="currentmobile"></p>
+            <!-- <p id="cab_type">...</p> -->
+          </div>
+          <spna style="font-size: 10px;
+          margin-left: -2px;
+          font-family: 'NetflixSansRegular';"><span id="currentdate">Please wait</span>,<span id="currenttime">Please
+              wait</span>
+          </spna>
+        </div>
+      </div>
+      <div class="currentaddress">
+        <div class="imagesline">
+          <img src="img/recbox.png" alt="rec" /><br />
+          <img src="img/midline.png" alt="line" style="margin-left: 6px; margin-top: -20px" /><br />
+          <img src="img/circle.png" alt="onlo" style="margin-top: -32px; margin-left: 2px" />
+        </div>
+        <div class="pickdrop">
+          <p id="currentpick" maxlength="20">Please Wait</p>
+          <p id="currentdrop" maxlength="20">Please Wait</p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="carPrice">
+      <img class="car_img" src='img/new_Mini.png' alt="Card image cap">
+      <div style="margin-bottom: 50px;" class="insured">
+        <span style="font-weight: bold; font-size: 14px; line-height: 20px;">Insured Ride</span>
+      </div>
+    </div> -->
+  </div>
+
+  <!-- ///////// Modal for Rental ride timing //////// -->
+  <div class="Rentalcard-deck" style="margin-top: 12px">
+    <div class="Rentalcard-body">
+      <p class="RentalHour ActiveHour" value="4">4 Hr - 40 Km</p>
+      <p class="RentalHour" value="8">8 Hr - 80 Km</p>
+      <p class="RentalHour" value="12">12 Hr - 120 Km</p>
+    </div>
+  </div>
+
+  <!-- <div class="card-deck">
+    <div class="card miniCard">
+      <img class="card-img-top" src='img/new_Mini.png' alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">Mini</p>
+        <h5 class="card-title" id="miniFare">Click for Fare</h5>
+      </div>
+    </div>
+    <div class="card sedanCard active-card">
+      <img class="card-img-top" src='img/new_Sedan.png' alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">Sedan</p>
+        <h5 class="card-title active-title" id="sedanFare">₹00</h5>
+      </div>
+    </div>
+    <div class="card suvCard">
+      <img class="card-img-top" src='img/new_MUV.png' alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">SUV</p>
+        <h5 class="card-title" id="suvFare">Click for Fare</h5>
+      </div>
+    </div>
+  </div> -->
+
+  <div id="interCard-deck">
+    <p style="margin-bottom: 0; font-size: 20px; font-weight: bold">
+      Choose Your Vehicle
+    </p>
+  </div>
+
+  <!-- <div class="card_container">
+      <div class="card_details">
+        <div class="km_details cardLayout">
+          <img src="img/km_icon.png" alt="" />
+          <p id="DistanceKm">-- kms</p>
+        </div>
+        <div class="seat_details cardLayout">
+          <img src="img/people_icon.png" alt="" />
+          <p id="people_count">1-4 pax</p>
+        </div>
+        <div class="beg_details cardLayout">
+          <img src="img/luggage_icon.png" alt="" />
+          <p id="begs_count">3 bags</p>
+        </div>
+      </div>
+    </div> -->
+
+  <div class="input-group mb-3 interCouponBtn">
+    <input type="text" class="form-control" style="font-size: 14px" id="coupon" placeholder="Have a coupon code ?"
+      aria-label="Have a coupon code ?" aria-describedby="button-addon2" />
+    <button type="button" style="  background: transparent;
+    font-weight: bold;
+    color: #3336CC;" id="applyCoupon">Apply</button>
+    <input type="hidden" id="CouponCode" />
+  </div>
+
+  <p class="couponSuccessMsg" id="couponSuccessMsg"></p>
+
+  <!-- <h2 style="margin: 12px 15px; font-size: 16px; font-weight: 600">
+      Payment Options
+    </h2> 
+
+    <div id="paymentOpt">
+      <div id="radiodiv">
+        <input type="radio" name="payradio" id="payradio" />
+        <p style="margin-bottom: 0">UPI/Credit/Debit Card</p>
+      </div>
+      <p
+        id="interPrice"
+        style="margin-bottom: 0; font-weight: bold; font-size: 15px"
+      >
+        $ 10
+      </p>
+    </div>  -->
+
+  <!-- <div class="paymentcontainer" style="width: 95%; margin-left: 5px">
+      <img src="img/Payment.png" alt="" style="width: 100%; height: 100%" />
+      <button class="flush-disable upiButton">Pay Now</button>
+      <button class="flush-disable netBankButton">Pay Now</button> 
+    </div> -->
+
+  <!-- <div class="paymentoptionnew">
+    <button type="button" class="ActiveBtn paymentButton" id="fullbutton">Full Payment
+      <p id="showfull"></p>
+    </button>
+
+    <button type="button" class="paymentButton" id="partbutton" style="display: none;">Part Payment
+      <p id="showpart"></p>
+    </button>
+
+    <button type="button" class="paymentButton" id="laterbutton">Pay Later
+      <p id="showlater"></p>
+    </button>
+
+  </div> -->
+  <div class="triangle">
+    <img src="img/Triangle.png" alt="" id="tri1" style="display: none; position: relative; right: 90px; scale: 80%" />
+    <img src="img/Triangle.png" alt="" id="tri2" style="display: none; scale: 80%; position: relative; left: 8px" />
+    <img src="img/Triangle.png" alt="" id="tri3" style="display: none; position: relative; left: 90px; scale: 80%" />
+  </div>
+
+  <div class="divtop" id="divpay">
+    <div class="opener mt-4">
+      <!-- // Paytm -->
+      <!-- <div id="paytmrow" class="pt-4">
+        <div class="d-flex PaymentBox">
+          <label class="d-flex">
+            <input type="radio" name="fav_language" id="fullpaymt" class="radioBtn" value="Paytm" />
+            <img src="img/paytm.png" alt="paytm">
+          </label>
+          <div class="imgfare" style="display: flex;">
+            <h4 class="fw-bold" id="PayNow">₹...<br> </h4>
+          </div>
+        </div>
+        <p class="textstyle"><strong>Pay through : </strong>UPI/Credit Card/Debit Card
+      </div>
+      <hr class="payLine" id="payline2"> -->
+
+      <!-- // Razorpay -->
+      <!-- <div id="razorpayrow" class="pt-4">
+        <div class="d-flex PaymentBox">
+          <label class="d-flex">
+            <input type="radio" name="fav_language" id="razorpayment" class="radioBtn" value="Razorpay" />
+            <img src="img/razorpay.png" alt="razorpay">
+          </label>
+          <div class="imgfare" style="display: flex;">
+            <h4 class="fw-bold" id="RazorPayAmount">₹...<br> </h4>
+          </div>
+        </div>
+        <p class="textstyle"><strong>Pay through : </strong>UPI/Credit Card/Debit Card
+      </div>
+      <hr class="payLine" id="payline2"> -->
+
+      <!-- // Simpl -->
+      <!-- <div id="simplrow" class="pt-4">
+        <div class="d-flex PaymentBox">
+          <label class="d-flex">
+            <input type="radio" name="fav_language" id="simplpaymt" class="radioBtn" value="Simpl" />
+            <img src="img/Simpl_Logo 1.png" alt="simpl">
+          </label>
+          <div class="imgfare" style="display: flex;">
+            <h4 class="fw-bold" id="SimplAmount">₹...<br> </h4>
+          </div>
+        </div>
+        <p class="textstyle"><strong>Get 5% Cashback up to Rs. 100</strong>
+        <P class="simplStatus"> YOU ARE NOT ELIGIBLE</P>
+
+      </div> -->
+
+      <!-- <hr class="payLine" id="payline2"> -->
+    </div>
+
+    <div id="laterrow" class="pt-3" style="margin-top: 7%">
+      <input type="radio" style="height: 3em" name="cashpayment" id="cashpaymt" class="paymentbtn" value="CASH"
+        checked />
+      <label class="paymentType" for="cashpaymt">
+        <div style="margin-left: 1rem">
+          <h3 class="headingh3" style="font-size: 15px; font-weight: 700">
+            Pay after trip completion
+          </h3>
+          <h4 class="discountedamount" id="PayNow1">₹...<br /></h4>
+          <h3 class="amountstyle"></h3>
+          <p class="textstyle" style="top: 5px">
+            Price subject to change<br />
+          </p>
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <!-- <button id="interPayNow">Pay Now</button> -->
+  <button id="flush-disable">Pay Now <span id="interPrice"></span></button>
+  <!-- <input type="button" id="flush-disable" disabled value="Pay Now" id="payNowButton" /> -->
+  <!-- </div> -->
+
+  <footer>
+    <p>For any query contact-</p>
+    <p>care@bookairportcab.com | 080-46800969</p>
+  </footer>
+
+  <div class="popupDiv">
+    <div class="popupBox">
+      <!-- <i class="fas fa-exclamation-circle exclamation"></i> -->
+      <h3>Congratulations!</h3>
+      <p class="redeem1">Your coupon code is applied successfully.</p>
+      <p class="redeem">
+        Redeem your
+        <span id="cpndiscnt" style="color: #000; font-weight: bold"></span>cashback through <br />Cashback link on trip
+        start.
+      </p>
+      <div class="buttonText" id="okay">Okay</div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="toast" tabindex="-1" role="dialog" aria-labelledby="toastTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body" id="toastBody" style="font-size: 18px;">
+          Please agree to terms and conditions
+        </div>
+        <div class="modal-footer">
+          <button id="okBTN" type="button" class="btn btn-secondary closebtn" data-dismiss="modal">
+            ok
+          </button>
+          <!-- <button type="button" class="btn btn-primary">OK</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="Framer" style="display: none">
+    <iframe src="https://bookairportcab.com/yatra2" style="width: 100%;
+      height: 1210vh;">
+    </iframe>
+  </div>
+
+  <!-- <div class="modal fade" id="exampleModal" aria-hidden="true">
+      <div class="modal-dialog modal-details" role="document">
+        <div class="modal-content" style="border-radius: 25px">
+          <div class="modal-header">
+            <h5 class="user-details-heading">Kindly Fill in the details:</h5>
+            <button
+              type="button"
+              class="close closebtn"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="nameform">
+              <div class="form-group">
+                <label for="userName" class="labelfont">Enter Your Name</label>
+                <input
+                  type="text"
+                  class="form-control user-form"
+                  id="userName"
+                  placeholder="Elon Musk"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="mb_number" class="labelfont"
+                  >Enter Your Mobile Number</label
+                >
+                <input
+                  type="tel"
+                  class="form-control user-form"
+                  id="mb_number"
+                  name="userNumber"
+                  placeholder="xxxxxxxxxx"
+                  pattern="[6-9]{1}[0-9]{4}[0-9]{5}"
+                  maxlength="10"
+                  oninvalid="this.setCustomValidity('Please enter your valid phone number')"
+                  oninput="this.setCustomValidity('')"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="userEmail" class="labelfont"
+                  >Enter Your Email address</label
+                >
+                <input
+                  type="email"
+                  class="form-control user-form"
+                  id="userEmail"
+                  aria-describedby="emailHelp"
+                  placeholder="elon@musk.com"
+                  required
+                /> -->
+  <!-- <p class="recommended"><i>For Ride Invoice</i></p style="recommended"> -->
+  <!-- </div>
+
+              <button type="submit" class="btn btn-primary" id="book--btn">
+                Proceed to Book
+              </button> -->
+  <!-- <button class="btn btn-primary" id="zoom--btn" style="padding: 8px;" onclick="zoomSubmit()">Find
+              Cars</button> -->
+  <!-- </form>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+  <script>
+    $(".spinner").css("display", "block");
+    $(".spinnerBack").css("display", "block");
+    $("#okBTN").click(function () {
+      window.location.href = "index.html";
+    });
+    let selectedCard;
+
+    window.onload = async function () {
+      try {
+        await fetchData();
+        let cardElements = document.querySelectorAll(".interCar-Card");
+        let price =
+          cardElements[0].querySelector("#vehiclePrice").textContent;
+        let fare = price.split(" ")[1];
+        localStorage.setItem("TotalFare", fare);
+        document.getElementById("interPrice").innerHTML = price;
+        // document.getElementById("payradio").checked = true;
+
+        if (selectedCard) {
+          $(selectedCard).css({ backgroundColor: "#fff" });
+        }
+
+        $(cardElements[0]).css({
+          backgroundColor: "#ccc",
+        });
+
+        selectedCard = cardElements[0];
+
+        let selectedVehicle = $(selectedCard).find("#vehicleName").text();
+        let selectedImgUrl = $(selectedCard).find("#vehicleImg").attr("src");
+        localStorage.setItem("selectedVehicle", selectedVehicle);
+        localStorage.setItem("selectedImgUrl", selectedImgUrl);
+
+        let user = JSON.parse(localStorage.getItem("interUserDetails"));
+        $("#currentmobile").text(user.userMobile);
+
+        // create_fare api called here
+        let id = selectedCard.getAttribute("quoteId");
+        sessionStorage.setItem("cardId", id)
+        // await fetchFareData(id);
+      } catch (error) {
+        $(".spinner").css("display", "none");
+        $(".spinnerBack").css("display", "none");
+        $("#toast").modal("show");
+        $("#toastBody").empty();
+        $("#toastBody").html("Sorry! Cab Not Available");
+        return false;
+        console.error("Error in window.onload:", error);
+      }
+    };
+
+    const getQuotes = async function () {
+      let userData = await JSON.parse(
+        localStorage.getItem("BookingPrefillData")
+      );
+
+      let userFormData = await JSON.parse(
+        localStorage.getItem("interUserDetails")
+      );
+
+      let originalDate = await JSON.parse(
+        localStorage.getItem("BookingPrefillData")
+      ).pickuptime;
+      let formattedDate = moment(originalDate, "YYYY-MM-DD HH:mm").format(
+        "YYYY-MM-DDTHH:mm:ss"
+      );
+
+      let cityList = await JSON.parse(localStorage["cityListdata"]);
+      let languageCode;
+
+      cityList.forEach((element) => {
+        if (element.code == userData.citycode) {
+          languageCode = element.language_code;
+          localStorage.setItem("languageCode", languageCode);
+          console.log(languageCode);
+        }
+      });
+      console.log(userFormData);
+      let quoteParams = {
+        "iataCode": userData.citycode,
+        "addressSearchPhrase": sessionStorage["AirportRideType"] == "departure" ? userData.sourcename : userData.destinationname,
+        "countryCode": languageCode,
+        "pickupDateTime": formattedDate,
+        "adultPassengers": userFormData.passenger,
+        "checkedLuggage": userFormData.luggage,
+        "ride_type": sessionStorage["AirportRideType"]
+      };
+
+      const response = await fetch(
+        "https://prodapi.mojoboxx.com/spicescreen/webapi/quotes",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(quoteParams),
+        }
+      );
+      const resData = await response.json();
+      if (response.status === 200) {
+        $(".spinner").css("display", "none");
+        $(".spinnerBack").css("display", "none");
+      }
+      return resData;
+    };
+
+    // --------------------InterCar-Card Data initialization code start----------------
+    const fetchData = async () => {
+      try {
+        let quoteData = await getQuotes();
+        let { quotes } = quoteData;
+        let originData = quoteData.origin
+        let destinationData = quoteData.destination;
+        localStorage.setItem("bookingOrigin", JSON.stringify(originData))
+        localStorage.setItem("bookingDestinantion", JSON.stringify(destinationData));
+        const cardData = quotes.map((quote) => {
+          let vehicleName;
+          let category = quote.vehicleCategory;
+          if (category.includes("_")) {
+            let carText = category.split("_");
+            if (carText.length === 1) {
+              vehicleName = carText[0];
+            }
+            if (carText.length === 2) {
+              vehicleName = carText[0] + " " + carText[1];
+            }
+            if (carText.length === 3) {
+              vehicleName = carText[0] + " " + carText[1] + " " + carText[2];
+            }
+            if (carText.length === 4) {
+              vehicleName =
+                carText[0] +
+                " " +
+                carText[1] +
+                " " +
+                carText[2] +
+                " " +
+                carText[3];
+            }
+          } else {
+            vehicleName = category;
+          }
+          return {
+            imageSrc: quote.vehicleImageUrl,
+            altText: vehicleName,
+            quoteId: quote.id,
+            passengerCapacity: quote.passengerCapacity,
+            luggageCapacity: quote.luggageCapacity,
+            price: quote.price,
+            currency: quote.currencyCode,
+            waitingTime: quote.includedWaitingTimeInMinutes
+          };
+        });
+
+        cardData.sort((a, b) => a.price - b.price);
+
+        const interCardDeckContainer =
+          document.getElementById("interCard-deck");
+
+        let cardElements = cardData.map((card) => {
+          const interCarCardElement = document.createElement("div");
+          interCarCardElement.classList.add("interCar-Card");
+
+          interCarCardElement.setAttribute("quoteId", card.quoteId);
+
+          // let currencySymbol = card.currency == "EUR" ? "€" : "$";
+          // localStorage.setItem("currencySymbol", currencySymbol);
+
+          interCarCardElement.innerHTML = `
+        <div class="vehicle_card">
+          <div id="imgBox">
+            <img id="vehicleImg" src="${card.imageSrc}" alt="${card.altText}" />
+          </div>
+          <div id="carDetail_Box">
+            <p id="vehicleName">${card.altText}</p>
+            <div style="margin-bottom: 0.2rem">
+              <div>
+                <img src="img/people_icon.png" alt="userImg" class="carDetail_Box_img" />
+                <p id="passenger" class="vehicle_card_para">Max. ${card.passengerCapacity}</p>
+              </div>
+              <div>
+                <img src="img/luggage_icon.png" alt="luggageImg" class="carDetail_Box_img" />
+                <p id="luggage" class="vehicle_card_para">Max. ${card.luggageCapacity}</p>
+              </div>
+            </div>
+            <div style="margin-bottom: 0.2rem">
+              <img src="img/km_icon.png" alt="KilometerImg" style="width: 15px" />
+              <p class="vehicle_card_para">${card.waitingTime} min free waiting time</p>
+            </div>
+            <p class="vehicle_card_para" style="margin-bottom: 0.2rem">Estimated duration: 30 min</p>
+          </div>
+          <div id="priceBox">
+            <p id="vehiclePrice">$ ${card.price}</p>
+          </div>
+        </div>
+        <p style="margin-bottom: 0; font-size: 10px"><span id="colorSpan"></span>Direct transfer reserved solely for your party</p>
+      `;
+          return interCarCardElement;
+        });
+
+        cardElements.forEach((interCarCardElement) => {
+          interCardDeckContainer.appendChild(interCarCardElement);
+        });
+
+        let interCards = document.querySelectorAll(".interCar-Card");
+
+        interCards.forEach((card, index) => {
+          card.addEventListener("click", async () => {
+            if (selectedCard) {
+              $(selectedCard).css({ backgroundColor: "#fff" });
+            }
+
+            $(card).css({
+              backgroundColor: "#ccc",
+            });
+
+            selectedCard = card;
+
+            let selectedVehicle = $(selectedCard).find("#vehicleName").text();
+            localStorage.setItem("selectedVehicle", selectedVehicle);
+
+            let selectedImgUrl = $(selectedCard)
+              .find("#vehicleImg")
+              .attr("src");
+            localStorage.setItem("selectedImgUrl", selectedImgUrl);
+
+            let priceElement = card.querySelector("#vehiclePrice");
+
+            if (priceElement) {
+              let price = priceElement.textContent;
+              document.getElementById("interPrice").innerHTML = price;
+              let fare = price.split(" ")[1];
+              localStorage.setItem("TotalFare", fare);
+            } else {
+              console.error("Price element not found in the clicked card.");
+            }
+
+            let id = card.getAttribute("quoteId");
+            sessionStorage.setItem("cardId", id)
+            // await fetchFareData(id);
+          });
+        });
+      } catch (error) {
+        console.error("Error fetching quotes:", error);
+      }
+    };
+
+    // const getInternationalFare = async (id) => {
+    //   let userFormData = await JSON.parse(
+    //     localStorage.getItem("interUserDetails")
+    //   );
+
+    //   let { firstName, lastName, userEmail, countryCode, userMobile } =
+    //     userFormData;
+    //   let mb_number = countryCode + userMobile;
+    //   let languageCode = localStorage["languageCode"];
+    //   let flightNumber = localStorage["flightText"];
+
+    //   let fareParams = {
+    //     email: userEmail,
+    //     quoteId: id,
+    //     tfirstName: firstName,
+    //     tlastName: lastName,
+    //     temail: userEmail,
+    //     tphone: mb_number,
+    //     driverComments: "",
+    //     tlanguageIsoCode: languageCode,
+    //     residenceCountryCode: languageCode,
+    //     flightNumber: flightNumber,
+    //     travelIntent: "BUSINESS",
+    //   };
+
+    //   const response = await fetch(
+    //     "https://prodapi.mojoboxx.com/spicescreen/webapi/create_fare",
+    //     {
+    //       method: "POST",
+    //       headers: {
+    //         "content-type": "application/json",
+    //       },
+    //       body: JSON.stringify(fareParams),
+    //     }
+    //   );
+
+    //   let resData = await response.json();
+    //   sessionStorage.setItem("partnerReference", resData.partnerReference);
+    //   sessionStorage.setItem("intlDistance", resData.journeys[0].approxDurationAndDistance.distance);
+    //   sessionStorage.setItem("intlDistanceUnit", resData.journeys[0].approxDurationAndDistance.distanceUnit);
+    //   return resData;
+    // };
+
+    // const fetchFareData = async (quoteId) => {
+    //   try {
+    //     let data = await getInternationalFare(quoteId);
+    //     let price = data.journeys[0].priceSummary.price;
+    //     let bookingId = data.id;
+    //     localStorage.setItem("TotalFare", price);
+    //     localStorage.setItem("BookingId", bookingId);
+    //   } catch (error) {
+    //     console.error(
+    //       `Error fetching data for quoteId ${quoteId}: ${error.message}`
+    //     );
+    //   }
+    // };
+
+    window.onload();
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="js/tracking.js"></script>
+  <script src="js/jspdf.min.js "></script>
+  <script src="js/moment.js"></script>
+  <script src="js/html2canvas.js "></script>
+  <script src="js/canvas2image.js "></script>
+  <script src="js/interPayNow.js"></script>
+  <script src="js/paytm_cabbooking.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <script>
+    if (
+      !/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)
+    ) {
+      $("#simplrow").css("display", "none");
+      $("#payline2").css("display", "none");
+    }
+  </script>
+</body>
+
+</html>

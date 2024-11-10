@@ -1,0 +1,1427 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif !important;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NetflixSansLight';
+  src: url(../font/NetflixSansLight.ttf);
+}
+
+@font-face {
+  font-family: 'NetflixSansMedium';
+  src: url(../font/NetflixSansMedium.ttf);
+}
+
+@font-face {
+  font-family: 'NetflixSansRegular';
+  src: url(../font/NetflixSansRegular.ttf);
+}
+
+#paymentButton {
+  width: 40%;
+  text-align: center;
+  background: rgb(55, 136, 177);
+  overflow: hidden;
+  padding: 10px 0px;
+  color: white;
+  border-radius: 7px;
+  font-family: 'NetflixSansRegular';
+  float: right;
+  position: relative;
+  /* display: none; */
+  right: -70%;
+  transition-duration: 1000ms;
+}
+
+#razor_payment {
+  width: 40%;
+  text-align: center;
+  background: rgb(55, 136, 177);
+  overflow: hidden;
+  padding: 10px 0px;
+  color: white;
+  border-radius: 7px;
+  font-family: 'NetflixSansRegular';
+  float: right;
+  position: relative;
+  /* top: 71%; */
+  right: -100%;
+  transition-duration: 1000ms;
+}
+
+.confirmation_boxCab {
+  position: fixed;
+  width: 80%;
+  top: 30vh;
+  left: 5vw;
+  background-color: white;
+  z-index: 12;
+  text-align: center;
+  padding: 5%;
+  display: none;
+}
+
+.confirmation_boxCabDiv {
+  position: fixed;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: none;
+  z-index: 11;
+  text-align: center;
+  padding: 5%;
+
+}
+
+.status {
+  background: RGB(224, 11, 37);
+  color: White;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 20%;
+  font-size: 1.2em;
+  margin: 0 auto;
+  background-color: #000;
+  margin-bottom: 0%;
+  margin-top: -87px;
+  border-radius: 5px;
+}
+
+.show1 {
+  display: block;
+  left: 27% !important;
+  transition-duration: 0.5s;
+}
+
+.show2 {
+  display: block;
+  left: 5% !important;
+  transition-duration: 0.5s;
+}
+
+.show3 {
+  display: block;
+  left: 45% !important;
+  transition-duration: 0.5s;
+}
+
+.show4 {
+  display: block;
+  left: 34% !important;
+  transition-duration: 0.5s;
+}
+
+.show5 {
+  display: block;
+  left: 15% !important;
+  transition-duration: 0.5s;
+}
+
+.show6 {
+  display: block;
+  left: 3% !important;
+  transition-duration: 0.5s;
+}
+
+#cmmsg {
+  color: black;
+  font-weight: 600;
+  margin-top: -10px;
+}
+
+.pay_now {
+  overflow: hidden;
+  background: white;
+  color: red;
+  font-family: 'NetflixSansRegular';
+  text-align: center;
+  width: 31%;
+  border-radius: 3px;
+  padding: 5px;
+  position: relative;
+  left: 90%;
+  margin-top: 0%;
+  /* display: none; */
+  cursor: pointer;
+}
+
+.pay_now:hover {
+  background-color: red;
+  color: #fff;
+  cursor: pointer;
+}
+
+.simpl_img {
+  width: 25%;
+  float: left;
+}
+
+
+#simplrow {
+  display: flex;
+  /* display: none; */
+}
+
+#simplrow input[type="radio"] {
+  width: 18px !important;
+  margin-top: -1% !important;
+}
+
+.simplStatus {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 2% 0 2% 15%;
+  display: none;
+}
+
+.showpartpay,
+#laterrow {
+  /* background-color: #eaf5f1; */
+  border-radius: 10px;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: -20px;
+}
+
+.lazy_img {
+  width: 30%;
+  float: left;
+}
+
+.cred_img {
+  width: 30%;
+  float: left;
+}
+
+.cred_im,
+.lazy_im,
+.simpl_im {
+  width: 40%;
+  float: left;
+  margin-bottom: 3%;
+}
+
+
+.confirmation_boxCabDiv {
+  position: fixed;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: none;
+  z-index: 11;
+  text-align: center;
+  padding: 5%;
+
+}
+
+.logostyle {
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+  background-color: rgb(238, 238, 238);
+  padding: 0.3rem 1rem 0.3rem 0.4rem;
+}
+
+.divtop {
+  /* background-color: #eaf5f1; */
+  border-radius: 10px;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: -5px;
+  /* border: 1px solid #ccc; */
+  margin-bottom: 5%;
+}
+
+.divtop h2 {
+  font-size: 1rem;
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+}
+
+.paymentbtn {
+  margin-left: 1rem;
+  height: 6em;
+  margin-top: 6.5rem;
+  width: 21px;
+}
+
+.headingh3 {
+  font-size: 0.8rem;
+}
+
+.amountstyle {
+  position: absolute;
+  right: 1rem;
+  margin-top: -1.5rem;
+  text-decoration: line-through;
+}
+
+/* .discountedamount {
+  position: absolute;
+  right: 7%;
+  bottom: 8%;
+  /* bottom: -25%; */
+/* margin-top: -34px;
+  font-size: 21px;
+  font-weight: 600;
+} */
+
+.discountedamount {
+  position: absolute;
+  right: 2rem;
+  font-size: 21px;
+  font-weight: 600;
+  margin-top: -13px;
+}
+
+
+.textstyle {
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 12px;
+  position: relative;
+  /* top: -17px; */
+}
+
+.righttick {
+  width: 0.6rem;
+}
+
+.rightticktext {
+  margin-left: 0.2rem;
+  font-size: 0.5rem;
+}
+
+.discounttext {
+  margin-top: -2rem;
+  font-size: 0.6rem;
+  background-color: rgb(245, 199, 83);
+  padding: 0.3rem 1rem 0.3rem 0.4rem;
+}
+
+.paymentmethodtext {
+  margin-top: 1rem;
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+.carddetail {
+  width: 40%;
+  margin-top: 1rem;
+  margin-right: 3%;
+  margin-left: 1rem;
+}
+
+.centerwithtopmargin {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.simicon {
+  height: 29px;
+  margin: 10px;
+}
+
+.simple {
+  display: flex;
+  width: 100%;
+  height: 64px;
+  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+  border-radius: 10px;
+  margin-top: 21px;
+  padding-top: 12px;
+}
+
+.body {
+  background-color: #E5E5E5;
+}
+
+.simp {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.cashback {
+  color: #212529;
+}
+
+.form {
+  width: 100%;
+  height: 50px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 16px;
+  font-weight: 600;
+  padding-left: 20px;
+}
+
+.micon {
+  height: 23px;
+  position: absolute;
+  right: 40px;
+  height: 23px;
+  margin-top: 28px;
+}
+
+.pay-now-form-control {
+  border-radius: 10px;
+  height: 40px;
+  border: 1px solid #eeeded;
+}
+
+.apply-btn {
+  border-bottom-right-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  background: linear-gradient(90deg, #BE1E24 0%, #ED1C24 51.56%, #BE1E24 100%);
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.apply-btn:hover {
+  background: #585b5c;
+}
+
+.apply-btn:active {
+  background: #585b5c;
+}
+
+.apply-btn:visited {
+  background: linear-gradient(90deg, #BE1E24 0%, #ED1C24 51.56%, #BE1E24 100%);
+}
+/* // dynamic payment method UI */
+.PaymentBox {
+  justify-content: space-between;
+  width: 88%;
+}
+/* .PaymentBox img{
+  width: 85%;
+  height: 24px;
+  margin-left: 10PX;
+} */
+.simplImg{
+  width: 85%;
+  height: 24px;
+  margin-left: 10PX;
+}
+.PaymentBox .radioBtn{
+  font-size: 15px;
+  width: 20px;
+  margin-left: 1rem;
+  margin-top: -7px;
+}
+.textstyle {
+  font-size: 13px;
+  margin-left: 12%;
+}
+.opener hr{
+  margin: 0;
+}
+#paytmrow,#razorpayrow,#simplrow{
+  display: none;
+}
+.simplStatus {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 2% 0 2% 15%;
+  display: none;
+}
+
+
+#flush-disable {
+  border-radius: 25px !important;
+  background: linear-gradient(90deg, #BE1E24 0%, #ED1C24 51.56%, #BE1E24 100%);
+  color: white;
+  border-radius: 25px;
+  width: 95%;
+  border-radius: 7px;
+  text-align: center;
+  padding: 7px 0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  clear: both;
+  font-size: 20px;
+  border: none;
+  margin: 10px 2%;
+}
+
+
+
+#flush-disable:hover {
+  background: #585b5c;
+}
+
+#flush-disable:active {
+  background: #585b5c;
+}
+
+#flush-disable:visited {
+  background: linear-gradient(90deg, #BE1E24 0%, #ED1C24 51.56%, #BE1E24 100%);
+}
+#interPayNow {
+  background: linear-gradient(90deg, #000000 0%, #585b5c 51.56%, #000000 100%);
+  color: white;
+  width: 95%;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  padding: 9px 0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  clear: both;
+  /* opacity: 70%; */
+  font-size: 20px;
+  border: none;
+  margin: 0 2%;
+}
+.activeBookbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #BE1E24 0%, #ED1C24 51.56%, #BE1E24 100%);
+  opacity: 100% !important;
+  color: #ffffff !important;
+  border-radius: 25px !important;
+  height: 40px !important;
+}
+
+button.activeBookbtn:hover {
+  background-color: #585b5c;
+}
+
+button.activeBookbtn:visited {
+  background-color: #585b5c;
+}
+
+footer {
+  text-align: center;
+  font-size: 11px;
+  margin: 2% 0;
+}
+
+
+
+footer p {
+  margin: 0;
+}
+
+footer P:nth-child(2) {
+  color: #6A6A6A;
+}
+
+.confirmation_boxCab {
+  top: 82vh;
+  left: 10vw;
+  width: 390px;
+  margin-left: -45px;
+}
+
+.confirmation_boxCab2 {
+  position: fixed;
+  width: 80%;
+  top: 80vh;
+  left: 10vw;
+  background-color: white;
+  /* z-index: 1000; */
+  text-align: center;
+  /* padding: 5%; */
+  display: none;
+  /* border-radius: 10px; */
+  font-size: 18px;
+}
+
+.confirmation_boxCab3 .call_msgCab {
+  height: 67px;
+}
+
+.confirmation_boxCab3,
+.confirmation_boxCab4,
+.confirmation_boxCab5 {
+  position: fixed;
+  width: 80%;
+  top: 83vh;
+  left: 10vw;
+  background-color: white;
+  /* z-index: 1000; */
+  text-align: center;
+  /* padding: 5%; */
+  display: none;
+  /* border-radius: 10px; */
+  font-size: 18px;
+}
+
+.confirmation_boxCab3 .call_msgCab {
+  height: 67px;
+}
+
+.confirmation_boxCab .call_msgCab {
+  height: 130px;
+}
+
+.okbutton {
+  background: RGB(224, 11, 37);
+  color: White;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 20%;
+  font-size: 1.2em;
+  margin: 0 auto 3%;
+  background-color: red;
+  border-radius: 5px;
+  font-family: "NetflixSansRegular";
+}
+
+.cross {
+  width: 25px;
+  position: relative;
+  left: 109px;
+  top: -44px;
+  background-color: rgb(225, 225, 225);
+  border-radius: 10px;
+}
+
+.confirmation_boxCabsimpl {
+  position: fixed;
+  width: 100%;
+  top: 59vh;
+  left: 0vw;
+  background-color: white;
+  z-index: 1000;
+  text-align: center;
+  padding: 5%;
+  display: none;
+  /* border-radius: 10px; */
+  font-size: 18px;
+  height: 263px;
+}
+
+.checking {
+  margin-top: 35px;
+}
+
+.show {
+  font-size: 13px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.number {
+  font-size: 12px;
+
+  margin-right: 25px;
+}
+
+.button1 {
+  color: #fff;
+  background: #000;
+  border: none;
+  border-radius: 7px;
+  /* font-size: 16px; */
+  padding: 10px;
+}
+
+.button2 {
+  color: #fff;
+  background: #000;
+  border: none;
+  border-radius: 7px;
+  /* font-size: 16px; */
+  padding: 10px;
+}
+
+.crossicon {
+  width: 15px;
+  position: relative;
+  left: 300px;
+  top: -41px;
+}
+
+.status22 {
+  display: none;
+}
+
+.top_img {
+  display: flex;
+}
+
+.ridedit {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px;
+}
+
+.pararide {
+  font-size: 16px;
+
+  font-family: 'NetflixSansMedium';
+}
+
+
+.custdetail {
+  background-color: #F3F7F8;
+  border-radius: 8px;
+  width: 95%;
+  margin-left: 8px;
+  margin-top: -20px;
+}
+
+.detail {
+  margin: 1px;
+  margin-left: 6px;
+  margin-top: 10px;
+}
+
+.calendar {
+  display: flex;
+}
+
+.calendarimg {
+  height: 44px;
+}
+
+#currentmobile {
+  margin-top: 23px;
+  font-size: 14px;
+  margin-left: 0px;
+  line-height: 0px;
+
+  font-family: 'NetflixSansRegular';
+}
+
+#cab_type {
+  margin-top: 23px;
+  font-size: 14px;
+  margin-left: 5px;
+  line-height: 0px;
+  font-family: 'NetflixSansRegular';
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.datetime {
+  font-size: 10px;
+  margin-left: -2px;
+  line-height: 5.5;
+  font-family: 'NetflixSansRegular';
+}
+.couponBtn {
+  width: 93%;
+  margin: 0 auto;
+  /* border: 1px solid rgba(0, 0, 0, 0.4); */
+  border-radius: 4px;
+  top: 2px;
+}
+
+.couponBtn input[type='text']:focus {
+  outline: none;
+}
+
+.currentaddress {
+  display: flex;
+  margin: 20px;
+  margin-top: 12px;
+  font-family: 'NetflixSansRegular';
+}
+
+
+#currentpick {
+  font-size: 14px;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 316px;
+  font-family: 'NetflixSansRegular';
+
+}
+
+#currentdrop {
+  font-size: 14px;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 315px;
+  font-family: 'NetflixSansRegular';
+
+}
+
+.accordion-flush .accordion-item {
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+  border: none;
+}
+
+.paymentoptionnew {
+  display: flex;
+  /* justify-content: space-around; */
+  height: 60px;
+  width: 94%;
+  margin-left: 12px;
+}
+
+.paymentoptionnew button {
+  font-size: 15px;
+  width: 30%;
+  height: 40px;
+  padding: 10px;
+}
+
+.confirmation_boxCab2 {
+  height: 175px;
+  margin-top: -20px;
+  position: fixed;
+  margin-left: -36px;
+  width: 397px;
+}
+
+#status2 {
+  width: 62%;
+  margin-top: 10px;
+  height: 46px;
+}
+
+#laterrow {
+  display: none;
+}
+
+#PartNow {
+  display: none;
+}
+
+.triangle {
+  display: flex;
+  justify-content: space-around;
+  margin-top: -21px;
+}
+
+#loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 999;
+  margin: -40px 0 0 -40px;
+  -webkit-border: 16px solid #f3f3f3;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border-top: 16px solid #e40f0f;
+  -webkit-border-top: 16px solid #e40f0f;
+  width: 30px;
+  height: 30px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+.spinner {
+  position: absolute;
+  top: 35%;
+  left: 37%;
+  width: 28%;
+  color: white;
+  display: none;
+  z-index: 9999;
+}
+
+.spinnerBack {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  top: 0;
+  display: none;
+  z-index: 9999;
+}
+
+#interCard-deck {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.interCar-Card {
+  border: 2px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.vehicle_card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#vehicleImg {
+  width:80px;
+}
+
+#vehicleName {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.vehicle_card > p {
+  font-size: 12px;
+}
+
+.vehicle_card > :nth-child(3) {
+  font-weight: bold;
+}
+
+.vehicle_card > img {
+  width: 100px;
+}
+
+.vehicle_card_para {
+  font-weight: bold;
+  font-size: 8px;
+  margin-bottom: 0;
+}
+
+#carDetail_Box > :nth-child(2) {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#carDetail_Box > :nth-child(2) > :nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#carDetail_Box > :nth-child(2) > :nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#carDetail_Box > :nth-child(3) {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#vehiclePrice {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+#colorSpan {
+  padding: 0 0.5rem;
+  background: #48A74D;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.card-deck {
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  border-radius: 12px;
+  margin-left: 4%;
+  border: none;
+  font-size: 12px;
+}
+
+.active-card {
+  /* border: 1px solid rgba(0, 0, 0, 0.4); */
+  background-color: #eeeded;
+}
+
+.card-body {
+  padding: 3px;
+  text-align: center;
+  line-height: 1;
+  margin-top: -15px;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 11px;
+}
+
+.active-title {
+  font-size: 20px;
+}
+
+.card img {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card p {
+  margin-bottom: 8px;
+  font-family: 'NetflixSansRegular';
+}
+
+.paymentButton {
+  background-color: #F3F7F8;
+  color: #000;
+  font-family: 'NetflixSansMedium';
+  border: none;
+  border-radius: 5px;
+  width: 32%;
+}
+.interCouponBtn {
+  width: 92%;
+  margin: 0 auto;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+}
+
+.ActiveBtn {
+  background-color: #585b5c;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  height: 40px;
+  width: 38%;
+  font-size: 12px !important;
+  padding: 11px;
+}
+
+.card_details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 17px;
+}
+
+.card_container {
+  margin-top: 10px;
+  margin-bottom: 5%;
+}
+
+.card_details .cardLayout {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card_details .cardLayout img {
+  width: 25%;
+}
+
+.card_details .cardLayout p {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: -1%;
+}
+
+.cityClass {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 10px 0px 5px;
+}
+
+.down_line {
+  border-bottom: 1.2561px solid rgba(0, 0, 0, 0.1);
+  width: 93%;
+  margin-left: 20px;
+  margin: 10px;
+}
+
+.couponBtn {
+  width: 93%;
+  margin: 0 auto;
+  /* border: 1px solid rgba(0, 0, 0, 0.4); */
+  border-radius: 4px;
+}
+
+.couponBtn input[type='text']:focus {
+  outline: none;
+}
+
+.popupBox {
+  position: fixed;
+  top: 25%;
+  width: 96%;
+  margin: 0 auto;
+  color: black;
+  background: white;
+  box-shadow: -1px 0px 8px 1px black;
+  /* padding: 2%; */
+  left: 2%;
+  text-align: center;
+  padding-bottom: 0;
+  display: none;
+  border-radius: 25px;
+}
+
+.popupDiv {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  top: 0;
+  position: fixed;
+  z-index: 9;
+  display: none;
+}
+
+.popupBox h3 {
+  margin-top: 5%;
+}
+
+.coupon_block {
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid #C7C7C7;
+  outline: none;
+  margin-top: 12%;
+  /* margin-bottom: 10%; */
+}
+
+.coupon_block input[type="text"] {
+  width: 70%;
+  padding: 2%;
+  font-family: 'NetflixSansRegular';
+  border: none;
+  outline: none;
+  color: gray;
+  /* border-top: 0.1px solid black; */
+  /* border-left: 0.5px solid black; */
+  /* border-bottom: 0.5px solid black; */
+  height: 23px;
+  font-size: 14px;
+  padding: 0.6em 0.4em 0.6em 0.8em;
+}
+
+.coupon_block input[type="text"]::placeholder {
+  color: gray;
+}
+
+.coupon_block span {
+  font-size: 14px;
+  /* color: red; */
+  color: grey;
+  margin-left: 3%;
+  font-weight: bold;
+}
+
+.couponSuccessMsg {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 13px;
+  color: grey;
+  margin-top: 2%;
+}
+
+.buttonText {
+  width: 100%;
+  float: left;
+  background: #be1e24;
+  color: white;
+  padding: 10px 8px;
+  text-align: center;
+  font-size: 20px;
+  border-bottom-left-radius: 25px !important;
+  border-bottom-right-radius: 25px !important;
+}
+
+input.buttonText:hover {
+  background-color: #585b5c;
+}
+
+input.buttonText:visited {
+  background-color: #585b5c;
+}
+
+#okay {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#laterbutton {
+  display: none;
+}
+
+.Rentalcard-body {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  width: 40%;
+  text-align: center;
+}
+
+.Rentalcard-body p:nth-child(1) {
+  width: 100%;
+  border: 1px solid black;
+  padding: 5px;
+  border-top-LEFT-radius: 5px;
+  border-bottom-LEFT-radius: 5px;
+}
+
+.Rentalcard-body p:nth-child(2) {
+  width: 100%;
+  border: 1px solid black;
+  padding: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.ActiveHour {
+  background: grey;
+  color: white;
+  border: 2px solid black !important;
+  border-right: 1px solid black !important;
+}
+
+.Rentalcard-deck {
+  display: none;
+}
+
+.payment-options-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-width: 320px) and (max-width : 374px) {
+
+  .discountedamount {
+    position: absolute;
+    right: 7%;
+    /* bottom: 4%; */
+
+  }
+
+  .divtop {
+    width: 95%;
+  }
+
+  .ActiveBtn {
+    width: 41%;
+  }
+
+  #currentdrop {
+    white-space: normal;
+  }
+
+}
+
+@media only screen and (min-width: 425px) and (max-width : 767px) {
+
+  .card-deck {
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+.coupon-popup {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+/* // Name , email css start */
+.user-details-heading {
+  font-size: 21px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.user-form {
+  border: 1px solid #cfd0d0;
+  border-radius: 25px;
+  font-size: 14px;
+  height: 40px;
+
+}
+
+.labelfont {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.modal-body button {
+  width: 100%;
+  color: white;
+  background: linear-gradient(90deg, #BE1E24 0%, #ED1C24 51.56%, #BE1E24 100%);
+  border: none;
+  border-radius: 25px;
+  height: 40px;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: rgb(170, 29, 29);
+  border-color: red;
+}
+
+.modal-details {
+  margin-top: 5%;
+}
+
+#zoom--btn {
+  display: none;
+}
+
+/* // Name , email css end */
+
+.triangle-icon {
+  display: block;
+  position: relative;
+  left: -116px;
+  scale: 80%;
+}
+
+@media only screen and (min-width : 768px) {
+  .card-deck {
+    display: flex;
+    justify-content: center;
+  }
+
+  .triangle-icon {
+    left: -243px;
+  }
+}
+
+.sedanDiscount {
+  display: flex;
+  margin-bottom: 3px;
+  justify-content: space-evenly;
+}
+
+.miniDiscount {
+  display: flex;
+  margin-bottom: 3px;
+  justify-content: space-evenly;
+}
+
+.suvDiscount {
+  display: flex;
+  margin-bottom: 3px;
+  justify-content: space-evenly;
+}
+
+.discount-box {
+  background-color: #31BC4F;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+.note {
+  margin: 8px;
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.interCouponBtn {
+  width: 92%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+#coupon {
+  border: none;
+}
+
+#interCouponInput::placeholder {
+  font-weight: bold;
+}
+
+#applyCoupon {
+  border: none;
+  outline: none;
+  background: linear-gradient(90deg, #BE1E24 0%, #ED1C24 51.56%, #BE1E24 100%);
+  font-weight: bold;
+}
+
+
+#paymentOpt {
+  width: 92%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  margin: 0 auto;
+  background-color: #F3F7F8;
+}
+
+#radiodiv {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
+/* #radiodiv > p {
+  margin-left: 1rem;
+} */
+
+#radiodiv > p {
+  margin-left: 1rem;
+  font-size: 15px;
+}
+
+#interPrice {
+  margin-left: 0.5rem;
+}
+
+@media only screen and (max-width:280px) {
+  #vehicleImg {
+    width: 55px;
+}
+
+#vehicleName {
+  font-size: 10px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+#vehiclePrice {
+  font-size: 10px;
+}
+
+.carDetail_Box_img {
+  width: 10px;
+}
+
+#radiodiv > p {
+  margin-left: 1rem;
+  font-size: 12px;
+}
+}
+
+.modal-footer button {
+  margin: 0 auto;
+  color: white;
+  background: red;
+  border: none;
+}
+
+#toastBody {
+  text-align: center;
+}

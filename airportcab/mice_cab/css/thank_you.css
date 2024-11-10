@@ -1,0 +1,1076 @@
+/* Body Styling */
+body {
+    background-color: #f9f9f9;
+    scroll-behavior: smooth;
+    overflow: auto;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+    font-family: 'Lato', sans-serif;   
+}
+  
+body::-webkit-scrollbar {
+    display: none;  
+}
+
+/* Font Weight Classes */
+#booking .thin { font-weight: 100; }
+#booking .light { font-weight: 300; }
+#booking .regular { font-weight: 400; }
+#booking .bold { font-weight: 700; }
+#booking .black { font-weight: 900; }
+#booking .italic { font-style: italic; }
+
+/* Header */
+#header {
+    background-color: black;
+    padding: 0 0 54px;
+    position: sticky;
+    top: 0;
+    z-index: 999; /* Ensure header stays on top */
+}
+
+/* Navigation Menu */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+  
+nav ul li {
+    margin-right: 10px;
+}
+  
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+  
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Review Section */
+.review-section {
+    background-color: #0a3b58;
+    padding: 10px;
+  
+    color: #fff;
+}
+
+.review-section h4 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.booking-details {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.booking-details .city {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.booking-details .arrow {
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.booking-details .one-way, 
+.booking-details .pickup {
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.booking-details .pickup {
+    font-weight: 500;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Layout for the two-column structure */
+.booking-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: -20px;
+}
+
+.main-content {
+    flex: 3;
+    padding-right: 20px;
+}
+
+
+/* Car Details Section */
+.car-details {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    /* border-radius: 5px; */
+}
+.car-info{
+    color: black;
+}
+
+.car-info h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.car-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.car-info ul li {
+    margin-bottom: 10px;
+}
+
+/* Payment Sidebar */
+.payment-summary {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pay-now-btn {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.coupons-section {
+    background-color: #ffffff;
+    margin: auto;
+}
+
+.coupons-section h4 {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: #333;
+    font-size: 15px;
+    text-align: left;
+}
+
+.coupon-option {
+    display: block;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.makeFlex {
+    display: flex;
+    align-items: center; /* Align vertically centered */
+}
+
+.hrtlCenter {
+    justify-content: flex-start; /* Aligns horizontally */
+}
+
+
+.font14 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.latoBlack {
+    font-weight: 900;
+}
+
+.darkGreyText {
+    color: #333;
+}
+
+.latoLight {
+    font-weight: 300;
+}
+
+.latoLight span{
+    line-height: 15px;
+}
+
+.btnLoader {
+    margin-left: 5px;
+}
+
+.discount {
+    color: #28a745; /* Green for discount */
+}
+
+.custom-coupon {
+    position: relative;
+}
+
+.custom-coupon input[type="text"] {
+    width: 100%;
+    padding: 10px 80px 10px 10px; /* Adjust padding to make space for the button */
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.custom-coupon button.apply-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 0 20px;
+    border: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-left: none;
+    color: #007bff;
+    border-top-right-radius: 5px;
+    font-weight: 600;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+
+/* General styles */
+h2, h3 {
+    margin: 0;
+}
+
+p {
+    color: #555;
+    font-size: 14px;
+}
+
+/* Car card container */
+.car-card {
+    background-color: #fff;
+    border-radius: 8px; /* Round the corners */
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* Car header (image and title section) */
+.car-header {
+    display: flex;
+    align-items: center;
+}
+
+.car-image img {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.car-info h2 {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+    display: inline-block;
+}
+
+.car-info .or-similar {
+    font-size: 14px;
+    color: #777;
+    margin-left: 5px;
+}
+
+.car-info p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: black;
+    font-weight: 400;
+}
+
+/* Car details (saver fare, ratings, and other info) */
+.saver-fare-background{
+    background-color: hsl(202, 100%, 96%);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); 
+    border: 1px solid #e0e0e0;
+}
+.saver-fare {
+    background-color: #ffffff;
+    padding: 10px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.05); 
+    max-width: 800px;
+    margin: 20px auto; 
+    z-index: 10;
+}
+
+.saver-fare h3 {
+    font-size: 18px;
+    margin: 0;
+    color: #0a3b58;
+    display: flex;
+    align-items: center;
+    font-weight: 600; /* Slightly bolder heading */
+}
+
+.saver-fare .rating {
+    background-color: #4caf50; /* Green background */
+    color: white;
+    padding: 3px 8px; /* Adjusted padding for better fit */
+    border-radius: 12px; /* Rounded pill shape */
+    font-size: 14px;
+    margin-left: 8px;
+    display: inline-block;
+}
+
+.saver-fare .rating-count {
+    color: #777;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.fare-details {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    text-align: left; /* Align details to the left */
+}
+.fare-details .fas{
+    color: #0a3b58;
+}
+
+.fare-details li {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.fare-details li strong {
+    color: #555;
+}
+
+/* Driver & Cab Details Card */
+.driver-cab-card {
+    margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.driver-cab-card h3 {
+    font-size: 18px;
+    color: #0a3b58;
+    margin-bottom: 10px;
+}
+
+.driver-cab-card p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+}
+
+/* Inclusions and Exclusions Card */
+.inclusions-exclusions-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.inclusions{
+    border-right: 1px solid #e0e0e0;
+}
+
+.inclusions, .exclusions {
+    flex: 1;
+}
+
+.exclusions {
+    margin-left: 40px; /* Increase margin for better spacing */
+}
+
+.inclusions h4, .exclusions h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0a3b58;
+}
+
+.inclusions ul, .exclusions ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.inclusions ul li, .exclusions ul li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #000000;
+}
+
+/* Customize bullet points */
+.inclusions ul li::before {
+    content: '✔'; /* Tick symbol */
+    color: #4CAF50; /* Green */
+    font-weight: bold;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.exclusions ul li::before {
+    content: '✖'; /* Cross symbol */
+    color: #d9534f; /* Red */
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Exclusions: Different color for extra charges */
+.exclusions ul li {
+    font-weight: 500;
+    color: #d9534f;
+}
+
+
+/* Special Requests Card */
+.special-requests-container {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    display: flex;
+   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.05);
+   border-radius: 5px;
+}
+
+.special-requests-card {
+    /* border-right: 1px solid #e0e0e0; */
+    padding: 20px;
+    width: 50%;
+   
+}
+
+.special-requests-card label {
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 10px;
+    color: #0a3b58;
+}
+
+.special-requests-card input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.special-requests-card .price {
+    font-size: 14px;
+    font-weight: bold;
+    color: #0a3b58;
+}
+
+.special-requests-card p {
+    font-size: 12px;
+    color: #0a3b58;
+}
+
+/* trip-details-form */
+.trip-details-form {
+    background-color: white;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.05);
+    margin-top: 30px;
+}
+
+.trip-details-form h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #0a3b58;
+}
+
+.trip-details-form label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.trip-details-form label span{
+    display: inline;
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    color: #8c8c8c;
+}
+
+.trip-details-form input[type="text"],
+.trip-details-form input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.contact-input {
+    display: flex;
+    align-items: center;
+}
+
+.contact-input span {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.gender-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.gender-options label {
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    background-color: #0a3b58;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #08425b;
+}
+
+/* Custom styles to match the look from the image */
+.read-before-booking {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.05);
+    max-width: 1200px;
+}
+
+.read-before-booking h5 {
+    color: #0a3b58;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.read-before-booking h6 {
+    font-size: 16px;
+    color: #0a3b58;
+    margin-bottom: 4px;
+}
+
+.read-before-booking p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+/* Adding padding and adjusting column alignment */
+.read-before-booking .row .col-md-6 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.read-before-booking .row {
+    margin-top: 16px;
+}
+
+/* Sticky Sidebar for Payment Section */
+.sidebar-container {
+    width: 320px; 
+    margin: 0 auto; 
+  
+}
+
+/* Free Cancellation Sticky Styling */
+.free-cancellation {
+    position: sticky;
+    top: 80px;
+    background-color: #e0ffe0; /* Light green */
+    color: #008800; /* Dark green text */
+    padding: 4px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 11px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds shadow for effect */
+    width: 100%;
+}
+
+/* Sidebar Card Styling */
+.right-section {
+    width: 320px;
+    color: black;   
+    font-weight: 600;
+    margin: 0 auto;
+}
+.booking-summary-major{
+    position: sticky;
+    top: 60px;
+}
+
+.booking-summary,
+.fare-summary {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-summary {
+    border-bottom: 1px solid #ddd; /* Border under the Your Booking section */
+}
+
+.booking-summary h2,
+.fare-summary h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: #1f1f1f; /* Font color as per request */
+}
+
+.details-section {
+    margin-top: 10px;
+    padding-bottom: 10px; /* Padding to make space before border */
+}
+
+.summary-item {
+    display: flex;
+    /* align-items: center; */
+    margin: 15px 0;
+    font-size: 14px; /* Font size adjusted for elements */
+    color: #1f1f1f; /* Darker text color */
+}
+
+.summary-item i {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #0a3b58;
+    flex-shrink: 0;
+}
+
+.date-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #1f1f1f;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 33.3%;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* Connector Line Between Pickup and Dropoff */
+.pickup-dropoff-section {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.pickup-dropoff-section .connector-line {
+    position: absolute;
+    left: 15px; /* Align with icons */
+    top: 25px; /* Adjust top position to connect icons */
+    height: 40px;
+    width: 2px;
+    background-color: #ccc; /* Light gray connecting line */
+}
+
+.summary-item span {
+    font-size: 12px;
+    line-height: 15px;
+    color: #1f1f1f;
+}
+
+/* Styling for the Fare Summary */
+.fare-summary {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* To align "View Details" */
+    margin-bottom: 20px;
+}
+
+.fare-summary h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1f1f1f;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bbb;
+}
+
+.fare-summary .view-details {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 12px;
+    color: #008cff;
+    text-decoration: underline;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.summary-item span {
+    font-weight: 600;
+}
+
+.summary-item.total {
+    font-size: 16px;
+    border-top: 1px solid #bbb;
+    padding-top: 10px;
+    font-weight: 800;
+}
+
+.summary-item.total span {
+    color: #1f1f1f;
+}
+
+.customer-satisfaction {
+    text-align: center;
+    font-size: 12px;
+    color: #00a887;
+    margin-top: 10px;
+}
+
+
+/* Remove inline CSS - Styling for the header (Your Booking + OUTSTATION) */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd; /* Border below heading */
+    padding-bottom: 10px; /* Space before the border */
+}
+
+.header-section span:first-child {
+    font-weight: 800;
+    color: #1f1f1f;
+}
+
+.header-section span:last-child {
+    font-weight: 600;
+    font-size: 12px;
+    color: #1f1f1f;
+}
+
+.confirmation_div{
+    background: url(../img/cab_confirmation_message.png);
+    background-size: cover;
+    height: 230px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    margin-top: 31px;
+    border-radius: 10px;
+}
+
+/* CAB-LISTING */
+.cab-listing-item {
+    /* display: flex; */
+    width: 100%;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    /* padding: 15px; */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* max-width: 750px; */
+    /* margin: 20px; */
+    font-family: Arial, sans-serif;
+    transition: border-color 0.3s ease;
+}
+  .cab-listing-item:hover {
+    border-color: #76b8ff; 
+  }
+  
+  
+  .car-details {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .car-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+  }
+  
+  .car-info h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 5px;
+  }
+  
+  .or-similar {
+    font-weight: 400;
+    font-size: 14px;
+    color: #999;
+  }
+  
+  h5 {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 5px;
+  }
+  
+  .or-similar {
+    font-weight: 400;
+    color: #999;
+    margin-left: 5px; /* Small space between "or similar" and the rating */
+  }
+  
+  .rating {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e6f2ff; /* Light blue background */
+    border-radius: 5px;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #2d72e3;
+    margin-left: 10px; /* Space between "or similar" and rating */
+  }
+  
+  .rating-value {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2d72e3;
+  }
+  
+  .rating-count {
+    font-size: 12px;
+    color: #6b6b6b;
+    margin-left: 5px;
+  }
+  
+  
+  
+  .car-info p {
+    margin: 3px 0;
+    font-size: 14px;
+  }
+  
+  .spacious {
+    color: #000000;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .extra-km-fare, .fuel-type, .cancellation {
+    font-size: 13px;
+    color: #6b6b6b;
+  }
+
+/* Transfer Box */
+.journeyInfoGreyBorder {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+     margin-top: 20px;
+    font-family: Arial, sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.journeyInfoGreyBorder:hover {
+    border-color: #76b8ff; 
+  }
+  
+
+.thankyouInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    background: #f2f9ff;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.appendLeft20 {
+    padding-left: 20px;
+}
+
+.appendRight20 {
+    padding-right: 20px;
+}
+
+.latoBlack {
+    font-weight: 700;
+}
+
+.font16 {
+    font-size: 16px;
+}
+
+.blackText {
+    color: #000;
+}
+
+.lightGreyText {
+    color: #777;
+}
+
+.capText {
+    text-transform: capitalize;
+}
+
+.cabBookingDetailsRowOuter {
+    padding-top: 10px;
+}
+
+.cabBookingDetailsRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.noLeftLine {
+    border-left: none;
+}
+
+.cabBookingDetailsRowLeft {
+    width: 150px;
+}
+
+.cabBookingDetailsRowRight {
+    flex-grow: 1;
+}
+
+.latoBold {
+    font-weight: 700;
+}
+
+.font22 {
+    font-size: 22px;
+}
+
+.font12 {
+    font-size: 12px;
+}
+
+.showLeftDot::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    border-radius: 50%;
+}
+.cabBookingDetailsRowOuter:before {
+    /* border-left: 1px dashed #4a4a4a; */
+    content: "";
+    z-index: 1000;
+}
+.cabBookingDetailsRowOuter:after {
+    background: #fff;
+    border: 1px solid #4a4a4a;
+    border-radius: 50%;
+    content: "";
+    height: 5px;
+    left: -19px;
+    position: absolute;
+    top: 0;
+    width: 5px;
+}
+.traveller-card {
+    margin-top : 20px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.latoBlack {
+    font-weight: 700;
+}
+
+.font20 {
+    font-size: 20px;
+}
+
+.font16 {
+    font-size: 16px;
+}
+
+.font12 {
+    font-size: 12px;
+}
+
+.blackText {
+    color: #000;
+}
+
+.darkGreyText {
+    color: #555;
+    text-decoration: none;
+}
+
+.appendBottom10 {
+    margin-bottom: 10px;
+}
+
+.appendBottom15 {
+    margin-bottom: 15px;
+}
+
+.cabTravellerInfo p {
+    margin: 0;
+}
+
+.fas{
+    color: gray;
+}

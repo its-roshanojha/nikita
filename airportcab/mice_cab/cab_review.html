@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <script src="js/apicall.js"></script>
+
+    <title>Book Airport Cab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_green.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!--CSS ============================================= -->
+    <link rel="stylesheet" href="css/linearicons.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cab_review.css">
+</head>
+
+<body>
+    <!-- #header -->
+    <header id="header">
+        <div class="container main-menu">
+            <div class="row align-items-center justify-content-between d-flex">
+				<a href='index.html' style="color:white;">
+                    <img src="https://i.ibb.co/J34Y0kk/b0682728-7f77-4b2c-9dd5-b3f5ffe4b3c9.jpg" alt="bookairportcab" style="top: 0;">
+                </a>
+                <nav>
+                    <!-- <ul>
+                        <li><a href="#">Flights</a></li>
+                        <li><a href="#">Hotels</a></li>
+                        <li><a href="#">Cabs</a></li>
+                    </ul> -->
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="review-section">
+        <div class="container">
+            <h4>Review Booking</h4>
+            <div class="booking-details">
+                <span class="source">...</span>
+                <span class="arrow">&rarr;</span>
+                <span class="destination">...</span>
+                <br>
+                <span class="one-way">One Way</span> |
+                <span class="pickup">Pickup: Tue, 1 Oct '24, 10:00 AM</span>
+            </div>
+        </div>
+    </div>
+    <div class="container booking-container">
+        <!-- Left (Main Content) -->
+        <div class="main-content">
+            <div class="car-details">
+                <div class="car-header">
+                    <div class="car-image" style="align-items: top;">
+                        <img src="./img/car.webp" alt="Car Image">
+                    </div>
+                    <div class="car-info">
+                        <h2 id="partner-name">Partner Name</h2>
+                        <p>-- • AC • -- Seats • -- kms included</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="saver-fare-background">
+                <div class="saver-fare">
+                    <h3>Value + Fare
+                        <span class="rating"><strong>...</strong>/5</span>
+                        <span class="rating-count">(.. ratings)</span>
+                    </h3>
+                    <p class="subtext">Value for money</p>
+                    <ul class="fare-details">
+                        <li><i class="fas fa-road"></i> <strong>Extra km fare:</strong> Extra charges may apply after a
+                            certain distanc</li>
+                        <li><i class="fas fa-gas-pump"></i> <strong>Fuel Type:</strong> Fuel type not specified</li>
+                        <li><i class="fas fa-times-circle"></i> <strong>Cancellation:</strong> Free cancellation
+                            available until a specified time before departure</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Driver & Cab Details -->
+            <div class="driver-cab-card">
+                <h3>Driver & Cab details</h3>
+                <p>Cab operator will be assigned on booking completion. Cab and driver details will be shared up to 30
+                    mins prior to departure.</p>
+            </div>
+
+            <!-- Inclusions and Exclusions -->
+            <div class="inclusions-exclusions-card">
+                <div class="inclusions">
+                    <h4>Inclusions (Included in the Price)</h4>
+                    <ul>
+                        <li>Night charges (10 PM to 6 AM)</li>
+                        <li>State Tax</li>
+                        <li>Toll Charges</li>
+                        <li id="list-distance-inclusion">--</li>
+                        <li>Driver Allowance</li>
+                        <li>Only One Pickup and Drop (One included)</li>
+                    </ul>
+                </div>
+                <div class="exclusions">
+                    <h4>Exclusions (Extra Charges)</h4>
+                    <ul>
+                        <li>Waiting Charges beyond 30 mins will be additional.</li>
+                        <li>Fare beyond <span id="list-distance-exclusion">--</span> will be charged differently.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Special Requests -->
+            <!-- <div class="special-requests-container">
+                <div class="special-requests-card">
+                    <label for="roof-carrier">
+                        <input type="checkbox" id="roof-carrier">
+                        <span>Roof Carrier</span>
+                    </label>
+                    <span class="price">₹237</span>
+                    <p>Car with roof carrier for adjusting extra luggage</p>
+                </div>
+                <div class="special-requests-card">
+                    <label for="new-vehicle">
+                        <input type="checkbox" id="new-vehicle">
+                        <span>New Vehicle</span>
+                    </label>
+                    <span class="price">₹315</span>
+                    <p>Promised new car with 2022 or newer model</p>
+                </div>
+            </div> -->
+
+            <!-- Trip Details Form -->
+            <div class="trip-details-form">
+                <h3>Trip Details</h3>
+                <form>
+                    <label for="pickup-address">Pick-up Address <span class="required-star">*</span> <span>(This will
+                            help our driver reach you on time)</span></label>
+                    <input type="text" id="pickup-address"
+                        placeholder="Enter exact pick-up address/nearby location / building name" required readonly>
+                   
+                    <label for="dropoff-address">Drop-off Address <span class="required-star">*</span> <span>(Optional - This will help you avoid any extra
+                            charges after the trip)</span></label>
+                    <input type="text" id="dropoff-address"
+                        placeholder="Enter drop address to know the exact fare & avoid extra charges after the trip"
+                        readonly>
+
+                    
+                    <h3 style="padding-top: 20px;">Confirm Traveller Information</h3>
+
+                    <!-- Row for Name and Gender -->
+                    <form id="bookingForm">
+                        <div id="errorMessages" class="alert alert-danger d-none" role="alert"></div> 
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Name<span class="required-star">*</span></label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Gender<span class="required-star">*</span></label>
+                                <div class="d-flex align-items-center">
+                                    <div class="form-check mr-3">
+                                        <input class="form-check-input" type="radio" id="male" name="gender" value="Male">
+                                        <label class="form-check-label" for="male">Male</label>
+                                    </div>
+                                    <div class="form-check mr-3">
+                                        <input class="form-check-input" type="radio" id="female" name="gender" value="Female">
+                                        <label class="form-check-label" for="female">Female</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="other" name="gender" value="Other">
+                                        <label class="form-check-label" for="other">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email Id<span class="required-star">*</span></label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contact-number" class="form-label">Contact Number<span class="required-star">*</span></label>
+                                <div class="row g-0">
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" value="+91" readonly style="width: 60px;">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="contact-number" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    
+                    
+                    <!-- Row for Privacy Policy and Agreement -->
+                    <div class="mb-3">
+                        <small>By proceeding to book, I Agree to Bookairportcab's <a href="#"
+                                class="text-decoration-underline">Privacy Policy</a>, <a href="#"
+                                class="text-decoration-underline">User Agreement</a> and <a href="#"
+                                class="text-decoration-underline">Terms of Service</a>.</small>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <!-- <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                    </div> -->
+                </form>
+            </div>
+            <!-- Read before you book section -->
+            <div class="mt-3 mb-5">
+                <div class="read-before-booking card p-4 shadow-sm">
+                    <h5 class="fw-bold mb-4">Read before you book!</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="fw-bold">Cab Category</h6>
+                            <p>The booking will be for cab type SEDAN and we do not commit on providing the preferred
+                                cab model.</p>
+
+                            <h6 class="fw-bold">Hilly Regions</h6>
+                            <p>AC will be switched off in hilly areas.</p>
+
+                            <h6 class="fw-bold">Luggage Policy</h6>
+                            <p>SEDAN has space for 2 Luggage Bags. However, depending on the number of passengers,
+                                luggage can be adjusted in seating area with driver consent.</p>
+
+                            <h6 class="fw-bold">Driver Details</h6>
+                            <p>Driver details will be shared up to 30 mins prior to departure. In case the driver/cab
+                                that reaches you for pick-up is different from what we have communicated, please don't
+                                board the cab and call us for assistance.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="fw-bold">Stops</h6>
+                            <p>This is a point-to-point booking and only one stop for meals is included.</p>
+
+                            <h6 class="fw-bold">Delays</h6>
+                            <p>Due to traffic or any other unavoidable reason, pickup may be delayed by 30 mins.</p>
+
+                            <h6 class="fw-bold">Receipts</h6>
+                            <p>You need to collect receipts from the driver for any extra charges paid directly to the
+                                driver during the trip. Our company is not liable to provide invoices for such amounts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Sidebar (Sticky Payment Section) -->
+        <!-- Container for Sidebar and Free Cancellation -->
+        <div class="sidebar-container">
+
+            <!-- Free Cancellation Section (Placed Above the Card) -->
+            <div class="free-cancellation">
+                <p style="font-size: 12px; text-align: center;"><i class="fas fa-check-circle" style=" color: #008800;"></i> Please make the necessary payment to proceed. <i class="fas fa-info-circle"
+                        style="color: #008800;"></i> </p>
+            </div>
+
+            <!-- The Sidebar Card -->
+            <div class="sidebar">
+                <button class="pay-now-btn" id="payNowBtn">PAY ₹... NOW</button>
+
+                <!-- Payment Options Section -->
+                <div class="payment-options">
+                    <!-- <label class="payment-option">
+                        <input type="radio" name="payment" checked />
+                        <span class="option-text">
+                            <span class="option-title">Make part payment now</span>
+                            <span class="option-subtitle">Pay the rest to the driver</span>
+                        </span>
+                        <span class="option-price">₹660</span>
+                    </label> -->
+
+                    <label class="payment-option">
+                        <!-- <input type="radio" name="payment" /> -->
+                        <span class="option-text">
+                            <span class="option-title">Make full payment now</span>
+                        </span>
+                        <span class="option-price" id="full-payment">₹...</span>
+                    </label>
+                </div>
+
+                <!-- Total Section -->
+                <div class="total-section">
+                    <div class="total-row">
+                        <p class="total-amount-title">Total Amount <br><span>(inclusive of GST)</span></p>
+                        <p class="total-amount"><span id="total-amount">₹...</span> <br>
+                            <a href="#fareBreakdown" class="collapsed fare-breakup" data-bs-toggle="collapse"
+                                aria-expanded="false" aria-controls="fareBreakdown" id="fare-breakup-link">
+                                Fare Breakup
+                            </a>
+                        </p>
+                    </div>
+
+                    <!-- Tooltip (initially hidden) -->
+                    <div id="fareBreakdown" class="collapse fare-breakdown-accordion">
+                        <p>Base Fare <span>₹266</span></p>
+                        <p>Service Fee <span>₹22</span></p>
+                        <p>Airport Entry Fee <span>₹200</span></p>
+                        <p>Taxes & Fees <span>₹24</span></p>
+                    </div>
+
+                </div>
+
+
+
+                <div class="coupons-section">
+                    <h4>Available Coupons</h4>
+                    <label class="coupon-option" for="deal1">
+                        <div class="makeFlex hrtlCenter appendBottom10">
+                            <input type="radio" id="deal1" name="coupon" disabled/>
+                            <span class="font14 latoBlack darkGreyText" style="color: gray;">CABFIRST<span class="btnLoader"></span></span>
+                        </div>
+                        <div class="latoLight blackText">
+                            <span>New User Offer: Use this code to get INR 21 Instant Discount on this booking</span>
+                        </div>
+                    </label>
+
+                    <div class="custom-coupon">
+                        <input type="text" placeholder="eg. CAB100" />
+                        <button class="apply-button">APPLY</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+        <script src="js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <!-- // OLD SCRIPT START-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+        <script src="js/swiper-bundle.min.js"></script>
+        <script src="js/moment.js"></script>
+        <script src="js/tracking.js"></script>
+        <!-- <script src="js/indexmain.js"></script> -->
+        <!-- // OLD SCRIPT END-->
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+        <script src="js/easing.min.js"></script>
+        <script src="js/hoverIntent.js"></script>
+        <script src="js/superfish.min.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/jquery.nice-select.min.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/cab_review.js"></script>
+        <!-- <script src="js/form.js"></script> -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const fareBreakdownLink = document.getElementById('fare-breakup-link');
+                const fareBreakdown = document.getElementById('fareBreakdown');
+
+                fareBreakdownLink.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    // Toggle collapse
+                    if (fareBreakdown.classList.contains('show')) {
+                        fareBreakdown.style.maxHeight = null;
+                        fareBreakdown.classList.remove('show');
+                    } else {
+                        fareBreakdown.classList.add('show');
+                        fareBreakdown.style.maxHeight = fareBreakdown.scrollHeight + "px";
+                    }
+                });
+            });
+        </script>
+
+</body>
+
+</html>

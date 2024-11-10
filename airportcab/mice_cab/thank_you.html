@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <script src="js/apicall.js"></script>
+
+    <title>Book Airport Cab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_green.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!--CSS ============================================= -->
+    <link rel="stylesheet" href="css/linearicons.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/thank_you.css">
+</head>
+
+<body>
+    <!-- #header -->
+    <header id="header">
+        <div class="container main-menu">
+            <div class="row align-items-center justify-content-between d-flex">
+				<a href='index.html' style="color:white;">
+                    <img src="https://i.ibb.co/J34Y0kk/b0682728-7f77-4b2c-9dd5-b3f5ffe4b3c9.jpg" alt="bookairportcab" style="top: 0;">
+                </a>
+                <nav>
+                    <ul>
+                        <!-- <li><a href="#">Flights</a></li>
+                        <li><a href="#">Hotels</a></li>
+                        <li><a href="#">Cabs</a></li> -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="review-section">
+        <div class="container">
+            <h4>Booking Details</h4>
+
+        </div>
+    </div>
+    <div class="container booking-container">
+        <!-- Left (Main Content) -->
+        <div class="main-content">
+            <div class='confirmation_div'>
+                <h2>Your airport cab booking is Successful</h2>
+                <p class="latoBold font16 blackText appendTop10"><span class="latoRegular capText">Booking ID:</span>
+                    <span id="booking_id">--</span></p>
+                <p class="latoBlack font16 appendTop20 blackText " style="margin-bottom: 0px;">Cab &amp; Driver Details
+                </p>
+                <p class="blackText latoRegular font14 lineHeight20 appendBottom15" style="width: 75%;">
+                    SMS and Whatsapp communication to <span id="user-phone-header">--</span> and email to <span id="user-email-header">--</span> will b sent <strong>15 mins</strong> prior to departure
+                   </p>
+                <!-- <p class="appendBottom15">
+                    <a class="btnGotoMyTrip latoBlack font16 blackText" href="https://supportz.makemytrip.com/"
+                        target="_blank" rel="noopener noreferrer" style="border: 2px SOLID;PADDING: 10px;">Go to my
+                        trips</a>
+                </p> -->
+            </div>
+
+            <div class="cab-listing-item">
+                <div class="car-details">
+                    <img src="./img/car.webp" alt="Car Image" class="car-image" />
+                    <div class="car-info">
+                        <h5>
+                            <span id="partner_name">--</span>
+                            <span class="rating">
+                                <span class="rating-value"></span>
+                                <span class="rating-count">(--)</span>
+                            </span>
+                        </h5>
+                        <p class="car-features">--</p>
+                        <p class="extra-km-fare"><i class="fas fa-route"></i>  Extra km fare: Extra charges may apply after a certain distance</p>
+                        <p class="fuel-type"><i class="fas fa-gas-pump"></i> Fuel Type: Fuel type not specified</p>
+                        <p class="cancellation"><i class="fas fa-times-circle"></i> Cancellation: Free cancellation available until a specified time before departure</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="journeyInfoGreyBorder">
+                <div class="thankyouInfo appendBottom20 appendLeft20 appendRight20">
+                    <div class="latoBlack font16 blackText" id="trip-type">--</div>
+                    <span>
+                        <span class="latoRegular font14 lightGreyText capText">included kms: </span>&nbsp;
+                        <span class="latoBlack font16 blackText" id="distance"></span>
+                    </span>
+                    <span>
+                        <span class="latoRegular font14 lightGreyText capText">extra fare: </span>&nbsp;
+                        <span class="latoBlack font16 blackText">--</span>
+                    </span>
+                </div>
+
+                <div data-testid="cab_card_section" class="cabBookingDetails appendLeft20 appendRight20 appendBottom25">
+                    <div class="cabBookingDetailsRowOuter">
+                        <!-- First Row: Time and Terminal 3 Details -->
+                        <div class="cabBookingDetailsRow noLeftLine appendBottom20">
+                            <div class="cabBookingDetailsRowLeft">
+                                <p class="font12 blackText " id="pickup-date">--</p>
+                                <p class="latoBold font22 blackText" id="pickup-time">21:20</p>
+                            </div>
+                            <div class="cabBookingDetailsRowRight">
+                                <p class="latoBold font16 blackText ">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span id="sub-pickup-address">--</span>
+                                    <br />
+                                    <span style="color: grey; font-weight: 400; font-size: 14px;" id="pickup-address">--</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Second Row: Duration -->
+                        <div class="cabBookingDetailsRow appendBottom20 noLeftLine">
+                            <div class="cabBookingDetailsRowLeft">&nbsp;</div>
+                            <div class="cabBookingDetailsRowRight">
+                                <p class="font12" id="time-taken">--</p>
+                            </div>
+                        </div>
+
+                        <!-- Third Row: Terminal 1 Details -->
+                        <div class="cabBookingDetailsRow showLeftDot noLeftLine">
+                            <div class="cabBookingDetailsRowLeft">&nbsp;</div>
+                            <div class="cabBookingDetailsRowRight">
+                                <p class="latoBold font16 blackText ">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span id="sub-dropoff-address">--</span><br>
+                                    <span style="color: grey; font-weight: 400; font-size: 14px;" id="dropoff-address">
+                                       --
+                                    </span>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="traveller-card shadow-sm p-4 mb-4 bg-white rounded">
+                <div data-testid="traveller_info_section" class="cabTravellerInfo">
+                    <p class="latoBlack font20 blackText appendBottom10">Driver & Cab Details</p>
+                    <p class="font12 appendBottom15">Cab and driver details will be shared up to 15 minutes prior to
+                        departure</p>
+
+                </div>
+            </div>
+            <div class="traveller-card shadow-sm p-4 mb-4 bg-white rounded">
+                <div data-testid="traveller_info_section" class="cabTravellerInfo">
+                    <p class="latoBlack font20 blackText appendBottom10">Traveller info</p>
+                    <p class="font12 appendBottom15">Your booking confirmation & voucher details will be sent here</p>
+                    <br />
+                    <p class="latoBold font16 blackText appendBottom10" id="user-name">--</p>
+                    <p class="appendBottom10">
+                        <a class="darkGreyText" style="font-size: 12px;" id="user-email">--</a>
+                    </p>
+                    <p><span style="font-size: 12px;" id="user-phone">--</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Right Section: Booking Summary -->
+        <div class="right-section" style="margin-top: 30px;">
+            <div class="booking-summary-major">
+                <div class="booking-summary">
+                    <!-- Header Section -->
+                    <div class="header-section">
+                        <span>Total Amount</span>
+                        <span style="font-style: 20px; font-weight: 600;" id="total-fare">₹ 429</span>
+                    </div>
+
+
+                </div>
+
+                <!-- Fare Summary -->
+                <div class="fare-summary">
+                    <h3>Manage Booking</h3>
+                    <p>Modify or cancel your bookings from the ‘My Trips’ section of the website.</p>
+                    <p style="text-align: right;color: #008cff;"><a href="#">Go to My Trips</a></p>
+                </div>
+                <div class="fare-summary">
+                    <h3>Contact us </h3>
+                    <p><a style="color: black; font-weight: 400;" href='mailto:care@bookairportcab.com'><i
+                                class="fas fa-solid fa-envelope"></i> &nbsp; care@bookairportcab.com</a></p>
+                    <p><a style="color: black; font-weight: 400;" href='tel:+919876543210'> <i
+                                class="fas fa-solid fa-phone"></i> &nbsp;+91 - 8046800969</a></p>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+    <script src="js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <!-- // OLD SCRIPT START-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/tracking.js"></script>
+    <!-- // OLD SCRIPT END-->
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="js/easing.min.js"></script>
+    <script src="js/hoverIntent.js"></script>
+    <script src="js/superfish.min.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/thank_you.js"></script>
+ 
+
+</body>
+
+</html>

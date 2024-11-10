@@ -1,0 +1,547 @@
+body {
+  font-family: "IBM Plex Sans";
+}
+img {
+  border-radius: 20px 20px 20px 20px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 10px;
+  overflow-x: hidden;
+}
+.wrapper--title {
+  font-size: 20px;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper--title--book {
+  padding: 2px;
+  background-color: black;
+  color: white;
+  width: 35%;
+  text-align: center;
+  font-weight: bolder;
+}
+.wrapper--title--airport {
+  background-color: white;
+  color: black;
+  width: 65%;
+  text-align: center;
+  font-weight: bolder;
+}
+
+/* #carouselContainer{
+  height: 300px;
+  width: 100%;
+  object-fit: contain;
+}
+.img-wrapper--image{
+  height: 300px;
+  width: 100%;
+  object-fit: contain;
+} */
+.slick-track{
+  height: 300px;
+  width: 100%;
+  object-fit: contain;
+}
+#loader {
+  /* Loader styles */
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* card section begins */
+
+.card--details {
+  /* padding: 4px; */
+  /* border-bottom: 1px solid #d3d3d3; */
+}
+.card--details--car {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 12px;
+  /* margin-bottom: 4px; */
+}
+.card--details--feature {
+  color: #ababab;
+  font-size: 12px;
+  /* margin-bottom: 8px; */
+}
+.card--details--feature--dot {
+  margin: 0 2px;
+  font-size: 12px;
+  /* padding-bottom: 4px; */
+  display: inline;
+}
+
+.card--details--rating {
+  display: flex;
+  align-items: center;
+  /* padding: 8px 0; */
+  width: 100%;
+}
+#card--details--rating--value {
+  font-family: "IBM Plex Sans";
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  color: #1f1f1f;
+  text-decoration: underline;
+  margin-left: 2px;
+}
+
+/* card section ends */
+
+.about-car,
+.car-location {
+  margin-top: 20px;
+}
+.title,
+.car {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.24px;
+  color: #1f1f1f;
+  margin-bottom: 10px;
+}
+.subheader {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+.desc {
+  color: #1f1f1f;
+}
+.features {
+  position: relative;
+  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  padding: 10px 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  font-size: 14px;
+}
+/* .show-more {
+  color: white;
+  position: absolute;
+  background-color: #10a310;
+  bottom: 0px;
+  right: 80px;
+  padding: 3px 3px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+} */
+/* .feat {
+  text-decoration: underline;
+} */
+.car-location {
+  width: 100%;
+}
+.car-location-details {
+  background-color: #fff;
+  padding: 16px 0px;
+  width: 100%;
+}
+.adress-map-container {
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  display: flex;
+  border-radius: 8px;
+  gap: 20px;
+}
+.address-container {
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 60%;
+  flex-direction: column;
+}
+.address {
+  margin-bottom: 12px;
+  max-width: 300px;
+}
+.distance {
+  font-family: "IBM Plex Sans";
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 0.24px;
+  color: #1f1f1f;
+  font-size: 12px;
+  padding: 2px 4px;
+  color: white;
+  background-color: black;
+  width: -webkit-fit-content;
+  width: fit-content;
+  margin-bottom: 2px;
+}
+.location-text {
+  font-family: "IBM Plex Sans";
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  color: #a8a8a8;
+}
+.summary-amount{
+    position: fixed;
+    bottom: 0px;
+    background-color: white;
+    left: 0px;
+    right: 0px;
+    margin-top: 30px;
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    padding: 15px;
+    z-index: 1;
+}
+.summary-amount-inner{
+    display: flex;
+    justify-content : center;
+    margin-bottom: 8px;
+}
+.summary-amount-inner-right{
+display: flex;
+align-items: center;
+}
+.amount, .fare{
+    font-weight: bold;
+}
+.flush-disable {
+  background: black;
+  color: white;
+  width: 95%;
+  border-radius: 7px;
+  text-align: center;
+  padding: 9px 0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  clear: both;
+  font-size: 20px;
+  border: none;
+  margin: 0 2%;
+}
+
+.header-container {
+  padding-bottom: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.title {
+  font-family: "IBM Plex Sans";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.24px;
+  color: #1f1f1f
+}
+
+.booking-time-data {
+  position: relative;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
+  padding: 12px 10px;
+}
+
+.time{
+  font-family: "IBM Plex Sans";
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  color: #1f1f1f;
+}
+
+.text {
+  font-family: "IBM Plex Sans";
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  color: #a8a8a8;
+  padding-bottom: 5px;
+}
+
+.booking-left{
+  width: 25%;
+}
+
+.booking-mid .trapezoid{
+  border-top: 25px solid #f5f5f5;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  height: 0;
+  width: 110px;
+}
+
+.duration {
+  position: absolute;
+  top: -25px;
+}
+
+.text.middle{
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  color: #666;
+}
+
+.booking-right {
+  text-align: right;
+  width: 25%;
+}
+
+.benefits {
+  margin-top: 20px;
+}
+.agreement_policy_wrapper{
+  margin-bottom: 110px;
+}
+
+.benefits .header-container {
+  padding-bottom: 10px
+}
+
+.benefits .header-container .header .title {
+  font-family: "IBM Plex Sans";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.24px;
+  color: #1f1f1f
+}
+
+.benefits .card-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap
+}
+
+@media screen and (max-width: 600px) {
+  .benefits .card-container {
+      justify-content:center
+  }
+}
+
+.benefits .card-container .card {
+  width: 330px;
+  border-radius: 12px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
+  padding: 15px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  position: relative
+}
+
+.benefits .card-container .card .card-data {
+  margin-left: 20px
+}
+
+.benefits .card-container .card .card-data .title {
+  font-family: "IBM Plex Sans";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.24px;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  color: black
+}
+
+.benefits .card-container .card .card-data .description {
+  padding-bottom: 10px;
+  font-family: "IBM Plex Sans";
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  color: #a8a8a8
+}
+.action{
+  display: flex;
+    align-items: center;
+}
+.benefits .card-container .card .card-data .action {
+  position: absolute;
+  right: 10px;
+  font-family: "IBM Plex Sans";
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  color: #666;
+  color: #10a310;
+  width: -webkit-fit-content;
+  width: fit-content;
+  text-decoration: underline;
+  cursor: pointer
+}
+
+.cancellation {
+  margin-top: 35px;
+  margin-bottom: 35px
+}
+
+.page-checkout .right .mobile-view .cancellation .header-container {
+  padding-bottom: 15px
+}
+
+.cancellation-data {
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12),0 1px 3px 0 rgba(0,0,0,0.2);
+  border-radius: 12px;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+.cancellation .cancellation-data .title {
+  font-family: "IBM Plex Sans";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.24px;
+  color: #1f1f1f;
+  font-size: 14px;
+}
+.cancellation .cancellation-data .inner.inactive {
+  font-family: "IBM Plex Sans";
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  color: #a8a8a8;
+}
+.cancellation .cancellation-data .inner {
+  font-size: 12px;
+  padding-bottom: 3px;
+}
+
+.single-action {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between
+}
+
+.single-action-left {
+  position: relative;
+  padding-left: 30px
+}
+
+.single-action-left .title {
+  font-family: "IBM Plex Sans";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.24px;
+  color: #1f1f1f;
+  font-size: 14px
+}
+
+.single-action-left .title i {
+  font-size: 20px;
+  font-weight: normal;
+  position: absolute;
+  left: 0px
+}
+
+.single-action-left .link a {
+  text-decoration: underline;
+  color: #10a310;
+  font-size: 12px
+}
+
+.single-action-left .description {
+  font-family: "IBM Plex Sans";
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  color: #a8a8a8
+}
+
+.single-action-right .checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 16px;
+  cursor: pointer;
+  font-size: 14px
+}
+
+.single-action-right .checkbox-container input[type="checkbox"] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  display: none
+}
+
+.single-action-right .checkbox-container input[type="checkbox"]:checked ~ .control-indicator {
+  border: none;
+  background: #10a310
+}
+
+.single-action-right .checkbox-container input[type="checkbox"]:checked ~ .control-indicator:after {
+  display: block
+}
+
+.single-action-right .checkbox-container .control-indicator {
+  position: relative;
+  top: 2px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background: #ffffff;
+  border: 1px solid;
+  border-radius: 3px
+}
+
+.single-action-right .checkbox-container .control-indicator:after {
+  left: 6px;
+  top: 0px;
+  width: 7px;
+  height: 15px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: "";
+  display: none;
+  position: absolute
+}
+
+.single-action-right .checkbox-container .control-indicator.active {
+  border-color: #e02d2d;
+  border-width: 2px
+}
+
+

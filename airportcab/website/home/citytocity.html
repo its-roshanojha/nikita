@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type" />
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
+        integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+    <link href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="css/mdtimepicker.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+    <script src="js/apicall.js"></script>
+    <title id="title">Book airport cab</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+            margin: 0;
+            background: black;
+            overflow-y: scroll;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            scrollbar-width: none;
+            /* For Firefox */
+            -ms-overflow-style: none;
+            /* For Internet Explorer and Edge */
+        }
+
+        html::-webkit-scrollbar {
+            width: 0px;
+            /* For Chrome, Safari, and Opera */
+        }
+
+        html {
+            scrollbar-width: none;
+            /* For Firefox */
+            -ms-overflow-style: none;
+            /* For Internet Explorer and Edge */
+        }
+
+        html::-webkit-scrollbar {
+            width: 0px;
+            /* For Chrome, Safari, and Opera */
+        }
+
+        @font-face {
+            font-family: 'NetflixSansLight';
+            src: url(font/NetflixSansLight.ttf);
+        }
+
+        @font-face {
+            font-family: 'NetflixSansMedium';
+            src: url(font/NetflixSansMedium.ttf);
+        }
+
+        @font-face {
+            font-family: 'NetflixSansRegular';
+            src: url(font/NetflixSansRegular.ttf);
+        }
+
+        p,
+        span {
+            font-family: NetflixSansRegular;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: NetflixSansRegular;
+        }
+
+        #tym2 {
+            width: 46%;
+            overflow: hidden;
+            float: left;
+            position: relative;
+            height: 41px;
+            z-index: 9;
+        }
+
+        .calenderBox {
+            width: 49%;
+            overflow: hidden;
+            float: left;
+            position: relative;
+            height: 41px;
+            z-index: 9;
+            margin-right: 7px;
+        }
+
+        .calenderText {
+            width: 47%;
+            overflow: hidden;
+            float: left;
+            position: relative;
+            height: 41px;
+            z-index: 9;
+            margin-left: 6% !important;
+        }
+
+        #pickupDiv {
+            width: 97%;
+            overflow: hidden;
+            float: left;
+            margin-right: 2%;
+            position: relative;
+            z-index: 9;
+        }
+
+        #cabPickupCity,
+        #outstationCity {
+            width: 99%;
+            margin-left: 5%;
+            padding: 2% 11px 8px;
+            color: #828282;
+            margin-top: 1%;
+            -webkit-appearance: none;
+            background-color: #F1F1F1;
+            height: 43px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        #pickupDiv2 {
+            width: 46%;
+            overflow: hidden;
+            float: right;
+            margin-right: 3%;
+            position: relative;
+            z-index: 9;
+        }
+
+        .calenderText::placeholder,
+        .timepicker::placeholder {
+            color: #828282 !important;
+        }
+
+        .tripType,
+        .selfType {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 94%;
+            margin: 2% auto;
+
+        }
+
+        .selfType {
+            /* box-shadow: 1px 1px 5px 1px lightgrey !important; */
+            display: none;
+        }
+
+        .tripType a {
+            margin: 5px 15px;
+            text-decoration: none;
+            color: black;
+            font-family: 'NetflixSansRegular';
+            border-bottom: 2px solid lightgrey;
+            font-size: 15px;
+        }
+
+        .selfType a {
+            text-decoration: none;
+            font-family: 'NetflixSansRegular';
+            width: 50%;
+            text-align: center;
+            padding: 10px 2px;
+            font-size: 13px;
+            float: left;
+            color: black;
+        }
+
+        .coming_soon2 {
+            display: none;
+        }
+
+        .selectedTrip {
+            border-bottom: 2px solid rgb(234, 33, 39) !important;
+            font-family: "NetflixSansMedium" !important;
+        }
+
+        .selectedSelfDrive {
+            background-color: black;
+            color: white !important;
+        }
+
+        #notePoint {
+            width: 86%;
+            margin: 0 auto;
+            margin-top: 7%;
+            font-size: 13px;
+            display: none;
+        }
+
+        #confirmation_boxGeneral {
+            position: fixed;
+            width: 89%;
+            top: 30%;
+            left: 0;
+            background-color: white;
+            display: none;
+            z-index: 9999;
+            margin-left: 18px;
+            /* box-shadow: 1px 1px 29px 1px grey; */
+        }
+
+        .thank_msg {
+            /* font-weight: bold; */
+            background: white;
+            text-align: center;
+            font-size: 1.5em;
+            padding-bottom: 4%;
+            padding-top: 5%;
+            font-family: 'NetflixSansRegular';
+        }
+
+        .cookie {
+            position: fixed;
+            bottom: 11px;
+            background-color: rgb(46, 46, 56);
+            padding: 16px 22px 0px 10px;
+            text-align: justify;
+            border-radius: 5px;
+            height: 2rem;
+            line-height: 14px;
+            width: 100%;
+        }
+
+        .call_msgGeneral p {
+            background: white;
+            /* padding-left: 12%; */
+            text-align: center;
+        }
+
+        .selfType label {
+            font-family: 'NetflixSansRegular';
+            font-size: 15px;
+        }
+
+        #ValidateMsg,
+        #ValidateCityMsg {
+            font-size: 8px;
+            color: rgb(234, 33, 39);
+            width: 88%;
+            margin: 0 auto;
+            display: none;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .rentalHour {
+            display: flex;
+            flex: 1 1 150px;
+            justify-content: center;
+            background-color: #f1f1f1;
+            margin: 0 10px;
+            border-radius: 5px;
+            font-family: 'NetflixSansRegular';
+
+        }
+
+        .time {
+            display: flex;
+            margin: 10px;
+            padding: 10px;
+            background-color: #E7E5E5;
+            border-radius: 5px;
+        }
+
+        #fourHours,
+        #sixHours,
+        #eightHours,
+        #twelveHours {
+            visibility: hidden;
+            display: none;
+        }
+
+        .time label {
+            text-align: center;
+            font-family: 'NetflixSansRegular';
+            font-size: 15px;
+        }
+
+        .mobileCheck,
+        .pickupLocation,
+        .dropLocation {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            font-size: 15px;
+            width: 100%;
+            font-family: 'NetflixSansRegular';
+        }
+
+        .inputBox {
+            width: 100%;
+            outline: none;
+            margin: 10px 10px 0px 10px;
+            background-color: #F1F1F1;
+            border-radius: 5px;
+            border: none;
+            padding: 13px;
+            font-size: 15px;
+            color: #828282;
+            font-family: 'NetflixSansRegular';
+
+        }
+
+        input[type=text]:active {
+            width: 100%;
+            /* display: flex; */
+        }
+
+        .bi {
+            position: absolute;
+            left: 88%;
+            margin-top: 20px;
+        }
+
+        .selectedItem {
+            background-color: black;
+            color: white;
+        }
+
+        #pickup-city2city {
+            position: relative;
+        }
+
+        #PayByCash span {
+            padding: 5px;
+        }
+
+        #searchI,
+        #searchII {
+            position: absolute;
+            right: 5.5%;
+            top: 22%;
+            width: 10%;
+            background-color: #F1F1F1;
+            text-align: right;
+            line-height: 38px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            color: black;
+            overflow: hidden;
+        }
+
+        #timemsg {
+            visibility: hidden;
+            min-width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            bottom: 10%;
+            font-size: 13px;
+            padding: 8px 9px 9px 2px;
+            font-family: NetflixSansRegular;
+        }
+
+        #timemsg.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        .confirmation_boxCab3 {
+            font-size: 14px;
+            /* font-weight: bold; */
+        }
+
+        /* .Partner_Logo {
+            width: 17%;
+            position: absolute;
+            bottom: -26px;
+            right: 4%;
+        } */
+        .fare_cardSize {
+            margin-left: -36px;
+            width: 323px;
+            height: 185px;
+        }
+
+        .distKm {
+            float: left !important;
+            margin-left: 4% !important;
+            width: 54% !important;
+            position: absolute !important;
+            top: 61% !important;
+            font-size: 16px !important;
+            left: 50% !important;
+            color: white !important;
+            font-weight: 100 !important;
+            text-align: right;
+            text-transform: capitalize !important;
+            margin-top: -1% !important;
+
+        }
+
+        .distpara1 {
+            float: left !important;
+            margin-left: 15% !important;
+            width: 56% !important;
+            position: absolute !important;
+            top: 37% !important;
+            font-size: 11px !important;
+            left: 38% !important;
+            color: white !important;
+            font-weight: 100 !;
+            text-align: right !important;
+            text-transform: capitalize !important;
+        }
+
+        .farePricetext {
+            position: absolute !important;
+            top: 72% !important;
+            font-size: 21px !important;
+            left: 73% !important;
+            color: white !important;
+            font-weight: 100 !important;
+            text-transform: capitalize !important;
+            margin-top: 3% !important;
+
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) --> 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11111478379"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-11111478379'); </script>
+
+    <!-- Event snippet for Page view conversion page -->
+    <script> gtag('event', 'conversion', {'send_to': 'AW-11111478379/v4WACLrpkpAYEOvorrIp'}); </script>
+
+</head>
+
+<body>
+
+    <div class="spinnerBack"></div>
+    <div class="spinner" id="spinner">
+        <div class="loader_1"></div>
+    </div>
+
+    <div class="confirmation_boxCabDiv"></div>
+    <div class="confirmation_boxCab">
+        <div class="thank_msg">
+            <i class="fa fa-check-circle" style="font-size:48px;color:rgb(234,33,39);background: transparent"></i>
+        </div>
+        <div class="call_msgCab">
+            <p id="cmmsg"></p>
+        </div>
+        <div class="status" id="status">OK</div>
+    </div>
+    <div class="confirmation_boxCab2">
+        <div class="thank_msg">
+            <i class="fa fa-check-circle" style="font-size:48px;color:rgb(234,33,39);background: transparent"></i>
+        </div>
+        <div class="call_msgCab">
+            <p id="cmmsg2"></p>
+        </div>
+        <div class="status" id="status2">OK</div>
+        <div class="status" id="status5">OK</div>
+        <div class="status" id="statusOutstation">OK</div>
+    </div>
+    <div class="confirmation_boxCab4" style="display:none">
+        <div class="thank_msg">
+            <i class="fa fa-check-circle" style="font-size:48px;color:rgb(234,33,39);background: transparent"></i>
+        </div>
+        <div class="call_msgCab">
+            <p id="cmmsg3"></p>
+        </div>
+        <div class="status" id="status4">OK</div>
+    </div>
+
+
+    <div id="interstitial_back" style="display: none;">
+    </div>
+
+    <main>
+        <div class="main_div">
+
+            <div class="robodemo_back" id="Terminal" style="display: none;">
+            </div>
+            <div class="robodemo_back" id="location" style="display: none;">
+            </div>
+            <div class="robodemo_back" id="tym" style="display: none;">
+            </div>
+            <div id="mapBox" style="display: none;">
+                <div id="map"></div>
+            </div>
+            <div class="top_detail">
+                <div id="top_banner">
+                    <img src="img/Banner_imgNov.jpg" alt="">
+                </div>
+
+                <div class="tripType">
+                    <a href="index.html" class="selectedTrip TripOption">Ride</a>
+                    <a href="#" class="TripOption rentaltxt">Rental</a>
+                    <a href="#" class="TripOption outstationtxt">Outstation</a>
+                    <a href="citytocity.html" class="TripOption selfdrivetxt">City Ride</a>
+                </div>
+
+                <img src="img/comming_soon.gif" class="coming_soon2">
+                <form id="ctn">
+
+                    <div id="mandatory"
+                        style="color: rgb(234,33,39); margin-left: 3%; font-size: 13px; display: none; font-family: NetflixSansMedium">
+                    </div>
+                    <div id="snackbar"></div>
+                    <div id="loader"></div>
+
+                    <div class="mobile_box" style="position: relative;">
+                        <input type="tel" class="form_mb" id="mb_number" placeholder="Enter Your Mobile Number"
+                            pattern="[6-9]{1}[0-9]{4}[0-9]{5}" maxlength="10"
+                            oninvalid="this.setCustomValidity('Please enter your valid phone number')"
+                            oninput="this.setCustomValidity('')" required>
+                        <i class="fas fa-pencil-alt pen"></i>
+                    </div>
+
+                    <div id="citytocity">
+                        <div class="drop_div" id="pickupDiv" style="margin:3px 0px 4px 0px;">
+
+                            <select class="drop_ui" id="outstationCity" style="margin-left: 11px;">
+                                <option value="Select City">Select City</option>
+                                <option value="AGR">Agra(AGR)</option>
+                                <option value="AMD">Ahmedabad(AMD)</option>
+                                <option value="ATQ">Amritsar(ATQ)</option>
+                                <option value="BEK">Bareilly(BEK)</option>
+                                <option value="IXB">Bagdogra(IXB)</option>
+                                <option value="IXG">Belgum(IXG)</option>
+                                <option value="BLR">Bengaluru(BLR)</option>
+                                <option value="BHO">Bhopal(BHO)</option>
+                                <option value="BBI">Bhubaneshwar(BBI)</option>
+                                <option value="IXC">Chandigarh(IXC)</option>
+                                <option value="MAA">Chennai (MAA)</option>
+                                <option value="COK">Cochin(COK)</option>
+                                <option value="CJB">Coimbatore(CJB)</option>
+                                <option value="DBR">Darbhanga(DBR)</option>
+                                <option value="DED">Dehradun(DED)</option>
+                                <option value="DEL">Delhi(DEL)</option>
+                                <option value="RDP">Durgapur(RDP)</option>
+                                <option value="GAY">Gaya(GAY)</option>
+                                <option value="GOI">Goa(GOI)</option>
+                                <option value="GOP">Gorakhpur(GOP)</option>
+                                <option value="GAU">Guwahati(GAU)</option>
+                                <option value="GWL">Gwalior(GWL)</option>
+                                <option value="HYD">Hyderabad(HYD)</option>
+                                <option value="IDR">Indore(IDR)</option>
+                                <option value="JLR">Jabalpur(JLR)</option>
+                                <option value="JAI">Jaipur (JAI)</option>
+                                <option value="IXJ">Jammu(IXJ)</option>
+                                <option value="JSA">Jaisalmer(JSA)</option>
+                                <option value="IXJ">Jammu(IXJ)</option>
+                                <option value="JDH">Jodhpur(JDH)</option>
+                                <option value="DHM">Kangra(DHM)</option>
+                                <option value="KNU">Kanpur(KNU)</option>
+                                <option value="KQH">Kishangarh(KQH)</option>
+                                <option value="COK">Kochi(COK)</option>
+                                <option value="CCU">Kolkata(CCU)</option>
+                                <option value="CCJ">Kozhikode(CCJ)</option>
+                                <option value="LKO">Lucknow(LKO)</option>
+                                <option value="IXM">Madurai(IXM)</option>
+                                <option value="IXE">Mangaluru(IXE)</option>
+                                <option value="BOM">Mumbai(BOM)</option>
+                                <option value="MYQ">Mysore(MYQ)</option>
+                                <option value="NAG">Nagpur(NAG)</option>
+                                <option value="ISK">Nashik(ISK)</option>
+                                <option value="PGH">Pantnagar(PGH)</option>
+                                <option value="PAT">Patna(PAT)</option>
+                                <option value="IXD">Prayagraj(IXD)</option>
+                                <option value="PNY">Puducherry(PNY)</option>
+                                <option value="PNQ">Pune(PNQ)</option>
+                                <option value="RPR">Raipur(RPR)</option>
+                                <option value="IXR">Ranchi(IXR)</option>
+                                <option value="RAJ">Rajkot(RAJ)</option>
+                                <option value="SAG">Shirdi(SAG)</option>
+                                <option value="SXR">Srinagar(SXR)</option>
+                                <option value="STV">Surat(STV)</option>
+                                <option value="TIR">Tirupathi(TIR)</option>
+                                <option value="TRZ">Trichy(TRZ)</option>
+                                <option value="TRV">Trivandrum(TRV)</option>
+                                <option value="UDR">Udaipur(UDR)</option>
+                                <option value="BDQ">Vadodara(BDQ)</option>
+                                <option value="VNS">Varanasi(VNS)</option>
+                                <option value="VGA">Vijaywada(VGA)</option>
+                                <option value="VTZ">Vizag(VTZ)</option>
+                                
+                            </select>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                        <p id="ValidateCityMsg"></p>
+
+
+                        <div class="ForNon-pnrLoad"> </div>
+
+                        <div style="width: 100%; margin: 1% 0px 2% 0%; float: left;" class="pnr_pickup">
+                            <div id="makeSerIcon">
+                                <label class="full-field">
+                                    <input id="pickup-city2city" name="pickup-city2city" class="input_srch"
+                                        autocomplete="off" placeholder="Enter Pickup location (Min 7 Char)" />
+                                    <i class="Locationbox fas fa-map-marker-alt " aria-hidden="true"
+                                        id="makeSerIconI"></i>
+                                </label>
+                            </div>
+                            <p id="ValidateMsg"></p>
+                            <ul class="autocomplete-results">
+                            </ul>
+                        </div>
+
+                        <div id="OutstationLoad">
+                            <div id="makeSerIconDrop">
+                                <label class="full-field">
+                                    <input id="Drop-input" name="Drop-input" class="Drop_srch" autocomplete="off"
+                                        placeholder="Enter Drop location (Min 7 Char)" />
+                                    <i class="fas fa-search" aria-hidden="true" id="makeSerIconDropI"></i>
+                                </label>
+                            </div>
+                            <ul class="autocomplete-resultsDrop">
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!----------- TiME uI POPUP code start --------->
+                    <div class="form-popup" id="myForm">
+                        <div class="back_icon">
+                            <img src="img/arrow-left.png">
+
+                        </div>
+                        <p class="back_text">Back</p>
+
+                        <div id="choosetimegrid" style="display: block; margin-bottom: 3%;">
+                            <label>Select Pick-up time:</label>
+                        </div>
+
+
+                        <div id="slotdiv">
+                            <div class="timeam">
+                                <span id="timeam" value="AM">AM</span>
+                            </div>
+
+                            <div class="timepm">
+                                <span id="timepm" value="PM">PM</span>
+                            </div>
+                            <p class="outstationMSG">* Do not select a time between 10PM to 6AM</p>
+                            <!-- <div class="done_btn"><input id="donetime" value="DONE" disabled />
+                            </div> -->
+                        </div>
+                        <div class="time-list-wrap" id="time-list-wrap" style="display: none;">
+                        </div>
+                        <div style="margin: 2% 0% 3% 5%;">
+                            <span style="font-size: 12px; font-weight: bold;">Important :</span><br> <span
+                                style="font-size: 11px; font-weight: lighter;">In case of departure choose your pick-up
+                                time wisely to catch your flight on time.</span><br><span
+                                style="font-size: 11px; font-weight: lighter;">• Domestic
+                                flight :- 2+2 hours (Airport Travel + Security Check-in)
+                                <br> • International flight :- 2+3 hours (Airport Travel + Security Check-in)</span>
+                        </div>
+
+                        <div id="timemsg">Please Select Time-Zone (AM/PM).
+                        </div>
+                    </div>
+                    <!----------- TiME uI POPUP code end --------->
+
+                    <div class="calenderBox" id="etaDiv">
+                        <input type="text" class="calenderText" id="datepicker" onclick="showdate()"
+                            placeholder="Pickup Date" autocomplete="off" readonly>
+                        <i class="fas fa-calendar-week calender" onclick="showdate()"></i>
+                    </div>
+                    <div id="tym2">
+                        <label>
+                            <h1 style="margin:0px auto 0px auto; display: none;"></h1>
+                            <input type="text" class="timepicker" placeholder="Pickup Time" autocomplete="off"
+                                readonly />
+                            <i class="fas fa-clock arrow"></i>
+                        </label>
+                    </div>
+                    <br>
+
+                    <div class="cabType" id="cabType">
+                        <div class="titleLeft mini">
+                            <span>Mini</span><br>
+                            <img src="img/mini.png" alt="mini car" class="active_cab">
+                        </div>
+                        <div class="titleLeft sedan">
+                            <span>Sedan</span><br>
+                            <img src="img/sedan.png" alt="mini car">
+                        </div>
+                        <div class="titleLeft suv">
+                            <span>SUV</span><br>
+                            <img src="img/suv.png" alt="mini car" style="margin-top: 7%; margin-bottom: -1%;">
+                        </div>
+                    </div>
+                    <img src="img/comming_soon.gif" class="coming_soon">
+                    <img src="img/preLoadimg.png" id="Loading_Img">
+                    <div id="swiperDiv">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper" id="swiper-wrapper">
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <p id="notePoint"><b>Note : </b> Book now and grab 40% discount* exclusively for Spicejet
+                                customers!</p>
+                        </div>
+                    </div>
+                    <input type="hidden" id="goamiles_number" value="" />
+
+                    <!-- ////////////////////////////  new payment ui code end//////////////////////////////// -->
+                    <div id="paymentoptions" style="display: none; margin-bottom: 0%;">
+                        <h3>Payment options</h3>
+                        <div class="radioBox" style="margin-top: -2%;" id="radioBox1">
+                            <input id="part" type="radio" name="paymentoption" value="PayNow" checked />
+                            <label for="part">
+                                <p style="margin-top: 0%;font-family: 'NetflixSansMedium';">Advance Payment (Pay Now)
+                                    <span><img src="img/info.png" class="PayInfo" id="PayNowinfo"
+                                            onclick="infoBox('prepaid')" /></span>
+                                    <br>
+                                    <span style="font-weight: lighter;">Price difference guarantee</span>
+                                </p>
+                            </label>
+                            <span id="PayNow">₹...</span>
+                        </div>
+
+                        <div class="radioBox" style="margin-top: -2%;" id="radioBox2">
+                            <input id="full" type="radio" name="paymentoption" value="PayLater" />
+                            <label for="full">
+                                <p style="margin-top: 0%;font-family: 'NetflixSansMedium';">Pay Later
+                                    <span><img src="img/info.png" class="PayInfo" id="PayLaterinfo"
+                                            onclick="infoBox('paylater')" /></span>
+                                    <br>
+                                    <span style="font-weight: lighter;">Price subject to change</span>
+                                </p>
+                            </label>
+                            <span id="PayLater">₹...</span>
+                        </div>
+                    </div>
+                    <!-- ////////////////////////////  new payment ui code start//////////////////////////////// -->
+
+
+                    <div class="coupon_block"><input type="text" style="font-weight: bolder; color: black" id="coupon"
+                            placeholder="Have a coupon code?" autocomplete="off">
+                        <span onclick="applyCoupon()" id="applyCoupon" style="color: grey;">Apply</span>
+                        <input type="hidden" id="CouponCode">
+                        <!-- <div class="infoBox">
+                            <img src="img/info.png" id="info" onclick="infoBox()" />
+                        </div> -->
+                    </div>
+                    <p class="couponSuccessMsg" id="couponSuccessMsg"></p>
+                    <div class="agreeBox" style="margin-top:10px">
+                        <input type="checkbox" name="terms_condition" id="terms_condition" checked="">
+                        <p class="terms_condition" style="margin-top: 0%;">I agree to <a
+                                href="terms_condition.html?back=index.html" style="color: rgb(234,33,39);">Terms &amp;
+                                Conditions</a></p>
+                    </div>
+
+                    <!-- //////////////// Show cookie toast code start///////////////// -->
+                    <div class="cookie" id="cookie" style="display: none;">
+                        <p style="display: inline; color: white; font-size: 0.8rem;">By using our website,you accept our
+                            <a style="color: white;" href="./cookiepolicy.html">Cookie Policy</a>
+                        </p>
+                        <button id="declinecookie">
+                            <p>Decline</p>
+                        </button>
+                        <p id="acceptcookie">X</p>
+                    </div>
+                    <!-- //////////////// Show cookie toast code end ///////////////// -->
+
+                    <div class="auto_btn btn_disable" id="ConfirmButton"><input type="submit" id="continue"
+                            value="Confirm pickup" disabled />
+                    </div>
+                    <div class="bookBtn" style="display:none">
+                        <div id="PayByCash">
+                            <p>Pay Later</p>
+                            <span style="font-size: 12px;">via Online Payment Link </span>
+                        </div>
+
+                        <div id="PayBypaytm">
+                            <div class="payment_btn">
+                                <div class="credit_btn"
+                                    style="font-size: 20px; width: 44%; display: none; margin-bottom: 3%;">
+                                    <p>Pay via <img src="img/Credit Card_logo.png" alt="Credit Card"> Card <br>
+                                        <span>& Get Instant ₹ 51 Cashback</span>
+                                    </p>
+                                </div>
+                                <div class="border_gap"></div>
+                                <div class="upi_btn" style="font-size: 20px; display: none;">
+                                    <div id="dblbtn">
+                                        <p>Pay via <img src="img/UPI Logo.png" alt="UPI"> </p>
+                                        <span>& Get Instant ₹ 51 Cashback</span>
+
+                                    </div>
+                                    <!-- <p>& Get Instant <span>₹ 51 Cashback</span> </p> -->
+                                    <div id="singlebtn">
+                                        <p>Pay Now</p>
+                                        <span style="color: white;">& Get Instant ₹ 51 Cashback</span>
+                                        <!-- <span style="color: white;">Via UPI, Card and Net Banking</span>     -->
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="popupDiv">
+                        <div class="popupBox">
+                            <!-- <i class="fas fa-exclamation-circle exclamation"></i> -->
+                            <h3>Congratulations!</h3>
+                            <p>Your coupon code is applied successfully.</p>
+                            <p>Redeem your <span id="cpndiscnt" style="color: #000; font-weight: bold;"></span>through
+                                <br>Cashback link on trip start.
+                            </p>
+                            <!-- <p>For additional cashback of Rs. 51, please ensure you make the payment through payment link.</p> -->
+                            <!-- <p>For additional Cashback of Rs. 51, Pay now.</p> -->
+                            <div class="buttonText" id="okay">Okay</div>
+                        </div>
+                    </div>
+
+                    <div class="referMain">
+                    </div>
+                    <div class="referBlock">
+                        <div class="referPara">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <p class="important">IMPORTANT</p>
+                            <p class="infoPara"></p>
+                            <div class="button" id="closePay">Ok</div>
+                        </div>
+                    </div>
+                </form>
+
+                <div id="bottom_banner">
+                    <img src="img/SupplyBanner.jpg" alt="">
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+        <!-- ///////////// Ride booking confirmation popup without arrival text code start///////////////// -->
+        <div class="confirmation_boxCabDiv3"></div>
+        <div class="confirmation_boxCab3">
+            <div class="thank_msg" style="font-family: NetflixsansRegular;font-size: 14px; padding-bottom: 0%;">
+                <br>Your booking request is submitted successfully.
+                <p>You will receive confirmation details shortly through SMS & Email.</p>
+            </div>
+            <div class="call_msgCab">
+                <p id="reserve" style="margin-top: -1rem;"><br>
+                    Don't forget to take your cashback.
+                    For any assistance
+                    call 08046800969.
+                </p>
+            </div>
+            <div class="status" id="status3" style="width:30%">Ok</div>
+        </div>
+        <!-- ///////////// Ride booking confirmation popup without arrivaltext  code start///////////////// -->
+
+
+        <!-- ///////////// Ride booking confirmation popup with arrival text code start///////////////// -->
+        <div class="confirmation_boxCabDiv5"></div>
+        <div class="confirmation_boxCab5">
+            <i class="fas fa-times-circle" id="close5" style="right: 0%;"></i>
+            <div class="thank_msg" style="font-family: NetflixsansRegular;font-size: 14px; padding-bottom: 0%;">
+                <br>Your booking request is submitted successfully.
+                <p>You will receive confirmation details shortly through SMS & Email.</p>
+            </div>
+            <div class="call_msgCab">
+                <p id="reserve5" style="margin-top: -1rem;"><br>
+                    Don't forget to take your cashback.
+                    Now Skip the queue and pre- book your arrival cab. For any assistance call 08046800969.
+                </p>
+            </div>
+            <div class="status" id="status6" style="width:45%">Book Now</div>
+        </div>
+        <!-- ///////////// Ride booking confirmation popup with arrival text code start///////////////// -->
+
+
+        <!-- ///////////// Self drive booking confirmation popup code start ///////////////// -->
+        <div class="confirmation_boxGeneral" id="confirmation_boxGeneral">
+            <div class="thank_msg">
+                <i class="fa fa-check-circle"
+                    style="font-size:48px;color:rgb(234,33,39);background: transparent"></i><br>Thank
+                You!
+            </div>
+            <div class="call_msgGeneral">
+                <p>Grab your 40% discount* now which has been sent to your mobile number.</p>
+            </div>
+            <div class="status" id="bookedstatusGeneral"><a id="selfdrive_url" style="text-decoration:none;"
+                    href="">OK</a>
+            </div>
+        </div>
+        <!-- ///////////// Self drive booking confirmation popup code end ///////////////// -->
+
+
+        <!-- //////////////// Confirmation ui popup code start //////////////////////// -->
+        <div id="mainDetails" style="display:none;">
+            <!-- <i class="fas fa-times-circle"></i> -->
+            <span class="close_popup" style="float: right;font-size: 20px;font-weight: bolder;"><b>x</b></span>
+            <p style="font-weight:bold;">Confirm Your Details</p>
+            <div class="card" id="popup_card"> </div>
+            <p style="position: absolute;
+            top: 109px;
+            right: 48px;
+            color: #fff;
+            font-size: 9px !important;">Estimated Distance</p>
+            <p id="price_km" style="    position: absolute;
+            top: 118px;
+            right: 46px;
+            color: #fff;
+            font-size: 12px !important;"></p>
+            <p style="position: absolute; top: 142px; right: 48px; color: #fff;font-size: 9px !important;">Estimated
+                Price</p>
+            <p id="price_fare"></p>
+
+            <div class="belowDetails">
+                <div class="Row1">
+                    <i class="fas fa-calendar"></i>
+                    <span class="RideSpan">1 Ride scheduled for</span>
+                    <a href="#" class="close_popup">Edit</a>
+                </div>
+                <div class="Row Row2">
+                    <img src="img/Edit Calendar.png" alt="">
+                    <span id="pickup_date">05 Aug 2021 12:30 pm </span>
+                </div>
+                <div class="Row Row3">
+                    <img src="img/Phone.png" alt="">
+                    <span id="user_num"> 8851779536 </span>
+                </div>
+                <div class="Row Row6">
+                    <img src="img/car_img.PNG" alt="">
+                    <span id="cabtp"> Sedan </span>
+                </div>
+                <div class="Row Row5">
+                    <!-- <img src="img/Group 1226.png" alt=""> -->
+                    <p style="display: inline;">From :</p>
+                    <div style="display: block;
+                    position: absolute;
+                    margin-left: 50px;
+                    width: 70%;
+                    margin-top: -7%;">
+                        <span id="destination_" style="padding-left: 0px;"> Destination </span>
+                    </div>
+                </div>
+                <div class="Row Row4">
+                    <!-- <img src="img/Group 1225.png" alt=""> -->
+                    <p style="display: inline;">To :</p>
+                    <div style="display: block;
+                    position: absolute;
+                    margin-left: 40px;
+                    width: 70%;
+                    margin-top: -4%;">
+                        <span id="source_"> source </span>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- <p style="font-size: 12px !important;">Toll and Parking charges are exclusive, if applicable.</p> -->
+            <p style="font-size: 12px !important; text-align: left;">* Extra charges for additional KM ,Toll & Parking.
+            </p>
+            <!-- <p style="font-size: 12px !important; text-align: left;">* Toll & Parking Charges Extra.</p> -->
+
+            <input type="button" id="doPayment" value="Verify & Proceed">
+        </div>
+        <!-- //////////////// Confirmation ui popup code end ///////////////////////// -->
+
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/mdtimepicker.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/tracking.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDM2Us_tcWSXmEUU0SXoENPjQvvdZxEi9E&libraries=places&v=weekly"></script>
+
+    <!-- <script src="js/main.js"></script> -->
+    <!-- <script src="js/index.js"></script> -->
+    <script src="js/citytocity.js"></script>
+    <script src="js/paytm_cabbooking.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        console.log(localStorage['couponPara_val']);
+    </script>
+</body>
+
+</html>

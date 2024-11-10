@@ -1,0 +1,896 @@
+/* Body styling */
+body {
+  background-color: #f9f9f9;
+  scroll-behavior: smooth;
+  overflow: auto;
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+  font-family: 'Lato', sans-serif;   
+}
+
+body::-webkit-scrollbar {
+  display: none;  
+}
+
+/* Font weight classes */
+#booking .thin { font-weight: 100; }
+#booking .light { font-weight: 300; }
+#booking .regular { font-weight: 400; }
+#booking .bold { font-weight: 700; }
+#booking .black { font-weight: 900; }
+#booking .italic { font-style: italic; }
+
+/* Header */
+#header {
+  background-color: black;
+  padding: 0 0 54px;
+  position: sticky;
+  top: 0;
+  z-index: 999; /* Ensure header stays on top */
+}
+
+/* Navigation Menu */
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Form Section */
+/* Main Form Section */
+.booking-form {
+  background-color: #0a3b58;
+  padding: 20px 0px;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
+}
+
+/* Flexbox Layout */
+.form-major-box {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 15px; /* Increased gap for better spacing */
+  width: 100%; /* Full width */
+}
+
+/* Individual Form Boxes */
+.form-box {
+  flex: 1;
+  min-width: 100px; /* Ensures minimum width */
+  background-color: #102c45;
+  color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  transition: transform 0.3s;
+  display: flex; /* Added to support flex direction */
+  flex-direction: column; /* Stacks items vertically */
+}
+.form-section {
+  background-color: #0a3b58;
+}
+
+
+
+/* Form Labels */
+.form-label {
+  color: #007bff;
+  font-size: 14px; /* Consistent with the other form styles */
+  font-weight: bold;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Form Controls */
+.form-control {
+  padding: 10px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Flip Button */
+.flip-btn-wrapper {
+  display: flex;
+  justify-content: center; /* Center the flip button */
+  margin: 50px 0; /* Optional margin for spacing */
+}
+
+
+.flip-btn {
+  background-color: transparent; /* Changed to match the form style */
+  border: none;
+  padding: 6px;
+  border-radius: 50%;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.flip-btn:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Added hover effect */
+}
+
+/* Date and Time Containers */
+.date-container, .time-container {
+  /* padding: 10px; */
+  background-color: #102c45;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #102c45;
+  font-size: 14px;
+  font-weight: 400;
+  flex-grow: 1;
+  cursor: pointer; /* Added cursor pointer for interactivity */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.date-container:hover, .time-container:hover {
+  background-color: #1c2e4b; /* Consistent hover effect */
+}
+
+/* Submit Button */
+.submit-btn-wrapper { 
+  display: flex;
+  justify-content: center; /* Centers the submit button */
+  margin-top: 40px; 
+}
+
+.submit-btn {
+  width: 100px; /* Full width */
+  height: 45px;
+  color: white;
+  font-weight: bold;
+  justify-content: end;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 25px;
+  background: linear-gradient(to right, rgb(143, 220, 250) 0%, rgb(97, 159, 240) 50%, rgb(51, 57, 233) 100%);
+  transition: background-color 0.3s, transform 0.3s;
+}
+.submit-btn.disabled {
+  background: linear-gradient(to right, rgb(200, 200, 200) 0%, rgb(150, 150, 150) 50%, rgb(100, 100, 100) 100%);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.submit-btn.disabled.fas{
+  color: white !important;
+}
+
+.submit-btn:hover {
+  background-color: #3b8cc6;
+  background: linear-gradient(to right, rgb(158, 226, 253) 0%, rgb(102, 167, 250) 50%, rgb(55, 61, 249) 100%);
+
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .form-major-box {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .booking-form .submit-btn {
+    font-size: 18px;
+    height: 45px;
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-form .submit-btn {
+    font-size: 16px;
+    height: 40px;
+    max-width: 140px;
+  }
+}
+
+/* Sorting Section */
+.filter-section {
+  padding-top: 20px;
+  flex: 1;
+  position: sticky;
+  top: 110px; 
+  height: fit-content; 
+}
+@media (max-width: 768px) {
+  .filter-section {
+    top: unset; 
+  }
+}
+
+.sorting-container {
+  position: sticky;
+  top: 54px; /* Match this with your header height */
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: #e6f5ff;
+  padding: 10px;
+  border-top: 2px solid #0a3b58;
+  
+}
+
+
+
+.sorting-text {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.sort-option {
+  margin-left: 5px;
+  color: #007bff;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+}
+
+.separator {
+  margin: 0 10px;
+  color: #666;
+}
+
+.route-info {
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sort-option i {
+  margin-left: 3px;
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+  padding: 10px;
+  z-index: 1;
+  top: 30px;
+  left: 0;
+  width: 250px;
+  border-radius: 5px;
+}
+
+.dropdown-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  color: #333;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+  color: #007bff;
+}
+
+.show {
+  display: block;
+}
+
+/* Cab Listings */
+.cab-listings {
+  padding-top: 20px;
+}
+
+
+/* Filter Section Styling */
+.filter-section {
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.filter-section h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.filter-section span {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 33px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Checkbox container */
+.filter-section div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 0;
+}
+
+.filter-section label {
+  font-size: 14px;
+  color: #333;
+  margin-left: 5px;
+}
+
+.filter-section input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.filter-section input[type="checkbox"]:hover + label {
+  color: #007bff;
+}
+
+/* Count of available items next to checkboxes */
+/* .filter-section div::after {
+  content: '(1)';
+  font-size: 12px;
+  color: #666;
+} */
+/* 
+.filter-section div:nth-child(2)::after { content: '(3)'; }
+.filter-section div:nth-child(3)::after { content: '(4)'; }
+.filter-section div:nth-child(6)::after { content: '(3)'; }
+.filter-section div:nth-child(7)::after { content: '(2)'; }
+.filter-section div:nth-child(8)::after { content: '(3)'; }
+.filter-section div:nth-child(11)::after { content: '(1)'; }
+.filter-section div:nth-child(12)::after { content: '(1)'; }
+.filter-section div:nth-child(13)::after { content: '(1)'; }
+.filter-section div:nth-child(14)::after { content: '(1)'; } */
+
+/* Spacing and alignment */
+.filter-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-section div {
+  padding-bottom: px;
+}
+
+.filter-section label {
+  flex-grow: 1;
+}
+
+/* Media Queries for Responsive Layout */
+@media (max-width: 768px) {
+  .filter-section {
+    padding: 10px;
+  }
+  
+  .filter-section h4 {
+    font-size: 16px;
+  }
+
+  .filter-section span {
+    font-size: 14px;
+  }
+
+  .filter-section label {
+    font-size: 12px;
+  }
+}
+
+/* CAB-LISTING */
+.cab-listing-item {
+  display: flex;
+  width: 100%;
+  background-color: white;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* max-width: 750px; */
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.cab-listing-item:hover {
+  border-color: #76b8ff; 
+}
+
+
+.car-details {
+  display: flex;
+  align-items: flex-start;
+}
+.car-features{
+  font-weight: 500;
+  color: #102c45;
+}
+
+.car-image {
+  width: 110px;
+  height: 80px;
+  margin-right: 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.car-info h5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+
+.or-similar {
+  font-weight: 400;
+  font-size: 14px;
+  color: #999;
+}
+
+h5 {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+
+.or-similar {
+  font-weight: 400;
+  color: #999;
+  margin-left: 5px; /* Small space between "or similar" and the rating */
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e6f2ff; /* Light blue background */
+  border-radius: 5px;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #2d72e3;
+  margin-left: 10px; /* Space between "or similar" and rating */
+}
+
+.rating-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: #2d72e3;
+}
+
+.rating-count {
+  font-size: 12px;
+  color: #6b6b6b;
+  margin-left: 5px;
+}
+
+
+
+.car-info p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+.spacious {
+  color: #000000;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.extra-km-fare, .fuel-type, .cancellation {
+  font-size: 13px;
+  color: #6b6b6b;
+}
+
+.price-details {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.discount {
+  color: #28a745;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  font-size: 14px;
+  color: #999;
+}
+
+.discounted-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #212121;
+}
+
+.taxes {
+  font-size: 12px;
+  color: #6b6b6b;
+  margin-bottom: 10px;
+}
+
+.book-btn {
+  justify-content: end;
+  width: 120px;
+  height: 35px;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 25px;
+  background: linear-gradient(to right, rgb(143, 220, 250) 0%, rgb(97, 159, 240) 50%, rgb(51, 57, 233) 100%);
+  text-transform: uppercase;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.book-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Style for Font Awesome icons */
+.fas {
+  color: #29567e; /* Change icon color to #007bff */
+}
+
+/* cancellation banner */
+.cancellation-banner {
+  width: 100%;
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  background-color: #d4f5e9;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #348f74;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.cancellation-banner i {
+  color: #348f74;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+/* Hide dropdown content by default */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Show the dropdown when the .show class is added */
+.dropdown-content.show {
+  display: block;
+}
+
+/* Style for dropdown items */
+.dropdown-item {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+
+/* WHY-BOOK*/
+.why-book {
+  background-image: linear-gradient(82deg, #d8e8f6, #d4f3fd);;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.why-book h2 {
+  font-size: 18px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.feature-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  flex: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: top;
+  gap: 10px;
+}
+
+.feature-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.feature-card h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.feature-card p {
+  line-height: 14px;
+  font-size: 12px;
+  margin: 5px 0 0;
+}
+.filter-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  background-color: #eaf6ff;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px 0 #0003;
+  margin: 6px;
+  padding: 5px 10px 5px 8px;
+  
+}
+
+.remove-filter {
+  margin-left: 10px;
+  font-weight: bold;
+  color: red;
+  cursor: pointer;
+}
+
+/* Styles for selected filters display */
+#selected-filters {
+  display: flex; 
+  flex-wrap: wrap; 
+  background-color: #f8f9fa; 
+  margin-bottom: 20px; 
+}
+
+.applied-filters-container {
+  display: none; 
+}
+
+.selected-filters .filter-item ::after{
+  padding: 10px;
+}
+
+.filter-item {
+  display: flex; 
+  align-items: center; 
+  padding: 10px !important; 
+  background-color: #ffffff; 
+  width: 40%;
+  border: 1px solid #ced4da; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.2s; 
+}
+
+.filter-item:hover {
+  background-color: #f1f1f1; 
+}
+
+.remove-filter {
+  margin-left: 8px; 
+  font-size: 16px; 
+  font-weight: bold; 
+  color: #dc3545; 
+  cursor: pointer; 
+  transition: color 0.2s; 
+}
+
+.remove-filter:hover {
+  color: #c82333; 
+}
+
+#clear-all {
+  display: none; 
+  background-color: #007bff; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  padding: 8px 16px; 
+  cursor: pointer; 
+  transition: background-color 0.2s; 
+}
+
+#clear-all:hover {
+  background-color: #0056b3; 
+}
+
+
+/* DROPDOWN */
+.autocomplete-results {
+  list-style: none;
+  padding: 0;
+  display: none;
+  margin: 0;
+  position: absolute;
+  background-color: white;
+  z-index: 1005;
+  width: 90%;
+  max-height: 200px;
+  overflow-y: scroll;
+  /* border: 1px solid #ccc; */
+  border-bottom-right-radius: 8px;
+  display: none; 
+
+}
+
+.autocomplete-item {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* border-top: 1px solid #bbb; */
+}
+
+.autocomplete-item input {
+  margin-right: 10px;
+}
+.autocomplete-results li {
+    color: #191a1e;
+    font-weight: 600;
+}
+
+.autocomplete-results li :hover {
+  background-color: #eee;
+}
+
+.autocomplete-item:hover {
+  background-color: #eee;
+}
+
+#current-location {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.hidden-radio {
+  display: none; 
+}
+#from-input::placeholder {
+  color: gray; 
+  font-size: 14px; 
+  font-weight: 500;
+}
+
+.to-dropdown{
+  width: 90%;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+
+/* CUSTOM DROP DOWN */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-label {
+  cursor: pointer;
+  /* border: 1px solid #ccc; */
+  /* background-color: #fff; */
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-menu {
+  display: none; /* Hide the dropdown initially */
+  position: absolute;
+  margin-top: -45px !important;
+  z-index: 10005;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  display: none; 
+}
+
+.dropdown-menu li {
+  padding: 10px;
+}
+
+.dropdown-menu input[type="radio"] {
+  display: none;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0; /* Highlight on hover */
+}
+
+/* Show dropdown when clicked */
+.show {
+  display: block;
+}
+
+/* left side cab type  */
+.cabType {
+  display: inline-block;
+  margin: 0px;
+}
+
+.cabType input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
+
+  /* .cabType img{
+    padding-right: 20px;
+  } */
+
+.cabType label {
+  display: inline-block;
+  padding: 10px 20px; /* Maintain comfortable padding */
+  border: 1px solid #ccc; /* Light gray border */
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 4px;
+  background: #fff; /* White background */
+  color: #333; /* Dark gray text color */
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: none; /* Remove shadow for a cleaner look */
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* Styles for the checked state */
+.cabType input[type="radio"]:checked + label {
+  border-color: #76b8ff; /* Blue border for selected state */
+  color: #102c45; /* Blue text color for selected state */
+  background: #f0f8ff; /* Very light blue background for selected state */
+}
+
+/* Hover effect */
+.cabType label:hover {
+  border-color: #c9e2fe;
+  background: #f7f9fc; 
+}
+
+#errorMessages {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #f5c6cb;
+  background-color: #f8d7da;
+  color: #721c24;
+}

@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- GC2 C0DE -->
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="css/mdtimepicker.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="icon" type="image/x-icon" href="img/SpiceJet-Header-Icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/apicall.js"></script>
+
+    <title>Book Airport Cab</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- <link rel="stylesheet" href="css/main.css" /> -->
+    <link rel="stylesheet" href="css/index.css" />
+
+    <script>
+        if (sessionStorage["AirportRideType"] == undefined || sessionStorage["AirportRideType"] == "undefined") {
+            sessionStorage.setItem("AirportRideType", 'departure')
+        }
+        var mapKey
+        ///// map key will always from production Database .So use production api key/////
+
+        let fetchRes = fetch("https://prodapi.mojoboxx.com/spicescreen/webapi/bookAirportCredentialsInfo");
+        fetchRes.then(res =>
+            res.json()).then(dataT => {
+
+                var detaResponse = dataT.data;
+                for (let i = 0; i < detaResponse.length; i++) {
+                    if (detaResponse[i].type == "spicejet_map_key") {
+                        mapKey = detaResponse[i].key
+                        localStorage["mapKey"] = detaResponse[i].key
+                        //console.log(mapKey); 
+                        loadJS("https://maps.googleapis.com/maps/api/js?v=3&key=" + mapKey + "&libraries=places&v=weekly", true);
+                        break;
+                    }
+                }
+
+            })
+
+
+        function loadJS(FILE_URL, async = true) {
+            let scriptEle = document.createElement("script");
+
+            scriptEle.setAttribute("src", FILE_URL);
+            scriptEle.setAttribute("type", "text/javascript");
+            scriptEle.setAttribute("async", async);
+
+            document.head.appendChild(scriptEle);
+
+            // success event 
+            scriptEle.addEventListener("load", () => {
+                // console.log("File loaded")
+                //console.log(mapKey);
+            });
+            // error event
+            scriptEle.addEventListener("error", (ev) => {
+                // console.log("Error on loading file", ev);
+            });
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap');
+
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+            margin: 0;
+            background: black;
+            overflow-y: scroll;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            scrollbar-width: none;
+            /* For Firefox */
+            -ms-overflow-style: none;
+            /* For Internet Explorer and Edge */
+        }
+
+        html::-webkit-scrollbar {
+            width: 0px;
+            /* For Chrome, Safari, and Opera */
+        }
+
+        html {
+            scrollbar-width: none;
+            /* For Firefox */
+            -ms-overflow-style: none;
+            /* For Internet Explorer and Edge */
+        }
+
+        html::-webkit-scrollbar {
+            width: 0px;
+            /* For Chrome, Safari, and Opera */
+        }
+
+        @font-face {
+            font-family: 'NetflixSansLight';
+            src: url(font/NetflixSansLight.ttf);
+        }
+
+        @font-face {
+            font-family: 'NetflixSansMedium';
+            src: url(font/NetflixSansMedium.ttf);
+        }
+
+        @font-face {
+            font-family: 'NetflixSansRegular';
+            src: url(font/NetflixSansRegular.ttf);
+        }
+
+        p,
+        span {
+            font-family: NetflixSansRegular;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #tym2,
+        #tym3 {
+            width: 47%;
+            overflow: hidden;
+            float: left;
+            position: relative;
+            height: 47px;
+            z-index: 9;
+            margin-bottom: 7%;
+            background: #ffffff;
+        }
+
+        .calenderBox {
+            width: 47%;
+            overflow: hidden;
+            float: left;
+            position: relative;
+            height: 41px;
+            z-index: 9;
+            margin-left: 4%;
+            /* margin: 0px 7px 0% 4%; */
+            clear: both;
+        }
+
+
+        #cabPickupCity,
+        #outstationCity {
+            width: 99%;
+            margin-left: 5%;
+            padding: 2% 11px 8px;
+            color: #828282;
+            margin-top: 1%;
+            -webkit-appearance: none;
+            background-color: #fff;
+            height: 43px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+
+
+        .calenderText::placeholder,
+        .timepicker::placeholder,
+        .timepicker2::placeholder {
+            color: #828282 !important;
+        }
+
+        .tripType,
+        .selfType {
+            display: flex;
+            width: 100%;
+            /* margin: 1% auto; */
+            margin-bottom: 7%;
+        }
+
+        .trip-type {
+            border-bottom: 2px solid #cfd0d0;
+        }
+
+        .selfType {
+            /* box-shadow: 1px 1px 5px 1px lightgrey !important; */
+            display: none;
+        }
+
+        .tripType a {
+            /* margin: 5px 16px; */
+            text-align: center;
+            width: 33%;
+            text-decoration: none;
+            color: black;
+            /* border-bottom: 2px solid lightgrey; */
+            font-size: 15px;
+        }
+
+        .selfType a {
+            text-decoration: none;
+            font-family: 'NetflixSansRegular';
+            width: 50%;
+            text-align: center;
+            padding: 10px 2px;
+            font-size: 13px;
+            float: left;
+            color: black;
+        }
+
+        .coming_soon2 {
+            display: none;
+        }
+
+        .selectedTrip {
+            border-bottom: 2px solid #ed1c24 !important;
+            margin-bottom: -2px;
+        }
+
+        .selectedSelfDrive {
+            background-color: black;
+            color: white !important;
+        }
+
+        #notePoint {
+            width: 86%;
+            margin: 0 auto;
+            margin-top: 7%;
+            font-size: 13px;
+            display: none;
+        }
+
+        #confirmation_boxGeneral {
+            position: fixed;
+            width: 89%;
+            top: 30%;
+            left: 0;
+            background-color: white;
+            display: none;
+            z-index: 9999;
+            margin-left: 18px;
+        }
+
+        .thank_msg {
+            /* font-weight: bold; */
+            background: white;
+            text-align: center;
+            font-size: 1.5em;
+            padding-bottom: 4%;
+            padding-top: 5%;
+            font-family: 'NetflixSansRegular';
+        }
+
+        .call_msgGeneral p {
+            background: white;
+            /* padding-left: 12%; */
+            text-align: center;
+        }
+
+        .selfType label {
+            font-family: 'NetflixSansRegular';
+            font-size: 15px;
+        }
+
+        #ValidateMsg,
+        #ValidateCityMsg {
+            font-size: 8px;
+            color: red;
+            width: 88%;
+            margin: 0 auto;
+            display: none;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .rentalHour {
+            display: flex;
+            flex: 1 1 150px;
+            justify-content: center;
+            background-color: #F1F1F1;
+            margin: 0 10px;
+            border-radius: 5px;
+            font-family: 'NetflixSansRegular';
+
+        }
+
+        .time {
+            display: flex;
+            margin: 10px;
+            padding: 10px;
+            background-color: #E7E5E5;
+            border-radius: 5px;
+        }
+
+        #fourHours,
+        #sixHours,
+        #eightHours,
+        #twelveHours {
+            visibility: hidden;
+            display: none;
+        }
+
+        .time label {
+            text-align: center;
+            font-family: 'NetflixSansRegular';
+            font-size: 15px;
+        }
+
+        .mobileCheck,
+        .pickupLocation,
+        .dropLocation {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            font-size: 15px;
+            width: 100%;
+            font-family: 'NetflixSansRegular';
+        }
+
+        .inputBox {
+            width: 100%;
+            outline: none;
+            margin: 10px 10px 0px 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            border: none;
+            padding: 13px;
+            font-size: 15px;
+            color: #828282;
+            font-family: 'NetflixSansRegular';
+            border-bottom: 1.2561px solid rgba(0, 0, 0, 0.1);
+
+        }
+
+        input[type=text]:active {
+            width: 100%;
+            /* display: flex; */
+        }
+
+        .bi {
+            position: absolute;
+            right: 6%;
+            margin-top: 20px;
+        }
+
+        .selectedItem {
+            background-color: black;
+            color: white;
+        }
+
+        #pac-inputOutstation {
+            position: relative;
+        }
+
+        #PayByCash span {
+            padding: 5px;
+        }
+
+        #searchI,
+        #searchII {
+            position: absolute;
+            right: 5.5%;
+            top: 22%;
+            width: 10%;
+            background-color: #fff;
+            text-align: right;
+            line-height: 38px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            color: black;
+            overflow: hidden;
+        }
+
+        .confirmation_boxCab3 {
+            font-size: 14px;
+            /* font-weight: bold; */
+        }
+
+
+        #bagblack {
+            display: none;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            z-index: 200;
+            background-color: rgba(0, 0, 0, .8);
+        }
+
+        #cpnarw {
+            display: none;
+            width: 10rem;
+            position: absolute;
+            margin-top: 29rem;
+            z-index: 300;
+            height: 6rem;
+            margin-left: 9rem;
+        }
+
+        #applyCoupon {
+            position: relative;
+        }
+
+        #timemsg {
+            visibility: hidden;
+            min-width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            bottom: 10%;
+            font-size: 13px;
+            padding: 8px 9px 9px 2px;
+            font-family: NetflixSansRegular;
+        }
+
+        #timemsg.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        .boxpayment {
+            margin-top: 14px;
+            border: 1px solid #ccc;
+            width: 90%;
+            margin-left: 18px;
+            background-color: #F9F9F9;
+            overflow: auto;
+        }
+
+        #PayNow2 {
+            display: none;
+        }
+
+        #switchcontent {
+            display: none;
+            position: relative;
+        }
+
+        .top_banner {
+            margin-bottom: 3%;
+            margin-top: -3%;
+        }
+
+        .selfdriveIframe {
+            display: none;
+        }
+
+        .selfdriveIframe iframe {
+            width: 100%;
+            position: fixed;
+            z-index: 99999;
+            height: 100vh;
+            top: 29px;
+            left: 0;
+        }
+
+        .selfdriveIframe button {
+            width: 100%;
+            background: #383838;
+            color: white;
+            text-align: left;
+            padding-left: 3%;
+            padding-top: 1%;
+            border: none;
+            position: fixed;
+        }
+
+        @media only screen and (min-width : 2560px) {
+            .calenderBox {
+                width: 46%;
+
+            }
+
+            #tym2,
+            #tym3 {
+                width: 46%;
+                margin-bottom: 1%;
+                margin-left: 4% !important;
+            }
+        }
+
+        @media only screen and (min-width : 320px) and (max-width : 767px) {
+            .calenderBox {
+                width: 47%;
+            }
+
+            #tym2,
+            #tym3 {
+                width: 46%;
+                margin-bottom: 1%;
+            }
+
+            .timepicker,
+            .timepicker2 {
+                border-top-right-radius: 10px !important;
+                border-bottom-right-radius: 10px !important;
+            }
+
+
+
+
+        }
+
+        @media only screen and (min-width : 768px) {
+            #tym2 {
+                width: 46.5%;
+            }
+
+            .timepicker {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            .calenderBox {
+                width: 46.5%;
+                margin-left: 3%;
+            }
+        }
+    </style>
+    <style>
+        /* Add your styles here */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .tabs-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+            /* padding: 10px; */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 10%;
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 10px;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .icon {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5FB2GK7PC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L5FB2GK7PC');
+    </script>
+</head>
+
+<!-- <body oncontextmenu="return false;"> -->
+
+<body>
+
+    <div class="spinnerBack"></div>
+    <div class="spinner" id="spinner"><img id="loader_img" src="img/yatra onload.gif">
+        <!-- <p style="font-size: 12px; position: relative; margin-left: 40px;">Please wait...</p> -->
+    </div>
+
+    <div id="interstitial_back" style="display: none;">
+        <div class="interstitial">
+            <img src="img/ZOOM-CAR-INTERSTITIAL.jpg">
+            <i class="fas fa-times-circle" id="Interstitialclose"></i>
+        </div>
+    </div>
+
+
+    <!-- <div class="selfdriveIframe">
+        <button type="button">
+            <span aria-hidden="true" onclick="backtomain()">&#x2190; Back</span>
+        </button>
+        <iframe src="https://www.zoomcar.com/?utm_medium=mojoboxx&utm_source=mojoboxx2&utm_campaign=mojoboxx3"></iframe> 
+    </div> -->
+
+    <main>
+        <div class="main_div">
+            <div id="mapBox" style="display: none;">
+                <div id="map"></div>
+            </div>
+            <div class="top_detail">
+
+                <section class="topsection" style="padding-top: 0px;">
+
+                    <!-- <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> -->
+                    <div class="topimg">
+                        <img src="img/yatra_logo.svg" />
+                    </div>
+
+                    <!-- <div class="top_banner">
+                        <img src="img/selfdrive.jpg">
+                    </div> -->
+
+                    <!-- <p class="content">INTRODUCING</p> -->
+                    <h2 class="content" style="font-weight: 600px;">On Time, Every Time. Book Now.
+                    </h2>
+                    <!-- <p>Catch your flight on time.</p> -->
+                </section>
+
+                <div class="tripType trip-type">
+                    <a href="#" class="selectedTrip TripOption">Ride</a>
+                    <a href="#" class="TripOption rentaltxt">Rental</a>
+                    <a href="#" class="TripOption outstationtxt">Outstation</a>
+                    <!-- <a href="#" class="TripOption selfdrivetxt">Self Drive</a> -->
+                    <!-- <a href="https://www.zoomcar.com/?utm_medium=mojoboxx&utm_source=mojoboxx2&utm_campaign=mojoboxx3" class="TripOption selfdrivetxt">Self Drive</a> -->
+                </div>
+
+                <form id="ctn">
+
+                    <div id="snackbar"></div>
+                    <!-- <div id="loader"></div> -->
+
+                    <div id="rentalcitylist">
+                        <label for="exampleFormControlInput1" class="form-label lablename" style="display: none;">Choose
+                            Pickup City</label>
+                        <div class="RentalCity" style="margin-bottom: 3%;">
+                            <select class="cityui" id="choosecitycode">
+                                <option value="Choose City Name">Pickup City Name</option>
+                                <option value="AGR-T1">Agra(AGR)</option>
+                                <option value="AMD-A10">Ahmedabad(AMD)</option>
+                                <option value="ATQ-A1">Amritsar(ATQ)</option>
+                                <option value="IXB-A23">Bagdogra(IXB)</option>
+                                <option value="BLR-A8">Bengaluru(BLR)</option>
+                                <option value="CCJ-A45">Calicut (CCJ)</option>
+                                <option value="MAA-A10">Chennai (MAA)</option>
+                                <option value="CJB-A18">Coimbatore(CJB)</option>
+                                <option value="DBR-T1">Darbhanga(DBR)</option>
+                                <option value="DED-A30">Dehradun(DED)</option>
+                                <!-- <option value="DEL-T1">Delhi(DEL-T1)</option>
+                                <option value="DEL-T2">Delhi(DEL-T2)</option> -->
+                                <option value="DEL-T3">Delhi(DEL)</option>
+                                <option value="RDP-A27">Durgapur(RDP)</option>
+                                <option value="GOI-A13">Goa(GOI)</option>
+                                <!-- <option value="GOI-A50">Goa(GOI-A50)</option> -->
+                                <option value="GAU-T1">Guwahati(GAU)</option>
+                                <option value="HYD-A9">Hyderabad(HYD)</option>
+                                <option value="JLR-A25">Jabalpur(JLR)</option>
+                                <option value="JAI-A14">Jaipur (JAI)</option>
+                                <option value="IXJ-T1">Jammu(IXJ)</option>
+                                <option value="JSA-A30">Jaisalmer(JSA)</option>
+                                <option value="JDH-A39">Jodhpur(JDH)</option>
+                                <option value="IXY-T1">Kandla(IXY)</option>
+                                <option value="DHM-A21">Kangra(DHM)</option>
+                                <option value="KQH-A4">Kishangarh(KQH)</option>
+                                <option value="HJR-T1">Khajuraho(HJR)</option>
+                                <option value="COK-A24">Kochi(COK)</option>
+                                <option value="CCU-A11">Kolkata(CCU)</option>
+                                <option value="CCJ-A45">Kozhikode(CCJ)</option>
+                                <option value="IXL-A44">Leh(IXL)</option>
+                                <option value="LKO-A45">Lucknow(LKO)</option>
+                                <option value="IXM-A16">Madurai(IXM)</option>
+                                <option value="IXE-A26">Mangaluru(IXE)</option>
+                                <option value="BOM-T1">Mumbai(BOM-T1)</option>
+                                <option value="BOM-T2">Mumbai(BOM-T2)</option>
+                                <option value="ISK-A46">Nashik(ISK)</option>
+                                <option value="PAT-A12">Patna(PAT)</option>
+                                <option value="IXD-T1">Prayagraj(IXD)</option>
+                                <option value="PNY-T1">Puducherry(PNY)</option>
+                                <option value="PNQ-A15">Pune(PNQ)</option>
+                                <option value="RAJ-A35">Rajkot(RAJ)</option>
+                                <option value="IXR-A47">Ranchi(IXR)</option>
+                                <option value="SAG-A40">Shirdi(SAG)</option>
+                                <option value="IXS-T1">Silchar(IXS)</option>
+                                <option value="SXR-T1">Srinagar(SXR)</option>
+                                <option value="STV-A17">Surat(STV)</option>
+                                <option value="TIR-A36">Tirupathi(TIR)</option>
+                                <option value="TRV-A38">Trivandrum(TRV)</option>
+                                <option value="UDR-A33">Udaipur(UDR)</option>
+                                <option value="VNS-A19">Varanasi(VNS)</option>
+                                <option value="VGA-A37">Vijaywada(VGA)</option>
+                                <option value="VTZ-A34">Vishkhapatnam(VTZ)</option>
+                            </select>
+
+                            <!-- <img src="img/down.png" alt=""
+                                style="width:4%; position: absolute; right: 22px; height:28%"> -->
+                            <!-- <i style="position: absolute; right : 7%;" class="Locationbox fas fa-angle-down"></i> -->
+                        </div>
+                        <div class="ZoomCity">
+                            <select class="zoomcityui" id="choosecity--zoomcar">
+                                <option value="Choose City Name Zoom">Pickup City Name</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div id="BydefaultShow">
+
+
+                    </div>
+                    <div id="switchcontent">
+
+                    </div>
+
+                    <div id="outstationDroploc">
+                        <!-- <label style="display: none;" for="exampleFormControlInput1" class="form-label lablename outstationLable">To</label> -->
+                        <div style="width: 100%; margin: 0px 16px 6px; float: left;" class="pnr_pickup"
+                            id="outstationlocationBox">
+                            <div id="outstationmakeSerIcon" style="margin-top: 1.2%;">
+                                <label class="full-field">
+                                    <input id="outstation-input" name="outstation-input" class="input_srch"
+                                        autocomplete="off" placeholder="Enter Drop Location (Min 7 Character)"
+                                        style="background-color:#F1F1F1;" />
+                                    <i class="Locationbox fas fa-pencil-alt pen" aria-hidden="true"
+                                        id="outstationDropIcon" style="background-color:#ffffff; right: 10%;"></i>
+                                </label>
+                                <span id="dropLoc-span" class="validation-span">Please enter drop location</span>
+                            </div>
+                            <ul class="outstationautocomplete-results">
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!----------- TiME uI POPUP  --------->
+                    <div class="form-popup" id="myForm">
+                        <div class="back_icon">
+                            <img src="img/arrow.png">
+
+                        </div>
+                        <p class="back_text">Back</p>
+
+                        <div id="choosetimegrid" style="display: block; margin-bottom: 3%;">
+                            <label>Select Pick-up Indian Standard Time (IST):</label>
+                        </div>
+
+
+                        <div id="slotdiv">
+                            <div class="timeam">
+                                <span id="timeam" value="AM">AM</span>
+                            </div>
+
+                            <div class="timepm">
+                                <span id="timepm" value="PM">PM</span>
+                            </div>
+                            <p class="outstationMSG">* Do not select a time between 10PM to 6AM</p>
+                            <!-- <div class="done_btn"><input id="donetime" value="DONE" disabled />
+                            </div> -->
+                        </div>
+                        <div class="time-list-wrap" id="time-list-wrap" style="display: none;">
+                        </div>
+                        <div style="margin: 2% 0% 3% 5%;">
+                            <span style="font-size: 12px; font-weight: bold;">Important :</span><br> <span
+                                style="font-size: 11px;">In case you are booking a departure cab,
+                                choose your pick-up time wisely to catch your flight on time :</span><br><span
+                                style="font-size: 11px;">• Domestic
+                                flight :- 2+2 hours (Airport Travel + Security Check-in)
+                                <br> • International flight :- 2+3 hours (Airport Travel + Security Check-in)</span>
+                        </div>
+
+                        <div id="timemsg">Please Select Time-Zone (AM/PM).
+                        </div>
+                    </div>
+                    <!----------- TiME uI POPUP  --------->
+                    <div class="startGroup">
+                        <label for="exampleFormControlInput1" class="form-label lablename datelabel labelfont">Schedule
+                            Your
+                            Ride
+                        </label>
+                    </div>
+
+
+                    <div class="calenderBox calActive" id="etaDiv">
+                        <input type="text" class="calenderText calInput" id="datepicker" placeholder="Pickup Date"
+                            autocomplete="off" readonly>
+                        <!-- <i class="fas fa-calendar-week calender"></i> -->
+                        <svg style="position: absolute; top: 10px; right: 11px;" width="16" height="16"
+                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="vaadin:date-input" clip-path="url(#clip0_38_71)">
+                                <path id="Vector" d="M14 1V4H11V1H5V4H2V1H0V16H16V1H14ZM15 15H1V6H15V15Z"
+                                    fill="#808080" />
+                                <path id="Vector_2" d="M3 0H4V3H3V0ZM12 0H13V3H12V0ZM3 8H4V13H3V8Z" fill="#808080" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_38_71">
+                                    <rect width="16" height="16" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+
+                    </div>
+                    <div id="tym2">
+                        <!-- <label> -->
+                        <!-- <h1 style="margin:0px auto 0px auto; display: none;"></h1> -->
+                        <input type="text" class="timepicker" id="start-time" placeholder="Pickup Time (IST)"
+                            autocomplete="off" readonly
+                            style="width: 100%; height: 40px; background-color:#FFFFFF; border: 1px solid #cfd0d0;" />
+                        <!-- <i class="fas fa-clock arrow" style="right: 6%;"></i> -->
+                        <svg style="position :absolute; right : 10px; top :11px;" width="16" height="16"
+                            viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="cil:clock" clip-path="url(#clip0_38_76)">
+                                <path id="Vector"
+                                    d="M8.4848 2.98438H7.4848V8.55034L11.0977 10.2675L11.527 9.36428L8.4848 7.91841V2.98438Z"
+                                    fill="#808080" />
+                                <path id="Vector_2"
+                                    d="M8 0.5C3.85787 0.5 0.5 3.85787 0.5 8C0.5 12.1421 3.85787 15.5 8 15.5C12.1421 15.5 15.5 12.1421 15.5 8C15.5 3.85787 12.1421 0.5 8 0.5ZM8 14.5C4.41016 14.5 1.5 11.5898 1.5 8C1.5 4.41016 4.41016 1.5 8 1.5C11.5898 1.5 14.5 4.41016 14.5 8C14.5 11.5898 11.5898 14.5 8 14.5Z"
+                                    fill="#808080" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_38_76">
+                                    <rect width="16" height="16" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <!-- </label> -->
+                    </div>
+
+                    <div id="flightBox">
+                        <label for="flight_input">Flight No.</label>
+                        <input type="text" id="flight_input" />
+                    </div>
+
+                    <div class="endGroup" style="display: none;">
+                        <div class="calenderBox calActive" id="etaDiv">
+                            <input type="text" class="calenderText calInput" id="datepicker2"
+                                placeholder="Drop-Off Date" autocomplete="off" readonly>
+                            <!-- <i class="fas fa-calendar-week calender"></i> -->
+                            <svg style="position : absolute; top : 10px; right : 11px; " width="16" height="16"
+                                viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="vaadin:date-input" clip-path="url(#clip0_38_71)">
+                                    <path id="Vector" d="M14 1V4H11V1H5V4H2V1H0V16H16V1H14ZM15 15H1V6H15V15Z"
+                                        fill="#ED1C24" />
+                                    <path id="Vector_2" d="M3 0H4V3H3V0ZM12 0H13V3H12V0ZM3 8H4V13H3V8Z"
+                                        fill="#ED1C24" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_38_71">
+                                        <rect width="16" height="16" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </div>
+                        <div id="tym3">
+                            <!-- <label> -->
+                            <!-- <h1 style="margin:0px auto 0px auto; display: none;"></h1> -->
+                            <input type="text" class="timepicker2" id="end-time" placeholder="Drop-Off Time"
+                                autocomplete="off" readonly
+                                style="width: 100%; height: 40px; background-color:#FFFFFF; border: 1px solid #cfd0d0;" />
+                            <!-- <i class="fas fa-clock arrow" style="right: 6%;"></i> -->
+                            <svg style="position :absolute; right : 10px; top :11px;" width="16" height="16"
+                                viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="cil:clock" clip-path="url(#clip0_38_76)">
+                                    <path id="Vector"
+                                        d="M8.4848 2.98438H7.4848V8.55034L11.0977 10.2675L11.527 9.36428L8.4848 7.91841V2.98438Z"
+                                        fill="#ED1C24" />
+                                    <path id="Vector_2"
+                                        d="M8 0.5C3.85787 0.5 0.5 3.85787 0.5 8C0.5 12.1421 3.85787 15.5 8 15.5C12.1421 15.5 15.5 12.1421 15.5 8C15.5 3.85787 12.1421 0.5 8 0.5ZM8 14.5C4.41016 14.5 1.5 11.5898 1.5 8C1.5 4.41016 4.41016 1.5 8 1.5C11.5898 1.5 14.5 4.41016 14.5 8C14.5 11.5898 11.5898 14.5 8 14.5Z"
+                                        fill="#ED1C24" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_38_76">
+                                        <rect width="16" height="16" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <!-- </label> -->
+                        </div>
+                    </div>
+
+
+
+                    <!-- <div id="FFP-ID" class="ffp-div">
+                            <div>
+                                <label for="ffp-id-input" class="labelfont lablename">Yatra FFP ID</label>
+                            </div>
+                            <div class="ffp-input">
+                                <input type="text" id="ffp-id-input" class="ffpId" placeholder="Enter FFP Id" />
+                                <input type="button" value="Submit" class="ffp-btn" id="ffpIdVerify" />
+                            </div>
+                        </div> -->
+            </div>
+
+
+            <!-- <p class="recommended">*Recommended pick up time</p style="recommended"> -->
+
+            <div class="tacbox">
+                <input id="checkbox" type="checkbox" checked style="accent-color: #DC8741;" />
+                <label for="checkbox"> I agree to these <a class="links" href="terms_condition.html">Terms and
+                        Conditions</a>.</label>
+            </div>
+
+            <div class="auto_btn btn_disable" id="ConfirmButton">
+                <input type="submit" id="continue" value="Next" data-toggle="modal" />
+                <!-- <input type="submit" id="continue" value="Next" data-toggle="modal" data-target="#exampleModal" disabled /> -->
+            </div>
+
+            <div class="self_btn btn_disable" id="SelfDriveBtn" style="display: none" onclick="submitForm()">
+                <span class="nxt_btn" style="font-size: 18px;">Next</span>
+            </div>
+
+
+            <footer>
+                <p>Questions?</p>
+                <p>care@bookairportcab.com | 080-46800969</p>
+
+            </footer>
+            </form>
+
+        </div>
+        </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" aria-hidden="true">
+            <div class="modal-dialog modal-details" role="document">
+                <div class="modal-content" style="border-radius: 25px">
+                    <div class="modal-header">
+                        <h5 class="user-details-heading">Kindly Fill in the details:</h5>
+                        <button type="button" class="close closebtn" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="nameform">
+                            <div class="form-group">
+                                <label for="userName" class="labelfont">First Name</label>
+                                <input type="text" class="form-control user-form" id="firstName"
+                                    placeholder="xxxxxxxxxx" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="userName" class="labelfont">Last Name</label>
+                                <input type="text" class="form-control user-form" id="lastName" placeholder="xxxxxxxxxx"
+                                    required />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mb_number" class="labelfont">Enter Your Mobile Number</label>
+                                <div id="mobileBox" class="user-form">
+                                    <div id="flags">
+                                        <select id="countrySelect" name="country">
+                                        </select>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <input type="tel" id="mb_number" name="userNumber" placeholder="xxxxxxxxxx"
+                                        pattern="[6-9]{1}[0-9]{4}[0-9]{5}" maxlength="10"
+                                        oninvalid="this.setCustomValidity('Please enter your valid phone number')"
+                                        oninput="this.setCustomValidity('')" required />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="userEmail" class="labelfont">Enter Your Email address</label>
+                                <input type="email" class="form-control user-form" id="userEmail"
+                                    aria-describedby="emailHelp" placeholder="xxxxxxxxxx" required />
+                                <!-- <p class="recommended"><i>For Ride Invoice</i></p style="recommended"> -->
+                            </div>
+
+                            <div class="form-group" id="pax_luggage">
+                                <div>
+                                    <p>No. of Pax</p>
+                                    <div class="counterBox">
+                                        <span class="sign" id="passenger_minus">-</span>
+                                        <span class="counter" id="passenger_counter">1</span>
+                                        <span class="sign" id="passenger_plus">+</span>
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                                <div>
+                                    <p>No. of Luggage</p>
+                                    <div class="counterBox">
+                                        <span class="sign" id="luggage_minus">-</span>
+                                        <span class="counter" id="luggage_counter">1</span>
+                                        <span class="sign" id="luggage_plus">+</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" id="userForm">
+                                Proceed to Book
+                            </button>
+                            <!-- <button
+                  class="btn btn-primary"
+                  id="zoom--btn"
+                  style="padding: 8px"
+                  onclick="zoomSubmit()"
+                >
+                  Find Cars
+                </button> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="modal fade" id="partnerFetching" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <img src="img/Cab .gif" />
+                </div>
+            </div>
+        </div>
+        <!-- 
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="toastTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="Toast-modal-header">
+                        <img src="img/confirm_box.jpeg" />
+                        <p class="toastPara">Verified</p>
+                    </div>
+
+                    <div class="modal-body" id="toastBody">
+                        Please agree to terms and conditions
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary closebtn" data-dismiss="modal">OKAY</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+
+        <!-- Button trigger modal -->
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#toast">
+            Launch demo modal
+        </button> -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="toast" tabindex="-1" role="dialog" aria-labelledby="toastTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body" id="toastBody">
+                        Please agree to terms and conditions
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary closebtn" data-dismiss="modal">ok</button>
+                        <!-- <button type="button" class="btn btn-primary">OK</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="tabs-container">
+            <div class="tab" style="background-color: #dee2e6;">
+                <i class="fas fa-plane icon"></i>
+                <span>Airport</span>
+            </div>
+            <div class="tab" onclick="navigateTo('https://railyatra.bookairportcab.com/website/home/index.html')">
+                <i class="fas fa-train icon"></i>
+                <span>Railway</span>
+            </div>
+            <div class="tab" onclick="navigateTo('https://hotelyatra.bookairportcab.com/website/home/index.html')">
+                <i class="fas fa-hotel icon"></i>
+                <span>Hotel</span>
+            </div>
+        </div>
+    </main>
+
+    <div class="Framer" style="display: none;">
+        <iframe src="https://bookairportcab.com/yatra2" style="width: 100%;
+    height: 1210vh;"></iframe>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <script src="js/mdtimepicker.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/tracking.js"></script>
+    <script src="js/indexmain.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>$("#zoom--btn").css("display", "none")</script>
+</body>
+<script>
+    function navigateTo(url) {
+        window.location.href = url;
+    }
+
+</script>
+<script>
+    var countryCodeSelect = document.getElementById("countrySelect");
+
+    var countryCodes = {
+        "India": "+91",
+        "Afghanistan": "+93",
+        "Albania": "+355",
+        "Algeria": "+213",
+        "American Samoa": "+1-684",
+        "Andorra": "+376",
+        "Angola": "+244",
+        "Anguilla": "+1-264",
+        "Antigua and Barbuda": "+1-268",
+        "Argentina": "+54",
+        "Armenia": "+374",
+        "Aruba": "+297",
+        "Australia": "+61",
+        "Austria": "+43",
+        "Azerbaijan": "+994",
+        "Bahamas": "+1-242",
+        "Bahrain": "+973",
+        "Bangladesh": "+880",
+        "Barbados": "+1-246",
+        "Belarus": "+375",
+        "Belgium": "+32",
+        "Belize": "+501",
+        "Benin": "+229",
+        "Bermuda": "+1-441",
+        "Bhutan": "+975",
+        "Bolivia": "+591",
+        "Bosnia and Herzegovina": "+387",
+        "Botswana": "+267",
+        "Brazil": "+55",
+        "British Virgin Islands": "+1-284",
+        "Brunei": "+673",
+        "Bulgaria": "+359",
+        "Burkina Faso": "+226",
+        "Burundi": "+257",
+        "Cambodia": "+855",
+        "Cameroon": "+237",
+        "Canada": "+1",
+        "Cape Verde": "+238",
+        "Cayman Islands": "+1-345",
+        "Central African Republic": "+236",
+        "Chad": "+235",
+        "Chile": "+56",
+        "China": "+86",
+        "Colombia": "+57",
+        "Comoros": "+269",
+        "Cook Islands": "+682",
+        "Costa Rica": "+506",
+        "Croatia": "+385",
+        "Cuba": "+53",
+        "Curacao": "+599",
+        "Cyprus": "+357",
+        "Czech Republic": "+420",
+        "Democratic Republic of the Congo": "+243",
+        "Denmark": "+45",
+        "Djibouti": "+253",
+        "Dominica": "+1-767",
+        "Dominican Republic": "+1-809, +1-829, +1-849",
+        "East Timor": "+670",
+        "Ecuador": "+593",
+        "Egypt": "+20",
+        "El Salvador": "+503",
+        "Equatorial Guinea": "+240",
+        "Eritrea": "+291",
+        "Estonia": "+372",
+        "Ethiopia": "+251",
+        "Falkland Islands": "+500",
+        "Faroe Islands": "+298",
+        "Fiji": "+679",
+        "Finland": "+358",
+        "France": "+33",
+        "French Polynesia": "+689",
+        "Gabon": "+241",
+        "Gambia": "+220",
+        "Georgia": "+995",
+        "Germany": "+49",
+        "Ghana": "+233",
+        "Gibraltar": "+350",
+        "Greece": "+30",
+        "Greenland": "+299",
+        "Grenada": "+1-473",
+        "Guam": "+1-671",
+        "Guatemala": "+502",
+        "Guernsey": "+44-1481",
+        "Guinea": "+224",
+        "Guinea-Bissau": "+245",
+        "Guyana": "+592",
+        "Haiti": "+509",
+        "Honduras": "+504",
+        "Hong Kong": "+852",
+        "Hungary": "+36",
+        "Iceland": "+354",
+        "Indonesia": "+62",
+        "Iran": "+98",
+        "Iraq": "+964",
+        "Ireland": "+353",
+        "Isle of Man": "+44-1624",
+        "Israel": "+972",
+        "Italy": "+39",
+        "Ivory Coast": "+225",
+        "Jamaica": "+1-876",
+        "Japan": "+81",
+        "Jersey": "+44-1534",
+        "Jordan": "+962",
+        "Kazakhstan": "+7",
+        "Kenya": "+254",
+        "Kiribati": "+686",
+        "Kosovo": "+383",
+        "Kuwait": "+965",
+        "Kyrgyzstan": "+996",
+        "Laos": "+856",
+        "Latvia": "+371",
+        "Lebanon": "+961",
+        "Lesotho": "+266",
+        "Liberia": "+231",
+        "Libya": "+218",
+        "Liechtenstein": "+423",
+        "Lithuania": "+370",
+        "Luxembourg": "+352",
+        "Macau": "+853",
+        "Macedonia": "+389",
+        "Madagascar": "+261",
+        "Malawi": "+265",
+        "Malaysia": "+60",
+        "Maldives": "+960",
+        "Mali": "+223",
+        "Malta": "+356",
+        "Marshall Islands": "+692",
+        "Mauritania": "+222",
+        "Mauritius": "+230",
+        "Mayotte": "+262",
+        "Mexico": "+52",
+        "Micronesia": "+691",
+        "Moldova": "+373",
+        "Monaco": "+377",
+        "Mongolia": "+976",
+        "Montenegro": "+382",
+        "Montserrat": "+1-664",
+        "Morocco": "+212",
+        "Mozambique": "+258",
+        "Myanmar": "+95",
+        "Namibia": "+264",
+        "Nauru": "+674",
+        "Nepal": "+977",
+        "Netherlands": "+31",
+        "Netherlands Antilles": "+599",
+        "New Caledonia": "+687",
+        "New Zealand": "+64",
+        "Nicaragua": "+505",
+        "Niger": "+227",
+        "Nigeria": "+234",
+        "Niue": "+683",
+        "North Korea": "+850",
+        "Northern Mariana Islands": "+1-670",
+        "Norway": "+47",
+        "Oman": "+968",
+        "Pakistan": "+92",
+        "Palau": "+680",
+        "Palestine": "+970",
+        "Panama": "+507",
+        "Papua New Guinea": "+675",
+        "Paraguay": "+595",
+        "Peru": "+51",
+        "Philippines": "+63",
+        "Pitcairn": "+64",
+        "Poland": "+48",
+        "Portugal": "+351",
+        "Puerto Rico": "+1-787, +1-939",
+        "Qatar": "+974",
+        "Republic of the Congo": "+242",
+        "Reunion": "+262",
+        "Romania": "+40",
+        "Russia": "+7",
+        "Rwanda": "+250",
+        "Saint Barthelemy": "+590",
+        "Saint Helena": "+290",
+        "Saint Kitts and Nevis": "+1-869",
+        "Saint Lucia": "+1-758",
+        "Saint Martin": "+590",
+        "Saint Pierre and Miquelon": "+508",
+        "Saint Vincent and the Grenadines": "+1-784",
+        "Samoa": "+685",
+        "San Marino": "+378",
+        "Sao Tome and Principe": "+239",
+        "Saudi Arabia": "+966",
+        "Senegal": "+221",
+        "Serbia": "+381",
+        "Seychelles": "+248",
+        "Sierra Leone": "+232",
+        "Singapore": "+65",
+        "Sint Maarten": "+1-721",
+        "Slovakia": "+421",
+        "Slovenia": "+386",
+        "Solomon Islands": "+677",
+        "Somalia": "+252",
+        "South Africa": "+27",
+        "South Korea": "+82",
+        "South Sudan": "+211",
+        "Spain": "+34",
+        "Sri Lanka": "+94",
+        "Sudan": "+249",
+        "Suriname": "+597",
+        "Svalbard and Jan Mayen": "+47",
+        "Swaziland": "+268",
+        "Sweden": "+46",
+        "Switzerland": "+41",
+        "Syria": "+963",
+        "Taiwan": "+886",
+        "Tajikistan": "+992",
+        "Tanzania": "+255",
+        "Thailand": "+66",
+        "Togo": "+228",
+        "Tokelau": "+690",
+        "Tonga": "+676",
+        "Trinidad and Tobago": "+1-868",
+        "Tunisia": "+216",
+        "Turkey": "+90",
+        "Turkmenistan": "+993",
+        "Turks and Caicos Islands": "+1-649",
+        "Tuvalu": "+688",
+        "U.S. Virgin Islands": "+1-340",
+        "Uganda": "+256",
+        "Ukraine": "+380",
+        "United Arab Emirates": "+971",
+        "United Kingdom": "+44",
+        "United States": "+1",
+        "Uruguay": "+598",
+        "Uzbekistan": "+998",
+        "Vanuatu": "+678",
+        "Vatican": "+379",
+        "Venezuela": "+58",
+        "Vietnam": "+84",
+        "Wallis and Futuna": "+681",
+        "Yemen": "+967",
+        "Zambia": "+260",
+        "Zimbabwe": "+263"
+    };
+
+    for (var country in countryCodes) {
+        if (countryCodes.hasOwnProperty(country)) {
+            var option = document.createElement("option");
+            option.value = countryCodes[country];
+            option.text = country + countryCodes[country];
+            if (country === "India") {
+                option.selected = true;
+                sessionStorage.setItem("selectedCountryCode", countryCodes[country]);
+            }
+            countryCodeSelect.appendChild(option);
+        }
+    }
+
+    countryCodeSelect.addEventListener("change", function () {
+        var selectedCountryCode = countryCodeSelect.value;
+        sessionStorage.setItem("selectedCountryCode", selectedCountryCode);
+    });
+    var flightInput = document.getElementById('flight_input');
+    flightInput.addEventListener('input', function () {
+        var enteredText = flightInput.value;
+        localStorage.setItem('flightText', enteredText);
+    });
+</script>
+
+<script>
+
+    // UI update in new tab as per user agent type
+    var iOS = navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+    // if (iOS || macLap) {
+    //     console.log('iniOS');
+    //     var divElement = document.getElementsByClassName('tacbox')
+    //     var labelElement = document.querySelector('label[for="checkbox"]')
+    //     var checkboxElement = document.getElementById('checkbox')
+    //     for (var i = 0; i < divElements.length; i++) {
+    //         divElements[i].classList.add('ios');
+    //     }
+
+    //     for (var j = 0; j < labelElements.length; j++) {
+    //         labelElements[j].classList.add('ios');
+    //     }
+
+    //     for (var k = 0; k < checkboxElements.length; k++) {
+    //         checkboxElements[k].classList.add('ios');
+    //     }
+    // } else {
+    //     console.log('inELSE', iOS)
+    //     console.log('inELSE', macLap)
+    // }
+    var ua = navigator.userAgent.toLowerCase();
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    var iOS = /iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var macLap = /Macintosh/.test(navigator.userAgent) && !(/like Mac OS X/.test(navigator.userAgent));
+    if (iOS || macLap) {
+        console.log('iniOS');
+        var divElements = document.getElementsByClassName('tacbox');
+        var labelElements = document.querySelectorAll('label[for="checkbox"]');
+        var checkboxElements = document.querySelectorAll('#checkbox');
+        for (var i = 0; i < divElements.length; i++) {
+            divElements[i].classList.add('ios');
+        }
+        for (var i = 0; i < labelElements.length; i++) {
+            labelElements[i].classList.add('ios');
+        }
+        for (var i = 0; i < checkboxElements.length; i++) {
+            checkboxElements[i].classList.add('ios');
+        }
+    }
+
+    var isAndroid = ua.indexOf("android") > -1;
+    if (isAndroid || iOS) {
+        $(".Framer").css("display", "block");
+        $(".main_div").css({ 'padding-bottom': '10%', 'height': 'auto' });
+    }
+    else {
+    }
+
+    $(".top_banner").click(function () {
+        Track_analytics(localStorage["booking_id"], "Selfdrive", "Null", "Null", "Null", "Null", "Null", "NULL", "BAC");
+        setTimeout(() => {
+            window.location.href = 'https://www.zoomcar.com/?utm_medium=mojoboxx&utm_source=mojoboxx2&utm_campaign=mojoboxx3'
+        }, 1000);
+    })
+
+    // $(".selfdrivetxt").click(function () {
+    //     Track_analytics(localStorage["booking_id"], "selfdrive", "Null", "Null", "Null", "Null", "Null", "NULL", "BAC");
+    //     setTimeout(() => {
+    //         window.location.href = 'https://www.zoomcar.com/?utm_medium=mojoboxx&utm_source=mojoboxx2&utm_campaign=mojoboxx3'
+    //     }, 1000);
+    // })
+
+
+    // function backtomain(){
+    //     $(".selfdriveIframe").css("display","none");
+    // }
+
+    // var ua = navigator.userAgent.toLowerCase();
+    // var isAndroid = ua.indexOf("android") > -1;
+    // if(!isAndroid)
+    // {
+    // }
+
+    if (!/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) {
+        $(".top_banner").css("display", "none");
+    }
+
+</script>
+
+</html>

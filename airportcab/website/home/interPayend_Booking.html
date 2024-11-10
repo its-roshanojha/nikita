@@ -1,0 +1,4513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Airport Cab</title>
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+
+  <link href="css/mdtimepicker.css" rel="stylesheet" type="text/css" />
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
+    integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+
+  <link href="css/mdtimepicker.css" rel="stylesheet" type="text/css" />
+  <script src="js/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/mdtimepicker.js"></script>
+  <script src="js/apicall.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <style>
+    @font-face {
+      font-family: "inter-bold";
+      src: url(font/Inter-Bold.ttf);
+    }
+
+    @font-face {
+      font-family: "inter-regular";
+      src: url(font/Inter-Regular.ttf);
+    }
+
+    @font-face {
+      font-family: "inter-medium";
+      src: url(font/Inter-Medium.ttf);
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11111478379"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "AW-11111478379");
+  </script>
+
+  <!-- Event snippet for Page view conversion page -->
+  <script>
+    gtag("event", "conversion", {
+      send_to: "AW-11111478379/v4WACLrpkpAYEOvorrIp",
+    });
+  </script>
+</head>
+<style>
+  body {
+    /* overflow: hidden; */
+    background-color: white;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+    /* For Internet Explorer and Edge */
+  }
+
+  html::-webkit-scrollbar {
+    width: 0px;
+    /* For Chrome, Safari, and Opera */
+  }
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  @font-face {
+    font-family: "NetflixSansLight";
+    src: url(font/NetflixSansLight.ttf);
+  }
+
+  @font-face {
+    font-family: "NetflixSansMedium";
+    src: url(font/NetflixSansMedium.ttf);
+  }
+
+  @font-face {
+    font-family: "NetflixSansRegular";
+    src: url(font/NetflixSansRegular.ttf);
+  }
+
+  p,
+  span {
+    font-family: NetflixSansRegular;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: NetflixSansRegular;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .top {
+    overflow-x: hidden;
+    background-color: black;
+  }
+
+  .left_logo {
+    width: 45%;
+    margin: 0 auto;
+    margin-top: 4px;
+  }
+
+  .right_logo {
+    width: 32%;
+    float: right;
+    margin-top: 1%;
+  }
+
+  .green {
+    width: 30%;
+    float: left;
+    margin-top: 0%;
+    margin-left: 34%;
+  }
+
+  .confirm {
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .top_div {
+    margin-top: 1%;
+    margin-bottom: 2%;
+    overflow: hidden;
+    width: 96%;
+    /* margin-left: 32%; */
+  }
+
+  .top_head {
+    width: 100vw;
+    top: 3%;
+    margin: 0;
+    padding-left: 2%;
+    /* overflow-x: hidden; */
+    z-index: 9999;
+  }
+
+  .mid_text {
+    float: left;
+    width: 50%;
+  }
+
+  .right_text p,
+  .right_text h5 {
+    margin: 1px 0px;
+  }
+
+  .right_text p {
+    font-size: 10px;
+  }
+
+  .right_text {
+    width: 31%;
+    float: left;
+    font-size: 11px;
+    text-align: right;
+  }
+
+  .mid_text {
+    float: left;
+    width: 47%;
+    font-size: 15px;
+    margin-left: 1%;
+  }
+
+  .mid_text span {
+    font-size: 11px;
+    font-weight: 600;
+    margin: 2px;
+  }
+
+  .mid_text p {
+    margin: 2px;
+    font-size: 10px;
+  }
+
+  .div2 {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 1%;
+    /* padding-top: 1%;
+      padding-left: 1%;
+      margin-top: 1%; */
+  }
+
+  #div2_part1 {
+    padding: 0.5rem;
+    width: 90%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+  }
+
+  #div2_part2 {
+    padding: 0.5rem;
+    width: 90%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+  }
+
+  #div2_part3 {
+    padding: 0.5rem;
+    width: 90%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+  }
+
+  .div2 h5 {
+    margin: 5px 0px;
+  }
+
+  .top_menu {
+    margin-top: 12%;
+  }
+
+  .div2 span {
+    font-size: 13px;
+  }
+
+  .left_div {
+    width: 55%;
+    float: left;
+    margin: 2px 0px;
+    font-size: 13px;
+    font-family: NetflixSansRegular;
+  }
+
+  .right_div {
+    width: 45%;
+    float: left;
+    margin: 2px 0px;
+    font-size: 14px;
+    padding-bottom: 1%;
+    font-family: NetflixSansMedium;
+    text-align: right;
+  }
+
+  .notify p {
+    font-size: 11px;
+    word-spacing: 3px;
+  }
+
+  .notify {
+    margin-top: 5%;
+    width: 95%;
+  }
+
+  .confirm_button {
+    width: 95%;
+    background-color: rgb(234, 33, 39);
+    text-align: center;
+    border-radius: 7px;
+    margin-top: 5%;
+    -webkit-appearance: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .confirm_button input[type="submit"] {
+    width: 100%;
+    float: left;
+    background-color: rgb(234, 33, 39);
+    text-align: center;
+    height: 50px;
+    border: none;
+    padding-top: 1%;
+    font-size: 20px;
+    color: white;
+    font-family: "NetflixSansRegular";
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+
+  .confirmation_boxCab,
+  .confirmation_boxCab2,
+  .confirmation_boxCab3,
+  #confirmation_boxCab5 {
+    position: fixed;
+    width: 80%;
+    top: 30vh;
+    left: 5vw;
+    background-color: white;
+    z-index: 12;
+    text-align: center;
+    padding: 5%;
+    display: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px -1px black;
+  }
+
+  #confirmation_boxCab5 {
+    top: 15vh;
+  }
+
+  #confirmation_boxCab6 {
+    position: absolute;
+    width: 85%;
+    top: 4vh;
+    left: 2.5vw;
+    background-color: white;
+    z-index: 12;
+    text-align: center;
+    padding: 5%;
+    display: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px -1px black;
+  }
+
+  .confirmation_boxCabDiv,
+  .confirmation_boxCabDiv2,
+  .confirmation_boxCabDiv3,
+  #confirmation_boxCabDiv5 {
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 11;
+    text-align: center;
+    padding: 5%;
+  }
+
+  .status {
+    background: RGB(224, 11, 37);
+    color: White;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 40%;
+    font-size: 1.2em;
+    margin: 0 auto;
+    background-color: rgb(234, 33, 39);
+    margin-bottom: 3%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: NetflixSansRegular;
+  }
+
+  .payment_success,
+  .cab_confi {
+    background: rgb(234, 33, 39);
+    color: white;
+    border-radius: 7px;
+    padding: 8px;
+    text-align: center;
+    top: 40%;
+    width: 80%;
+    /* margin: 0 auto; */
+    position: absolute;
+    left: 8%;
+  }
+
+  .payment_success h3,
+  .cab_confi h3 {
+    font-weight: 100;
+  }
+
+  .ok_b {
+    background: white;
+    color: rgb(234, 33, 39);
+    width: 13%;
+    padding: 5px;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 3%;
+  }
+
+  .pay_back1 {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    top: 0%;
+    display: none;
+  }
+
+  .pay_back2 {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    top: 0%;
+    display: none;
+  }
+
+  #brand-logo {
+    background: black;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+  }
+
+  .top_img {
+    width: 45%;
+    float: left;
+    margin-left: 0%;
+  }
+
+  .bookingDate {
+    width: 40%;
+    float: right;
+    text-align: right;
+  }
+
+  #passenger_name {
+    margin: 0;
+    padding: 0;
+    color: rgb(234, 33, 39);
+    font-size: 16px;
+    /* border-bottom: 5px solid #F1F1F1; */
+    padding-right: 3%;
+    padding-top: 5%;
+    font-family: "NetflixSansMedium";
+  }
+
+  .journeyInfo {
+    width: 95%;
+    background: white;
+    margin: 0 auto;
+    margin-bottom: 2%;
+    overflow: hidden;
+  }
+
+  .journeyDest {
+    width: 97%;
+    overflow: hidden;
+    margin-top: 5%;
+    margin-left: 3%;
+  }
+
+  .journeyFrom {
+    width: 15%;
+    float: left;
+    margin-right: 3%;
+  }
+
+  #passenger_source,
+  #passenger_to {
+    margin-top: 5%;
+    font-size: 20px;
+    margin-bottom: 10%;
+    font-family: NetflixSansMedium;
+  }
+
+  #passenger_source {
+    color: green;
+    font-weight: 800;
+    text-decoration: underline;
+  }
+
+  .journeyImg {
+    float: left;
+    width: 62%;
+    margin-top: -2%;
+    border-bottom: 2px dashed;
+  }
+
+  #snackbarCab {
+    visibility: hidden;
+    min-width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    bottom: 30px;
+    font-size: 13px;
+    padding: 8px 9px 9px 2px;
+    font-family: NetflixSansRegular;
+  }
+
+  #snackbarCab.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  img {
+    width: 40%;
+    /* height: 100%; */
+  }
+
+  .journeyTo {
+    width: 15%;
+    float: left;
+    padding-left: 3%;
+  }
+
+  .detail_img {
+    width: 5%;
+    float: left;
+    margin-right: 3%;
+  }
+
+  .heading {
+    width: 13%;
+    float: left;
+    margin-top: 0 !important;
+  }
+
+  #depart_time,
+  #arrival_time {
+    margin-top: 2%;
+    font-size: 13px;
+    width: 130%;
+  }
+
+  .modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    /* background-color: rgb(0,0,0); Fallback color */
+    /* background-color: rgba(0,0,0,0.4); Black w/ opacity */
+    -webkit-animation-name: fadeIn;
+    /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    /* position: fixed; */
+    bottom: 0%;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin-bottom: 15%;
+  }
+
+  .paymentType_active {
+    background-color: gray !important;
+  }
+
+  .paymentPara_active {
+    color: white;
+  }
+
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-header {
+    padding: 2px 16px;
+    background-color: transparent;
+    /* background-color: #ED1C24; */
+    color: white;
+    text-align: center;
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
+  }
+
+  .modal-header p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    font-family: "NetflixSansRegular";
+    line-height: 26px;
+    color: #000;
+    margin: 20px 0px 10px 0px;
+    text-align: left;
+    padding-left: 6%;
+    font-family: "NetflixSansMedium";
+  }
+
+  .paymentType {
+    background: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    margin: 3px 0px;
+    padding: 5px 0;
+  }
+
+  .paymentType img {
+    width: 56px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .paymentType p {
+    color: #696969;
+    /* font-family: Netflix Sans; */
+    font-size: 16px;
+    margin-left: 8%;
+  }
+
+  .cardLabel {
+    font-family: NetflixSansRegular;
+  }
+
+  .paymentChildShowDiv {
+    display: "block";
+    border-top-left-radius: "0px";
+    border-top-right-radius: "0px";
+  }
+
+  .paymentChild {
+    height: 214px;
+    margin: -12px 0px 10px 0px;
+    background-color: #fff;
+    display: none;
+    padding-bottom: 2%;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .modal-body {
+    padding: 2px 16px;
+  }
+
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #ed1c24;
+    color: white;
+  }
+
+  .pararide {
+    font-size: 16px;
+    font-family: "NetflixSansMedium";
+  }
+
+  .ridedit {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px;
+  }
+
+  .custdetail {
+    width: 100%;
+    padding: 0.5rem;
+    /* background-color: white;
+      border-radius: 8px;
+      width: 95%;
+      margin-left: 8px;
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between; */
+    display: flex;
+    gap: 1rem;
+  }
+
+  .custwrapper {
+    width: 60%;
+  }
+
+  .carPrice {
+    width: 20%;
+    /* margin-right: 10px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #carImg {
+    width: 80%;
+    height: 50%;
+  }
+
+  #carImg_Text {
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .insured {
+    color: rgba(3.3800000930204988, 169.00000512599945, 0, 1);
+    width: 100%;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid rgba(3.3800000930204988, 169.00000512599945, 0, 1);
+  }
+
+  /* Add Animation */
+  @-webkit-keyframes slideIn {
+    from {
+      bottom: -300px;
+      opacity: 0;
+    }
+
+    to {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      bottom: -300px;
+      opacity: 0;
+    }
+
+    to {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  div.panel {
+    display: none;
+  }
+
+  div.panel.show {
+    display: block !important;
+  }
+
+  .form_mb {
+    width: 93%;
+    padding: 10px 10px;
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    font-size: 0.9em;
+    color: #828282;
+    background: #f1f1f1;
+    border-radius: 2px;
+    margin: 1.5% 0;
+    margin-bottom: 0.3%;
+    margin-left: 0%;
+    /* border-radius: 5%; */
+  }
+
+  .expiry {
+    width: 90%;
+    padding: 10px 10px;
+    font-size: 0.9em;
+    color: #828282;
+    background: #f1f1f1;
+    border-radius: 2px;
+    margin: 1.5% 0;
+    margin-bottom: 0.3%;
+    margin-left: 0%;
+    border: none;
+    outline: none;
+  }
+
+  .cvv {
+    width: 92%;
+    /* margin: 0px 5px; */
+    padding: 10px 10px;
+    font-size: 0.9em;
+    color: #828282;
+    background: #f1f1f1;
+    border-radius: 2px;
+    margin: 1.5% 0;
+    margin-bottom: 0.3%;
+    border: none;
+    outline: none;
+  }
+
+  #cvvMessage {
+    font-size: 11px;
+    font-family: NetflixSansRegular;
+  }
+
+  .payCard {
+    background-color: #ed1c24;
+    width: 100px;
+    height: 42px;
+    border-radius: 5px;
+    left: 273px;
+    color: #fff;
+    float: right;
+    border-color: #ed1c24;
+    font-family: NetflixSansRegular;
+  }
+
+  #checkEligibilityMessage {
+    margin-top: 5px;
+    /* position: fixed; */
+    font-size: 13px;
+    font-family: NetflixSansRegular;
+  }
+
+  #showModal {
+    font-size: 30px;
+    background: white;
+    color: rgb(234, 33, 39);
+    /* border-radius: 2px; */
+    position: absolute;
+    right: 7%;
+    bottom: -10%;
+  }
+
+  #cashPay {
+    width: 20%;
+    font-family: "NetflixSansRegular";
+    right: 7%;
+    position: absolute;
+    background: rgb(234, 33, 39);
+    text-align: center;
+    color: white;
+    bottom: 4%;
+    padding: 2%;
+    border-radius: 6px;
+  }
+
+  #paybyCash {
+    background: rgb(237, 28, 36);
+    color: white;
+    margin-left: 14%;
+    border-radius: 4px;
+    border-color: rgb(237, 28, 36);
+    font-size: 14px;
+    height: 17px;
+    width: 100px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 40%);
+  }
+
+  .modal-body hr {
+    width: 120%;
+    margin-left: -10%;
+    background: #f1f1f1;
+    height: 8px;
+    border: none;
+  }
+
+  .include_txt {
+    margin: 1%;
+    font-size: 12px;
+  }
+
+  .PaymentBlock {
+    background: white;
+    padding: 3%;
+    border-radius: 5px;
+  }
+
+  .PaymentBlock input[type="radio"] {
+    margin-right: 3%;
+  }
+
+  .PaymentBlock input[type="radio"]:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+
+  .paymentType input[type="radio"]:after,
+  #SimplDiv input[type="radio"]:after,
+  .upiDiv input[type="radio"]:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    top: -9px;
+    left: -8px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+
+  input[type="radio"]:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: rgb(234, 33, 39);
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+
+  .paymentType input[type="radio"]:checked:after,
+  #SimplDiv input[type="radio"]:checked:after,
+  .upiDiv input[type="radio"]:checked:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    top: -9px;
+    left: -8px;
+    position: relative;
+    background-color: green;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+
+  .PaymentBlock .textBlock {
+    display: inline-grid;
+  }
+
+  .PaymentBlock .textBlock p {
+    font-size: 14px;
+    margin: 0 40px 0 0;
+    padding: 3px;
+  }
+
+  #partAmount,
+  #fullAmount {
+    display: inline-flex;
+    font-family: "NetflixSansMedium";
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .non-activeAmount {
+    color: grey;
+    font-family: "NetflixSansRegular" !important;
+  }
+
+  .upiDiv img {
+    width: 30%;
+    margin: 1% 1%;
+  }
+
+  .img_back {
+    width: 100%;
+    background: white;
+    overflow: hidden;
+  }
+
+  .confirm_btn {
+    font-family: "NetflixSansRegular";
+    background: black;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    margin: 0 15%;
+    width: 60%;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /* display: none; */
+  }
+
+  .terms_condition {
+    font-size: 11px;
+  }
+
+  .terms_condition a {
+    text-decoration: none;
+  }
+
+  /* .paymentbtn {
+        position: absolute;
+        right: 5%;
+        margin-top: 6%;
+    } */
+
+  .success {
+    float: right;
+    width: 30%;
+    margin: 4px;
+    text-align: right;
+    color: green;
+    margin-bottom: 5%;
+  }
+
+  #loaderr {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 1%;
+  }
+
+  #confirmation_boxCabDiv5 {
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 11;
+    text-align: center;
+    padding: 5%;
+  }
+
+  .mailb {
+    width: 100%;
+    float: left;
+    background-color: #e51837;
+    text-align: center;
+    height: 50px;
+    border: none;
+    padding-top: 1%;
+    font-size: 15px;
+    color: white;
+    font-family: "NetflixSansRegular";
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+
+  #sentmail {
+    width: 100%;
+    float: left;
+    background-color: #333333;
+    text-align: center;
+    height: 50px;
+    border: none;
+    padding-top: 1%;
+    font-size: 15px;
+    color: white;
+    font-family: "NetflixSansRegular";
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+
+  .mailbb {
+    width: 79%;
+    display: none;
+    float: left;
+    background-color: #f1f1f1;
+    height: 50px;
+    border: none;
+    padding-top: 1%;
+    font-size: 15px;
+    color: #000;
+    font-family: NetflixSansRegular;
+    border-radius: 7px;
+    cursor: pointer;
+    padding-left: 10px;
+  }
+
+  .vl {
+    border-left: 2px solid #000;
+    height: 40px;
+    position: absolute;
+    right: 62px;
+    display: none;
+  }
+
+  .icon {
+    width: 17px;
+    position: relative;
+    top: 0px;
+    background-color: #fff;
+    right: 1px;
+    border-radius: 50px;
+    padding: 5px 5px 5px 5px;
+  }
+
+  #sentmail {
+    display: none;
+  }
+
+  .confirmation_buttonBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+  }
+
+  .confirm_button {
+    width: 48%;
+    background-color: #e51837;
+    text-align: center;
+    border-radius: 7px;
+    margin-left: 0px;
+    margin-top: 6%;
+    -webkit-appearance: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .confirm_button input[type="submit"] {
+    width: 100%;
+    float: left;
+    background-color: #e51837;
+    text-align: center;
+    height: 50px;
+    border: none;
+    padding-top: 1%;
+    font-size: 15px;
+    color: white;
+    font-family: "NetflixSansRegular";
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+
+  .confirmation_boxCab,
+  .confirmation_boxCab2 {
+    position: fixed;
+    width: 80%;
+    top: 30vh;
+    left: 5vw;
+    background-color: white;
+    z-index: 12;
+    text-align: center;
+    padding: 5%;
+    display: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px -1px black;
+  }
+
+  .confirmation_boxCabDiv,
+  .confirmation_boxCabDiv2 {
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 11;
+    text-align: center;
+    padding: 5%;
+    overflow-y: scroll;
+  }
+
+  .status {
+    background: RGB(224, 11, 37);
+    color: White;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 40%;
+    font-size: 1.2em;
+    margin: 0 auto;
+    background-color: #e51837;
+    margin-bottom: 3%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: NetflixSansRegular;
+  }
+
+  .inner_textBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #f1f1f1;
+    margin-right: 22px;
+    border-radius: 12px;
+  }
+
+  .iconbox {
+    display: none;
+  }
+
+  .no-outline:focus {
+    outline: none;
+  }
+
+  .top_carImg {
+    position: absolute;
+    top: -55px;
+    width: 21%;
+    left: 36%;
+    background: white;
+    border: 10px solid rgba(0, 0, 0, 0.8);
+    border-radius: 64px;
+    padding: 5px;
+  }
+
+  .tp_carImg {
+    /* top: -55px; */
+    width: 40%;
+    margin: 0 auto;
+    left: 36%;
+    /* background: white; */
+    border-radius: 64px;
+  }
+
+  .top_carImg img {
+    padding-top: 12px;
+  }
+
+  #confirmation_boxCab5 .thank_msg {
+    font-family: NetflixsansRegular;
+    font-size: 14px;
+    padding-bottom: 0%;
+    text-align: center;
+    margin-top: 3%;
+  }
+
+  #confirmation_boxCab5 .call_msgCab p {
+    padding: 0.5rem;
+    font-weight: bolder;
+    color: green;
+    text-align: center;
+    margin: 0;
+  }
+
+  #confirmation_boxCab5 .coupon_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #confirmation_boxCab5 .coupon_container {
+    border: 2px dotted black;
+    border-radius: 0.2rem;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #confirmation_boxCab5 .coupon_box img {
+    width: 20px;
+  }
+
+  .BookingBtn {
+    margin-top: 4%;
+  }
+
+  .ReturnRide {
+    margin: 4% 0;
+  }
+
+  .ReturnRide input[type="text"] {
+    width: 65%;
+    padding: 8px;
+    background: #f3f7f8;
+    border: none;
+    border-radius: 5px;
+    margin-right: 7px;
+    box-shadow: 0px 0px 1.97906px rgb(0 0 0 / 25%);
+  }
+
+  .ReturnRide button {
+    color: white;
+    background: #40a3ff;
+    box-shadow: 0px 0px 1.97906px rgba(0, 0, 0, 0.25);
+    border-radius: 4.94764px;
+    border: none;
+    padding: 8px;
+  }
+
+  .detailbox {
+    border-radius: 5px;
+    height: 20vh;
+    width: 85vw;
+    background-color: rgb(223, 234, 236);
+  }
+
+  .innerbox {
+    height: 8vh;
+    width: 85vw;
+    /* background-color: orange; */
+  }
+
+  .img1 {
+    padding: 2%;
+  }
+
+  @media screen and (min-width: 390px) and (max-width: 418px) {
+    .img1 {
+      height: 4vh;
+    }
+  }
+
+  .offamt {
+    width: 100%;
+    padding: 3% 10%;
+    color: white;
+    height: 40%;
+    margin-top: 5%;
+    background-color: red;
+    /* border: 2px solid red; */
+  }
+
+  #discountamt {
+    font-size: 16px;
+    /* margin-top: -2% */
+    font-weight: bold;
+    margin-top: -20%;
+  }
+
+  .fullamt {
+    margin-top: -76%;
+    margin-left: -96%;
+    width: 100%;
+  }
+
+  .calndericon {
+    position: absolute;
+    margin-top: 3%;
+    margin-left: 2%;
+  }
+
+  .calenderbox {
+    width: 45%;
+  }
+
+  #datepicker {
+    color: #828282;
+    padding: 0.5em 0.5em 0.5em 2.5em;
+    width: 70%;
+    margin-left: 3%;
+    outline: none;
+    font-size: 14px;
+    border: none;
+    background-color: rgb(223, 234, 236);
+    height: 24px;
+    border-radius: 2px;
+  }
+
+  .datecalender {
+    color: #828282;
+    padding: 0.5em 0.5em 0.5em 2.5em;
+    width: 70%;
+    margin-left: 3%;
+    outline: none;
+    font-size: 14px;
+    border: none;
+    background-color: rgb(223, 234, 236);
+    height: 24px;
+    border-radius: 2px;
+  }
+
+  .paymentbtn {
+    margin-top: 10%;
+    border-radius: 40px;
+    background-color: #8d97a1;
+    color: white;
+  }
+
+  .timepicker::placeholder {
+    color: #828282 !important;
+  }
+
+  #close6 {
+    position: absolute;
+    top: -9px;
+    right: -7px;
+    font-size: 30px;
+    background: rgb(234, 33, 39);
+    color: white;
+    border-radius: 30px;
+  }
+</style>
+
+<body>
+  <div id="snackbarCab">
+    Your Cab Booking Voucher is downloading<br />
+    If the download does not start, take a screenshot
+  </div>
+
+  <div id="loaderr">
+    <img src="img/loader.gif" alt="" />
+  </div>
+
+  <div class="confirmation_boxCabDiv"></div>
+  <div class="confirmation_boxCab">
+    <!-- <i class="fas fa-times-circle" id="referclose2" style="right: 0%;"></i> -->
+    <div class="thank_msg" style="font-family: NetflixsansRegular">
+      <br />Confirmation for your cab booking has been successfully
+      downloaded.
+    </div>
+    <div class="call_msgCab">
+      <p id="reserve">Please check your phone's download section</p>
+    </div>
+    <div class="status" id="Failed">Ok</div>
+  </div>
+  <div class="confirmation_boxCabDiv2"></div>
+  <div class="confirmation_boxCab2">
+    <i class="fas fa-times-circle" id="referclose" style="right: 0%"></i>
+    <div class="call_msgCab">
+      <p id="cmmsg1"></p>
+      <p id="cmmsg2"></p>
+    </div>
+    <div class="status" id="arrivalBook">
+      <a style="text-decoration: none; color: #fff" id="arrVAL">Book Now</a>
+    </div>
+  </div>
+  <div class="confirmation_boxCabDiv3"></div>
+  <div class="confirmation_boxCab3">
+    <div class="thank_msg" style="font-family: NetflixsansRegular; font-size: 17px">
+      <br />Your booking request is submitted successfully.
+    </div>
+    <div class="call_msgCab">
+      <p id="reserve" style="font-size: 17px">
+        You will receive confirmation details shortly through SMS & Email.
+      </p>
+      <!-- <p style="font-size:17px ;">Don't forget to take your cashback , after successful payment through payment link sent to your mobile number. -->
+      <!-- <p style="font-size: 17px;">Don't forget to take your cashback.
+                <br> For any assistance call 08046800969</p> -->
+      <p style="font-size: 17px">For any assistance call 08046800969</p>
+    </div>
+    <div class="status" id="status3">Ok</div>
+  </div>
+
+  <div id="confirmation_boxCabDiv5"></div>
+  <div id="confirmation_boxCab5">
+    <i class="fas fa-times-circle" id="close5" style="right: 0%"></i>
+    <div class="thank_msg" style="
+          font-family: NetflixsansRegular;
+          font-size: 14px;
+          padding-bottom: 0%;
+        ">
+      <br />Your booking request is submitted successfully.
+      <p>
+        You will receive confirmation details shortly through SMS &
+        Email.Don't forget to take your Cashback.
+      </p>
+      <p>For any assistance call 08046800969.</p>
+      <!-- <p>You will receive confirmation details shortly through SMS & Email.<br> For any assistance call 08046800969.</p> -->
+    </div>
+    <div class="call_msgCab" style="outline-style: dotted; border-radius: 0.2rem; height: 11rem">
+      <h3 style="color: red; padding-top: 0.5rem; padding-left: 0.5rem">
+        Want to Book Arrival Cab ?
+      </h3>
+      <p style="font-weight: bolder">Use Coupon Code :</p>
+      <p style="
+            margin-top: -0.5rem;
+            background-color: rgb(236, 228, 228);
+            padding: 0.5rem;
+            border-radius: 0.2rem;
+            font-weight: bolder;
+            width: 90%;
+            margin-left: 0.5rem;
+            text-align: center;
+          " id="couponapi"></p>
+      <p style="font-size: 14px; padding-left: 0.5rem">
+        & get Cashback of Rs. <b><span id="coupounamt"></span></b> on trip
+        start.
+      </p>
+    </div>
+    <div class="status" id="status6" style="width: 100%; margin-top: 1rem">
+      Book Arrival Now !
+    </div>
+  </div>
+
+  <div id="confirmation_boxCab6">
+    <i class="fas fa-times-circle" id="close6" style="right: 0%"></i>
+
+    <div style="
+          background-color: rgb(223, 234, 236);
+          padding: 2%;
+          width: 108%;
+          margin-left: -6%;
+        ">
+      <div class="tp_carImg"><img src="img/top_car.png" /></div>
+      <div class="thank_msg" style="font-family: inter-medium">
+        Booked Successfully
+        <p style="font-size: 14px; font-family: inter-medium">
+          You will receive confirmation details shortly through SMS & Email.
+        </p>
+      </div>
+    </div>
+    <h4 style="text-align: left; font-family: inter-bold; margin-bottom: 2%">
+      Schedule your Return Ride
+    </h4>
+    <div class="call_msgCab coupon_box"></div>
+    <div class="detailbox">
+      <div class="innerbox" style="display: flex">
+        <div class="img1">
+          <img src="img/Group 79794.png" alt="" />
+        </div>
+        <div class="pno" style="width: 80%">
+          <p style="
+                font-size: 14px;
+                text-align: left;
+                font-family: inter-medium;
+              ">
+            <span id="mobile">9999999999</span> <br />Sedan - 1-3 people | 2
+            bags
+          </p>
+        </div>
+        <div class="img1" style="height: 125%">
+          <img src="img/carnew.png" alt="" />
+        </div>
+      </div>
+
+      <div class="innerbox" style="display: flex; margin-top: 2%">
+        <div class="img1" style="margin-left: 4%">
+          <img src="img/Group 79795.png" alt="" />
+        </div>
+        <div class="pno" style="width: 70%; margin-top: -3%">
+          <p style="font-size: 12px; text-align: left">
+            <span id="fromlocation" style="font-family: inter-regular">Delhi Airport</span>
+            <br /><br /><span id="tolocation" style="font-family: inter-regular">Phase 5 Udyog Vihar</span>
+          </p>
+        </div>
+        <div class="img1" id="img1" style="display: none">
+          <div class="offamt">
+            <p style="font-size: 10px; margin-top: 2%">₹ 75 Off</p>
+          </div>
+          <div id="discountamt">
+            <p id="finalamt" style="font-family: inter-bold">₹ 0</p>
+          </div>
+          <div class="fullamt">
+            <p style="font-size: 12px; text-decoration: line-through red" id="fullamt">
+              ₹ 0
+            </p>
+          </div>
+          <p style="
+                font-size: 8px;
+                position: absolute;
+                margin-top: -3.5%;
+                width: 30%;
+                margin-left: -14%;
+                font-family: inter-regular;
+              ">
+            Exc. of Airport tolls & taxes
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h6 style="font-family: inter-bold; margin-top: 2%" id="updatedatetimeline">
+      * To Get Discounted Fare Update Your Pickup Date & Time
+    </h6>
+
+    <div style="text-align: left">
+      <h4 style="font-family: inter-bold">Update Date & Time</h4>
+    </div>
+
+    <div style="display: flex">
+      <div class="calenderbox">
+        <i class="fas fa-calendar-week calndericon"></i>
+        <input style="
+              border-radius: 5px;
+              margin-left: 0%;
+              font-family: inter-medium;
+            " type="text" class="datecalender" id="datepicker" placeholder="Pickup Date" autocomplete="off" readonly />
+      </div>
+
+      <div class="calenderbox" style="margin-left: 10%">
+        <i class="fas fa-clock calndericon"></i>
+        <input style="
+              border-radius: 5px;
+              margin-left: 0%;
+              font-family: inter-medium;
+            " type="text" class="datecalender timepicker" placeholder="Pickup Time" autocomplete="off" readonly />
+      </div>
+    </div>
+
+    <div class="paymentbtn" id="paymentbtn">
+      <h4 style="padding: 3%; font-family: inter-bold; text-align: center">
+        Pay Now
+      </h4>
+    </div>
+
+    <p style="
+          text-align: left;
+          text-decoration: underline;
+          color: rgb(64, 163, 255);
+          font-family: inter-bold;
+        " id="arrivalpageopen">
+      + Add Destination Airport Ride
+    </p>
+  </div>
+
+  <!----------- TiME uI POPUP code start --------->
+  <div class="form-popup" id="myForm" style="display: none">
+    <div class="back_icon">
+      <img src="img/arrow-left.png" />
+    </div>
+    <p class="back_text">Back</p>
+
+    <div id="choosetimegrid" style="display: block; margin-bottom: 3%">
+      <label>Select Pick-up time:</label>
+    </div>
+
+    <div id="slotdiv">
+      <div class="timeam">
+        <span id="timeam" value="AM">AM</span>
+      </div>
+
+      <div class="timepm">
+        <span id="timepm" value="PM">PM</span>
+      </div>
+      <p class="outstationMSG">* Do not select a time between 10PM to 6AM</p>
+      <!-- <div class="done_btn"><input id="donetime" value="DONE" disabled />
+            </div> -->
+    </div>
+    <div class="time-list-wrap" id="time-list-wrap" style="display: none"></div>
+    <div style="margin: 2% 0% 3% 5%">
+      <span style="font-size: 12px; font-weight: bold">Important :</span><br />
+      <span style="font-size: 11px; font-weight: lighter">In case of departure choose your pick-up time wisely to catch
+        your
+        flight on time.</span><br /><span style="font-size: 11px; font-weight: lighter">• Domestic flight :- 2+2 hours
+        (Airport Travel + Security Check-in)
+        <br />
+        • International flight :- 2+3 hours (Airport Travel + Security
+        Check-in)</span>
+    </div>
+
+    <div id="timemsg">Please Select Time-Zone (AM/PM).</div>
+  </div>
+  <!----------- TiME uI POPUP code end --------->
+
+  <main>
+    <div id="interstitial_back" style="display: none"></div>
+
+    <form class="confirm" id="cabForm">
+      <div class="top_img">
+        <img src="img/yatra.png" alt="Yatra-India-Logo" style="margin-left: 10px; height: 4rem;">
+
+      </div>
+
+      <!-- <div class="top_menu">
+                <a href="cab_confirm.html" style="text-decoration: none; color: #000;">
+                    <div class="CabSection selectedGurny">
+                        <span style="text-decoration: none;"><img src="img/car_logo.png" /> CAB </span>
+                    </div>
+                </a>
+
+                <a href="reactspicejetserver/index.html" style="text-decoration: none; color: #000;">
+                    <div class="hotelSection">
+                        <span style="text-decoration: none;"><img src="img/hotel_logo.png" /> HOTEL </span>
+                    </div>
+                </a>
+            </div> -->
+
+      <div class="back_img">
+        <div class="top_head">
+          <div class="custdetail">
+            <div class="custwrapper">
+              <div>
+                <p class="pararide">Booking Received</p>
+              </div>
+              <div>
+                <p>
+                  We will share the driver details before 30 mins prior to the
+                  pickup time
+                </p>
+              </div>
+            </div>
+            <div class="carPrice">
+              <img id="carImg" class="car_img" src="img/new_Mini.png" alt="Card image cap" />
+              <p id="carImg_Text">COACH</p>
+              <!-- <div style="margin-bottom: 50px" class="insured">
+                  <span style="font-weight: bold">Insured Ride</span>
+                </div> -->
+            </div>
+          </div>
+
+          <div class="div2">
+            <div id="div2_part1">
+              <div id="BookingId">Booking Id : <span>......</span></div>
+              <div id="MobileNo">Mobile No : <span>........</span></div>
+              <div style="width: 95%; margin-bottom: 2%">
+                <h5 class="heading">From:</h5>
+                <span id="pickUpLock">T3 Indira Gandhi International Airport, New Delhi</span>
+              </div>
+              <div style="width: 95%; margin-bottom: 2%">
+                <h5 class="heading">To:</h5>
+                <span id="dropLoc">Loading..</span>
+              </div>
+              <div style="width: 47%; margin-bottom: 1%; float: left">
+                <h5 class="heading">Date:</h5>
+                <span id="picTime" style="width: 30%; margin-left: 13%">DD-MM-YYYY</span>
+              </div>
+              <div style="width: 48%; float: left">
+                <h5 class="heading">Time:</h5>
+                <span id="picTym" style="margin-left: 15%">00:00 hrs</span>
+              </div>
+              <div style="width: 48%; margin-bottom: 5%">
+                <h5 class="heading" style="width: 43%">Cab Type:</h5>
+                <span id="picTyp">Sedan</span>
+              </div>
+            </div>
+            <div id="div2_part2">
+              <div style="width: 95%">
+                <h5>Trip fare</h5>
+                <div class="left_div">Base Fare</div>
+                <div class="right_div" id="bfp">$ 000</div>
+                <div class="left_div">Discount</div>
+                <div class="right_div" id="discount_amount">$ 0</div>
+                <div class="left_div" id="paidText">Pre-Paid Amount</div>
+                <div class="right_div" id="paidTextamount" style="display: none">
+                  $ 0
+                </div>
+                <div class="right_div" id="simplPaid_amount">$ 0</div>
+                <div class="left_div">Cancellation Fee</div>
+                <div class="right_div" id="cancel_amount">$ 0</div>
+                <br />
+                <hr style="clear: both" />
+              </div>
+              <div style="width: 95%">
+                <div class="left_div" style="font-family: NetflixSansMedium; font-size: 15px">
+                  Due Amount:
+                </div>
+                <div class="right_div" style="font-size: 20px; margin-top: -1%" id="tobfp">
+                  $ 000
+                </div>
+                <br />
+                <div class="left_div" style="font-family: NetflixSansMedium; margin-bottom: 5%">
+                  Estimated Distance:<span style="font-family: NetflixSansMedium" id="eprk"></span>
+                </div>
+              </div>
+              <!-- <hr style="clear: both;"> -->
+              <h5 style="margin: 2% 0%; clear: both; width: 65%; float: left" id="payMethod"></h5>
+              <!-- <h4 class="success">Success</h4> -->
+              <!-- <h5 style="margin: 2% 0%; clear: both;" id="payMethod">Payment can be made
+                                after trip
+                                completion through UPI, online wallets or cash to driver.</h5> -->
+              <p style="
+                    font-size: 12px;
+                    margin: 0;
+                    margin-top: 5px;
+                    clear: both;
+                  " id="simpl_extra">
+                <b style="font-size: 14px">Note :</b>You will receive a link
+                on your registered mobile number where you can check your
+                booking details or request for refund.
+              </p>
+
+              <p style="
+                    font-size: 12px;
+                    margin: 0;
+                    margin-top: 5px;
+                    clear: both;
+                    display: none;
+                  " id="cash_extra">
+                <b style="font-size: 14px">Note :</b> In case of extra
+                distance travelled fare will be re-calculated. For any
+                assistance call 08046800969.
+              </p>
+            </div>
+
+            <!-- <hr style="clear: both" /> -->
+
+            <div id="div2_part3">
+              <div style="width: 95%">
+                <h5 style="margin: 0%; clear: both">Our Service Promise</h5>
+                <!-- <hr style="clear: both;"> -->
+                <p style="font-size: 13px; margin: 0; margin-top: 5px" id="paymethod">
+                  We are committed to providing our customers with the best
+                  airport ride experience.
+                  <br /><br />
+                  Your feedback matters! If you're not satisfied with your
+                  ride experience, please share your feedback at
+                  <b>care@bookairportcab.com</b>
+                </p>
+                <br />
+                <h5 style="margin: 0%; clear: both; font-style: italic">
+                  Wish you a very Happy Journey !
+                </h5>
+                <!-- <br /> -->
+                <!-- <h5 style="margin: 0%; clear: both; font-style: italic">
+                    #Delight #Book Airport Cab
+                  </h5> -->
+              </div>
+            </div>
+
+            <!-- <div class="confirm_button">
+                            <input type="submit" value="Download PDF" id="cmcb" />
+                        </div>
+                        <input type="email" class="mailb" value="Get invoice on mail " id="mailbox" />
+                        <input value="Sent on mail" id="sentmail" class="sentmail" />
+                        <div class="iconbox" style="display: flex;">
+
+                            <input type="email" class="mailbb" id="typemail" placeholder="Enter your email Id" required
+                                name="email">
+
+                            <img src="img/icon-removebg-preview.png" alt="icon" id="icon" type="sumbit" class="icon">
+        </form>
+        <div class="vl" id="line"></div>
+        </div> -->
+            <!-- <div class="confirmation_buttonBox">
+                <div class="confirm_button">
+                  <input type="submit" value="Download PDF" id="cmcb" />
+                </div>
+                <div class="confirm_button">
+                  <input
+                    type="email"
+                    class="mailb"
+                    value="Get invoice on e-mail "
+                    id="mailbox"
+                    readonly
+                  />
+                  <input
+                    value="Sent on e-mail"
+                    id="sentmail"
+                    class="mailb"
+                    readonly
+                  />
+                </div>
+              </div> -->
+            <div class="iconbox">
+              <div class="inner_textBox">
+                <input type="email" class="mailbb no-outline" id="typemail" placeholder="Enter your email Id" required
+                  name="email" />
+                <div class="vl" id="line"></div>
+                <div class="icongo">
+                  <img src="img/Forward-512.webp" alt="icon" id="icon" type="sumbit" class="icon" />
+                </div>
+              </div>
+            </div>
+            <!-- </form> -->
+
+            <!-- <p id="cmcb" style="font-size: 14px"><a href="#">Click here to Download Confirmation</a></p> -->
+          </div>
+        </div>
+        <div id="bottom_banner" style="margin-top: 4%" ;></div>
+      </div>
+
+      <input type="hidden" id="popupvalue" />
+      <!-- start modal  -->
+      <!-- The Modal -->
+    </form>
+  </main>
+
+  <script>
+    // UI update in new tab as per user agent type
+    var iOS =
+      navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+    var ua = navigator.userAgent.toLowerCase();
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    var macLap = userAgent.match(/Macintosh/i);
+
+    var isAndroid = ua.indexOf("android") > -1;
+    if (isAndroid || iOS) {
+    } else {
+      $(".div2").css({
+        width: "30%",
+        margin: "0 auto",
+      });
+
+      $(".custdetail").css({
+        width: "30%",
+        margin: "0 auto",
+        clear: "both",
+      });
+
+      $(".top_img").css({
+        width: "15%",
+        margin: "0 auto",
+        clear: "both",
+      });
+    }
+
+    //   var responseload
+    var FetchBookingResp;
+    localStorage.setItem("Pageopen", "second");
+    var fareVal;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const orderId = urlParams.get("orderId");
+    const paymentType = urlParams.get("paymentType");
+    const order_reference_number = urlParams.get("order_reference_number");
+    const Paymethod = urlParams.get("payMethod");
+    // fillDataThroughBookingId();
+    if (
+      orderId != null &&
+      paymentType != null &&
+      order_reference_number != null
+    ) {
+      // fillBookingData();
+      document.getElementById("loaderr").style.display = "block";
+      fillDataThroughBookingId(order_reference_number);
+      $("#payMethod").html("PAYMENT METHOD : PAYTM");
+
+      departure_Ads();
+    } else {
+      fillBookingData();
+      if (Paymethod == "Simpl") {
+        $("#payMethod").html("PAYMENT METHOD : SIMPL");
+      }
+      if (Paymethod == "RAZORPAY") {
+        $("#payMethod").html("PAYMENT METHOD : RazorPay");
+      }
+      if (Paymethod == "Cash") {
+        $("#payMethod").html("PAYMENT METHOD : ONLINE");
+        $("#simpl_extra").css("display", "none");
+        $("#cash_extra").css("display", "block");
+      }
+      departure_Ads();
+    }
+
+    ///////////////////////////// Status Show after payment start ////////////////////////
+
+    // const ShowStatus = (statusCode) => {
+
+    //     if (statusCode == 101) {
+    //         $(".confirmation_boxCabDiv").css("display", "block");
+    //         $(".confirmation_boxCab").css("display", "block");
+    //      }
+
+    // if (statusCode == 200) {
+    //     $(".confirmation_boxCabDiv3").css("display", "block");
+    //     $(".confirmation_boxCab3").css("display", "block");
+    // }
+    // }
+
+    ///////////////////////////// Status Show after payment end ////////////////////////
+
+    $("#Failed").click(function () {
+      $(".confirmation_boxCabDiv").css("display", "none");
+      $(".confirmation_boxCab").css("display", "none");
+      // window.location= "https://spicescreen.com/"
+    });
+    $("#status3").click(function () {
+      $(".confirmation_boxCabDiv3").css("display", "none");
+      $(".confirmation_boxCab3").css("display", "none");
+      // window.location= "https://spicescreen.com/"
+    });
+
+    ///////////////////// DATA FILL ON PAGE LOAD CODE START ////////////////
+    var final_data;
+    async function fillBookingData() {
+      console.log(JSON.parse(localStorage["TripEND"]));
+      // const dataDF = JSON.parse(JSON.parse(localStorage["BookingDatafromMain"]))
+
+      // for international
+      let travelType = localStorage.getItem("TravelType");
+
+      const registerClubMember2 = JSON.parse(localStorage.TripEND);
+      final_data = registerClubMember2.clubMember;
+      FetchBookingResp = final_data[0];
+
+      // if ((final_data[0].isDeparture == 1) && (final_data[0].category == "CAB") && (final_data[0].cab_category != 'Outstation')) {
+      //     fetch(BaseAPIURL+domain+"/webapi/getCouponCode").then((res) => {
+      //         return res.json();
+      //     }).then((data) => {
+      //         for (let k in data.data) {
+      //             if (data.data[k].confirm_page == 1) {
+      //                 $("#confirmation_boxCabDiv5").css("display", "block");
+      //                 $("#confirmation_boxCab6").css("display", "block");
+      //                 returnride(FetchBookingResp);
+      //                 document.getElementById("couponapi").innerText = data.data[k].coupon_code;
+      //                 document.getElementById("coupounamt").innerText = data.data[k].amount;
+      //             }
+      //         }
+      //     })
+      // }
+      // else {
+      $(".confirmation_boxCabDiv3").css("display", "block");
+      $(".confirmation_boxCab3").css("display", "block");
+      // }
+
+      ///////Split Fare amount code start///////
+      if (String(final_data[0]["fare_price"]).includes("-")) {
+        final_data[0]["fare_price"] =
+          final_data[0]["fare_price"].split("-")[1];
+      }
+      if (final_data[0]["card_type"] == "mojoFixFare") {
+        var fare;
+        if (final_data[0]["discount_type"] == "discount") {
+          fare =
+            Number(final_data[0]["content_id"]) +
+            Number(final_data[0]["discount_amount"]);
+          $("#bfp").html(
+            "₹" +
+            (Number(final_data[0]["content_id"]) +
+              Number(final_data[0]["discount_amount"]))
+          );
+        } else {
+          fare = final_data[0]["content_id"];
+          $("#bfp").html("₹" + final_data[0]["content_id"]);
+        }
+      } else {
+        var fare = final_data[0]["fare_price"];
+        $("#bfp").html("₹" + final_data[0]["fare_price"]);
+      }
+      var splitFare;
+      if (String(fare).includes(" - ")) {
+        fareVal = fare.split("-")[1];
+        splitFare = parseInt(fare.split("-")[1]) + 50;
+      } else {
+        fareVal = fare;
+        splitFare = parseInt(fareVal) + 50;
+      }
+      ///////Split Fare amount code end///////
+
+      ////// amount show by simpl code start//////////
+      if (
+        final_data[0]["pay_type"] == "partial_simpl" &&
+        final_data[0]["paymentMethod"] == "SIMPL"
+      ) {
+        $("#simplPaid_amount").html("- ₹" + 50);
+        $("#tobfp").html("₹" + Number(parseInt(fareVal) - parseInt(50)));
+        // $("#discount_amount").html("- ₹" + parseInt(final_data[0]["total_kilometers"])*2)
+      } else if (
+        final_data[0]["pay_type"] == "full_simpl" &&
+        final_data[0]["paymentMethod"] == "SIMPL"
+      ) {
+        $("#simplPaid_amount").html("- ₹" + fareVal);
+        // $("#discount_amount").html("- ₹" + parseInt(final_data[0]["total_kilometers"])*2)
+        $("#tobfp").html("₹" + Number(parseInt(fareVal) - parseInt(fareVal)));
+      } else if (
+        final_data[0]["pay_type"] == "full_razor" &&
+        final_data[0]["paymentMethod"] == "RAZORPAY"
+      ) {
+        if (
+          final_data[0].cab_category == "Outstation" ||
+          final_data[0].cab_category == "Rental"
+        ) {
+          $("#paidText").css("display", "block");
+          $("#bfp").html("₹" + fareVal);
+          $("#simplPaid_amount").html("₹" + fareVal);
+          $("#tobfp").html(
+            "₹" + Number(parseInt(fareVal) - parseInt(fareVal))
+          );
+        } else {
+          let fareVal;
+          if (final_data[0]["card_type"] == "mojoFixFare") {
+            if (final_data[0]["discount_type"] == "discount") {
+              fareVal =
+                Number(final_data[0]["content_id"]) +
+                Number(final_data[0]["discount_amount"]);
+              $("#paidText").css("display", "block");
+              $("#discount_amount").css("display", "block");
+              $("#discount_amount").html(
+                "- ₹" + Number(final_data[0]["discount_amount"])
+              );
+            } else {
+              fareVal = final_data[0]["content_id"];
+            }
+            $("#simplPaid_amount").html(
+              "₹" + Number(final_data[0]["content_id"])
+            );
+            $("#bfp").html("₹" + fareVal);
+            $("#tobfp").html(
+              "₹" + Number(parseInt(fareVal) - parseInt(fareVal))
+            );
+          } else {
+            if (final_data[0]["discount_type"] == "discount") {
+              fareVal =
+                Number(final_data[0]["content_id"]) +
+                Number(final_data[0]["discount_amount"]);
+              $("#paidText").css("display", "block");
+              $("#discount_amount").css("display", "block");
+
+              travelType == "International"
+                ? $("#discount_amount").html(
+                  "$" + Number(final_data[0]["discount_amount"])
+                )
+                : $("#discount_amount").html(
+                  "- ₹" + Number(final_data[0]["discount_amount"])
+                );
+            } else {
+              // fareVal = final_data[0]["content_id"];
+              fareVal = final_data[0]["content_id"];
+              $("#paidText").css("display", "block");
+
+              travelType == "International"
+                ? $("#discount_amount").html(
+                  "$" + Number(final_data[0]["discount_amount"])
+                )
+                : $("#discount_amount").html(
+                  "- ₹" + Number(final_data[0]["discount_amount"])
+                );
+
+              travelType == "International"
+                ? $("#cancel_amount").html("$" + 0)
+                : $("#cancel_amount").html("₹" + 0);
+
+              travelType == "International"
+                ? $("#bfp").html("$" + fareVal)
+                : $("#bfp").html("₹" + fareVal);
+
+              travelType == "International"
+                ? $("#simplPaid_amount").html(
+                  "$" + final_data[0]["content_id"]
+                )
+                : $("#simplPaid_amount").html(
+                  "₹" + final_data[0]["content_id"]
+                );
+
+              travelType == "International"
+                ? $("#tobfp").html(
+                  "$" +
+                  Number(
+                    parseInt(fareVal) -
+                    Number(parseInt(final_data[0]["content_id"]))
+                  )
+                )
+                : $("#tobfp").html(
+                  "₹" +
+                  Number(
+                    parseInt(fareVal) -
+                    Number(parseInt(final_data[0]["content_id"]))
+                  )
+                );
+            }
+          }
+        }
+      } else if (
+        final_data[0]["pay_type"] == "partial_razor" &&
+        final_data[0]["paymentMethod"] == "RAZORPAY"
+      ) {
+        $("#bfp").html("₹" + Number(parseInt(final_data[0]["fare_price"])));
+        $("#simplPaid_amount").html(
+          "- ₹" + Number(final_data[0]["content_id"])
+        );
+        $("#paidText").css("display", "block");
+        $("#discount_amount").html(
+          "- ₹" + Number(final_data[0]["discount_amount"])
+        );
+        $("#tobfp").html(
+          "₹" +
+          (Number(final_data[0]["fare_price"]) -
+            (Number(final_data[0]["content_id"]) +
+              Number(final_data[0]["discount_amount"])))
+        );
+      } else {
+        $("#simplPaid_amount").html("₹0");
+        $("#simpl_extra").css("display", "none");
+        $("#tobfp").html("₹" + parseInt(fareVal));
+        // $("#paidText").css("display","none")
+        // $("#discount_amount").html("₹" + 50);
+      }
+      ////// amount by simpl show code end  //////////
+
+      $("#epr").html(final_data[0]["fare_price"]);
+
+      //////// Calculate distance km start/////////////
+      var Addmoreamount = "";
+      Addmoreamount = parseInt(final_data[0]["total_kilometers"]) * 2;
+      // $("#bfp").html("₹" + Number(parseInt(final_data[0]["fare_price"])+parseInt(Addmoreamount)));
+      // $("#bfp").html("₹" + final_data[0]["fare_price"]);
+      //////// Calculate distance km end /////////////
+
+      if (
+        final_data[0]["email"] != "" &&
+        final_data[0]["email"] != "undefined"
+      ) {
+        if (travelType == "International") {
+          sendInvoice();
+        } else {
+          sendEmail(
+            final_data[0]["email"],
+            final_data[0]["order_reference_number"],
+            final_data[0]["mobile"],
+            "BAC_box"
+          );
+        }
+      }
+
+      $("#eprk").html(final_data[0]["total_kilometers"] + "Km");
+      $("#picTyp")
+        .html(final_data[0]["cab_type"])
+        .css("text-transform", "Capitalize");
+      $("#cabPartner").html(final_data[0]["partnerName"]);
+
+      $("#dropLoc").html(final_data[0]["destination_name"]);
+      $("#pickUpLock").html(final_data[0]["source_name"]);
+
+      let currentTravelType = localStorage.getItem("TravelType");
+      let userMobile = JSON.parse(
+        localStorage.getItem("interUserDetails")
+      ).userMobile;
+      if (currentTravelType == "International") {
+        $("#MobileNo span").text(userMobile);
+      } else {
+        $("#MobileNo span").html(final_data[0]["mobile"]);
+      }
+
+      $("#BookingId span").html(final_data[0]["order_reference_number"]);
+
+      const PickupTym = new Date(final_data[0]["pickup_time"].split(" ")[0]);
+      const zone2 = PickupTym.toGMTString();
+      const da2 = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(
+        PickupTym
+      );
+      const mo2 = new Intl.DateTimeFormat("en", { month: "short" }).format(
+        PickupTym
+      );
+      const ye2 = new Intl.DateTimeFormat("en", { year: "numeric" }).format(
+        PickupTym
+      );
+
+      const bottom_date = da2 + "-" + mo2 + "-" + ye2;
+
+      // let wholeTime = bottom_date + " " + localStorage["Pictime"];
+      $("#picTime").html(bottom_date);
+      $("#picTym").html(final_data[0]["pickup_time"].split(" ")[1] + " hrs");
+
+      document.getElementById("loaderr").style.display = "none";
+    }
+
+    var responseload;
+    async function fillDataThroughBookingId(order_reference_number) {
+      const dataLoad = await fetch(
+        BaseAPIURL +
+        domain +
+        "/webapi/getCabBookingDetail?bookingId=" +
+        order_reference_number
+      );
+      // const dataLoad  = await fetch("https://preprodapi.mojoboxx.com/preprod/webapi/getCabBookingDetail?bookingId="+order_reference_number)
+      responseload = await dataLoad.json();
+      console.log(responseload);
+      FetchBookingResp = responseload;
+      // console.log(FetchBookingResp)
+
+      // if ((responseload.isDeparture == 1) && (responseload.category == "CAB")) {
+      //     fetch(BaseAPIURL+domain+"/webapi/getCouponCode").then((res) => {
+      //         return res.json();
+      //     }).then((data) => {
+      //         for (let k in data.data) {
+      //             if (data.data[k].confirm_page == 1) {
+      //                 $("#confirmation_boxCabDiv5").css("display", "block");
+      //                 $("#confirmation_boxCab6").css("display", "block");
+      //                 returnride(responseload);
+      //                 document.getElementById("couponapi").innerText = data.data[k].coupon_code;
+      //                 document.getElementById("coupounamt").innerText = data.data[k].amount;
+      //             }
+      //         }
+      //     })
+      // }
+      // else {
+      $(".confirmation_boxCabDiv3").css("display", "block");
+      $(".confirmation_boxCab3").css("display", "block");
+      // }
+
+      if (responseload["fare_price"].includes("-")) {
+        responseload["fare_price"] = responseload["fare_price"].split("-")[1];
+      }
+
+      $("#picTyp").html(responseload["cab_type"]);
+      $("#cabPartner").html(responseload["partnerName"]);
+
+      if (
+        responseload["pay_type"] == "partial_paytm" &&
+        responseload["paymentMethod"] == "PAYTM"
+      ) {
+        $("#bfp").html(
+          "₹" +
+          (Number(parseInt(responseload["fare_price"])) +
+            Number(responseload["service_charge"]))
+        );
+        $("#simplPaid_amount").html(
+          "- ₹" + Number(responseload["content_id"])
+        );
+        $("#paidText").css("display", "block");
+        $("#discount_amount").html(
+          "- ₹" + Number(responseload["discount_amount"])
+        );
+        $("#tobfp").html(
+          "₹" +
+          (Number(parseInt(responseload["fare_price"])) +
+            Number(responseload["service_charge"]) -
+            (Number(responseload["content_id"]) +
+              Number(responseload["discount_amount"])))
+        );
+      } else if (
+        responseload["pay_type"] == "full_paytm" &&
+        responseload["paymentMethod"] == "PAYTM"
+      ) {
+        if (
+          responseload.cab_category == "Outstation" ||
+          responseload.cab_category == "Rental"
+        ) {
+          $("#paidText").css("display", "block");
+          $("#bfp").html("₹" + Number(responseload["content_id"]));
+          $("#simplPaid_amount").html(
+            "₹" + Number(responseload["content_id"])
+          );
+          $("#tobfp").html(
+            "₹" +
+            Number(
+              parseInt(responseload["content_id"]) -
+              parseInt(responseload["content_id"])
+            )
+          );
+        } else {
+          let fareVal;
+          if (responseload["card_type"] == "mojoFixFare") {
+            if (responseload["discount_type"] == "discount") {
+              fareVal =
+                Number(responseload["content_id"]) +
+                Number(responseload["discount_amount"]);
+              $("#paidText").css("display", "block");
+              $("#discount_amount").css("display", "block");
+              $("#discount_amount").html(
+                "- ₹" + Number(responseload["discount_amount"])
+              );
+            }
+            if (responseload["discount_type"] == "discount%") {
+              fareVal =
+                Number(responseload["content_id"]) +
+                Number(responseload["discount_amount"]);
+              $("#paidText").css("display", "block");
+              $("#discount_amount").css("display", "block");
+              $("#discount_amount").html(
+                "- ₹" + Number(responseload["discount_amount"])
+              );
+            } else {
+              fareVal = responseload["content_id"];
+            }
+            $("#simplPaid_amount").html(
+              "₹" + Number(responseload["content_id"])
+            );
+            $("#bfp").html("₹" + fareVal);
+            $("#tobfp").html(
+              "₹" + Number(parseInt(fareVal) - parseInt(fareVal))
+            );
+          } else {
+            if (responseload["discount_type"] == "discount") {
+              fareVal =
+                Number(responseload["content_id"]) +
+                Number(responseload["discount_amount"]);
+              $("#paidText").css("display", "block");
+              $("#discount_amount").css("display", "block");
+              $("#discount_amount").html(
+                "- ₹" + Number(responseload["discount_amount"])
+              );
+            }
+            if (responseload["discount_type"] == "discount%") {
+              fareVal =
+                Number(responseload["content_id"]) +
+                Number(responseload["discount_amount"]);
+              $("#paidText").css("display", "block");
+              $("#discount_amount").css("display", "block");
+              $("#discount_amount").html(
+                "- ₹" + Number(responseload["discount_amount"])
+              );
+            } else {
+              fareVal = responseload["content_id"];
+            }
+            $("#paidText").css("display", "block");
+            $("#bfp").html("₹" + fareVal);
+            $("#simplPaid_amount").html("₹" + responseload["content_id"]);
+            $("#tobfp").html(
+              "₹" + Number(parseInt(fareVal) - parseInt(fareVal))
+            );
+          }
+        }
+      }
+
+      $("#epr").html(responseload["fare_price"]);
+      $("#eprk").html(responseload["total_kilometers"] + "Km");
+
+      $("#dropLoc").html(responseload["destination_name"]);
+      $("#pickUpLock").html(responseload["source_name"]);
+      $("#MobileNo span").html(responseload["mobile"]);
+      $("#BookingId span").html(responseload["order_reference_number"]);
+
+      const PickupTym = new Date(responseload["pickup_time"].split(" ")[0]);
+      const zone2 = PickupTym.toGMTString();
+      const da2 = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(
+        PickupTym
+      );
+      const mo2 = new Intl.DateTimeFormat("en", { month: "short" }).format(
+        PickupTym
+      );
+      const ye2 = new Intl.DateTimeFormat("en", { year: "numeric" }).format(
+        PickupTym
+      );
+
+      const bottom_date = da2 + "-" + mo2 + "-" + ye2;
+
+      // let wholeTime = bottom_date + " " + localStorage["Pictime"];
+      $("#picTime").html(bottom_date);
+      $("#picTym").html(responseload["pickup_time"].split(" ")[1] + " hrs");
+      document.getElementById("loaderr").style.display = "none";
+    }
+
+    //////////////////////Return Ride code start/////////////////////
+
+    function returnride(BookigInnerLoad) {
+      fetch(BaseAPIURL + domain + "/webapi/bookAirportCredentialsInfo")
+        .then((res) => res.json())
+        .then((d) => {
+          console.log(d);
+          let x = d.data;
+          for (let i of x) {
+            if (i.type == "PAYTM_MID") {
+              localStorage.setItem("PayMID", i.merchant_id);
+            }
+          }
+        });
+
+      var MultiplierAmount;
+
+      document
+        .getElementById("arrivalpageopen")
+        .addEventListener("click", () => {
+          location.href = "arrival.html";
+        });
+
+      localStorage.setItem("arrival_Airport", BookigInnerLoad.from_city);
+      localStorage.setItem("terminalCode", BookigInnerLoad.terminalCode);
+      localStorage.setItem("KMNum", BookigInnerLoad.total_kilometers);
+
+      localStorage.setItem("destination_name", BookigInnerLoad.source_name);
+      localStorage.setItem("destination_city", BookigInnerLoad.source_city);
+      localStorage.setItem(
+        "destination_latitude",
+        BookigInnerLoad.source_latitude
+      );
+      localStorage.setItem(
+        "destination_longitude",
+        BookigInnerLoad.source_longitude
+      );
+      localStorage.setItem("source_name", BookigInnerLoad.destination_name);
+      localStorage.setItem("source_city", BookigInnerLoad.from_city);
+      localStorage.setItem(
+        "source_latitude",
+        BookigInnerLoad.destination_latitude
+      );
+      localStorage.setItem(
+        "source_longitude",
+        BookigInnerLoad.destination_longitude
+      );
+
+      if (BookigInnerLoad.source_name.length > 30) {
+        $("#tolocation").html(
+          BookigInnerLoad.source_name.substring(0, 27) + "..."
+        );
+      } else {
+        $("#tolocation").html(BookigInnerLoad.source_name);
+      }
+      if (BookigInnerLoad.destination_name.length > 30) {
+        $("#fromlocation").html(
+          BookigInnerLoad.destination_name.substring(0, 27) + "..."
+        );
+      } else {
+        $("#fromlocation").html(BookigInnerLoad.destination_name);
+      }
+      $("#mobile").html(BookigInnerLoad.mobile);
+    }
+
+    $("#datepicker").datepicker({
+      dateFormat: "dd-mm-yy",
+      minDate: 0,
+      onSelect: function (dateText) {
+        // Track_LoadAnalytics(localStorage["mobileNum"], "departure", "bookairportcab", "null", SourceCity, cityCODE, TerminalCode, source_city, pickup_lat, pickup_long, source_latitude, source_longitude,
+        //     moment($("#datepicker").val(), ["DD-MM-YYYY", "YYYY-MM-DD", "DD/MM/YYYY"]).format("YYYY-MM-DD"), "null")
+
+        // alert($(".timepicker").val())
+        if ($(".timepicker").val() == "") {
+          $("#myForm").css("display", "block");
+          $("#time-list-wrap").css("display", "block");
+          $(".done_btn").css("display", "none");
+          $("#slotdiv").css("display", "block");
+
+          var CardInterval = setInterval(function () {
+            console.log($(".timepicker").val());
+            localStorage.setItem("LoadTIMEUI", true);
+            if ($(".timepicker").val() != "") {
+              clearInterval(CardInterval);
+              lastDetails();
+            }
+          }, 1000);
+        } else if ($(".timepicker").val() != "") {
+          lastDetails();
+        }
+        updateTime();
+      },
+    });
+
+    ////////////////////// Ride Time UI Code start /////////////////////////////////////
+    if (
+      localStorage["loadPagevalue"] == "ride" ||
+      localStorage["loadPagevalue"] == "undefined" ||
+      localStorage["loadPagevalue"] == undefined
+    ) {
+      let st = 15;
+      let times = [];
+      let tt = 60;
+      let ap = ["", ""];
+      let hour_arr = [];
+      let min_arr = [];
+
+      for (let i = 0; tt < 13 * 60; i++) {
+        let hh = Math.floor(tt / 60);
+        let mm = tt % 60;
+        times[i] =
+          ("0" + (hh % 12)).slice(-2) +
+          ":" +
+          ("0" + mm).slice(-2) +
+          ap[Math.floor(hh / 12)];
+        tt = tt + st;
+      }
+      // console.log(times)
+
+      for (k = 0; k <= times.length; k++) {
+        if (times[k] != undefined) {
+          let timeslot_div = document.createElement("div");
+          timeslot_div.setAttribute("class", "time-slot");
+          timeslot_div_span = document.createElement("span");
+          timeslot_div_span.setAttribute("class", "dispTime");
+          timeslot_div_span.setAttribute("id", "time_index" + k);
+          var slotTime;
+          switch (times[k]) {
+            case "00:00":
+              timeslot_div_span.innerHTML = "12:00";
+              break;
+            case "00:15":
+              timeslot_div_span.innerHTML = "12:15";
+              break;
+            case "00:30":
+              timeslot_div_span.innerHTML = "12:30";
+              break;
+            case "00:45":
+              timeslot_div_span.innerHTML = "12:45";
+              break;
+            default:
+              timeslot_div_span.innerHTML = times[k];
+          }
+          // timeslot_div_span.innerHTML = times[k];
+
+          timeslot_div.appendChild(timeslot_div_span);
+          document.getElementById("time-list-wrap").appendChild(timeslot_div);
+        }
+      }
+
+      if ($(".dispTime").html() == undefined) {
+        $(".dispTime").css("display", "none");
+      }
+
+      $(".timepicker").click(() => {
+        if ($("#datepicker").val() != "") {
+          document.getElementById("paymentbtn").style.backgroundColor =
+            "#8d97a1";
+          localStorage.setItem("LoadTIMEUI", true);
+
+          $(".timepicker").empty();
+
+          // alert($(".timepicker").val());
+
+          $("#myForm").css("display", "block");
+          $("#time-list-wrap").css("display", "block");
+          $(".done_btn").css("display", "none");
+          $("#slotdiv").css("display", "block");
+
+          // var CardInterval = setInterval(function () {
+          //     console.log($(".timepicker").val())
+          //     localStorage.setItem("LoadTIMEUI", true);
+          //     if ($(".timepicker").val() != "") {
+          //         clearInterval(CardInterval)
+          //         lastDetails();
+          //     }
+          // }, 5000)
+        }
+      });
+      $(".dispTime").click(function () {
+        var x = document.getElementById("timemsg");
+        x.className = "show";
+        setTimeout(function () {
+          x.className = x.className.replace("show", " ");
+        }, 2000);
+
+        $(".dispTime").removeClass("activeClass");
+        $("#timeam").removeClass("activeClass");
+        $("#timepm").removeClass("activeClass");
+
+        $(this).addClass("activeClass");
+        localStorage.setItem("depttime", $(this).text());
+      });
+      var TimeFormat;
+      var numberValue;
+      $("#timeam").click(() => {
+        $("#timeam").addClass("activeClass");
+        $("#timepm").removeClass("activeClass");
+        if ($(".dispTime").hasClass("activeClass")) {
+          TimeFormat = localStorage["depttime"] + " " + $("#timeam").html();
+          numberValue = moment(
+            localStorage["depttime"] + " " + $("#timeam").html(),
+            ["h:mm A"]
+          ).format("HH:mm");
+          updateTime();
+        }
+      });
+      $("#timepm").click(() => {
+        $("#timepm").addClass("activeClass");
+        $("#timeam").removeClass("activeClass");
+        if ($(".dispTime").hasClass("activeClass")) {
+          TimeFormat = localStorage["depttime"] + " " + $("#timepm").html();
+          numberValue = moment(
+            localStorage["depttime"] + " " + $("#timepm").html(),
+            ["h:mm A"]
+          ).format("HH:mm");
+          updateTime();
+        }
+      });
+      $(".back_icon, .back_text").click(() => {
+        $("#myForm").css("display", "none");
+        $("#confirmation_boxCab6").css("display", "block");
+      });
+
+      function updateTime() {
+        if (String(TimeFormat).includes("undefined")) {
+          return false;
+        }
+        $(".timepicker").html(TimeFormat);
+        $(".timepicker").val(TimeFormat);
+        $("#myForm").css("display", "none");
+
+        var today = new Date();
+        // var city_code = $("#cabPickupCity").val()
+        // console.log(city_code);
+        // if (city_code == "DEL") {
+
+        //     today = new Date(today.getTime() + (10 * 60 * 1000));
+        //     console.log(city_code);
+        // }
+
+        // else if (city_code == "CCU") {
+        //     today = new Date(today.getTime() + (60 * 60 * 1000));
+        // }
+        // else {
+        today = new Date(today.getTime() + 60 * 60 * 1000);
+        // }
+
+        var timeToday = today.getHours();
+        var getMin = today.getMinutes();
+        if (String(timeToday).length == 1) {
+          timeToday = "0" + timeToday;
+        }
+        if (String(getMin).length == 1) {
+          getMin = "0" + getMin;
+        }
+        var ZeroHour = timeToday + ":" + getMin;
+        let todayDate = new Date().toISOString().slice(0, 10);
+
+        var Timevalue = moment(TimeFormat, ["h:mm A"]).format("HH:mm");
+
+        if (
+          moment($("#datepicker").val(), [
+            "DD-MM-YYYY",
+            "YYYY-MM-DD",
+            "DD/MM/YYYY",
+          ]).format("YYYY-MM-DD") < todayDate
+        ) {
+          $("#cmmsg").html(
+            "You have selected an invalid pickup Date & Time."
+          );
+          $(".thank_msg i").removeClass("fa-check-circle");
+          $(".confirmation_boxCabDiv").css("display", "block");
+          $(".confirmation_boxCab").css("display", "block");
+          $(".timepicker").val("Pickup Time");
+        }
+        // console.log(todayDate)
+        // console.log(moment($("#datepicker").val(), ["DD-MM-YYYY", "YYYY-MM-DD", "DD/MM/YYYY"]).format("YYYY-MM-DD"))
+        if (
+          todayDate ==
+          moment($("#datepicker").val(), [
+            "DD-MM-YYYY",
+            "YYYY-MM-DD",
+            "DD/MM/YYYY",
+          ]).format("YYYY-MM-DD")
+        ) {
+          // console.log(Timevalue)
+          // console.log(ZeroHour)
+          if (Timevalue < ZeroHour) {
+            // if (city_code == "DEL") {
+            //     $("#cmmsg").html("You are advised to select a time, 10 minutes later than current Time.");
+            // }
+            // else if (city_code == "CCU") {
+            //     $("#cmmsg").html("You are advised to select a time, 1 hour later than current Time.");
+            // }
+            // else {
+            $("#cmmsg").html(
+              "You are advised to select a time, 1 hour later than current Time."
+            );
+            // }
+
+            $(".thank_msg i").css("display", "none");
+            $(".confirmation_boxCabDiv").css("display", "block");
+            $(".confirmation_boxCab").css("display", "block");
+            $(".timepicker").val("Pickup Time");
+          }
+        }
+
+        var pick_time;
+
+        // //////////////// Convert time format form AM / PM to 24 hour format code start ////////////////////
+        var time = $(".timepicker").val();
+        var status = time.includes("M");
+        if (status) {
+          var hours = Number(time.match(/^(\d+)/)[1]);
+          var minutes = Number(time.match(/:(\d+)/)[1]);
+          var AMPM = time.match(/\s(.*)$/)[1];
+          if (AMPM == "PM" && hours < 12) hours = hours + 12;
+
+          if (AMPM == "AM" && hours == 12) hours = hours - 12;
+
+          var sHours = hours.toString();
+          var sMinutes = minutes.toString();
+          if (hours < 10) sHours = "0" + sHours;
+
+          if (minutes < 10) sMinutes = "0" + sMinutes;
+
+          var statusTime = sHours + ":" + sMinutes;
+          pick_time =
+            moment($("#datepicker").val(), [
+              "DD-MM-YYYY",
+              "YYYY-MM-DD",
+              "DD/MM/YYYY",
+            ]).format("YYYY-MM-DD") +
+            " " +
+            statusTime;
+          localStorage.setItem("Pictime", statusTime);
+        } else {
+          pick_time =
+            moment($("#datepicker").val(), [
+              "DD-MM-YYYY",
+              "YYYY-MM-DD",
+              "DD/MM/YYYY",
+            ]).format("YYYY-MM-DD") +
+            " " +
+            $(".timepicker").val();
+          localStorage.setItem("Pictime", $(".timepicker").val());
+        }
+        // //////////////// Convert time format form AM / PM to 24 hour format code end ////////////////////
+
+        var dateValue =
+          moment($("#datepicker").val(), [
+            "DD-MM-YYYY",
+            "YYYY-MM-DD",
+            "DD/MM/YYYY",
+          ]).format("YYYY-MM-DD") +
+          " " +
+          statusTime;
+        var currentTime = moment().add(8, "hours").format("YYYY-MM-DD HH:MM");
+        if (currentTime > dateValue) {
+          // localStorage.setItem("removecash", "yes")
+          localStorage.setItem("removecash", "no");
+        } else {
+          localStorage.setItem("removecash", "no");
+        }
+
+        // if (!localStorage["LoadTIMEUI"]) {
+        // console.log("isopen")
+        // if (($("#cabPickupCity").val() != null) && ($("#cabPickupTerminal").val() != null) && ($("#pac-input").val() != '') && ($("#datepicker").val() != '') && ($(".timepicker").val() != "Pickup Time")) {
+        //     console.log("load details")
+        lastDetails();
+        // }
+
+        // }
+      }
+    }
+
+    async function lastDetails() {
+      var BookingTrip_Type = "City Ride";
+      localStorage.setItem("trip_type", "City Rental");
+
+      $("#updatedatetimeline").css("display", "none");
+      $("#img1").css("display", "block");
+
+      // document.getElementById("loader").style.display = "block";
+      localStorage.removeItem("LoadTIMEUI");
+      // document.getElementById("Loading_Img").style.display = "none";
+
+      var cab_response = [];
+      $.ajax({
+        type: "GET",
+        url:
+          BaseURL +
+          domain +
+          "/webapi/getCabPartnerData?city=" +
+          localStorage["arrival_Airport"] +
+          "&category=" +
+          BookingTrip_Type,
+        // url: 'https://preprod.mojoboxx.com/preprod/webapi/getCabPartnerData?city=' + localStorage["arrival_Airport"] + "&category=" + BookingTrip_Type,
+        contentType: "application/json",
+        dataType: "json",
+        success: function (cab_res) {
+          // console.log(cab_res);
+          // console.log(cab_res);
+          for (let i in cab_res) {
+            if (cab_res[i].platform.toLowerCase() != "host") {
+              if (
+                cab_res[i].cab_category.includes(BookingTrip_Type) &&
+                cab_res[i].pay_type.includes("payment")
+              ) {
+                let dterminal = localStorage["terminalCode"];
+                if (localStorage["arrival_Airport"].toLowerCase() == "del") {
+                  // if ((cab_res[i].isArrival == "1") && (cab_res[i].t_code == dterminal)) {
+                  if (
+                    cab_res[i].isArrival == "1" &&
+                    cab_res[i].t_code.includes(dterminal)
+                  ) {
+                    cab_response.push(cab_res[i]);
+                    // document.getElementById("loader").style.display = "none";
+                  }
+                } else if (cab_res[i].isArrival == "1") {
+                  cab_response.push(cab_res[i]);
+                  // document.getElementById("loader").style.display = "none";
+                }
+              }
+            }
+          }
+          localStorage.setItem("cab_response", JSON.stringify(cab_response));
+
+          partnerSlider(
+            cab_response,
+            "sedan",
+            localStorage["arrival_Airport"],
+            localStorage["trip_type"]
+          );
+
+          // getstate(localStorage["pickup_lat"], localStorage["pickup_long"]);
+          // function getstate(lat, long) {
+          //     fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + lat + ',' + long + '&key=' + localStorage["mapKey"])
+          //         .then((response) => response.json())
+          //         .then((responseJson) => { var state = responseJson.results[responseJson.results.length - 2].formatted_address;
+          //             if (String(state).includes(",")) {
+          //                 state = String(state).split(",")[0];
+          //             }
+          //             stateforinvoice = state;
+          //         })
+          // }
+        },
+        error: function (e) {
+          lastDetails();
+          console.log(e);
+        },
+      });
+    }
+
+    var scv = [];
+    var cabFare = [];
+    var cab_Type = [];
+    var MojoFare = [];
+    var cab_Type2 = [];
+    async function partnerSlider(
+      cab_response,
+      cabTypeName,
+      cityType,
+      cabCategory
+    ) {
+      localStorage.removeItem("MojoboxxFare");
+      var Comingsoon = "show";
+      // $(".coming_soon").css("display", "none");
+      await loadMojoMultiplier(localStorage["arrival_Airport"]);
+      var swiper = "";
+      // document.getElementsByClassName("swiper-slide").innerHTML = "";
+      // document.getElementById("swiper-wrapper").innerHTML = "";
+      let one = 0;
+      scv.length = 0;
+      MojoFare.length = 0;
+      cabFare.length = 0;
+      for (let i = 0; i < cab_response.length; i++) {
+        let cab_city = cab_response[i].city_code.split(",");
+        let CabCITY = 0;
+        if (cab_city.length == 1) {
+          CabCITY = 1;
+        } else {
+          CabCITY = cab_city.length;
+        }
+        for (let jk = 0; jk < CabCITY; jk++) {
+          // console.log(cab_city[jk]);
+
+          if (cab_city[jk].toLowerCase() == cityType.toLowerCase()) {
+            Comingsoon = "notshow";
+            cab_Type = cab_response[i].cab_type_arrival.split(",");
+            // console.log(cab_Type);
+            let clc = 0;
+            if (cab_Type.length == 1) {
+              clc = 1;
+            } else {
+              clc = cab_Type.length;
+            }
+
+            let cab_Image = cab_response[i].partner_image.split(",");
+            for (let j = 0; j < clc; j++) {
+              if (cab_Type[j].toLowerCase() == cabTypeName.toLowerCase()) {
+                cab_Type2 = cabTypeName;
+                one = 1;
+                // var timestamp = new Date().getUTCMilliseconds();
+                // $(".coming_soon").css("display", "none");
+
+                const Partnr = await loadPartnerData();
+
+                let cabpartnername;
+
+                if (cabTypeName == "sedan") {
+                  cabpartnername = Partnr;
+                }
+
+                localStorage.setItem("ptnr", cabpartnername);
+
+                await multiplierFun(cabpartnername);
+
+                scv.push(cabpartnername);
+                // await myFunction(scv[0])
+                localStorage.setItem("partnerName", scv[0]);
+
+                let fareCalculate = await calculatePricePartnerWise(
+                  cabpartnername,
+                  localStorage["KMNum"],
+                  cab_Type[j],
+                  cab_city[jk]
+                );
+                // cabFare.push(localStorage["finalFare" + cabpartnername]);
+                // localStorage.setItem("partnerFare", parseInt(cabFare[0]));
+
+                // document.getElementById("fullamt").innerText = "₹" + parseInt(cabFare[0]);
+                // alert(parseInt(cabFare[0]));
+              }
+            }
+          }
+        }
+
+        if (scv[0] != undefined) {
+          if (
+            scv[0] == "QUICKRIDE" ||
+            scv[0] == "BLUSMART" ||
+            scv[0] == "MERU" ||
+            scv[0] == "MEGA" ||
+            scv[0] == "GOZO CABS"
+          ) {
+            $("#paymentbtn").css("background-color", "black");
+            document.getElementById("fullamt").innerText =
+              "₹" + localStorage["partnerFare"];
+            document.getElementById("finalamt").innerText =
+              "₹" + (localStorage["partnerFare"] - 75);
+          }
+        }
+      }
+    }
+
+    //////////////////////////////////pay now button code start///////////////////////
+    document.getElementById("paymentbtn").addEventListener("click", () => {
+      if (
+        document.getElementById("paymentbtn").style.backgroundColor ==
+        "rgb(0, 0, 0)"
+      ) {
+        let FarePrice = parseInt(localStorage["partnerFare"]);
+
+        dataJ = {
+          clubMember: [
+            {
+              type: "cabForm",
+              name_title: localStorage["PNR_Data"] == "Found" ? title : "",
+              user_name:
+                localStorage["PNR_Data"] == "Found"
+                  ? customerFName
+                  : "Spicejet Customer",
+              last_name:
+                localStorage["PNR_Data"] == "Found"
+                  ? customerLName
+                  : "Spicejet Customer",
+              mobile: localStorage["mobileNum"],
+              email: "",
+              time: Date.now(),
+              sendLeadSms: "true",
+              partnerName: MojoPartnerName,
+              title: localStorage["ptnr"].trim(),
+              category: "CAB",
+              drop_location: localStorage["destination_name"],
+              pickup_time:
+                moment($("#datepicker").val(), [
+                  "DD-MM-YYYY",
+                  "YYYY-MM-DD",
+                  "DD/MM/YYYY",
+                ]).format("YYYY-MM-DD") +
+                " " +
+                moment($(".timepicker").val(), ["h:mm A"]).format("HH:mm") +
+                ":00",
+              cab_type: "sedan",
+              cab_id: localStorage["ptnr"] == "GOZO CABS" ? GOZOFareId : 0,
+              // "fare_price": localStorage["source_city"].toLowerCase() == "dubai" ? String(dubaiFare).split(" ")[1] : price,
+              fare_price: FarePrice,
+              total_kilometers: localStorage["KMNum"],
+              terminalCode: localStorage["terminalCode"],
+              msgUniqueId: getRandom(10),
+              host_id: "Website",
+              from_city: localStorage["source_city"],
+              to_city: localStorage["source_city"],
+              source: localStorage["source_name"],
+              destination: localStorage["destination_name"],
+              latitude: localStorage["source_latitude"],
+              longitude: localStorage["source_longitude"],
+              isDeparture: 2,
+              pnr: localStorage["booking_id"],
+              source_city: localStorage["source_city"].trim(),
+              source_latitude: localStorage["source_latitude"],
+              source_longitude: localStorage["source_longitude"],
+              source_name: localStorage["source_name"],
+              destination_city: localStorage["destination_city"],
+              destination_latitude: localStorage["destination_latitude"],
+              destination_longitude: localStorage["destination_longitude"],
+              destination_name: localStorage["destination_name"],
+              status: "CAB",
+              card_type: "",
+              content_id: FarePrice - 75,
+              // "refer_Code": localStorage.CouponCode != undefined ? localStorage.CouponCode : '',
+              refer_Code: "0",
+              fixedFareId:
+                localStorage["ptnr"] == "QUICKRIDE"
+                  ? quickrideFareId
+                  : localStorage["ptnr"] == "MERU"
+                    ? localStorage["meruSearchId"]
+                    : localStorage["ptnr"] == "MEGA"
+                      ? localStorage["megaSearchId"]
+                      : "",
+              carID:
+                localStorage["ptnr"] == "SAVAARI" ? localStorage.carID : "",
+              website_url: "BAC_ReturnRide",
+              user_agent: localStorage["userAgent"],
+              mojoPartner: "BAC",
+              // "service_charge": localStorage["ptnr"] == "QUICKRIDE" ? 100 : 0 || localStorage["ptnr"] == "GOZO" ? 100: 0 || localStorage["ptnr"] == "MERU" ? 100: 0 ,
+              // "service_charge": ((localStorage["ptnr"] == "QUICKRIDE") || (localStorage["ptnr"] == "GOZO CABS") || (localStorage["ptnr"] == "BLUSMART") || (localStorage["ptnr"] == "MERU") || (localStorage["ptnr"] == "SAVAARI") || (localStorage["ptnr"] == "MEGA")) ? MultiplierAmount : 0,
+              service_charge: parseInt(MultiplierAmount),
+              pay_type: "post",
+              paymentMethod: "PAYBYCASH",
+              order_reference_number:
+                "BAC" + Math.floor(10000000000 + Math.random() * 9000000000),
+              state: "",
+              advance_amount: FarePrice - parseInt(MultiplierAmount),
+              discount_type: "discount",
+              discount_amount: 75,
+            },
+          ],
+        };
+        console.log(dataJ);
+
+        if (dataJ.cab_type != "mojoFixFare" && MojopartnerReset == 1) {
+          console.log("updatereset");
+          fetch(
+            `https://preprodapi.mojoboxx.com/preprod/webapi/partnerBookingCountReset?isReset=1&cityCode=${localStorage["cityCODE"]}&travelType=arrival`
+          );
+        }
+
+        localStorage.setItem("cabbookingData", JSON.stringify(dataJ));
+
+        addPaymentType(
+          "PAYTM",
+          "",
+          "",
+          "full_pay",
+          dataJ.clubMember[0].content_id
+        );
+      }
+    });
+    //////////////////////////////////pay now button code end///////////////////////
+
+    // ////////////////// Fetch Cab partner from Mojoboxx fixed fare code start //////////////////
+    var MojopartnerReset = 0;
+    var MojoPartnerName;
+    async function loadPartnerData(partnerName, cityName, distance, cabType) {
+      return new Promise(async function (resolve, reject) {
+        //    fetch('https://preprodapi.mojoboxx.com/preprod/webapi/mojofixBookingCount',{
+        fetch(BaseAPIURL + domain + "/webapi/mojofixBookingCount", {
+          method: "GET",
+        })
+          .then((response) => response.json())
+          .then((json) => {
+            if (json.data.length >= 1) {
+              // console.log(json);
+              let CountArr = [];
+              for (let k in json.data) {
+                if (
+                  json.data[k].travel_type == "arrival" &&
+                  json.data[k].city == localStorage["arrival_Airport"]
+                ) {
+                  CountArr.push(json.data[k]);
+                }
+              }
+              console.log(CountArr);
+
+              for (let k in CountArr) {
+                let JSONLength = CountArr.length;
+                if (CountArr[k].Bcount < CountArr[k].Tcount) {
+                  MojoPartnerName = CountArr[k].partner;
+                  resolve(MojoPartnerName);
+                  return false;
+                } else if (
+                  CountArr[JSONLength - 1].Bcount ==
+                  CountArr[JSONLength - 1].Tcount ||
+                  CountArr[JSONLength - 1].Bcount >
+                  CountArr[JSONLength - 1].Tcount
+                ) {
+                  MojopartnerReset = 1;
+                  MojoPartnerName = CountArr[0].partner;
+                  // console.log(CountArr[0].partner)
+                  resolve(MojoPartnerName);
+                  return false;
+                }
+              }
+            } else {
+              console.log("fare not found");
+              resolve(true);
+            }
+          });
+      });
+    }
+    // ////////////////// Fetch Cab partner from Mojoboxx fixed fare code end  //////////////////
+
+    async function loadMojoMultiplier(CityCode) {
+      var timeUpdate = moment().hour();
+      if (timeUpdate >= "0" && timeUpdate <= "9") {
+        timeUpdate = "0" + timeUpdate;
+      }
+      const multiplier = await fetch(
+        BaseAPIURL +
+        domain +
+        "/webapi/mojoboxxMultiplier/?city=" +
+        CityCode +
+        "&time=" +
+        timeUpdate +
+        "&travel_type=arrival&platform=BAC"
+      );
+      //   const multiplier = await fetch('https://preprodapi.mojoboxx.com/preprod/webapi/mojoboxxMultiplier/?city=' + CityCode + '&time=' + moment().hour() + "&travel_type=arrival&platform=BAC")
+      const multiResponse = await multiplier.json();
+      localStorage.setItem(
+        "multiResponseData",
+        JSON.stringify(multiResponse)
+      );
+      // console.log(multiResponseData)
+    }
+
+    async function multiplierFun(partner_Name) {
+      // console.log(partner_Name);
+      var multiResponseData = JSON.parse(localStorage["multiResponseData"]);
+      MultiplierAmount = 0;
+      if (multiResponseData.data.length > 0) {
+        multiResponseData.data.every((element) => {
+          // console.log(element.partner)
+          // console.log(partner_Name)
+          if (element.partner.toLowerCase() == partner_Name.toLowerCase()) {
+            MultiplierAmount = element.amount;
+            localStorage.setItem(
+              "multiplier" + partner_Name,
+              MultiplierAmount
+            );
+            return false;
+          } else {
+            MultiplierAmount = 0;
+            localStorage.setItem(
+              "multiplier" + partner_Name,
+              MultiplierAmount
+            );
+            return true;
+          }
+        });
+      }
+    }
+
+    async function calculatePricePartnerWise(
+      partnerName,
+      KMNum,
+      cabTyp,
+      cityName
+    ) {
+      return new Promise(async function (resolve, reject) {
+        var desP;
+        var distanceP = KMNum;
+        var hypenVal;
+        var hypen_pos;
+        var dis;
+        var dis2;
+        var amt;
+        if (partnerName == "QUICKRIDE") {
+          // $("#prQUICKRIDE").html("Please wait..")
+          // $("#prQUICKRIDE").css("font-size", "16px");
+          // $("#fare").css("width", "100%");
+          let quickrideResp = await GetFarefromPartner(cabTyp);
+          resolve(true);
+        } else if (partnerName == "MEGA") {
+          // $("#prMEGA").html("Please wait..")
+          // $("#prMEGA").css("font-size", "16px");
+          // $("#fare").css("width", "100%");
+          let megaResp = await GetFareFromMega(cabTyp);
+          resolve(true);
+        } else if (partnerName == "BUDDY CABS") {
+          // $("#prBUDDY CABS").html("Please wait..")
+          // $("#prBUDDY CABS").css("font-size", "16px");
+          // $("#fare").css("width", "100%");
+          let BuddyFare = await GetFarefromPartnerBuddy(cabTyp);
+          resolve(true);
+        } else if (partnerName == "MERU") {
+          // $("#prMERU").html("Please wait..")
+          // $("#prMERU").css("font-size", "16px");
+          // $("#fare").css("width", "100%");
+          let MeruResp = await GetFarefromMeru(cabTyp);
+          resolve(true);
+        } else if (partnerName == "GOZO CABS") {
+          let gozofare = await GetFareFromGozoPartner(cabTyp);
+          resolve(true);
+        } else if (partnerName == "COOP") {
+          // $("#pr2COOP").css("display", "none");
+          // $("#prCOOP").html("Please wait..");
+          // $("#prCOOP").css("font-size", "16px");
+          // $("#fare").css("width", "100%");
+          let coopFare = await coop_call(cabTyp);
+          resolve(true);
+        } else if (partnerName == "BLUSMART") {
+          // $("#pr2BLUSMART").css("display", "none");
+          // $("#prBLUSMART").html("Please wait..");
+          // $("#prBLUSMART").css("font-size", "16px");
+          // $("#fare").css("width", "100%");
+          let BLUMSMARTfare = await checkFareBlusmart(cabTyp);
+          resolve(true);
+        } else if (partnerName == "GOAMILES") {
+          // $("#pr2COOP").css("display", "none");
+          // $("#prCOOP").html("Please wait..");
+          // $("#prCOOP").css("font-size", "16px");
+          // $("#fare").css("width", "100%");
+          let GOAMILESFare = await checkFareGoamiles(cabTyp);
+          resolve(true);
+        } else {
+          await loadCityName(cityName);
+          $(".bookBtn").css("display", "none");
+          var fareData = await loadFareFormDB(
+            partnerName,
+            cityNameFetch,
+            distanceP,
+            cabTyp.toLowerCase()
+          );
+          resolve(fareData);
+        }
+        resolve(true);
+      });
+    }
+
+    // ///////////////////////Get fare from Quickride API code start////////////////////////
+    var quickrideFareId;
+    var QuickrideFareResponse;
+    async function GetFarefromPartner(PartnercabType) {
+      return new Promise(async function (resolve, reject) {
+        // document.getElementById("pr2QUICKRIDE").style.display = "none";
+        var fetchResponse;
+
+        var datasend = {
+          key: "MojoBox-Klm9.45j",
+          vendor_id: "MOJO_BOXX_ZORY",
+          destination_name: localStorage["destination_name"],
+          destination_city: localStorage["destination_city"],
+          destination_latitude: localStorage["destination_latitude"],
+          destination_longitude: localStorage["destination_longitude"],
+          source_name: localStorage["source_name"],
+          source_city: localStorage["source_city"],
+          source_latitude: localStorage["source_latitude"],
+          source_longitude: localStorage["source_longitude"],
+          start_time:
+            moment($("#datepicker").val(), [
+              "DD-MM-YYYY",
+              "YYYY-MM-DD",
+              "DD/MM/YYYY",
+            ]).format("YYYY-MM-DD") +
+            " " +
+            moment($(".timepicker").val(), ["h:mm A"]).format("HH:mm") +
+            ":00",
+          end_time: "",
+          travelType: "Local",
+        };
+        $("#fare").css("width", "45%");
+        // fetch('https://qtds.getquickride.com:443/taxidemandserver/rest/mojobox/taxi/booking/search', {
+        fetch(BaseAPIURL + domain + "/webapi/getQuickRideFare", {
+          method: "POST",
+          body: JSON.stringify(datasend),
+          headers: {
+            Authorization:
+              "Basic eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2MyIsImlzcyI6IlF1aWNrUmlkZSIsImlhdCI6MTYzOTU0MTgyMH0.6H0Dt2Hqhlj7RxcMcybV2bgkr29pCtm6ni8qfZFpv6qLtJtqy4-BbL-kTnz2zYiDZGDeGGj8Gr_GBC2FZFRkdg",
+            "Content-type": "Application/json",
+          },
+        })
+          .then((response) => response.json())
+          .then((json) => {
+            var fareAmountInteger;
+            fetchResponse = json;
+            for (let a = 0; a < fetchResponse.fareForTaxis.length; a++) {
+              let TaxiType = fetchResponse.fareForTaxis[a].taxiType;
+              if (TaxiType == "Car") {
+                var fareResponse = fetchResponse.fareForTaxis[a].fares;
+                QuickrideFareResponse = fetchResponse.fareForTaxis[a].fares;
+                // console.log(fareResponse);
+                if (fareResponse.length >= 1) {
+                  for (let i = 0; i < fareResponse.length; i++) {
+                    if (
+                      fareResponse[i].taxiType == "Car" &&
+                      fareResponse[i].vehicleClass.toLowerCase() ==
+                      PartnercabType.toLowerCase()
+                    ) {
+                      // console.log(fareResponse[i].taxiType);
+                      quickrideFareId = fareResponse[i].fixedFareId;
+                      fareAmountInteger =
+                        parseInt(fareResponse[i].maxTotalFare) +
+                        parseInt(MultiplierAmount);
+                      console.log("quickride" + MultiplierAmount);
+                      // let AmountDiscount = ((50 / (fareAmountInteger + Number(50)) * 100));
+                      // if (String(AmountDiscount).includes(".")) {
+                      //     var splitAmount = String(AmountDiscount).split(".")
+                      //     var splitAmount2 = splitAmount[0];
+                      // } else {
+                      //     splitAmount2 = AmountDiscount;
+                      // }
+                      // $("#fare").css("width", "45%");
+                      localStorage.setItem(
+                        "partnerFare",
+                        parseInt(fareAmountInteger)
+                      );
+                      resolve(fareAmountInteger);
+                    }
+                  }
+                }
+              }
+            }
+          })
+          .catch((error) => {
+            resolve(true);
+          });
+      });
+    }
+
+    // //////////////////////get fare from quickride code end ///////////////////////////
+
+    async function GetFarefromMeru(PartnercabType) {
+      return new Promise(async function (resolve, reject) {
+        // document.getElementById("pr2MERU").style.display = "none";
+        let meruSearchId = Math.random().toString(16).slice(2);
+        localStorage.setItem("meruSearchId", meruSearchId);
+        let meruTime =
+          moment($("#datepicker").val(), [
+            "DD-MM-YYYY",
+            "YYYY-MM-DD",
+            "DD/MM/YYYY",
+          ]).format("YYYY-MM-DD") +
+          " " +
+          moment($(".timepicker").val(), ["h:mm A"]).format("HH:mm") +
+          ":00";
+        var city = localStorage["source_city"];
+        // var hardCodeCity =
+        console.log(city);
+
+        var datasend = {
+          source: {
+            place_id: localStorage["MAPPLACEID"],
+            address: localStorage["source_name"],
+            // "address": localStorage["terminalCode"],
+            latitude: localStorage["source_latitude"],
+            longitude: localStorage["source_longitude"],
+            city: localStorage["source_city"],
+          },
+          destination: {
+            place_id: null,
+            address: localStorage["destination_name"],
+            latitude: localStorage["destination_latitude"],
+            longitude: localStorage["destination_longitude"],
+            city: localStorage["destination_city"],
+            // "city": "Delhi",
+          },
+          trip_type: "ONE_WAY",
+          start_time: moment(meruTime)
+            .add(3, "minutes")
+            .format("YYYY-MM-DDTHH:mm:ss"),
+          end_time: moment(meruTime)
+            .add(1, "hours")
+            .format("YYYY-MM-DDTHH:mm:ss"),
+          search_id: meruSearchId,
+          // "one_way_distance": localStorage["KMVal"].includes(".") ? localStorage["KMVal"].split(".")[0] : localStorage["KMVal"],
+          one_way_distance: localStorage["KMNum"].includes(".")
+            ? localStorage["KMNum"].split(".")[0]
+            : localStorage["KMNum"],
+          package_distance: 0,
+          is_instant_search: false,
+        };
+        console.log(datasend);
+        // $("#fare").css("width", "45%");
+        fetch(
+          BaseAPIURL + domain + "/webapi/getMeruFarePrice",
+          // fetch('https://preprodapi.mojoboxx.com/preprod/webapi/getMeruFarePrice',
+          {
+            method: "POST",
+            body: JSON.stringify(datasend),
+            headers: {
+              "Content-type": "Application/json",
+            },
+          }
+        )
+          .then((response) => response.text())
+          .then((result) => {
+            var newResult = JSON.parse(result);
+            console.log(newResult.data.response.car_types);
+            var fare;
+            newResult.data.response.car_types.forEach((elem) => {
+              console.log(elem);
+              if (elem.type.toLowerCase() == PartnercabType.toLowerCase()) {
+                fare =
+                  elem.fare_details.base_fare +
+                  elem.fare_details.extra_charges.toll_charges["amount"] +
+                  elem.fare_details.extra_charges.parking_charges["amount"];
+              }
+            });
+
+            var FareAmount = fare + parseInt(MultiplierAmount);
+            // console.log("Meru"+ parseInt(MultiplierAmount));
+            // let AmountDiscount = ((50 / (Number(FareAmount) + Number(50)) * 100));
+            // if (String(AmountDiscount).includes(".")) {
+            //     var splitAmount = String(AmountDiscount).split(".")
+            //     var splitAmount2 = splitAmount[0];
+            // } else {
+            //     splitAmount2 = AmountDiscount;
+            // }
+            // $("#fare").css("width", "45%");
+
+            // filldetailsInCard('MERU', parseInt(FareAmount))
+            localStorage.setItem("partnerFare", parseInt(FareAmount));
+            resolve(parseInt(FareAmount));
+            // return true
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            resolve(true);
+          });
+      });
+    }
+
+    // //////////////////////get fare from Meru code end ///////////////////////////
+
+    // //////////////////// Get fare from BuddyCab code start ///////////////////////////
+
+    var buddyFareId;
+    async function GetFarefromPartnerBuddy(PartnercabType) {
+      return new Promise(async function (resolve, reject) {
+        // document.getElementById("pr2BUDDY CABS").style.display = "none";
+        var fetchResponse;
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          destination_name: localStorage["destination_name"],
+          destination_city: localStorage["destination_city"],
+          destination_latitude: localStorage["destination_latitude"],
+          destination_longitude: localStorage["destination_longitude"],
+          source_name: localStorage["source_name"],
+          source_city: localStorage["source_city"],
+          source_latitude: localStorage["source_latitude"],
+          source_longitude: localStorage["source_longitude"],
+          travelType: "Local",
+        });
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        await fetch(
+          "https://api.buddy-cabs.com/SpiceJet/GetCabFare",
+          requestOptions
+        )
+          .then((response) => response.json())
+          .then((json) => {
+            let fareAmountInteger;
+            fetchResponse = json;
+            let TaxiType = fetchResponse.resultData.fareForTaxis.taxiType;
+            if (TaxiType == "Car") {
+              let fareResponse = fetchResponse.resultData.fareForTaxis.fares;
+              if (fareResponse.length >= 1) {
+                for (let i = 0; i < fareResponse.length; i++) {
+                  if (
+                    fareResponse[i].taxiType == "Car" &&
+                    fareResponse[i].vehicleClass.toLowerCase() ==
+                    PartnercabType.toLowerCase()
+                  ) {
+                    // console.log(fareResponse[i].taxiType);
+                    fareAmountInteger = parseInt(fareResponse[i].totalCharge);
+                    // let AmountDiscount = ((50 / (fareAmountInteger + Number(50)) * 100));
+                    // if (String(AmountDiscount).includes(".")) {
+                    //     var splitAmount = String(AmountDiscount).split(".")
+                    //     var splitAmount2 = splitAmount[0];
+                    // } else {
+                    //     splitAmount2 = AmountDiscount;
+                    // }
+                    // $("#fare").css("width", "45%");
+
+                    // filldetailsInCard('BUDDY CABS', parseInt(fareAmountInteger))
+
+                    // document.getElementById("pr2BUDDY CABS").style.display = "block";
+                    // $("#prBUDDY CABS").css("font-size", "16px");
+                    // document.getElementById("discountBUDDY CABS").innerHTML = splitAmount2 + "% off"
+                    // document.getElementById("prBUDDY CABS").innerHTML = " ₹ " + fareAmountInteger
+                    // document.getElementById("pr2BUDDY CABS").innerHTML = "₹" + (
+                    //     Number(fareAmountInteger) + Number(50)
+                    // )
+                    // localStorage.setItem("finalFareBUDDY CABS", fareAmountInteger);
+                    // localStorage.setItem("TotalFare", fareAmountInteger);
+                    localStorage.setItem(
+                      "partnerFare",
+                      parseInt(fareAmountInteger)
+                    );
+                    resolve(fareAmountInteger);
+                  }
+                }
+              }
+            }
+          })
+          .catch((error) => {
+            reject(error);
+            console.log("error", error);
+          });
+      });
+    }
+
+    // //////////////////// Get fare from BuddyCab code end  ////////////////////////////
+
+    // /////////////////////// start MEGA /////////////////////////////////////////////////
+    const GetFareFromMega = async (PartnercabType) => {
+      return new Promise(async (resolve, reject) => {
+        // var travelTime = moment().add(5, 'hours').format("DD-MM-YYYY HH:MM");
+        // var travelTime = moment().add(5, 'hours').format("DD-MM-YYYY HH:MM");
+
+        let megaSearchId = Math.random().toString(16).slice(2);
+        localStorage.setItem("megaSearchId", megaSearchId);
+        let meruTime =
+          moment($("#datepicker").val(), [
+            "DD-MM-YYYY",
+            "YYYY-MM-DD",
+            "DD/MM/YYYY",
+          ]).format("YYYY-MM-DD") +
+          " " +
+          moment($(".timepicker").val(), ["h:mm A"]).format("HH:mm") +
+          ":00";
+        var city = localStorage["source_city"];
+
+        let sendquestedData = {
+          destination: {
+            place_id: null,
+            address: localStorage["destination_name"],
+            latitude: localStorage["destination_latitude"],
+            longitude: localStorage["destination_longitude"],
+            city: localStorage["destination_city"],
+          },
+
+          source: {
+            // "place_id": MapPlaceId,
+            place_id: null,
+            address: localStorage["source_name"],
+            latitude: localStorage["source_latitude"],
+            longitude: localStorage["source_longitude"],
+            city: localStorage["source_city"].trim(),
+          },
+          trip_type: "ONE_WAY",
+          start_time: moment(meruTime)
+            .add(3, "minutes")
+            .format("YYYY-MM-DDTHH:mm:ss"),
+          end_time: moment(meruTime)
+            .add(1, "hours")
+            .format("YYYY-MM-DDTHH:mm:ss"),
+          search_id: megaSearchId,
+          one_way_distance: localStorage["KMNum"].includes(".")
+            ? localStorage["KMNum"].split(".")[0]
+            : localStorage["KMNum"],
+          package_distance: 0,
+          is_instant_search: false,
+        };
+        console.log(sendquestedData);
+        // const ReferMega = await fetch("https://preprodapi.mojoboxx.com/preprod/webapi/getMegaFare", {
+        const ReferMega = await fetch(
+          BaseAPIURL + domain + "/webapi/getMegaFare",
+          {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(sendquestedData),
+          }
+        );
+        const getMega = await ReferMega.json();
+        console.log("getMega", getMega.data["estimatedMinFare"]);
+        // show details on card start
+        if (getMega.data.response.car_types.length > 0) {
+          for (let i = 0; i < getMega.data.response.car_types.length; i++) {
+            if (
+              getMega.data.response.car_types[i].type.toLowerCase() ==
+              PartnercabType.toLowerCase()
+            ) {
+              let amountValue =
+                getMega.data.response.car_types[i].fare_details.grand_total +
+                parseInt(MultiplierAmount);
+              console.log("mega" + parseInt(MultiplierAmount));
+              // let AmountDiscount = ((50 / (parseInt(amountValue) + Number(50)) * 100));
+              // if (String(AmountDiscount).includes(".")) {
+              //     var splitAmount = String(AmountDiscount).split(".")
+              //     var splitAmount2 = splitAmount[0];
+              // } else {
+              //     splitAmount2 = AmountDiscount;
+              // }
+              // $("#fare").css("width", "45%");
+
+              //   filldetailsInCard('MEGA', parseInt(amountValue))
+
+              // document.getElementById("pr2MEGA").style.display = "block";
+              // $("#pr2MEGA").css("font-size", "16px");
+              // document.getElementById("discountMEGA").innerHTML = splitAmount2 + "% off"
+              // document.getElementById("prMEGA").innerHTML = " ₹ " + amountValue
+              // document.getElementById("pr2MEGA").innerHTML = "₹" + (Number(amountValue) + Number(50))
+              // localStorage.setItem("finalFareMEGA", amountValue);
+              // localStorage.setItem("TotalFare", amountValue);
+              localStorage.setItem("partnerFare", parseInt(amountValue));
+              resolve(amountValue);
+            } else {
+              // document.getElementById("pr2MEGA").style.display = "none";
+              // document.getElementById("prMEGA").innerHTML = "Fare not found"
+              // document.getElementById("prMEGA").style.fontSize = "10px";
+              resolve(true);
+            }
+          }
+        } else {
+          // document.getElementById("pr2MEGA").style.display = "none";
+          // document.getElementById("prMEGA").innerHTML = "Fare not found"
+          // document.getElementById("prMEGA").style.fontSize = "10px";
+          resolve(true);
+        }
+      });
+    };
+    // /////////////////////// end MEGA /////////////////////////////////////////////////
+
+    /////////////////////////get Fare from Blusmart code Start///////////////////////////
+    var blusmartFareId;
+    async function checkFareBlusmart(partnercabType) {
+      return new Promise(async function (resolve, reject) {
+        // document.getElementById("pr2BLUSMART").style.display = "none";
+        let total_km = localStorage["KMNum"].includes(".")
+          ? localStorage["KMNum"].split(".")[0]
+          : localStorage["KMNum"];
+        let totalkm = Math.round(total_km[0]);
+        let dateandtime =
+          moment($("#datepicker").val(), [
+            "DD-MM-YYYY",
+            "YYYY-MM-DD",
+            "DD/MM/YYYY",
+          ]).format("YYYY-MM-DD") +
+          " " +
+          (moment($(".timepicker").val(), ["h:mm A"]).format("HH:mm") +
+            ":00");
+        console.log(dateandtime);
+
+        var myHeaders = new Headers();
+        // myHeaders.append("Authorization", "Basic c3BpY2VqZXQtZGV2OjBuV2FSTDZXaDU1NjEwMmtBc1lW");
+        myHeaders.append(
+          "Authorization",
+          "Basic NjYzZDJmNDhlOGEwN2I4ZmY1M2E3YWM5YjMzYTk4ZDk6MmJjNTYyMzZlNjk2YThkM2FiNjYyNDU3ZGJhZjdhNjM="
+        );
+
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Access-Control-Allow-Origin", "*");
+
+        var raw = JSON.stringify({
+          source: {
+            place_id: "ChIJv01jvzAZDTkReNbfdLygyf8",
+            address: localStorage["source_name"].trim(),
+            latitude: localStorage["source_latitude"],
+            longitude: localStorage["source_longitude"],
+            city: localStorage["source_city"].trim(),
+          },
+          destination: {
+            place_id: "ChIJv01jvzAZDTkReNbfdLygyf8",
+            address: localStorage["destination_name"].trim(),
+            latitude: localStorage["destination_latitude"],
+            longitude: localStorage["destination_longitude"],
+            city: localStorage["destination_city"].trim(),
+          },
+          trip_type: "ONE_WAY",
+          search_id: Math.random().toString(14).slice(2),
+          start_time:
+            moment($("#datepicker").val(), [
+              "DD-MM-YYYY",
+              "YYYY-MM-DD",
+              "DD/MM/YYYY",
+            ]).format("YYYY-MM-DD") +
+            " " +
+            moment($(".timepicker").val(), ["h:mm A"]).format("HH:mm") +
+            ":00",
+          end_time: moment(dateandtime)
+            .add(50, "minutes")
+            .format("YYYY-MM-DD HH:mm:ss"),
+          vendor_id: "PARTNER_CODE",
+          partner_name: "SPICEJET",
+          search_tags: ["EPASS"],
+          one_way_distance: totalkm,
+        });
+
+        console.log(raw);
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        // fetch("https://fusion.tracking.uat.blucgn.com/api/v1/booking/search", requestOptions)
+        fetch(
+          "https://fusion.tracking.blucgn.com/api/v1/booking/search",
+          requestOptions
+        )
+          .then((response) => response.text())
+          .then((result) => {
+            var newResult = JSON.parse(result);
+            let amountValue =
+              newResult.response.car_types[0].fare_details.base_fare +
+              parseInt(MultiplierAmount);
+            console.log("Blusmart" + parseInt(MultiplierAmount));
+            console.log(
+              newResult.response.car_types[0].fare_details.base_fare
+            );
+            // document.getElementById("prBLUSMART").innerHTML = "₹" + (
+            //     newResult.response.car_types[0].fare_details.base_fare
+            // )
+            // let AmountDiscount = ((50 / (parseInt(amountValue) + Number(50)) * 100));
+            // if (String(AmountDiscount).includes(".")) {
+            //     var splitAmount = String(AmountDiscount).split(".")
+            //     var splitAmount2 = splitAmount[0];
+            // } else {
+            //     splitAmount2 = AmountDiscount;
+            // }
+            // localStorage.setItem("finalFareBLUSMART", amountValue);
+            // localStorage.setItem("TotalFare", amountValue);
+            localStorage.setItem("partnerFare", parseInt(amountValue));
+            resolve(amountValue);
+            return;
+          })
+          .catch((error) => {
+            // console.log('error', error)
+            // $("#prBLUSMART").html("Slot not available, choose diff time");
+            // $("#prBLUSMART").css({ "font-size": "8px", "width": "100%" });
+            // $("#fare").css("width", "100%");
+            //   $(".include").html("please choose diff time");
+            //   $(".include").css({"font-size":"9px","width":"100%"});
+            resolve(true);
+          });
+      });
+    }
+
+    // /////////////////////// start Gozo /////////////////////////////////////////////////
+    var GOZOFareId;
+    const GetFareFromGozoPartner = async (CabType) => {
+      return new Promise(async function (resolve, reject) {
+        //////////////////Current date & time code start/////////////////
+        var tym_date = moment(new Date())
+          .add(4, "hours")
+          .format("YYYY-MM-DDTHH:mm:ss");
+        var Currenttym = tym_date.split("T")[1];
+        var Currentdate = tym_date.split("T")[0];
+        //////////////////Current date & time code end /////////////////
+
+        var settings = {
+          // "url": "https://preprodapi.mojoboxx.com/preprod/webapi/getGozoFares",
+          url: BaseAPIURL + domain + "/webapi/getGozoFares",
+          method: "POST",
+          timeout: 0,
+          headers: {
+            Authorization:
+              "Basic M2UwMDA4NTU0NWQ0OWZmMmNjM2MxNjRhMTcyYzE0ZGQ=",
+            "Content-Type": "application/json",
+          },
+          data: JSON.stringify({
+            startDate: Currentdate,
+            startTime: Currenttym,
+            cab_type: CabType,
+            mobile: document.getElementById("mobile").innerText,
+            source_address: localStorage["source_name"],
+            source_latitude: localStorage["source_latitude"],
+            source_longitude: localStorage["source_longitude"],
+            destination_address: localStorage["destination_name"],
+            destination_latitude: localStorage["destination_latitude"],
+            destination_longitude: localStorage["destination_longitude"],
+          }),
+        };
+        // console.log(settings);
+        // console.log(settings.data);
+
+        $.ajax(settings).done(function (gozores) {
+          // console.log(gozores);
+          if (gozores.success != "false" && gozores.code == 200) {
+            var gozofare = gozores["data"]["cabRate"];
+            var GozoResponse = gozores.result;
+            localStorage.setItem(
+              "GozoResponse",
+              JSON.stringify(GozoResponse)
+            );
+            for (let a = 0; a < gozofare.length; a++) {
+              CabType == "Hatchback" ? (CabType = "Compact") : CabType;
+              if (
+                gozofare[a]["cab"]["category"].toLowerCase() ==
+                CabType.toLowerCase()
+              ) {
+                // console.log(gozores["data"]["cabRate"][0]["cab"]["category"]);
+                GOZOFareId = gozores["data"]["cabRate"][0]["cab"]["id"];
+                var FareAmount =
+                  gozofare[a]["fare"]["totalAmount"] +
+                  parseInt(MultiplierAmount);
+                console.log("GozoFare" + parseInt(MultiplierAmount));
+                // console.log(FareAmount)
+                localStorage.setItem("partnerFare", parseInt(FareAmount));
+                resolve(FareAmount);
+              } else {
+                resolve(true);
+              }
+            }
+          } else {
+            console.log("GOZO CABS fare not found");
+            reject("Gozo fare not Found");
+          }
+          // console.log("resolve it")
+        });
+      });
+    };
+    // /////////////////////// end Gozo /////////////////////////////////////////////////
+
+    // //////////////////////// coop getfare code start ////////////////////////////
+    async function coop_call(PartnercabType) {
+      return new Promise(async (resolve, reject) => {
+        const total_km = localStorage["KMNum"].includes(".")
+          ? localStorage["KMNum"].split(".")[0]
+          : localStorage["KMNum"];
+        const totalkm = Math.round(total_km[0]);
+
+        dataJ = {
+          total_distance: totalkm,
+          source_city: localStorage["source_city"].trim(),
+          destination_city: localStorage["destination_city"].trim(),
+          type_of_booking: "City",
+        };
+        $.ajax({
+          contentType: "application/json",
+          Accept: "application/json",
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+          data: JSON.stringify(dataJ),
+          dataType: "json",
+          beforeSend: function () {
+            $(".my-button").text("Please wait ...");
+          },
+
+          success: function (res) {
+            if (res.code == 200 && res.code != 101) {
+              // console.log("eske andr")
+              var CoopResponse = res;
+              localStorage.setItem(
+                "CoopResponse",
+                JSON.stringify(CoopResponse)
+              );
+              $("#coop_number").val(res.data.order_reference_number);
+              if (CoopResponse.data.price.length != 0) {
+                if (PartnercabType.toLowerCase() == "sedan") {
+                  FareResponse = CoopResponse.data.price.sedan;
+                } else if (PartnercabType.toLowerCase() == "hatchback") {
+                  FareResponse = CoopResponse.data.price.hatchback;
+                } else if (PartnercabType.toLowerCase() == "suv") {
+                  FareResponse = CoopResponse.data.price.suv;
+                }
+                var FareAmount = FareResponse;
+                // let AmountDiscount = ((50 / (Number(FareAmount) + Number(50)) * 100));
+                // if (String(AmountDiscount).includes(".")) {
+                //     var splitAmount = String(AmountDiscount).split(".")
+                //     var splitAmount2 = splitAmount[0];
+                // } else {
+                //     splitAmount2 = AmountDiscount;
+                // }
+                // $("#pr2COOP").css("display", "block");
+                // $("#fare").css("width", "45%");
+                //  filldetailsInCard('COOP', parseInt(FareAmount))
+
+                // document.getElementById("pr2COOP").style.display = "block";
+                // document.getElementById("discountCOOP").innerHTML = splitAmount2 + "% off"
+                // document.getElementById("prCOOP").innerHTML = " ₹ " + FareAmount
+                // document.getElementById("pr2COOP").innerHTML = "₹" + (
+                //     Number(FareAmount) + Number(50)
+                // )
+                // localStorage.setItem("finalFareCOOP", FareAmount);
+                // localStorage.setItem("TotalFare", FareAmount);
+                localStorage.setItem("partnerFare", parseInt(FareAmount));
+                resolve(FareAmount);
+              }
+            } else {
+              console.log("Coop fare not found");
+              reject("Rastey fare not found");
+            }
+            return FareAmount;
+          },
+          type: "POST",
+          // url: 'https://preprodapi.mojoboxx.com/preprod/webapi/getCoopPrice'
+          url: BaseAPIURL + domain + "/webapi/getCoopPrice",
+        });
+      });
+    }
+
+    // //////////////////////// coop getfare code end /////////////////////////////////////
+
+    /////////////////////// Dubai cab code start///////////////////////////////////////////
+
+    $("#dubai").on("change", function () {
+      lastDetails(PaymentMethod);
+    });
+
+    var dubaiCity;
+    var dubaiDistance;
+    var dubaiLat;
+    var dubaiLong;
+    var dubaiFare;
+    async function getOptiondubai(cab_response) {
+      // await lastDetails(PaymentMethod);
+      var selectedval = document.getElementById("dubai").value;
+      var cityName = selectedval.split(",")[0];
+      dubaiCity = cityName.split("-")[1];
+
+      var cityLat = selectedval.split(",")[1];
+      dubaiLat = cityLat.split("-")[1];
+
+      var cityLong = selectedval.split(",")[2];
+      dubaiLong = cityLong.split("-")[1];
+
+      var cityKM = selectedval.split(",")[3];
+      dubaiDistance = cityKM.split("-")[1];
+
+      var cityFare = selectedval.split(",")[4];
+      dubaiFare = cityFare.split("-")[1];
+
+      document.getElementById("km" + cab_response).innerHTML =
+        dubaiDistance + " Km";
+      $("#fare").css("float", "right");
+      $(".include").css("font-size", "6px");
+      localStorage.setItem("DubaiFare", dubaiFare);
+      document.getElementById("pr" + cab_response).innerHTML = dubaiFare;
+    }
+
+    /////////////////////// Dubai cab code end ///////////////////////////////////////////
+
+    // ///////////////////// Goa miles fare API code start /////////////////////////////
+    var Goamilesfareid = "";
+    var GoamilesvehicleTyp = "";
+    var Goamilesamount = "";
+    var GoamilesVehiclename = "";
+
+    async function checkFareGoamiles(cabTyp) {
+      return new Promise(async function (resolve, reject) {
+        if ($("#mb_number").val() == "") {
+          $("#cmmsg").html("Enter mobile number");
+          $(".thank_msg i").removeClass("fa-check-circle");
+          $(".confirmation_boxCabDiv").css("display", "block");
+          $(".confirmation_boxCab").css("display", "block");
+          $("#pac-input").val("");
+          $("#makeSerIconI").removeClass("fa-times");
+          $("#makeSerIconI").addClass("fa-map-marker-alt");
+          return false;
+        }
+
+        dataJ = {
+          passenger_mobile: $("#mb_number").val(),
+          passenger_email: "",
+          pickup_latlng:
+            localStorage["source_latitude"] +
+            "," +
+            localStorage["source_longitude"],
+          pickup_address: $("#cabPickupTerminal :selected").text().trim(),
+          bookingId: "",
+          pickup_time: moment().format("YYYY-MM-DD HH:mm:ss"),
+          drop_latlng:
+            localStorage["pickup_lat"] + "," + localStorage["pickup_long"],
+          drop_address: $("#pac-input").val(),
+        };
+        // console.log(dataJ);
+        $.ajax({
+          contentType: "application/json",
+          Accept: "application/json",
+          data: JSON.stringify(dataJ),
+          dataType: "json",
+          success: function (res) {
+            if (
+              res.data.response_code != null &&
+              res.data.response_code == 101
+            ) {
+              Goamilesfareid = res.data.data.request_id;
+              var Farelist = res.data.data.fare_list;
+              Farelist.forEach((element) => {
+                if (
+                  element.vehicle_type_name.toLowerCase() ==
+                  cabTyp.toLowerCase()
+                ) {
+                  // console.log(element.vehicle_type_name);
+                  let amountValue = parseInt(element.booking_amount);
+                  let AmountDiscount =
+                    (50 / (amountValue + Number(50))) * 100;
+                  if (String(AmountDiscount).includes(".")) {
+                    var splitAmount = String(AmountDiscount).split(".");
+                    var splitAmount2 = splitAmount[0];
+                  } else {
+                    splitAmount2 = AmountDiscount;
+                  }
+                  $("#fare").css("width", "45%");
+                  document.getElementById("pr2GOAMILES").style.display =
+                    "block";
+                  document.getElementById("discountGOAMILES").innerHTML =
+                    splitAmount2 + "% off";
+                  document.getElementById("prGOAMILES").innerHTML =
+                    " ₹ " + amountValue;
+                  document.getElementById("pr2GOAMILES").innerHTML =
+                    "₹" + (Number(amountValue) + Number(50));
+                  localStorage.setItem("finalFareGOAMILES", amountValue);
+                  localStorage.setItem("TotalFare", amountValue);
+                  GoamilesvehicleTyp = element.vehicle_type;
+                  Goamilesamount = element.booking_amount;
+                  GoamilesVehiclename = element.vehicle_type_name;
+                  resolve(amountValue);
+                }
+              });
+            } else {
+              $("#cmmsg").html(res.data.response_message);
+              $(".thank_msg i").removeClass("fa-check-circle");
+              $(".thank_msg i").addClass("fa-times-circle");
+              $(".confirmation_boxCabDiv").css("display", "block");
+              $(".confirmation_boxCab").css("display", "block");
+              reject(true);
+            }
+          },
+          error: function (xhr) {
+            if (
+              xhr.statusText == "error" ||
+              xhr.statusText == "Bad Request"
+            ) {
+              document.getElementById("loader").style.display = "none";
+              $("#pac-input").val("Server temporarily unavailable");
+              $("#cmmsg").html("Server temporarily unavailable");
+              $(".thank_msg i").removeClass("fa-check-circle");
+              $(".thank_msg i").addClass("fa-times-circle");
+              $(".confirmation_boxCabDiv").css("display", "block");
+              $(".confirmation_boxCab").css("display", "block");
+              reject(true);
+            }
+          },
+          type: "POST",
+          // url: 'https://preprodapi.mojoboxx.com/preprod/webapi/updateBookingLatLongGoa'
+          url: BaseAPIURL + domain + "/webapi/updateBookingLatLongGoa",
+          // url: 'https://preprodapi.mojoboxx.com/preprod/webapi/updateBookingLatLongAllM    iles'
+        });
+      });
+    }
+    // ///////////////////// Goa miles fare API code end /////////////////////////////
+
+    ///////////////////// Goa miles booking cab code start ///////////////////
+    var GoamilePaymentLink = "";
+    async function generateBookingGoa() {
+      dataJ = {
+        request_id: Goamilesfareid,
+        order_id:
+          "SPJ" + Math.floor(10000000000 + Math.random() * 9000000000),
+        veh_type: GoamilesvehicleTyp,
+        veh_type_name: GoamilesVehiclename,
+        booking_amount: Goamilesamount,
+      };
+      $.ajax({
+        contentType: "application/json",
+        Accept: "application/json",
+        data: JSON.stringify(dataJ),
+        dataType: "json",
+        success: function (res) {
+          // console.log(res);
+          if (res.data.response_code != "117") {
+            document.getElementById("loader").style.display = "none";
+            GoamilePaymentLink = res.data.data.offline_payement_link;
+            window.location = res.data.data.offline_payement_link;
+          } else {
+            $("#cmmsg").html(res.data.response_message);
+            $(".thank_msg i").removeClass("fa-check-circle");
+            $(".thank_msg i").addClass("fa-times-circle");
+            $(".confirmation_boxCabDiv").css("display", "block");
+            $(".confirmation_boxCab").css("display", "block");
+          }
+        },
+        error: function (xhr) {
+          if (xhr.statusText == "error" || xhr.statusText == "Bad Request") {
+            document.getElementById("loader").style.display = "none";
+            $("#cmmsg").html("Server temporarily unavailable");
+            $(".thank_msg i").removeClass("fa-check-circle");
+            $(".thank_msg i").addClass("fa-times-circle");
+            $(".confirmation_boxCabDiv").css("display", "block");
+            $(".confirmation_boxCab").css("display", "block");
+          }
+        },
+        type: "POST",
+        // url: 'https://preprodapi.mojoboxx.com/preprod/webapi/generateBookingGoa'
+        url: BaseAPIURL + domain + "/webapi/generateBookingGoa",
+      });
+    }
+    ///////////////////// Goa miles booking cab code end  ///////////////////
+
+    //////////////////////Return Ride code end/////////////////////
+
+    ////////////////////PDF DOWNLOAD CODE START ///////////////////////////////
+    $("#cmcb").on("click", async function (e) {
+      $("#cmcb").css("display", "none");
+      localStorage.setItem("moveHere", true);
+      e.preventDefault();
+      var x, y;
+      if (localStorage["delivery"]) {
+        var a = 500;
+        y = 270 + a;
+      } else {
+        var a = 300;
+        y = 350 + a;
+      }
+
+      var HTML_Width = $("#cabForm ").width();
+      var HTML_Height = $("#cabForm ").height() + 300;
+      var top_left_margin = 15;
+      var PDF_Width = HTML_Width + top_left_margin * 2;
+      var PDF_Height = HTML_Height;
+      var canvas_image_width = HTML_Width;
+      var canvas_image_height = HTML_Height;
+
+      var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
+      var body = document.body,
+        html = document.documentElement;
+
+      var height = Math.max(
+        body.scrollHeight,
+        body.offsetHeight,
+        html.clientHeight,
+        html.scrollHeight,
+        html.offsetHeight
+      );
+
+      // document.getElementById("status").onclick = function () {
+      //     location.href = "index.html"
+      //     window.localStorage.removeItem("prevPageNameTravel");
+      //     window.localStorage.removeItem("prevPageDataIndexTravel");
+      // }
+
+      html2canvas($("body ")[0], {
+        // allowTaint: true,
+        useCORS: true,
+      }).then(function (canvas) {
+        canvas.getContext("2d");
+
+        console.log(canvas.height + " " + canvas.width);
+
+        var imgData = canvas.toDataURL("image/jpeg ", 1.0);
+
+        // window.location.href = imgData;
+
+        var pdf = new jsPDF("p", "pt", [PDF_Width, PDF_Height + a]);
+        pdf.addImage(
+          imgData,
+          "JPEG",
+          top_left_margin,
+          top_left_margin,
+          canvas_image_width,
+          canvas_image_height
+        );
+        pdf.setFontSize(11);
+        pdf.setTextColor(255, 255, 255);
+        pdf.setFillColor(0, 0, 0);
+
+        var textX, textY;
+        // if (coupon_card == " " || coupon_card == "null ") {
+        (textX = 225), (textY = 530);
+
+        // let pnrD = JSON.parse(localStorage["pnrData"]);
+        // Track_analytics(localStorage["booking_id"], pnrD[0]["FirstName"], pnrD[0]["ArrivalStation"], pnrD[0]["DepartureStation"], pnrD[0]["STA"], pnrD[0]["STD"], pnrD[0]["PassengerNumber"], "NULL", "PDF DOWNLOAD");
+        //Canvas2Image.saveAsImage(canvas, canvas_image_width, canvas_image_height, name + pdfCount + ".png ")
+
+        pdf.save("cabConfirmationInfo.pdf");
+
+        setTimeout(function () {
+          //$(".confirmation_box ").fadeIn(1000);
+          $(".confirmation_boxCabDiv").fadeIn(1000);
+          $(".confirmation_boxCab").fadeIn(1000);
+          // localStorage.setItem("PDF_download",true);
+        }, 2000);
+
+        myFunction();
+      });
+      function myFunction() {
+        var x = document.getElementById("snackbarCab");
+        x.className = "show";
+        setTimeout(function () {
+          x.className = x.className.replace("show", " ");
+        }, 5000);
+      }
+      $("#cmcb").css("display", "block");
+    });
+
+    function searchRandom(length) {
+      return (
+        "sch" +
+        Math.floor(
+          Math.pow(10, length - 1) +
+          Math.random() * 9 * Math.pow(10, length - 1)
+        )
+      );
+    }
+    var random_serchNum = searchRandom(18);
+    ////////////////////PDF DOWNLOAD CODE END ///////////////////////////////
+
+    ///////////////////// DISPLAY ADS CODE START /////////////////////////
+    async function departure_Ads() {
+      // const ads = await fetch(BaseURL+domain+"/webapi/getDepartureAds")
+      const ads = await fetch(
+        BaseAPIURL + domain + "/webapi/getDepartureAds"
+      );
+      const adResponse = await ads.json();
+      // console.log(adResponse.length);
+
+      for (let i = 0; i < adResponse.length; i++) {
+        if (
+          adResponse[i]["type"].toLowerCase() == "interstitial" &&
+          adResponse[i]["position"] == 2 &&
+          adResponse[i]["page_name"] == "departure"
+        ) {
+          document.getElementById("interstitial_back").style.display =
+            "block";
+          document.getElementById("interstitial_back").innerHTML = "";
+          let inter = document.createElement("div");
+          inter.setAttribute("class", "interstitial");
+          let interImg = document.createElement("img");
+          interImg.setAttribute("src", adResponse[i]["thumbnail"]);
+          inter.appendChild(interImg);
+          localStorage.setItem("popupshow", true);
+          interImg.onclick = function () {
+            document.getElementById("interstitial_back").style.display =
+              "none";
+            // document.getElementById("Terminal").style.display = "block";
+          };
+          let cross = document.createElement("i");
+          cross.setAttribute("class", "fas fa-times-circle");
+          cross.setAttribute("id", "cross");
+          inter.appendChild(cross);
+          cross.onclick = function () {
+            document.getElementById("interstitial_back").style.display =
+              "none";
+            if (localStorage["PNR_Data"] == "Found") {
+              let pnrD = JSON.parse(localStorage["pnrData"]);
+              Track_analytics(
+                localStorage["booking_id"],
+                pnrD[0]["FirstName"],
+                pnrD[0]["ArrivalStation"],
+                pnrD[0]["DepartureStation"],
+                pnrD[0]["STA"],
+                pnrD[0]["STD"],
+                pnrD[0]["PassengerNumber"],
+                "NULL",
+                "Confirmation_Cross"
+              );
+            } else {
+              Track_analytics(
+                localStorage["booking_id"],
+                "C2ACustomer",
+                "NULL",
+                "NULL",
+                "NULL",
+                "NULL",
+                "NULL",
+                "NULL",
+                "Confirmation_CrossNon-Pnr"
+              );
+            }
+          };
+          document.getElementById("interstitial_back").appendChild(inter);
+          var closeTym;
+          if (
+            adResponse[i]["interstitial_time"] != "" ||
+            adResponse[i]["interstitial_time"] != null
+          ) {
+            closeTym = adResponse[i]["interstitial_time"];
+          } else {
+            closeTym = 7000;
+          }
+          setTimeout(() => {
+            document.getElementById("interstitial_back").style.display =
+              "none";
+          }, closeTym);
+        } else if (adResponse[i]["type"].toLowerCase() == "bottom-banner") {
+          console.log(adResponse[i]["type"].toLowerCase());
+          document.getElementById("bottom_banner").innerHTML = "";
+          document.getElementById("bottom_banner").style.display = "block";
+          let interImg = document.createElement("img");
+          interImg.setAttribute("src", adResponse[i]["thumbnail"]);
+          document.getElementById("bottom_banner").appendChild(interImg);
+        }
+      }
+    }
+    ///////////////////// DISPLAY ADS CODE END //////////////////////////
+
+    $("#close5").click(function () {
+      $("#confirmation_boxCabDiv5").css("display", "none");
+      $("#confirmation_boxCab5").css("display", "none");
+    });
+
+    $("#close6").click(function () {
+      $("#confirmation_boxCabDiv5").css("display", "none");
+      $("#confirmation_boxCab6").css("display", "none");
+    });
+
+    $("#status6").click(function () {
+      localStorage.setItem(
+        "discount",
+        document.getElementById("couponapi").innerText
+      );
+      $("#confirmation_boxCabDiv5").css("display", "none");
+      $("#confirmation_boxCab5").css("display", "none");
+      location.href = "arrival.html";
+    });
+
+    $("#cmcb").click(function () {
+      $("#mailbox").css("display", "block");
+      $("#icon").css("display", "none");
+      $("#typemail").css("display", "none");
+      $("#sentmail").css("display", "none");
+    });
+
+    $("#mailbox").click(function () {
+      $("#cmcb").css("display", "none");
+      $("#mailbox").css("display", "none");
+      $("#typemail").css("display", "block");
+      $("#line").css("display", "block");
+      $("#icon").css("display", "block");
+      $(".iconbox").css("display", "block");
+    });
+
+    ////////////////////////////////////////email button/////////////////////////////////////////////
+    // var BookingData = JSON.parse(localStorage["cabbookingData"])
+    // var BookigInnerLoad;
+    //     BookigInnerLoad = BookingData.clubMember[0];
+    // console.log(final_data[0]["mobile"]);
+
+    $("#icon").click(function () {
+      console.log(FetchBookingResp);
+      console.log(FetchBookingResp["order_reference_number"]);
+      console.log(FetchBookingResp["mobile"]);
+
+      var emailVal = $("#typemail").val();
+      if (emailVal == "") {
+        alert("Please enter your email id");
+        return false;
+      } else {
+        $("#cmcb").css("display", "block");
+        $("#icon").css("display", "none");
+        $("#typemail").css("display", "none");
+        $("#line").css("display", "none");
+        $("#sentmail").css("display", "block");
+        // console.log(BookigInnerLoad);
+        if (travelType == "International") {
+          sendInvoice();
+        } else {
+          sendEmail(
+            $("#typemail").val(),
+            FetchBookingResp["order_reference_number"],
+            FetchBookingResp["mobile"],
+            "BAC"
+          );
+        }
+      }
+    });
+
+    function onLoadHandler() {
+      let selectedImgUrl = localStorage.getItem("selectedImgUrl");
+      let selectedVehicle = localStorage.getItem("selectedVehicle");
+      $(".car_img").attr("src", selectedImgUrl);
+      $("#carImg_Text").text(selectedVehicle);
+    }
+
+    /////////////////////////// send invoice ///////////////////////////////////
+    async function sendInvoice() {
+      let bookingId = localStorage.getItem("BookingId");
+
+      let response = await fetch(
+        "https://prodapi.mojoboxx.com/spicescreen/webapi/tarnsferz_invoice",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ booking_id: bookingId }),
+        }
+      );
+
+      let resData = await response.json();
+      return resData;
+    }
+
+    //////////////////////////////////Send Email///////////////////////////////
+
+    function sendEmail(email, bookingId, phoneNumber, name) {
+      // console.log("hey");
+      // console.log(email, bookingId, phoneNumber);
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      var raw = JSON.stringify({
+        email: email,
+        name: name,
+        bookingId: bookingId,
+        urlType: "CAB",
+        phoneNumber: phoneNumber,
+      });
+
+      var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch(
+        BaseAPIURL + domain + "/webapi/sendEmailOfInvoice",
+        requestOptions
+      )
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+    }
+
+    window.addEventListener("load", onLoadHandler);
+  </script>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="js/tracking.js"></script>
+
+  <script src="js/jspdf.min.js "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/mdtimepicker.js"></script>
+  <script src="js/moment.js"></script>
+  <script src="js/mdtimepicker.js"></script>
+  <script src="js/paytm_cabbooking.js"></script>
+</body>
+
+</html>

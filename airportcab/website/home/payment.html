@@ -1,0 +1,1143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <script src="js/apicall.js"></script>
+  <title>Payment</title>
+
+    <!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '134831566224001');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=134831566224001&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  
+</head>
+
+<style>
+  #paymentButton {
+    width: 40%;
+    text-align: center;
+    background: rgb(55, 136, 177);
+    overflow: hidden;
+    padding: 10px 0px;
+    color: white;
+    border-radius: 7px;
+    font-family: 'NetflixSansRegular';
+    float: right;
+    position: relative;
+    /* display: none; */
+    right: -70%;
+    transition-duration: 1000ms;
+  }
+
+  #razor_payment {
+    width: 40%;
+    text-align: center;
+    background: rgb(55, 136, 177);
+    overflow: hidden;
+    padding: 10px 0px;
+    color: white;
+    border-radius: 7px;
+    font-family: 'NetflixSansRegular';
+    float: right;
+    position: relative;
+    /* top: 71%; */
+    right: -100%;
+    transition-duration: 1000ms;
+  }
+
+  .confirmation_boxCab {
+    position: fixed;
+    width: 80%;
+    top: 30vh;
+    left: 5vw;
+    background-color: white;
+    z-index: 12;
+    text-align: center;
+    padding: 5%;
+    display: none;
+  }
+
+  .confirmation_boxCabDiv {
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    z-index: 11;
+    text-align: center;
+    padding: 5%;
+
+  }
+
+  .status {
+    background: RGB(224, 11, 37);
+    color: White;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 20%;
+    font-size: 1.2em;
+    margin: 0 auto;
+    background-color: #000;
+    margin-bottom: 0%;
+    margin-top: -87px;
+    border-radius: 5px;
+  }
+
+  .show1 {
+    display: block;
+    left: 27% !important;
+    transition-duration: 0.5s;
+  }
+
+  .show2 {
+    display: block;
+    left: 5% !important;
+    transition-duration: 0.5s;
+  }
+
+  .show3 {
+    display: block;
+    left: 45% !important;
+    transition-duration: 0.5s;
+  }
+
+  .show4 {
+    display: block;
+    left: 34% !important;
+    transition-duration: 0.5s;
+  }
+
+  .show5 {
+    display: block;
+    left: 15% !important;
+    transition-duration: 0.5s;
+  }
+
+  .show6 {
+    display: block;
+    left: 3% !important;
+    transition-duration: 0.5s;
+  }
+
+  #cmmsg {
+    color: black;
+    font-weight: 600;
+    margin-top: -10px;
+  }
+
+  .pay_now {
+    overflow: hidden;
+    background: white;
+    color: red;
+    font-family: 'NetflixSansRegular';
+    text-align: center;
+    width: 31%;
+    border-radius: 3px;
+    padding: 5px;
+    position: relative;
+    left: 90%;
+    margin-top: 0%;
+    /* display: none; */
+    cursor: pointer;
+  }
+
+  .pay_now:hover {
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .simpl_img {
+    width: 25%;
+    float: left;
+  }
+
+  .lazy_img {
+    width: 30%;
+    float: left;
+  }
+
+  .cred_img {
+    width: 30%;
+    float: left;
+  }
+
+  .cred_im,
+  .lazy_im,
+  .simpl_im {
+    width: 40%;
+    float: left;
+    margin-bottom: 3%;
+  }
+
+
+  .confirmation_boxCabDiv {
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    z-index: 11;
+    text-align: center;
+    padding: 5%;
+
+  }
+
+  .logostyle {
+    border-radius: 0.3rem;
+    font-size: 0.8rem;
+    background-color: rgb(238, 238, 238);
+    padding: 0.3rem 1rem 0.3rem 0.4rem;
+  }
+
+  .divtop {
+    /* background-color: rgb(225, 225, 225); */
+    /* background:linear-gradient(120deg, #E5E5E5, #DDDDDD, #FFFFFF, #DADADA); */
+    background-color: #F3F7F8;
+    border-radius: 8px;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-top: -10px;
+    height: 120px;
+    border: 1px solid #ccc;
+  }
+
+  .divtop h2 {
+    font-size: 1rem;
+    margin-left: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  .paymentbtn {
+    margin-left: 1rem;
+    height: 7em;
+    margin-top: -1.5rem;
+    width: 21px;
+  }
+
+  .headingh3 {
+    font-size: 0.8rem;
+  }
+
+  .amountstyle {
+    position: absolute;
+    right: 1rem;
+    margin-top: -1.5rem;
+    text-decoration: line-through;
+  }
+
+  .discountedamount {
+    position: absolute;
+    right: 1rem;
+    margin-top: -34px;
+    font-size: 30px;
+
+    font-family: 'NetflixSansMedium';
+  }
+
+  .textstyle {
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+    font-family: 'NetflixSansRegular';
+    position: relative;
+    top: -22px;
+  }
+
+  .righttick {
+    width: 0.6rem;
+  }
+
+  .rightticktext {
+    margin-left: 0.2rem;
+    font-size: 0.5rem;
+  }
+
+  .discounttext {
+    margin-top: -2rem;
+    font-size: 0.6rem;
+    background-color: rgb(245, 199, 83);
+    padding: 0.3rem 1rem 0.3rem 0.4rem;
+  }
+
+  .paymentmethodtext {
+    margin-top: 1rem;
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+
+  .carddetail {
+    width: 40%;
+    margin-top: 1rem;
+    margin-right: 3%;
+    margin-left: 1rem;
+  }
+
+  .centerwithtopmargin {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+
+  .simicon {
+    height: 29px;
+    margin: 10px;
+  }
+
+  .simple {
+    display: flex;
+    width: 100%;
+    height: 64px;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    border-radius: 10px;
+    margin-top: 21px;
+    padding-top: 12px;
+  }
+
+  .body {
+    background-color: #E5E5E5;
+  }
+
+  .simp {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+
+  .cashback {
+    color: #212529;
+    ;
+  }
+
+  .form {
+    width: 100%;
+    height: 50px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 16px;
+    font-weight: 600;
+    padding-left: 20px;
+
+  }
+
+  .micon {
+    height: 23px;
+    position: absolute;
+    right: 40px;
+    height: 23px;
+    margin-top: 28px;
+  }
+
+  .confirmation_boxCab {
+    top: 82vh;
+    left: 10vw;
+    width: 390px;
+    margin-left: -45px;
+  }
+
+  .confirmation_boxCab2 {
+    position: fixed;
+    width: 80%;
+    top: 80vh;
+    left: 10vw;
+    background-color: white;
+    /* z-index: 1000; */
+    text-align: center;
+    /* padding: 5%; */
+    display: none;
+    /* border-radius: 10px; */
+    font-size: 18px;
+  }
+
+  .confirmation_boxCab3 .call_msgCab {
+    height: 67px;
+  }
+
+  .confirmation_boxCab3,
+  .confirmation_boxCab4,
+  .confirmation_boxCab5 {
+    position: fixed;
+    width: 80%;
+    top: 83vh;
+    left: 10vw;
+    background-color: white;
+    /* z-index: 1000; */
+    text-align: center;
+    /* padding: 5%; */
+    display: none;
+    /* border-radius: 10px; */
+    font-size: 18px;
+  }
+
+  .confirmation_boxCab3 .call_msgCab {
+    height: 67px;
+  }
+
+  .confirmation_boxCab .call_msgCab {
+    height: 130px;
+  }
+
+  .okbutton {
+    background: RGB(224, 11, 37);
+    color: White;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 20%;
+    font-size: 1.2em;
+    margin: 0 auto 3%;
+    background-color: red;
+    border-radius: 5px;
+    font-family: "NetflixSansRegular";
+  }
+
+  .cross {
+    width: 25px;
+    position: relative;
+    left: 109px;
+    top: -44px;
+    background-color: rgb(225, 225, 225);
+    border-radius: 10px;
+  }
+
+  .confirmation_boxCabsimpl {
+    position: fixed;
+    width: 100%;
+    top: 59vh;
+    left: 0vw;
+    background-color: white;
+    z-index: 1000;
+    text-align: center;
+    padding: 5%;
+    display: none;
+    /* border-radius: 10px; */
+    font-size: 18px;
+    height: 263px;
+  }
+
+  .checking {
+    margin-top: 35px;
+  }
+
+  .show {
+    font-size: 13px;
+    text-align: left;
+    font-weight: 500;
+  }
+
+  .number {
+    font-size: 12px;
+
+    margin-right: 25px;
+  }
+
+  .button1 {
+    color: #fff;
+    background: #000;
+    border: none;
+    border-radius: 7px;
+    /* font-size: 16px; */
+    padding: 10px;
+  }
+
+  .button2 {
+    color: #fff;
+    background: #000;
+    border: none;
+    border-radius: 7px;
+    /* font-size: 16px; */
+    padding: 10px;
+  }
+
+  .crossicon {
+    width: 15px;
+    position: relative;
+    left: 300px;
+    top: -41px;
+  }
+
+  .status22 {
+    display: none;
+  }
+
+  .top_img {
+    display: flex;
+  }
+
+  .ridedit {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px;
+  }
+
+  .pararide {
+    font-size: 16px;
+
+    font-family: 'NetflixSansMedium';
+  }
+
+  .anchorride {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .custdetail {
+    background-color: #F3F7F8;
+    border-radius: 8px;
+    width: 95%;
+    margin-left: 8px;
+    margin-top: -20px;
+  }
+
+  .detail {
+    margin: 1px;
+    margin-left: 6px;
+    margin-top: 10px;
+  }
+
+  .calendar {
+    display: flex;
+  }
+
+  .calendarimg {
+    height: 44px;
+  }
+
+  #currentmobile {
+    margin-top: 23px;
+    font-size: 14px;
+    margin-left: 0px;
+    line-height: 0px;
+
+    font-family: 'NetflixSansRegular';
+  }
+
+  #cab_type {
+    margin-top: 23px;
+    font-size: 14px;
+    margin-left: 5px;
+    line-height: 0px;
+    font-family: 'NetflixSansRegular';
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .datetime {
+    font-size: 10px;
+    margin-left: -2px;
+    line-height: 0.5;
+
+    font-family: 'NetflixSansRegular';
+  }
+
+  /* #currentdate{
+      font-size: 13px;
+    margin-left: -2px;
+    font-weight: 600;
+    font-family: 'NetflixSansRegular';
+    }
+    #currenttime{
+      font-size:10px;
+      font-weight: 600;
+      font-family: 'NetflixSansRegular';
+    } */
+
+  .currentaddress {
+    display: flex;
+    margin: 20px;
+    margin-top: -79px;
+    font-family: 'NetflixSansRegular';
+  }
+
+  .gadii {
+
+    text-align: right;
+    margin-top: 11px;
+    margin-right: 1%;
+  }
+
+  #pricemoney {
+    font-size: 30px;
+
+    position: relative;
+    left: 2px;
+    top: -7px;
+    font-family: 'NetflixSansMedium';
+  }
+
+  #currentpick {
+    font-size: 14px;
+
+    width: 55%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 316px;
+    font-family: 'NetflixSansRegular';
+
+  }
+
+  #currentdrop {
+    font-size: 14px;
+
+    width: 55%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 127px;
+
+    font-family: 'NetflixSansRegular';
+
+  }
+
+  .accordion-flush .accordion-item {
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    border: none;
+  }
+
+  @font-face {
+    font-family: 'NetflixSansMedium';
+    src: url(font/NetflixSansMedium.ttf);
+  }
+
+  @font-face {
+    font-family: 'NetflixSansRegular';
+    src: url(font/NetflixSansRegular.ttf);
+  }
+
+  .paymentoptionnew {
+    display: flex;
+    justify-content: space-around;
+    height: 60px;
+    width: 98%;
+    margin-left: 4px;
+  }
+
+  .confirmation_boxCab2 {
+    height: 175px;
+    margin-top: -20px;
+    position: fixed;
+    margin-left: -36px;
+    width: 397px;
+  }
+
+  /* .active{
+    box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 50%);
+  } */
+  #status2 {
+    width: 62%;
+    margin-top: 10px;
+    height: 46px;
+  }
+
+  #laterrow {
+    display: none;
+  }
+
+  #PartNow {
+    display: none;
+  }
+
+  .triangle {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+  }
+  #loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 999;
+    margin: -40px 0 0 -40px;
+    -webkit-border: 16px solid #f3f3f3;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border-top: 16px solid #e40f0f;
+    -webkit-border-top: 16px solid #e40f0f;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+.spinner {
+    position: absolute;
+    top: 35%;
+    left: 37%;
+    width: 25%;
+    display: none;
+    z-index: 99;
+}
+
+.spinnerBack {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    display: none;
+    z-index: 99;
+}
+
+  /* #flush-headingOne{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    z-index: 9;
+    background: black;
+    color: white;
+    width: 100%;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+  }
+  #flush-headingTwo{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    z-index: 9;
+    background: black;
+    color: white;
+    width: 100%;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+  }
+  #status22{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    z-index: 9;
+    background: black;
+    color: white;
+    width: 100%;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+  } */
+</style>
+
+<body>
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <div class="confirmation_boxCabDiv"></div>
+
+  <!-- <div id="snackbar"></div> -->
+  <!-- <div id="loader"></div> -->
+  <div class="spinnerBack"></div>
+    <div class="spinner" id="spinner">
+         <img id="loader_img" src="img/loader.gif" style="width: 100%;">
+
+    </div>
+  <div class="confirmation_boxCab4" style="display:none">
+    <div class="thank_msg">
+      <i class="fa fa-check-circle" style="font-size:48px;color:red;background: transparent"></i>
+    </div>
+    <div class="call_msgCab">
+      <p id="cmmsg3" style="font-size: 18px;">
+      </p>
+    </div>
+    <!-- <div class="status" id="status4">OK</div> -->
+  </div>
+  <div class="confirmation_boxCabsimpl" style="display:none">
+    <p class="show">Simpl,Lazypay,Zestmoney & more</p>
+    <img src="img/70-703356_cross-sign-comments-thin-x-sign-png.png" class="crossicon" alt="crossicon" id="crossicon">
+    <span class="number">
+      Proceed to check eligibilty of mobile no.for Pay Later
+    </span>
+    <div class="mobile">
+      <input type="tel" class="form" id="mobileauto" pattern="[6-9]{1}[0-9]{4}[0-9]{5}" maxlength="10"
+        oninvalid="this.setCustomValidity('Please enter your valid phone number')" oninput="this.setCustomValidity('')"
+        required>
+      <img src="img/micon.PNG" alt="ino" class="micon">
+    </div>
+    <div class="confirmation_boxCab">
+
+      <div class="call_msgCab">
+        <p id="cmmsg"></p>
+        <!-- <img src="/new payment uiii/img/cross-mark_274c.png" alt="close" id="cross." class="cross"> -->
+      </div>
+      <div class="status" id="status">OK</div>
+    </div>
+    <div class="confirmation_boxCab2">
+      <div class="call_msgCab">
+        <p id="cmmsg2" style="    margin-top: -12px;"></p>
+        <!-- <img src="/new payment uiii/img/cross-mark_274c.png" alt="close" id="cross" class="cross"> -->
+      </div>
+
+      <div class="call_msgCab">
+        <p id="checkEligibilityMessage" style="margin-top:0px"></p>
+      </div>
+
+      <div class="status" id="status2">Book Now</div>
+      <!-- <div class="status" id="status5">OK</div>
+    <div class="status" id="status7" style="display: none;">OK</div>
+    <div class="status" id="statusOutstation">OK</div> -->
+    </div><br><br><br>
+    <hr class="payLine">
+    <div class="confirmation_boxCab3" style="height: 140px;
+margin-top: -20px;
+width: 394px;
+margin-left: -42px;
+position:fixed;">
+
+      <div class="call_msgCab" style="    margin-top: 12px;">
+        <p id="confirmTxt"></p>
+        <!-- <img src="/new payment uiii/img/cross-mark_274c.png" alt="close3" id="cross" class="cross"> -->
+      </div>
+
+      <div class="status" style="width: 50%;
+  margin-top: -29px;" id="status3">Link Now</div>
+    </div>
+    <div class="checking">
+      <button class="button1" id="button1">Check Eligibity</button>
+
+    </div>
+    <!-- <div class="status" id="status4">OK</div> -->
+  </div>
+
+
+
+  <div class="top_img">
+    <img src="img/topbanner.png" alt="spicejet_logo" style="height: 2rem;
+    margin-top: 18px;
+    margin-left: 10px;">
+  </div>
+  <div class="ridedit">
+    <p class="pararide">Your Ride Details</p>
+    <a class="anchorride" id="autofill" style="text-decoration: none; font-family: 'NetflixSansMedium';"
+      href="#">Edit</a>
+  </div>
+  <div class="custdetail">
+    <div class="calendar">
+      <div class="detail"><img class="calendarimg" src="img/calendar.png"></div>
+      <div class="datetime">
+        <div class="showD" style="display: flex; align-items: center;">
+          <p id="currentmobile">Please wait</p>
+          <p id="cab_type">...</p>
+        </div>
+        <spna class="datetime"><span id="currentdate">Please wait</span>,<span id="currenttime">Please wait</span>
+        </spna>
+      </div>
+      <div class="gadii">
+        <img src="img/Car.png" alt="car">
+        <p id="pricemoney">₹...</p>
+        <p style="   font-size: 10px; font-weight: 600;
+            margin-top: -19px;
+            position: relative;
+            top: -4px;
+            left: 2px;
+            font-family: 'NetflixSansRegular';" id="inclusivetolls">Inclusive of Airport tolls & taxes</p>
+
+      </div>
+    </div>
+    <div class="currentaddress">
+      <div class="imagesline">
+        <img src="img/recbox.png" alt="rec"><br>
+        <img src="img/midline.png" alt="line" style="margin-left: 6px;
+  margin-top: -20px;"><br>
+        <img src="img/circle.png" alt="onlo" style="margin-top: -32px;
+  margin-left: 2px;">
+      </div>
+      <div class="pickdrop">
+        <p id="currentpick" maxlength="20">Please Wait</p>
+        <p id="currentdrop" maxlength="20">Please Wait</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <h2 style="    margin: 20px;
+margin-top: -10px;
+font-size: 16px;
+font-family: 'NetflixSansMedium';">Payment Options</h2>
+
+  <div class="paymentoptionnew">
+    <button type="button" class="btn btn-primary active" aria-pressed="true" data-bs-toggle="button" autocomplete="off"
+      style="background-color: #2389E8;
+    font-family: 'NetflixSansMedium';" id="fullbutton">Full
+      Payment
+      <p id="showfull"></p>
+    </button>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off" style="background-color: #F3F7F8;
+    color: #000;
+    font-family: 'NetflixSansMedium';
+    border: none;" id="partbutton">Part
+      Payment
+      <p id="showpart"></p>
+    </button>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="button" style="background-color: #F3F7F8;
+    color: #000;
+    font-family: 'NetflixSansMedium';
+    border: none;" autocomplete="off" id="laterbutton">Pay Later
+      <p id="showlater"></p>
+    </button>
+
+  </div>
+  <div class="triangle">
+    <img src="img/Triangle.png" alt="" id="tri1" style="display: block;position: relative;right: 90px; scale:80%;">
+    <img src="img/Triangle.png" alt="" id="tri2" style="display: none; scale:80%;    position: relative;left: 78px;">
+    <img src="img/Triangle.png" alt="" id="tri3" style="display: none; position: relative;left: 90px; scale:80%;">
+  </div>
+
+  <div class="divtop" id="divpay">
+    <div class="opener">
+      <div id="paytmrow">
+        <input type="radio" name="fav_language" id="fullpaymt" class="paymentbtn" value="FullPaytm" checked />
+        <label class="paymentType" for="fullpaymt" style="margin-top: -50px;">
+          <div style="margin-left: 1rem;">
+            <div class="imgfare" style="display: flex;">
+              <!-- <h3 class="headingh3"
+              style="font-size: 15px;margin-top: 4px;margin-bottom: 11px;  font-family: 'NetflixSansMedium';">Discounted
+              Fare</h3> -->
+              <h4 class="discountedamount" id="PayNow">₹...<br> </h4>
+              <!-- <h4 class="discountedamount"  id="PartNow" >₹...<br>
+              </h4>
+            -->
+            </div>
+            <img src="img/paytm.png" alt="paytm" style="scale: 85%;position: relative; top: -34px; left: 22px;">
+
+            <p class="textstyle">Pay through UPI/Credit Card/Debit Card/
+              NetBanking/GPay/PhonePe/Paytm/Mobikwik
+            </p>
+            <!-- <span class="discounttext">Get instant ₹ 100 Discount</span> -->
+          </div>
+        </label>
+
+      </div>
+
+      <!-- <hr class="payLine" id="payline2">
+
+      <div id="razorrow">
+        <input type="radio" name="fav_language" id="partpaymt" class="paymentbtn" value="FullRazor" />
+        <label class="paymentType" for="fullpaymt">
+          <div style="margin-left: 1rem;">
+            <img src="img/razorpay.png" alt="azorpay" style="scale: 88%;">
+            <h3 class="headingh3"
+              style="font-size: 15px;margin-top: 4px;margin-bottom: 11px;  font-family: 'NetflixSansMedium';">Discounted
+              Fare</h3>
+            <h4 class="discountedamount" id="PayNow2" style="display: none;">₹...<br></h4>
+           
+            <h3 class="discountedamount"></h3>
+            <p class="textstyle">UPI/Card/Wallet/NetBanking
+            </p>
+          
+
+          </div>
+        </label>
+      </div> -->
+
+      <div class="status"
+        style="position: fixed; bottom: 0px; z-index: 9;display:none;background: grey; left: 0px; height: 6%; color: white; width: 100%; border-top-left-radius: 40px; border-top-right-radius: 40px;"
+        id="flush-disable">
+        Pay Now</div><br>
+      
+      <div class="status"
+        style="position: fixed; bottom: 0px; z-index: 9; background: black; left: 0px; height: 6%; color: white; width: 100%; border-top-left-radius: 40px; border-top-right-radius: 40px;"
+        id="flush-headingOne">
+        Pay Now</div><br>
+      <!-- <div class="status" style="width: 100%;margin-top: 35px; display: none;  margin-top: 11px;height: 46px;"
+        id="flush-headingTwo">Pay Now</div> -->
+      <br>
+    </div>
+    <div class="showpartpay" style="display: none;">
+      <div id="paytmrowl">
+        <input type="radio" name="Fev_Payment" id="fullpaymtl" class="paymentbtn" value="PartPaytm" checked />
+        <label class="paymentType" for="fullpaymtl" style="margin-top: -50px;">
+          <div style="margin-left: 1rem;">
+            <div class="imgfare" style="display: flex;">
+              <img src="img/paytm.png" alt="paytm" style="scale: 85%;position: relative; top: -34px; left: 22px;">
+              <!-- <h3 class="headingh3"
+              style="font-size: 15px;margin-top: 4px;margin-bottom: 11px;  font-family: 'NetflixSansMedium';">Discounted
+              Fare</h3> -->
+              <h4 class="discountedamount" id="PayNowl">₹...<br>
+              </h4>
+              <!-- <h4 class="discountedamount"  id="PartNow" >₹...<br>
+              </h4>
+            -->
+            </div>
+
+            <p class="textstyle">Pay through UPI/Credit Card/Debit Card/
+              NetBanking/GPay/PhonePe/Paytm/Mobikwik
+
+            </p>
+
+            <!-- <span class="discounttext">Get instant ₹ 100 Discount</span> -->
+          </div>
+        </label>
+
+      </div>
+      <!-- <hr class="payLine" id="payline2l">
+
+      <div id="razorrowl">
+        <input type="radio" name="Fev_Payment" id="partpaymtl" class="paymentbtn" value="PartRazor" />
+        <label class="paymentType" for="partpaymtl">
+          <div style="margin-left: 1rem;">
+            <img src="img/razorpay.png" alt="azorpay" style="scale: 88%;">
+            <h3 class="headingh3"
+            style="font-size: 15px;margin-top: 4px;margin-bottom: 11px;  font-family: 'NetflixSansMedium';">Discounted
+            Fare</h3>
+            <h4 class="discountedamount" id="PayNow2l" style="display: none;">₹...<br></h4>
+          
+
+            <h3 class="discountedamount"></h3>
+            <p class="textstyle">UPI/Card/Wallet/NetBanking
+            </p>
+         
+
+          </div>
+        </label>
+
+      </div> -->
+      <div class="status"
+        style="position: fixed; bottom: 0px; z-index: 9; background: black; left: 0px; height: 6%; color: white; width: 100%; border-top-left-radius: 40px; border-top-right-radius: 40px;"
+        id="ParsePay_Now">Pay
+        Now</div><br>
+      <!-- <div class="status" style="width: 100%;margin-top: 10px; display:none;  margin-top: 11px;height: 46px;"
+        id="ParsePay_Now2">Pay Now</div> -->
+      <br>
+    </div>
+
+    <div id="laterrow">
+      <input type="radio" style="height: 3em;" name="cashpayment" id="cashpaymt" class="paymentbtn" value="SIMPL"
+        checked />
+      <label class="paymentType" for="cashpaymt">
+        <div style="margin-left: 1rem;">
+          <h3 class="headingh3" style="    font-size: 20px;
+        font-weight: 700;">Pay Later</h3>
+          <h4 class="discountedamount" id="PayNow1" style="display: none;">₹...<br>
+          </h4>
+          <h3 class="amountstyle"></h3>
+          <p class="textstyle" style="top: 5px;">Price subject to change<br>
+            <!-- <p class="textstyle">Price subject to change<br> -->
+
+          </p>
+
+        </div>
+      </label>
+    </div>
+    <div class="status"
+      style=" display: none; position: fixed; bottom: 0px; z-index: 9; background: black; left: 0px; height: 6%; color: white; width: 100%; border-top-left-radius: 40px; border-top-right-radius: 40px;"
+      id="status22">Book Now</div><br>
+  </div>
+
+  <div class="status"
+      style=" display: none; position: fixed; bottom: 0px; z-index: 9; background: grey; display:none;left: 0px; height: 6%; color: white; width: 100%; border-top-left-radius: 40px; border-top-right-radius: 40px;"
+      id="flush-disablecash">Book Now</div><br>
+  </div>
+
+  <!-- <div class="accordion accordion-flush" id="accordionFlushExample" style="border: none;">
+      <div class="accordion-item" style="border: none;">
+        <h2 class="accordion-header" id="flush-headingOne">
+
+          <button type="button" style="width: 340px;
+        margin-top: 20px;
+        margin-left: 10px;
+        background-color: #000;" class="btn btn-secondary btn-lg btn-block">Pay Now</button>
+        </h2>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button type="button" id="razar_paybtn" style=" width: 340px;
+        margin-top: 20px;
+        margin-left: 10px;
+        background-color: #000;display: none;" class="btn btn-secondary btn-lg btn-block">Pay Now</button>
+            </button>
+          </h2>
+
+        </div>
+
+
+
+        <div class="accordion-item" style="border: none;">
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+
+            <img src="img/Group 1058.png" alt="" id="gpay" class="wallet_btn">
+            <img src="img/Group 1057.png" alt="" class="wallet_btn">
+            <img src="img/Group 1056.png" alt="" class="wallet_btn">
+
+          </div>
+
+        </div>
+        <div class="accordion-item" style="    padding: 6px;">
+          <h2 class="accordion-header" id="flush-headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" style="display: none;"
+              data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+              <img src="img/Group 1068.png" alt="Paylater">&nbsp;&nbsp;<span
+                style=" font-size:18px; font-family: 'NetflixSansMedium';">Paylater</span>
+            </button>
+          </h2>
+          <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="simple" id="simple_div">
+                <img src="img/CJaEn57Tn_UCEAE=.webp" alt="icon" class="simicon">
+                <p class="simp">Simpl<span style="margin-left: 10px;"><b>10% Cashback upto Rs.200</b> </span></p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="js/tracking.js"></script>
+  <script src="js/jspdf.min.js "></script>
+  <script src="js/moment.js"></script>
+  <script src="js/html2canvas.js "></script>
+  <script src="js/canvas2image.js "></script>
+  <script src="js/payment.js"></script>
+  <script src="js/paytm_cabbooking.js">
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>CustomerCare Dashboard</title>
+	<style>
+		.box{
+			margin-top: 1rem;
+			/* border: 2px solid black; */
+		}
+		.form-label{
+			font-weight: bold;
+			margin: 0.51rem;
+		}
+		.navbar-brand{
+			border-radius: 0.5rem;
+    padding: 0.2rem;
+    background-color: yellowgreen
+		}
+		#alert{
+			position: absolute;
+			top: 40%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		#failalert{
+			display: none;
+			background-color: rgb(233, 39, 39);
+			border: 2px solid black;
+			padding: 1rem;
+			border-radius: 0.5rem;
+			color: white;
+		}
+		#successalert{
+			display: none;
+			background-color: yellowgreen;
+			border: 2px solid black;
+			padding: 1rem;
+			border-radius: 0.5rem;
+			color: white;
+		}
+	</style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+		  <a class="navbar-brand" href="#">Customer Care Dashboard</a>
+		</div>
+	  </nav>
+	  <div id="alert">
+		<div id="failalert">
+			<h3 id="failmsg"></h3>
+		</div>
+		<div id="successalert">
+			<h3 id="successmsg"></h3>
+		</div>
+	  </div>
+	  <div class="box">
+		<div class="container">
+			<form id="myform" class="row g-3">
+				<div class="col-md-6">
+				  <label for="inputName" class="form-label">Name of the Agent</label>
+				  <select id="aname" class="form-select" aria-label="Default select example">
+					<option value="0" selected>Select your Name</option>
+					<option value="Ashu">Ashu</option>
+					<option value="Kriti">Kriti</option>
+					<option value="Mandeep">Mandeep</option>
+					<option value="Rakesh">Rakesh</option>
+				  </select>
+				</div>
+				<div class="col-md-6">
+					<label for="inputName" class="form-label">Call Type</label>
+					<select id="calltype" class="form-select" aria-label="Default select example">
+					  <option value="0" selected>Select Call Type</option>
+					  <option value="Inbound">Inbound</option>
+					  <option value="Outbound">Outbound</option>
+					</select>
+				  </div>
+				  <div class="col-md-6">
+					<label for="inputName" class="form-label">Booking Type</label>
+					<select id="booktyp" class="form-select" aria-label="Default select example">
+					  <option value="0" selected>Select Booking Type</option>
+					  <option value="Arrival">Arrival</option>
+					  <option value="Departure">Departure</option>
+					</select>
+				  </div>
+				  <div class="col-md-6">
+					  <label for="inputName" class="form-label">Call Duration</label>
+					  <select id="callduration" class="form-select" aria-label="Default select example">
+						<option value="0" selected>Call Duration Time</option>
+						<option value="1min">1 min</option>
+						<option value="2min">2 min</option>
+						<option value="3min">3 min</option>
+						<option value="4min">4 min</option>
+						<option value="5min">5 min</option>
+						<option value="10min">10 min</option>
+						<option value="11min">> 10 min</option>
+					  </select>
+					</div>
+					<div class="col-md-6">
+						<label for="inputName" class="form-label">Booking Status</label>
+						<select id="bookingstatus" class="form-select" aria-label="Default select example">
+						  <option value="0" selected>Select Booking Status</option>
+						  <option value="cancel">Cancel</option>
+						  <option value="conver">Convert</option>
+						  <option value="modify">Modify</option>
+						</select>
+					  </div>
+					  <div class="col-md-6">
+						  <label for="inputName" class="form-label">Call Status</label>
+						  <select id="callstatus" class="form-select" aria-label="Default select example">
+							<option value="0" selected>Select Call Status</option>
+							<option value="connected">Connected</option>
+							<option value="Switchoff">Switch Off</option>
+							<option value="dnp">DNP</option>
+						  </select>
+						</div>
+						<div class="col-md-6">
+							<label for="inputName" class="form-label">Partner Name</label>
+							<select id="partnername" class="form-select" aria-label="Default select example">
+							  <option value="0" selected>Select Partner Name</option>
+							  <option value="gozo">Gozo</option>
+							  <option value="quickride">QuickRide</option>
+							  <option value="meru">Meru</option>
+							  <option value="buddy">Buddy</option>
+							  <option value="radiowings">Radiowings</option>
+							  <option value="tajindia">Taj India</option>
+							  <option value="ugna">Ugna</option>
+							  <option value="gosafecab">Gosafecab</option>
+							  <option value="taxibazar">taxi bazzar</option>
+							  <option value="friendstaxi">Friends Taxi</option>
+							  <option value="penguin">Penguin</option>
+							  <option value="taxxico">Taxxico</option>
+							  <option value="peindia">PEIndia</option>
+							  <option value="sanjana">Sanjana</option>
+							</select>
+						  </div>
+						  <div class="col-md-6">
+							  <label for="inputName" class="form-label">Customer Mobile</label>
+							  <input id="customernumber" type="text" class="form-select" placeholder="Enter Customer Mobile NO."  maxlength="10">
+							</div>
+				<div class="col-12">
+				  <label for="inputAddress2" class="form-label">REMARK</label>
+				  <input id="remark" type="text" class="form-control" placeholder="Enter Remark Here">
+				</div>
+				<div class="d-flex justify-content-center">
+				  <button id="btn" type="submit" class="btn btn-success">Post</button>
+				</div>
+			  </form>
+		</div>
+	  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script>
+		window.addEventListener('offline', function(event){
+    alert("You are offline please turn on internet connection to run website");
+});
+		
+		document.getElementById('btn').addEventListener("click", function(e){
+			e.preventDefault();
+			let select = document.getElementById('aname');
+		let value = select.options[select.selectedIndex].value;
+		let ctype = document.getElementById('calltype');
+		let v2 = ctype.options[ctype.selectedIndex].value;
+		let booktkype = document.getElementById('booktyp');
+		let v3 = booktkype.options[booktkype.selectedIndex].value;
+		let cduration = document.getElementById('callduration');
+		let v4 = cduration.options[cduration.selectedIndex].value;
+		let bstatus = document.getElementById('bookingstatus');
+		let v5 = bstatus.options[bstatus.selectedIndex].value;
+		let callstatus = document.getElementById('callstatus');
+		let v6 = callstatus.options[callstatus.selectedIndex].value;
+		let partnername = document.getElementById('partnername');
+		let v7 = partnername.options[partnername.selectedIndex].value;
+		let v8 = document.getElementById('customernumber').value;
+		let v9 = document.getElementById('remark').value;
+
+		function failalt(msg){
+			document.getElementById('failmsg').innerText = msg;
+		}
+
+		function succssalt(msg){
+			document.getElementById('successmsg').innerText = msg
+		}
+
+		let output = 0;
+		if(value==0){
+			// alert("Please select Agent Name");
+			failalt("Please select Agent Name");
+			document.getElementById('failalert').style.display = 'block';
+			setTimeout(() => {
+				document.getElementById('failalert').style.display = 'none';
+			}, 2000);
+
+		}
+		else if(v2==0){
+			// alert("Please select Call Type");
+			failalt("Please select Call Type");
+			document.getElementById('failalert').style.display = 'block';
+			setTimeout(() => {
+				document.getElementById('failalert').style.display = 'none';
+			}, 2000);
+		}
+		else if(v3==0){
+			// alert("Please select Booking Type");
+			failalt("Please select Booking Type");
+			document.getElementById('failalert').style.display = 'block';
+			setTimeout(() => {
+				document.getElementById('failalert').style.display = 'none';
+			}, 2000);
+		}
+		else if(v4==0){
+			// alert("Please select Call Duration");
+			failalt("Please select Call Duration");
+			document.getElementById('failalert').style.display = 'block';
+			setTimeout(() => {
+				document.getElementById('failalert').style.display = 'none';
+			}, 2000);
+		}
+		else if(v5==0){
+			// alert("Please select Booking Status");
+			failalt("Please select Booking Status");
+			document.getElementById('failalert').style.display = 'block';
+			setTimeout(() => {
+				document.getElementById('failalert').style.display = 'none';
+			}, 2000);
+		}
+		else if(v6==0){
+			// alert('Please select Call Status');
+			failalt("Please select Call Status");
+			document.getElementById('failalert').style.display = 'block';
+			setTimeout(() => {
+				document.getElementById('failalert').style.display = 'none';
+			}, 2000);
+		}
+		else if(v7==0){
+			// alert("Please select Partner Name");
+			failalt("Please select Partner Name");
+			document.getElementById('failalert').style.display = 'block';
+			setTimeout(() => {
+				document.getElementById('failalert').style.display = 'none';
+			}, 2000);
+		}
+		else if(v8==''){
+			// alert("Please Enter Mobile No.")
+			failalt("Please Enter Mobile No.");
+			document.getElementById('failalert').style.display = 'block';
+			setTimeout(() => {
+				document.getElementById('failalert').style.display = 'none';
+			}, 2000);
+		}
+		else if(v8.length<10 || v8.charAt(0)=='0' || v8.charAt(0)=='1' || v8.charAt(0)=='2' || v8.charAt(0)=='3' || v8.charAt(0)=='4' || v8.charAt(0)=='5'){
+			// alert("Please Enter Correct Mobile No.")
+			failalt("Please Enter Correct Mobile No.");
+			document.getElementById('failalert').style.display = 'block';
+			setTimeout(() => {
+				document.getElementById('failalert').style.display = 'none';
+			}, 2000);
+		}
+		else if(v9==''){
+			// alert("Please Enter Remark");
+			failalt("Please Enter Remark");
+			document.getElementById('failalert').style.display = 'block';
+			setTimeout(() => {
+				document.getElementById('failalert').style.display = 'none';
+			}, 2000);
+		}
+		else{
+			output=1;
+		}
+
+
+		if(output==1){
+			// console.log(JSON.stringify(value));
+		// console.log(typeof(v2));
+		// console.log(v3);
+		// console.log(v4);
+		// console.log(v5);
+		// console.log(v6);
+		// console.log(v7);
+		// console.log(v8);
+		// console.log(v9);
+
+		fetch("http://analytics.bookairportcab.com/api/ArrivalAnalytics/analytics/InsertData", {
+	 method: "POST",
+	 body: JSON.stringify({
+			"aname":value,
+			"calltype":v2,
+			"booktyp":v3,
+			"callduration":v4,
+			"bookingstatus":v5,
+			"callstatus":v6,
+			"partnername":v7,
+			"customernumber":v8,
+			"remark":v9
+	 }),
+	 headers: {
+		 "Content-type": "application/json; charset=UTF-8"
+	 }
+ })
+  
+//  .then(response => response.json())
+.then((response)=>{
+       if(response.status==200){
+        //   alert('succesfull');
+		succssalt("Data sent Successfully");
+		document.getElementById('successalert').style.display='block';
+		document.getElementById('btn').style.display='none';
+		setTimeout(() => {
+			document.getElementById('successalert').style.display='none';
+			document.getElementById("myform").reset();
+			document.getElementById('btn').style.display='block';
+		}, 2000);
+ }
+       
+         else{
+        //   alert('Invalid credentials');
+		failalt("Failed Please check connection");
+			document.getElementById('failalert').style.display = 'block';
+			setTimeout(() => {
+				document.getElementById('failalert').style.display = 'none';
+			}, 2000);
+         }
+       })
+  
+ .then(json => console.log(json));
+		
+		}
+		
+		})
+		
+	</script>
+  </body>
+</html>

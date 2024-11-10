@@ -1,0 +1,2739 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <title>MojoBoxx An In-Flight Company</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Template by CocoBasic" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, PHP" />
+    <meta name="author" content="CocoBasic" />
+    <meta user-scalable="no" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="shortcut icon" href="images/mojoboxx-web-icon.png" />
+    <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat Subrayada'> -->
+    <link  rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Rubik:400,700,700i' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" type="text/css" href='style1.css' />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <!--[if lt IE 9]>
+                <script src="js/html5shiv.js"></script>            
+                <script src="js/respond.min.js"></script>                   
+        <![endif]-->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"> -->
+
+    <script async type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <!-- <script async src="js/jquery.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">  </script> -->
+
+    <script src="js/lazysizes.min.js" async></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat';
+            /* color: rgb(255,255,255); */
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            scrollbar-width: none;
+            /* For Firefox */
+            -ms-overflow-style: none;
+            /* For Internet Explorer and Edge */
+        }
+
+        html::-webkit-scrollbar {
+            width: 0px;
+            /* For Chrome, Safari, and Opera */
+        }
+
+        html {
+            scrollbar-width: none;
+            /* For Firefox */
+            -ms-overflow-style: none;
+            /* For Internet Explorer and Edge */
+        }
+
+        html::-webkit-scrollbar {
+            width: 0px;
+            /* For Chrome, Safari, and Opera */
+        }
+        .gallerycontainer{
+         display: flex;   
+         flex-wrap: wrap; 
+        }
+        .galleryimg{
+            height: 18rem;
+            width: 26rem;
+            margin: 1rem;
+        }
+
+        .carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    /* width: 15px; */
+    border-radius: 50%;
+    height: 0.5rem;
+    width: 0.5rem;
+    /* height: 5px; */
+    padding: 0;
+    margin-right: 3px;
+    /* margin-left: 3px; */
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border : 20px;
+    border-top: 0.5px solid transparent;
+    border-bottom: 0px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+}
+
+        .carousel-indicators .active {
+    /* opacity: 1;
+    width: 4rem;
+    height: 0.8rem;
+    border-radius: 14.2px 14.2px 14.2px 14.2px;
+    background-color: red; */
+    opacity: 1;
+    width: 1.5rem;
+    height: 0.5rem;
+    border : 10px;
+    border-radius: 14px 14px 14px 14px;
+    background-color: red;
+}
+
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: 8rem;
+    margin-left: 15%;
+    list-style: none;
+}
+
+#knbtn :hover{
+    color: white;
+}
+
+.altalogo{
+    margin-top: 10rem; 
+    height: 30.58rem;
+    /* width: 40rem; */
+    text-align-last: left;
+}
+
+.swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        /* font-size: 18px; */
+        /* background: #fff; */
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        /* display: block; */
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+      }
+
+      #knbtn{
+        width: 15rem;
+        height: 3rem;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 300px;
+        margin: 20px auto;
+      }
+      .append-buttons {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .append-buttons button {
+        display: inline-block;
+        cursor: pointer;
+        border: 1px solid #007aff;
+        color: #007aff;
+        text-decoration: none;
+        padding: 4px 10px;
+        border-radius: 4px;
+        margin: 0 10px;
+        font-size: 13px;
+      }
+
+      .altaimages{
+        position: absolute;
+        width: 60%;
+        top: 20%;
+        left: 43%;
+      }
+
+      .left{
+        position: absolute;
+        left: 50%;
+        top: 105%;
+        
+      }
+
+      .right{
+        position: absolute;
+        left: 90%;
+        top: 105%;
+      }
+
+      .home-text h5{
+        font-size: 1rem;
+      }
+      .btn-secondary{
+        background-color: #000 !important;
+        border: none !important;
+      }
+      .dropdown{
+        margin-right: 20px;
+      }
+     #showScreen{
+        color: #fff;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 15px;
+}
+.popup{
+    display: none;
+    width: 100%;
+    background-color: #000;
+    height: 100vh;
+}
+.img_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+   
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  padding: 40px;
+  font-size: 30px;
+  text-align: center;
+}
+.grid-item a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.grid-item1 { 
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  margin-top: 10px;
+}
+.dropdown-menu1 li a{
+    color: #fff;
+    font-size: 15px;
+}
+.dropdown-menu1 li a:hover{
+    color: #fff;
+    font-size: 15px;
+}
+.btn{
+    margin-bottom: 15px !important;
+    background-color: #212529;
+}
+
+/* .brochureLine{
+    margin-top: 5px !important;
+} */
+.title {
+    color: #fff;
+    margin-top: -30px;
+    text-align: center;
+    font-family: 'NetflixSansRegular';
+    font-weight: 500;
+    font-size: 30px;
+        }
+
+        .bottomtitle {
+            color: #fff;
+            margin-top: 100px;
+            font-family: 'NetflixSansMedium';
+            font-weight: 700;
+            font-size: 39px;
+        }
+
+        .bottompara {
+            color: #fff;
+            margin-top: 20px;
+            font-family: 'NetflixSansMedium';
+            font-weight: 400;
+            font-size: 30px;
+        }
+
+        .titleh1 {
+            color: #fff;
+            margin-top: 80px;
+            text-align: center;
+            font-family: 'NetflixSansMedium';
+            font-weight: 700;
+            font-size: 70px;
+        }
+        
+        .top-title{
+            font-size:70px;
+            color:#D5B961;
+            text-align: center;
+           
+            margin-top:100px;
+            font-family:  'NetflixSansMedium';
+        }
+
+        .bottom-title {
+            color: #fff;
+    text-align: center;
+    font-family: 'NetflixSansRegular';
+    font-weight: 300;
+    font-size: 46px;
+    background-image: url(/images/vector.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 86px;
+    height: 147px;
+    background-position-x: 389px;
+    margin-top: -31px; 
+    animation: animate__fadeInUp; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+        }
+        .or{
+            color:#fff;
+            text-align: center;
+    margin-top: 0px;
+        }
+        .boldnumber{
+            color: #D5B961;
+    margin-top: 19px;
+    text-align: center;
+    font-family: 'NetflixSansMedium';
+    font-weight: 700;
+    font-size: 30px;
+    
+}
+        .bottomspan{
+            color: #fff;
+            margin-top: 80px;
+            text-align: center;
+            font-family: 'NetflixSansMedium';
+            font-weight: 700;
+            font-size: 54px;
+        }
+
+        .line {
+            width: 800px;
+        }
+
+        @font-face {
+            font-family: 'NetflixSansLight';
+            src: url(font/NetflixSansLight.ttf);
+        }
+
+        @font-face {
+            font-family: 'Apple Chancery';
+            src: url(fontss/Apple\ Chancery.ttf);
+        }
+
+
+        @font-face {
+            font-family: 'NetflixSansMedium';
+            src: url(font/NetflixSansMedium.ttf);
+        }
+
+        @font-face {
+            font-family: 'NetflixSansRegular';
+            src: url(font/NetflixSansRegular.ttf);
+        }
+
+        .lineimg {
+            text-align: center;
+            margin-top: -20px;
+        }
+
+        .content_p {
+            color: #fff;
+            font-family: 'NetflixSansLight';
+            margin-top: -69px;
+            font-weight: 400px;
+            font-size: 18px;
+            width: 592px;
+            text-align: justify;
+            margin-left: 30px;
+        }
+
+        .iconpara {
+            color: #fff;
+            font-family: 'NetflixSansLight';
+            font-weight: 400px;
+            font-size: 17px;
+            margin-left: 10px;
+            text-align: left;
+        }
+
+        .content {
+            margin-top: 60px;
+        }
+
+        .button {
+            background-color: #E30052;
+            color: #fff;
+            border: none;
+            font-family: 'NetflixSansMedium';
+            border-radius: 55px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            height: 75px;
+            font-size: 22px;
+        }
+
+        .button:hover {
+            background-color: #0F59F7;
+        }
+
+        .read {
+            color: #EC6D37;
+        }
+
+        .leftbox {
+            background-color: #5E5E5E;
+            width: 210px;
+            height: 50px;
+            margin-top: 120px;
+        }
+
+        .rightbox {
+            background-color: #5E5E5E;
+            width: 210px;
+            height: 50px;
+            margin-top: 120px;
+        }
+
+        .question {
+            display: flex;
+        }
+
+        .icon1 {
+            width: 30px;
+            height: 30px;
+        }
+
+        .imagess {
+            width: 540px;
+            height: 309px;
+        }
+
+        .toppart {
+            background-color: #000;
+        }
+
+        .downpart {
+            background-color: #000;
+        }
+
+        .client {
+            text-align: center;
+            font-weight: 700;
+            font-family: 'NetflixSansMedium';
+            font-size: 72px;
+            color: #fff;
+        }
+
+        .clientpara {
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'NetflixSansMedium';
+        }
+
+        .clientimg {
+            margin-top: 30px;
+        }
+
+        .cli {
+            width: 600px;
+        }
+
+        .down {
+            margin-bottom: 70px;
+        }
+
+        .animation {
+            box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+            background-color: #26E989;
+            border-radius: 15px;
+            width: 159px;
+            height: 220px;
+            margin-left: 20px;
+            /* animation: shake 4s;
+            animation-iteration-count: infinite; */
+        }
+
+        .anipara {
+            color: #000;
+            text-align: center;
+            font-weight: 500;
+            font-family: 'NetflixSansMedium';
+            margin-top: -230px;
+            padding: 13px;
+            padding-top: 65px;
+        }
+
+        .anipara1 {
+            color: #000;
+            text-align: center;
+            font-weight: 500;
+            font-family: 'NetflixSansMedium';
+            margin-top: 34px;
+            padding: 13px;
+            padding-top: 34px;
+        }
+
+        .anipara2 {
+            color: #fff;
+            text-align: center;
+            font-weight: 500;
+            font-family: 'NetflixSansMedium';
+            margin-top: 160px;
+            padding: 38px;
+            padding-top: 60px;
+        }
+
+        .anipara3 {
+            color: #fff;
+            text-align: center;
+            font-weight: 500;
+            font-family: 'NetflixSansMedium';
+            margin-top: -177px;
+            padding: 13px;
+            padding-top: 44px;
+        }
+
+        .animation1 {
+            box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+            background-color: #D9D9D9;
+            border-radius: 15px;
+            width: 159px;
+            height: 220px;
+            margin-left: 51px;
+            position: relative;
+            left: 95px;
+            /* animation: shake 4s;
+            animation-iteration-count: infinite; */
+        }
+
+        .animation2 {
+            box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+            background-color: #E30052;
+            border-radius: 15px;
+            width: 159px;
+            height: 220px;
+            margin-left: 51px;
+            position: relative;
+            left: -83px;
+            top: -255px;
+            /* animation: shake 4s;
+            animation-iteration-count: infinite; */
+        }
+
+        .animation3 {
+          
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    background-color: #0F59F7;
+    border-radius: 15px;
+    width: 235px;
+    height: 144px;
+    margin-left: 36px;
+    /* animation: shake 4s;
+    animation-iteration-count: infinite; */
+}
+        
+
+        .animation4 {
+            box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    background-color: #D9D9D9;
+    border-radius: 15px;
+    width: 183px;
+    height: 128px;
+    margin-left: 42px;
+    position: relative;
+    left: 83px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+            /* animation: shake 0.5s;
+  animation-iteration-count: infinite; */
+        
+
+        .anipara4 {
+            color: #000;
+            text-align: center;
+            font-weight: 500;
+            font-family: 'NetflixSansMedium';
+            margin-top: 60px;
+            padding: 13px;
+            padding-top: 30px;
+
+        }
+
+        .animation5 {
+            position: relative;
+    left: -66px;
+    margin-top: 230px;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    background-color: #5E5E5E;
+    border-radius: 15px;
+    width: 223px;
+    height: 119px;
+    margin-left: 20px;
+   
+}
+        
+
+        .eab {
+            margin-top: -200px;
+        }
+
+        .black {
+            background-color: #000;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translate(1px, 1px) rotate(0deg);
+            }
+
+            10% {
+                transform: translate(-1px, -2px) rotate(-1deg);
+            }
+
+            20% {
+                transform: translate(-3px, 0px) rotate(1deg);
+            }
+
+            30% {
+                transform: translate(3px, 2px) rotate(0deg);
+            }
+
+            40% {
+                transform: translate(1px, -1px) rotate(1deg);
+            }
+
+            50% {
+                transform: translate(-1px, 2px) rotate(-1deg);
+            }
+
+            60% {
+                transform: translate(-3px, 1px) rotate(0deg);
+            }
+
+            70% {
+                transform: translate(3px, 1px) rotate(-1deg);
+            }
+
+            80% {
+                transform: translate(-1px, -1px) rotate(1deg);
+            }
+
+            90% {
+                transform: translate(1px, 2px) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(1px, -2px) rotate(-1deg);
+            }
+        }
+
+        .partner {
+            width: 430px;
+            margin-top: 50px;
+        }
+
+        .india {
+            width: 550px;
+            margin-top: 20px;
+        }
+
+        .citi {
+            color: #fff;
+    font-size: 10px;
+    margin-top: -14px;
+    font-family: 'NetflixSansRegular';
+    margin-left: 216px;
+        }
+
+        .form-popup-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .form-popup-bg {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(94, 110, 141, 0.9);
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+            -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+            transition: opacity 0.3s 0s, visibility 0s 0.3s;
+            overflow-y: auto;
+            z-index: 10000;
+        }
+
+        .form-popup-bg.is-visible {
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+            -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+            transition: opacity 0.3s 0s, visibility 0s 0s;
+        }
+
+        .form-container {
+            background-color: #2d3638;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            padding: 40px;
+            color: #fff;
+        }
+
+        .close-button {
+            background: none;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: solid 1px #fff;
+        }
+
+        .form-popup-bg:before {
+            content: '';
+            background-color: #fff;
+            opacity: .25;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .name {
+            background-color: #D9D9D9;
+            width: 191px;
+            font-family: 'NetflixSansRegular';
+        }
+
+        .number {
+            background-color: #D9D9D9;
+            margin-top: 0px;
+            margin-left: 7px;
+            width: 196px;
+            font-family: 'NetflixSansRegular';
+        }
+
+        .pin {
+            background-color: #D9D9D9;
+            margin-top: 8px;
+            margin-left: 10px;
+            width: 161px;
+            font-family: 'NetflixSansRegular';
+        }
+
+        .state {
+            background-color: #D9D9D9;
+            margin-top: 8px;
+            width: 225px;
+            font-family: 'NetflixSansRegular';
+        }
+
+        .email {
+            background-color: #D9D9D9;
+            margin-top: 8px;
+            font-family: 'NetflixSansRegular';
+        }
+
+        .city {
+            background-color: #D9D9D9;
+            margin-top: 8px;
+            font-family: 'NetflixSansRegular';
+        }
+
+        .address {
+            background-color: #D9D9D9;
+            margin-top: 8px;
+        }
+
+        .whitea {
+            background-color: #fff;
+            width: 475px;
+            font-family: 'NetflixSansRegular';
+        }
+
+        .common {
+            display: flex;
+            font-family: 'NetflixSansRegular';
+        }
+
+        .common1 {
+            display: flex;
+            margin-top: 10px;
+            font-family: 'NetflixSansRegular';
+        }
+
+        .fsum {
+            height: 39px;
+            margin-left: 296px;
+            margin-top: 23px;
+            border-radius: 10px;
+            background-color: #000;
+            color: #fff;
+            width: 100px;
+            font-family: 'NetflixSansRegular';
+        }
+
+        .fsums1 {
+            height: 39px;
+            margin-top: 23px;
+            border-radius: 10px;
+            background-color: #f1f1f1;
+            outline: none;
+            width: 135px;
+        }
+
+        .fsums2 {
+            height: 39px;
+            margin-top: 23px;
+            border-radius: 10px;
+            background-color: #f1f1f1;
+            outline: none;
+
+            width: 200px;
+        }
+
+        .fsums3 {
+            height: 39px;
+            margin-top: 23px;
+            border-radius: 10px;
+            background-color: #000;
+            color: #fff;
+            width: 157px;
+            margin-left: 35px;
+        }
+
+        .samebut {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            margin-top: -10px;
+        }
+
+        .about {
+            margin-top: 12px;
+            width: 393px;
+            margin-left: 1px;
+            height: 100px;
+            background-color: #D9D9D9;
+        }
+
+        .atext {
+            background-color: #D9D9D9;
+            height: 100%;
+        }
+
+        .btn {
+            border: none;
+            outline: none;
+            padding: 10px 16px;
+            background-color: #D9D9D9;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: 'NetflixSansRegular';
+        }
+
+        /* Style the active class, and buttons on mouse-over */
+        .btn:hover {
+            background-color: #000;
+            color: white;
+        }
+
+        .active {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+
+        .contentt {
+            margin-top: 60px;
+        }
+
+        .buttont {
+            background-color: #E30052;
+            color: #fff;
+            border: none;
+            font-family: 'NetflixSansMedium';
+            border-radius: 55px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            height: 75px;
+            font-size: 22px;
+        }
+
+        .buttont:hover {
+            background-color: #0F59F7;
+        }
+
+
+
+
+
+
+        .form-popup-bgt {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+        }
+
+        /* .form-popup-bgt {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(94, 110, 141, 0.9);
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+            -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+            transition: opacity 0.3s 0s, visibility 0s 0.3s;
+            overflow-y: auto;
+            z-index: 10000;
+        }
+
+        .form-popup-bgt.is-visible {
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+            -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+            transition: opacity 0.3s 0s, visibility 0s 0s;
+        } */
+
+        .form-containert {
+            background-color: #2d3638;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            padding: 40px;
+            color: #fff;
+        }
+
+        .close-buttont {
+            background: none;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: solid 1px #fff;
+        }
+
+        .form-popup-bgt:before {
+            content: '';
+            background-color: #fff;
+            opacity: .25;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+
+
+        .whiteat {
+            background-color: #fff;
+            width: 475px;
+            height: 100%;
+        }
+
+
+
+        .btnt {
+            border: none;
+            outline: none;
+            padding: 10px 16px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+
+        .thanks {
+            justify-content: center;
+            display: flex;
+        }
+
+        .thankscont {
+            color: #000;
+            font-family: 'NetflixSansRegular';
+            text-align: center;
+            margin-top: -14px;
+        }
+
+        .closeform {
+            background-color: #000;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 116px;
+    margin-right: 120px;
+    border-radius: 12px;
+    height: 40px;
+    padding: 6px;
+    margin-top: 50px;
+        }
+
+    </style>
+
+
+    <!-- script code for spicejet phone website Start -->
+
+    <!-- <script>
+        function getURLParameter(url, name) {
+            return (RegExp(name + '=' + '(.+?)(&|$)').exec(url) || [, null])[1];
+        }
+        localStorage["booking_id"] = getURLParameter(location.href, 'booking_id');
+        var iOS = navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+        var ua = navigator.userAgent.toLowerCase();
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        var macLap = userAgent.match(/Macintosh/i);
+        
+        var isAndroid = ua.indexOf("android") > -1;
+        if (isAndroid) {
+            document.getElementById('mobileDesktop').style.display = "none";
+            document.getElementById('img22').style.display = "none";
+            window.location.replace("reactspicejetserver/index.html");
+        } else if (iOS) {
+            document.getElementById('mobileDesktop').style.display = "none";
+            document.getElementById('img22').style.display = "none";
+            window.location.replace("reactspicejetserver/index.html");
+        } else if (macLap == "Macintosh") {
+            document.getElementById('mobileDesktop').style.display = "block";
+            document.getElementById('img22').style.display = "block";
+        } else {
+            document.getElementById('mobileDesktop').style.display = "block";
+            document.getElementById('img22').style.display = "block";
+
+        }
+    </script> -->
+
+    <!-- script code for spicejet phone website End -->
+
+    <!-- <script src="jquery-3.6.0.min.js"></script> -->
+    <!-- <script>
+        function isElementInViewport(elem) {
+            var $elem = $(elem);
+
+            // Get the scroll position of the page.
+            var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
+            var viewportTop = $(scrollElem).scrollTop();
+            var viewportBottom = viewportTop + $(window).height();
+
+            // Get the position of the element on the page.
+            var elemTop = Math.round($elem.offset().top);
+            var elemBottom = elemTop + $elem.height();
+
+            return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
+        }
+
+        // Check if it's time to start the animation.
+        function checkAnimation() {
+            var $elem = $('.big-text ');
+
+            // If the animation has already been started
+            if ($elem.hasClass('start')) return;
+
+            if (isElementInViewport($elem)) {
+                // Start the animation
+                $elem.addClass('start');
+            }
+        }
+
+        // Capture scroll events
+        $(window).scroll(function () {
+            checkAnimation();
+        });
+    </script> -->
+
+
+
+    <!-- code for google analytics  start-->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2YLP7C3H9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-E2YLP7C3H9');
+    </script>
+
+     <!-- code for google analytics  End-->
+</head>
+
+<body class="page-template-onepage">
+
+    <div class="site-wrapper">
+
+
+        <div class="doc-loader">
+            <img src="images/loader.gif" alt="Seppo">
+            <!-- <img src="images/web splash.mp4" alt="Seppo"> -->
+            <!-- <video width="100%" height="100%" autoplay="autoplay" muted id="vidPlayer">
+                <source src="./videos/websplash.mp4.mp4" type="video/mp4"> -->
+            <!-- <source src="movie.ogg" type="video/ogg"> -->
+            <!-- Your browser does not support the video tag. -->
+            <!-- </video> -->
+        
+        </div>
+
+        <header class="header-holder">
+            <div class="menu-wrapper center-relative relative">
+
+                <div class="header-logo">
+                    <a style="color: white;" href="index.html">mojoboxx-logo
+                        <img src="images/mojoboxx-logo.png" alt="Seppo">
+                        <!-- <img src="images/logo_mojo.png" alt="Seppo"> -->
+                        <!-- <p>An In-Flight Company</p> -->
+                        <!-- <img src="images/MojoBoxxLogo.png" alt="Seppo"> -->
+
+                        <!-- <video width="100%" height="100%" preload="true" muted id="logoVideo">
+                            <source src="videos/mojoboxxLogoAnimation.mp4" type="video/mp4"> -->
+                    </a>
+                </div>
+
+                <div class="toggle-holder">
+                    <div id="toggle">
+                        <div class="first-menu-line"></div>
+                        <div class="second-menu-line"></div>
+                        <div class="third-menu-line"></div>
+                    </div>
+                </div>
+
+                <div class="menu-holder">
+                    <nav id="header-main-menu">
+                        <ul class="main-menu sm sm-clean">
+                            <!-- <li class="brochureLine">
+                                <div class="dropdownList">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" >
+                                     Brochure
+                                    </button>
+                                    <ul class="dropdown-menu1">
+                                    <li id="showScreen">Brochure</li>
+                                      <li id="showHome"> <a class="disableFormBtn" href="#home">Home</a></li>
+                                      <li> <a class="disableFormBtn" href="./Aix.html">Aircraft EXPO 2022</a></li>
+                                      <li> <a class="disableFormBtn" id="contactid" href="#contact">Contact Us</a></li>
+                                    </ul>
+                                  </div>
+                            </li> -->
+                            
+                            <!-- <li>
+                                <a class="disableFormBtn" href="#home">Home</a>
+                            </li>
+                            <li>
+                                <a class="disableFormBtn" href="./Aix.html">Aircraft EXPO 2022</a>
+                            </li>
+                            <li>
+                                <a class="disableFormBtn" id="contactid" href="#contact">Contact Us</a>
+                            </li>  -->
+                            <!-- <li> -->
+                                <!-- <a class="disableFormBtn" href="blogs/Home.html">Blog</a> -->
+                                <!-- <a class="disableFormBtn" href="website/blog.html">Blog</a> -->
+                            <!-- </li> -->
+                          <!--  <li>
+                                <a class="disableFormBtn" href="#about">About</a>
+                            </li> -->
+                            <!-- <li>
+                                <a href="#clients">Clients</a>
+                            </li> -->
+                            <!-- <li>
+                                <a href="#millstones">Cab Plugin</a>
+                            </li>
+                            <li>
+                                <a href="#millstones">Cab Plugin</a>
+                            </li> -->
+                            <!-- <li>
+                                <a class="disableFormBtn" href="#news">Product</a>
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="#portfolio">Portfolio</a>
+                            </li> -->
+                            <!-- <li>
+                                <a class="disableFormBtn" href="#pricing">Partners</a>
+                            </li>
+                            <li>
+                                <a class="disableFormBtn" href="#press">Press</a>
+                            </li>
+                            <li>
+                                <a class="disableFormBtn" href="#team">Reviews</a>
+                            </li> -->
+                            <!-- <li>
+                                <a href="#skills">Skills</a>
+                            </li> -->
+                            <!-- <li>
+                                <a href="#millstones">Milestones</a>
+                            </li> -->
+
+                            <li>
+                                <a href="website/GetCab.html"> <button class="cab_btn" id="cab_btn1">On-Ground-Experience</button></a>
+
+
+                                        <!-- <a href="#portfolio-wrapper"> <button class="cab_btn" id="cab_btn1">Get Cab
+                                            Plugin</button></a> -->
+
+                                <!-- <a href="#cab_btn_move_here"> <button class="cab_btn" id="cab_btn1">Get Cab
+                                         Plugin</button></a> -->
+
+                                <!-- <a class="btn1 btn--svg1 js-animated-button" id="cab_btn1" href="#cab_btn_move_here">
+                                    <span> Get Cab Plugin</span>
+                                    <svg class="btn--svg__circle" width="180" x="0px" y="0px" viewBox="0 0 60 60"
+                                        enable-background="new 0 0 60 60">
+                                        <circle class="js-discover-circle" fill="rgba(0, 0, 0, 0)" cx="30" cy="30"
+                                            r="28.7">
+                                           
+                                        </circle>
+                                    </svg>
+                                    <svg class="btn--svg__border" x="0px" y="0px" preserveaspectratio="none"
+                                        viewBox="2 29.3 56.9 13.4" enable-background="new 2 29.3 56.9 13.4" width="180">
+                                        <g class="btn--svg__border--left js-discover-left-border" id="Calque_2">
+                                            <path fill="none" stroke="rgb(212,185,96)" stroke-width="0.5"
+                                                stroke-miterlimit="1"
+                                                d="M30.4,41.9H9c0,0-6.2-0.3-6.2-5.9S9,30.1,9,30.1h21.4"></path>
+                                        </g>
+                                        <g class="btn--svg__border--right js-discover-right-border" id="Calque_3">
+                                            <path fill="none" stroke="rgb(212,185,96)" stroke-width="0.5"
+                                                stroke-miterlimit="1"
+                                                d="M30.4,41.9h21.5c0,0,6.1-0.4,6.1-5.9s-6-5.9-6-5.9H30.4"></path>
+                                        </g>
+                                    </svg></a> -->
+
+                            </li>
+                            <li>
+
+                                <a href="website/PromoteYourBrand.html"> <button class="promote_btn" id="promote_btn1"
+                                    onclick="btnClick()">In-Flight-Experience</button></a>
+                                <!-- <a href="#mojocab_img_text"> <button class="promote_btn" id="promote_btn1"
+                                        onclick="btnClick()">Promote Your Brand</button></a> -->
+
+
+
+                                <!-- <a class="btn1 btn--svg1 js-animated-button" id="promote_btn1" href="#mojocab_img_text">
+                                    <span> Promote Your Brand</span>
+                                    <svg class="btn--svg__circle" width="180" x="0px" y="0px" viewBox="0 0 60 60"
+                                        enable-background="new 0 0 60 60">
+                                        <circle class="js-discover-circle" fill="rgba(0, 0, 0, 0)" cx="30" cy="30"
+                                            r="28.7">
+                                           
+                                        </circle>
+                                    </svg>
+                                    <svg class="btn--svg__border" x="0px" y="0px" preserveaspectratio="none"
+                                        viewBox="2 29.3 56.9 13.4" enable-background="new 2 29.3 56.9 13.4" width="180">
+                                        <g class="btn--svg__border--left js-discover-left-border" id="Calque_2">
+                                            <path fill="none" stroke="rgb(212,185,96)" stroke-width="0.5"
+                                                stroke-miterlimit="1"
+                                                d="M30.4,41.9H9c0,0-6.2-0.3-6.2-5.9S9,30.1,9,30.1h21.4"></path>
+                                        </g>
+                                        <g class="btn--svg__border--right js-discover-right-border" id="Calque_3">
+                                            <path fill="none" stroke="rgb(212,185,96)" stroke-width="0.5"
+                                                stroke-miterlimit="1"
+                                                d="M30.4,41.9h21.5c0,0,6.1-0.4,6.1-5.9s-6-5.9-6-5.9H30.4"></path>
+                                        </g>
+                                    </svg></a> -->
+
+                            </li>
+                            <li class="brochureLine">
+                                <div class="dropdownList">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" >
+                                     More
+                                    </button>
+                                    <ul class="dropdown-menu1" style="margin-left: -57px;">
+                                    <!-- <li id="showScreen">More</li> -->
+                                    <li> <a class="disableFormBtn" id="contactid" href="#contact">Contact Us</a></li>
+                                      <li> <a class="disableFormBtn" href="./seller.html">Join Book Airport Cab Network</a></li>
+                                      <li> <a class="disableFormBtn" href="./Aix.html">Aircraft EXPO 2022</a></li>
+                                     
+                                    </ul>
+                                  </div>
+                            </li>  
+
+                        </ul>
+                    </nav>
+                   
+                </div>
+                <div class="clear"></div>
+            </div>
+        </header>
+      <div class="popup">
+        <div class="img_container">
+            <div class="grid-container">
+                <div class="grid-item"> <a href="https://docsend.com/view/cu97jref7zjjtfjs"> <img src="/images/webImg1.png" alt="">  <div class="grid-item1">Shopping Mall</div></a></div>
+                <div class="grid-item"> <a href="https://docsend.com/view/y3exhvktmbchictc "> <img src="/images/webImg2.png" alt=""> <div class="grid-item1">Hotel Brochure</div></a></div>
+                <div class="grid-item"> <a href="https://docsend.com/view/ftwxm6qyed832u8y"> <img src="/images/webImg3.png" alt=""> <div class="grid-item1">Mojoboxx Transfers</div></a></div> 
+               
+                
+               
+              </div>
+        </div>
+      </div>
+     
+            
+
+       
+
+
+      <div class="toppart">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="banner">
+                    <h3 class="top-title">
+                        Are you a Premium<br> Cab Supplier?
+                    </h3>
+                  
+                    <h1 class="bottom-title animate__fadeInUp">
+                        Join <span class="bottomspan">Book Airport Cab</span> Network
+                    </h1>
+                    <!-- <div class=lineimg>
+                        <img src="images/Vector 48.png" alt="bottfanimationom line" class="line">
+                    </div> -->
+                   
+                   
+                    
+                </div>
+                <div class="col-md-3">
+                    <div class="animation">
+                        <p class="anipara">Featured on our platform by brand your car with our stickers</p>
+                    </div>
+                    <div class="animation1">
+                        <p class="anipara1">Stay busy in all seasons.<br><br>Good service <br>=<br> More business</p>
+                    </div>
+                    <div class="animation2">
+                        <p class="anipara2">You simply provide top quality service</p>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="content">
+                        <p class="content_p">
+                            Our mission is to join hands with others and together excel in helping travellers have 
+                            swift airport transfers. Calling for all cab drivers/owners to come and join us in this journey 
+                            of reformation. We offer mobility solutions by connecting customers to drivers and enabling 
+                            convenience and transparency for hundreds of millions of consumers and over 100+ cab-partners.
+
+                        </p>
+                       
+
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-primary button" id="btnOpenForm" type="button"
+                                style="background-color: #D5B961; color: #000; font-weight: 600;">Join Now</button>
+                        </div>
+                        <div class="or">
+                            <p class="or">or</p>
+                        </div>
+                        <h1 class="title">
+                            Give a Missed call <span class="boldnumber">079-48222248</span>
+                        </h1>
+                        <div class="form-popup-bg">
+                            <div class="form-container whitea">
+                                <button id="btnCloseForm" class="close-button" style="color: #000;">X</button>
+                                <div id="url_type" class="samebut ">
+
+                                    <button class="btn one" id="owner">Cab Owner</button>
+                                    <button class="btn one" id="aggre" style="margin-left: 10px;">Cab Aggregator</button>
+
+                                </div>
+                                <form action="" style="margin-top: 20px;" id="form">
+                                    <div class="common">
+                                        <div class="form-group">
+                                            <input class="form-control name" name="name" id="name" required placeholder="Name*"
+                                                type="text"    maxlength="32"  required/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control number" id="phone" required
+                                                placeholder="Phone Number*" type="text" name="phone"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control email" id="email" required placeholder="Email ID*"
+                                            type="text" />
+                                    </div>
+                                    <div class="common1">
+                                        <div class="form-group">
+                                            <input class="form-control name" id="city" required placeholder="City*"
+                                                type="text" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control number" id="no_of_cabs" required
+                                                placeholder="Number of Cabs*" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group about">
+                                        <input class="form-control atext" id="message" required
+                                            placeholder="About your Company*" type="text" />
+                                    </div>
+                                    <button type="submit" class="fsum" id="btnOpenFormt">Submit</button>
+
+                                </form>
+                                <div class="form-popup-bgt">
+                                    <div class="form-containert whiteat">
+                                        <button id="btnCloseFormt" class="close-buttont" style="color: #000;">X</button>
+                                        <div class="container thanks">
+                                            <img src="images/Screenshot 2022-11-04 at 12.24 1.png" alt="thank">
+
+                                        </div>
+                                        <p class="thankscont">
+                                            Your details have been received successfully.<br>
+                                            Our executive will connect with you shortly
+                                        </p>
+                                        <a href="/index.html" class="closeform">Go Home</a>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <!-- <p class="content_p">
+                            Join the India's leading In-Flight company since the year 2020, now in the
+                            Airport Transfers Segment.<br>
+                            You can anticipate the best possible online booking experience when your
+                            Cabs are booked with Book Airport Cab. Book Airport Cab takes great pleasure in
+                            allowing customer satisfaction with premium customer care, a dedicated
+                            helpline for support that is available around-the-clock, and over millions
+                            of happy customers.
+                        </p> -->
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="animation3">
+                        <p class="anipara3">Featured on our platform by brand your car with our stickers</p>
+                    </div>
+                    <div class="animation4">
+                        <p class="anipara4">24/7<br>Business service support</p>
+                    </div>
+                    <div class="animation5">
+                        <p class="anipara3">Start of business same day</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container-fluid eab">
+            <div class="row">
+                <div class=" col-md-2 leftbox"></div>
+                <div class=" col-md-8 centerpart">
+                    <h2 class="titleh1">Excellence and Beyond.</h2>
+                </div>
+                <div class=" col-md-2 rightbox"></div>
+            </div>
+        </div>
+        <div class="container">
+            <h6 class="bottomtitle">How to ensure good ride experience with customers</h6>
+            <p class="bottompara">Please follow below tips to get repeated rides.</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="question">
+                        <img src="images/image 3.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Be ontime & Inform passenger once you reached</p>
+                    </div>
+                    <div class="question">
+                        <img src="images/image 5.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Avoid calls during the trip. Follow traffic rules</p>
+                    </div>
+                    <div class="question">
+                        <img src="images/image 4.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Don’t cancel trip after accepting; Cancellation charges may apply</p>
+                    </div>
+                    <div class="question">
+                        <img src="images/image 6.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Greet passenger when they board the taxi</p>
+                    </div>
+                    <div class="question">
+                        <img src="images/image 7.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Don’t collect cash from the passengers. Tolls & taxes are included</p>
+                    </div>
+                    <div class="question">
+                        <img src="images/image 8.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Keep the car clean, passengers give high ratings to such trips</p>
+                    </div>
+                    <div class="question">
+                        <img src="images/image 9.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Avoid in-between trip stops</p>
+                    </div>
+                    <div class="question">
+                        <img src="images/image 10.png" alt="icon1" class="icon1">
+                        <p class="iconpara">Don't drink and drive. It cancels your driver account</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/image 11.png" alt="image" class="imagess">
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+    <div class="downpart">
+        <h2 class="client">OUR B2B CAB PARTNERS</h2>
+        <p class="clientpara">82,000 PREMIUM CABS, 216 CITIES AND 106 SPECIALISED PARTNERS</p>
+
+        <div class="container text-center black">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="images/Screenshot 2022-11-15 at 11.52 1.png" alt="india map" class="india">
+                </div>
+                <div class="col-md-6">
+                    <img src="images/Screenshot 2022-11-15 at 11.55 1.png" alt="partner" class="partner">
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8">
+                        <p class="citi">DELHI, PUNE, GOA, MUMBAI, KOLKATA, CHENNAI, HYDERABAD, BANGALORE, JAIPUR,
+                            VARANASI, AMRITSAR,
+                            PATNA, DEHRADUN, JODHPUR, BAGDOGRA, AHMEDABAD, GUWAHATI & 200 MORE CONNECTED LOCATIONS
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+            
+
+
+
+          
+
+            <div class="caseStdyContainer">
+
+                <div class="caseStdyContentWrapper">
+
+                    <div class="caseStudyHeading">
+                        <p>Our Success Story</p>
+
+
+                    </div>
+                    <div class="caseStdyWrapper">
+                        <div class="caseStdyfirst">
+                            <div class="caseStdytype">
+                                <p>Hotel</p>
+                            </div>
+
+                            <div><a href="https://docsend.com/view/adzcys5wh4kv978v" target="_blank">The Imperial Hotel </a></div>
+                            <div><a href="https://docsend.com/view/tqvsk94dvr4tkrg8" target="_blank">Holiday Inn </a></div>
+                            <div><a href="https://docsend.com/view/ybvbtgxsk6dxktpj" target="_blank">Fern Hotels </a></div>
+                            <div><a href="https://docsend.com/view/x5n8wqwsrjzmzu25" target="_blank">Lemon Tree</a></div>
+                            <!-- <div><a href="" target="_blank">Oyo</a></div>
+                            <div><a href="" target="_blank">La Calypso Hotel</a></div>
+                            <div><a href="" target="_blank">Sinclairs</a></div> -->
+                            
+                            <div> <a href="https://docsend.com/view/zctkbu7cj6nnfygb" target="_blank">Hotel Annual </a></div>
+                            <div><a href="https://docsend.com/view/2mshjwf7g2enxwsp" target="_blank">Lord's Hotel </a></div>
+
+
+                            <!--<div><a href="https://docsend.com/view/xbp5ieb9wst7725s">Germany</a></div>
+                            <div><a href="https://docsend.com/view/323thp384624axbq">Candere </a></div> -->
+
+
+                        </div>
+                        <div class="caseStdysecond">
+                            <div class="caseStdytype">
+                                <p>Vacation</p>
+                            </div>
+                                                       
+                            <div><a href="https://docsend.com/view/z2nvzj7asifhinfa" target="_blank">Punjab tourism </a></div>
+                            <div><a href="https://docsend.com/view/peuaaxxxtyzh4gbx" target="_blank">PickYourTrail</a></div>
+                            <div><a href="https://docsend.com/view/hkc8zuq2fcdfcvw2" target="_blank">Dubai tourism</a> </div>
+                            <!-- <div><a href="">Vietnam Toursim</a></div> -->
+                            <!-- <div><a href="" target="_blank">Maldives Tourism </a></div> -->
+                            <!-- <div><a href="" target="_blank">Spain Tourism </a></div> -->
+
+                        </div>
+                        <div class="caseStdyThird">
+                            <div class="caseStdytype">
+                                <p>Advertisers</p>
+                            </div>
+                           
+                            <div><a href="https://docsend.com/view/uirk3ky4uinr5cje" target="_blank">Charagh Din Report (October) </a></div>
+                            <div><a href="https://docsend.com/view/vecwwmxzqx73262q" target="_blank">Byju's Report </a></div>
+                            <div><a href="https://docsend.com/view/mwkydj7cdyjie7mx" target="_blank">My Travel Journey </a></div>
+                            <div> <a href="https://docsend.com/view/dgffharteakzamjt" target="_blank">Spotify </a></div> 
+                            <div><a href="https://docsend.com/view/k227r8tgz8enbipv" target="_blank">Tata motors </a></div>
+                            <div><a href="https://docsend.com/view/qfs3iuitkfve5pjt" target="_blank">Guy In Dubai</a></div>
+                            <div><a href="https://docsend.com/view/cefyepxqwrjy49p6" target="_blank">Gulshan Homz</a></div>
+                            <div><a href="https://docsend.com/view/k4q8sejvugrbqxsf" target="_blank">Club Mahindra</a></div>
+                            <!-- <div><a href="" target="_blank">Skoda </a></div>
+                            <div><a href="" target="_blank">Car Dekho </a></div>
+                            <div><a href="" target="_blank">Maruti Suzuki </a></div> -->
+                            <div><a href="https://docsend.com/view/mimutrnncn68ymzr" target="_blank">Djibouti</a></div>
+                             
+                            <!-- <div><a href="https://docsend.com/view/h88yh6mmggu3k6in">REWIND</a></div>
+                            <div><a href="https://docsend.com/view/h88yh6mmggu3k6in">Eduauraa Sample</a></div>
+                            <div><a href="https://docsend.com/view/2422f69qzz62xyun">F&B </a></div> -->
+                           
+                        </div>
+                        <div class="caseStdyFourth">
+                            <div class="caseStdytype">
+                                <p>Cab</p>
+                            </div>
+                            
+                            <!-- <div><a href="" target="_blank">Meru </a></div>
+                            <div><a href="" target="_blank">Gozocabs </a></div>
+                            <div><a href="" target="_blank">Quickride </a></div> -->
+                            <!-- <div><a href="" target="_blank">Simpl </a></div> -->
+                            <div><a href="https://docsend.com/view/3jvsrtir2j7y5v94" target="_blank">Annual Report</a></div>
+                            <div><a href="https://docsend.com/view/8w85h9kcrmbzmz8h" target="_blank">Departure</a></div>
+                            <div><a href="https://docsend.com/view/3jvsrtir2j7y5v94" target="_blank">Arrival Cabs</a></div>
+                        
+                            <!-- <div> <a href="https://docsend.com/view/pys74x8hwciwyijc">DAVP </a></div>
+                             <div><a href="https://docsend.com/view/regbuexs3xcamduw">The Big Picture</a></div>
+                            <div><a href="https://docsend.com/view/8vv6vhvq9tbdmcfw">Vacations</a></div> -->
+                            </div>
+                        <div class="caseStdyFivth">
+                            <div class="caseStdytype">
+                                <p>Food & Beverages</p>
+                            </div>
+       
+                            <div><a href="https://docsend.com/view/xj9rw4ghpjnmtwwb" target="_blank">Biryani Blues</a></div>
+                            <div><a href="https://docsend.com/view/axdt5spm37qp58ye" target="_blank">Burger Singh </a></div>
+                            <div><a href="https://docsend.com/view/vdd5ba4a5bevjzys" target="_blank">Molecule </a></div>
+                            <div><a href="https://docsend.com/view/ytpbbeb243y9ppw2" target="_blank">Soda Bottle Opener Wala</a></div>
+                            <div><a href="https://docsend.com/view/9rburj9f3s4nck6j" target="_blank">Biryani By Killo </a></div>
+                            <div><a href="https://docsend.com/view/uwgm5c9hpvhqkawb" target="_blank">Behrouz Biryani </a></div>
+                            <div><a href="https://docsend.com/view/8h25s3uta9kj94fd" target="_blank">Drunken Botanist </a></div>
+                            <div><a href="https://docsend.com/view/ry7q2jws42b7gayv">Distillery</a></div>
+                            <div><a href="https://docsend.com/view/ka2r4inzxnfxksc8" target="_blank">Vietnom Toursim </a></div> 
+                            <div><a href="https://docsend.com/view/e2ji9iwxkzd7uum7" target="_blank">Nando's </a></div>  
+                            <div><a href="https://docsend.com/view/n3b82rybvytk66hm" target="_blank">Underdoggs </a></div>
+                           
+                            
+                            <!-- <div><a href="https://docsend.com/view/j8dz6yr8psitstwr">AMD</a></div>
+                            <div><a href="https://docsend.com/view/5raa6c26askkizkm">Rosie Deck</a></div> -->
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- ***************************** Case Study Code End ************************************* -->
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content center-relative">
+                    <div class="footerwrapper">
+                        <div class="footerContent1">
+                            <div><a href="website/privacy-policy.html"> Privacy Policy </a></div>
+                            <div><a href="website/term-conditions.html"> Terms & Conditions </a></div>
+                            <div><a href="mailto:hello@mojoboxx.com">hello@mojoboxx.com</a></div>
+                            <div class="social-media-link"><a href="https://www.linkedin.com/in/mojoboxx/" target="_blank">
+                                    <span class="fa fa-linkedin-square"></span>
+                                </a>
+                                <a href="https://mobile.twitter.com/mojoboxx" target="_blank">
+                                    <span class="fa fa-twitter"></span>
+                                </a>
+                                <a href="https://www.instagram.com/mojoboxx.official/?igshid=YmMyMTA2M2Y="
+                                    class="fa fa-instagram" target="_blank"></a>
+                                <div></div>
+
+                            </div>
+                        </div>
+                        <div class="footerContent2">
+                            <div class="footer_logo">
+                                
+                                <a href="http://test.mojoboxx.com/" ><img src="images/mojoboxx-logo.png" alt="Seppo"></a>
+                                <!-- <a href="http://test.mojoboxx.com/" ><img src="images/logo_mojo.png" alt="Seppo"></a> -->
+
+                            </div>
+                            <div class="copyrigth">
+                                <p>© All Rights Reserved.</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- <div class="copyright-holder">
+                        Copyright 2022 <a href="https://MojoBoxx.com">MojoBoxx</a>
+                    </div> -->
+
+
+
+
+
+
+                    <!-- <div class="footer-logo">
+                        <img src="images/logo_mojo.png" alt="Seppo" />
+                    </div>
+                    <div class="footer-logo-divider"></div>
+                    <div class="footer-mail">
+
+                        <a href="mailto:hello@mojoboxx.com">hello@mojoboxx.com</a>
+                    </div>
+
+
+                    <div class="footer-social-divider">
+                        <div class="privacy-policy">
+                            <a href="privacy-policy.html"> Privacy Policy </a>
+                        </div>
+
+                        <div class="terms-conditions">
+                            <a href="term-conditions.html"> Terms & Conditions </a>
+                        </div>
+                    </div>
+                    <div class="social-holder">
+                        <a href="https://mobile.twitter.com/mojoboxx">
+                            <span class="fa fa-twitter"></span>
+                        </a>
+                        <a href="https://www.linkedin.com/company/mojoboxx/mycompany/">
+                            <span class="fa fa-linkedin-square"></span>
+                        </a>
+                    </div>
+
+                    <div class="copyright-holder">
+                        Copyright 2022 <a href="https://MojoBoxx.com">MojoBoxx</a>
+                    </div> -->
+
+                </div>
+            </footer>
+
+
+            <!--Load JavaScript-->
+            <!-- <script async src="js/jquery.js"></script> -->
+            <!-- <script src="js/jquery.sticky.js"></script>
+            <script src="js/tipper.js"></script>
+            <script src="js/jarallax.js"></script>
+            <script src="js/jarallax-element.min.js"></script>
+            <script src='js/imagesloaded.pkgd.js'></script>
+            <script src='js/jquery.fitvids.js'></script>
+            <script src='js/jquery.smartmenus.min.js'></script>
+            <script src='js/isotope.pkgd.js'></script>
+            <script src='js/owl.carousel.min.js'></script>
+            <script src='js/jquery.sticky-kit.min.js'></script> -->
+            <script async src='js/main.js'></script>
+
+            <!-- <script>
+                setInterval(() => {
+        document.getElementById('cl').click();
+    }, 2000);
+                // $("#email_fill").click(function () {
+
+                //     $("#contact-email").val($("#emailId").val());
+                // })
+                // $(".Book Airport Cab-link").click(function () {
+
+                //     $(".email_btn").css("display", "block");
+                //     $(".Book Airport Cab-link").css("display", "none");
+
+                // })
+                // $("#email_fill2").click(function () {
+                //     $(".email_btn2").css("display", "none");
+                //     $(".mojoboxx_ads_link").css("display", "block");
+                //     $("#contact-email").val($("#emailId2").val());
+                // })
+
+                // $("#email_fill3").click(function () {
+                //     $(".contact-form-wrapper").css("display", "block");
+                //     // $(".contact-heading").css("display", "none");
+                //     $(".contect_email_btn").css("display", "none");
+                //     $("#contactEmail").val($("#emailId3").val());
+                // })
+                // $("#email_fill4").click(function () {
+                //     $("#contact-email").val($("#emailId4").val());
+                // })
+                // $("#email_fill").click(function () {
+                //     $("#email_btn_f").css("display:none");
+                // })
+
+
+              
+                // $(".pressReadMore").click(function () {
+                //     console.log("clicckked");
+                //     location.href ="website/press.html";
+                // })
+
+                $("#contect-Btn-Id").click(function () {
+                    $(".contact-form-wrapper").css("display", "block");
+                    // $(".contact-heading").css("display", "none");
+                    $(".contect_email_btn").css("display", "none");
+                    // $(".contect_email_btn").css("opacity", "0");
+                    $("#contactEmail").val($("#contect-Btn-Input-Id").val());
+                })
+                $(".contactSubmitBtnBeforeClick").click(function () {
+                    // $(".contact-form-wrapper").css("display", "block");
+                    // $(".contact-heading").css("display", "none");
+                    // $(".contect_email_btn").css("display", "none");
+                    // $(".contect_email_btn").css("opacity", "0");
+                    // $("#contactEmail").val($("#contect-Btn-Input-Id").val());
+                    if ($("#contactEmail").val() == "") {
+                        alert("Please enter your email");
+                    }
+                    else {
+                        $("#contactName").css("display", "initial");
+                        $("#contactNum").css("display", "initial");
+                        $("#contactCompany").css("display", "initial");
+                        $(".contactSubmitBtn").css("display", "initial");
+                        $(".contactSubmitBtnWrapper1").css("display", "none");
+                        localStorage.setItem("Form_Type", "Get Demo");
+
+                    }
+
+
+                })
+
+
+
+
+
+            </script> -->
+
+
+            <!-- code for apply animation on number to start from 0 to a spacific number  in milestone class-->
+            <script>
+                $('.num').each(function () {
+                    $(this).prop('Counter', 0).animate({
+                        Counter: $(this).text()
+                    }, {
+                        duration: 4000,
+                        easing: 'swing',
+                        step: function (now) {
+                            $(this).text(Math.ceil(now));
+                        }
+                    });
+                });
+            </script>
+
+
+            <!-- code for apply animation when content is see by user  -->
+            <!-- <script>
+            window.onload = function () {
+                    function isElementInViewport(elem) {
+                        var $elem = $(elem);
+
+                        // Get the scroll position of the page.
+                        var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
+                        var viewportTop = $(scrollElem).scrollTop();
+                        var viewportBottom = viewportTop + $(document).height();
+
+                        // Get the position of the element on the page.
+                        var elemTop = Math.round($elem.offset().top );
+                        var elemBottom = elemTop + $elem.height();
+                        console.log("******", elemTop, viewportBottom, elemBottom, viewportTop);
+
+                        return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
+                    }
+
+                    // Check if it's time to start the animation.
+                    function checkAnimation() {
+                        var $elem = $('.news_background_wrapper');
+                        var $elem2 = $('campaign_img');
+
+                        // If the animation has already been started
+                        // console.log("")
+                        if ($elem.hasClass('start')) return;
+                        if ($elem2.hasClass('start2')) return;
+
+                        if (isElementInViewport($elem)) {
+                            // Start the animation
+                            
+                            $('.news_background').addClass('start');
+                        }
+                        if (isElementInViewport($elem2)) {
+                            // Start the animation
+                            $('.campaign_image').addClass('start2');
+                        }
+
+                    }
+
+                    // Capture scroll events
+                    $(window).on("scroll", function () {
+                        checkAnimation();
+                    }); -->
+
+
+
+
+
+
+            <!-- ///<reference path="../bower_components/jquery/dist/jquery.js" />
+                // (function ($, window, document, undefined) {
+                //     'use strict';
+                //     var animationObject;
+
+                //     function addAnimation() {
+                //         animationObject.each(function (index, element) {
+                //             var $currentElement = $(element),
+                //                 animationType = $currentElement.attr('animation-type');
+
+                //             if (onScreen($currentElement)) {
+                //                 $currentElement.addClass('animated ' + animationType);
+                //             }
+                //         });
+                //     }
+
+                //     // takes jQuery(element) a.k.a. $('element')
+                //     function onScreen(element) {
+                //         // window bottom edge
+                //         var windowBottomEdge = $(window).scrollTop() + $(window).height();
+
+                //         // element top edge
+                //         var elementTopEdge = element.offset().top;
+                //         var offset = 100;
+
+                //         // if element is between window's top and bottom edges
+                //         return elementTopEdge + offset <= windowBottomEdge;
+                //     }
+
+                //     $(window).load(function () {
+                //         animationObject = $('[animation-type]');
+                //         addAnimation();
+                //     });
+
+                //     $(window).on('scroll', function (e) {
+                //         addAnimation();
+                //     });
+                // })(jQuery, window, document); -->
+
+
+            <!-- }; -->
+            </script>
+
+
+            <script>
+                // var count = 1;
+                $("#cab_btn1").click(function () {
+                    
+                //     if( count == 1 ){
+                //         $('html,body').animate({
+                //             scrollTop: $("#portfolio-wrapper1").offset().top +150  },
+                //              'slow');
+                //              count = 2;
+                //     }
+                //     else{
+                //         $('html,body').animate({
+                //             scrollTop: $("#portfolio-wrapper1").offset().top +200  },
+                //              'slow');
+                //     }
+
+                   
+                    // alert("scrollTop");
+
+                    localStorage.setItem("Form_Type", "Get Cab Plugin");
+
+
+
+                    // $(".cab_btn").css("background-color", "rgb(221, 196, 116)");
+                    
+                    // $(".promote_btn").css("background-color", "white");
+                    // $(".getCabForm").css("display", "block");
+                    // $(".cutForm").css("display", "block");
+                    // $(".page-template-onepage").css("height", "100%");
+                    // $(".page-template-onepage").css("overflow", "hidden");
+                    // $(".set_opacity_cab_btn_click").css("opacity", "0.1");
+                    // $(".dynamicText").html("Get Cab Plugin");
+
+                    // let screenWidth = screen.width;
+                    // if (screenWidth >= 1024 && screenWidth < 1280) {
+                    //     $(".getCabForm").css("top", "270px");
+                    //     $(".getCabForm").css("left", "310px");
+                    //     $(".cutForm").css("top", "275px");
+                    //     $(".cutForm").css("right", "275px");
+                    //     // alert("inside cab 1420 else ");
+                    //     console.log("screenWidth : " + screenWidth)
+
+                    // }
+
+                    // else if (screenWidth >= 1280 && screenWidth < 1420) {
+                    //     $(".getCabForm").css("top", "277px");
+                    //     $(".getCabForm").css("left", "430px");
+                    //     $(".cutForm").css("top", "280px");
+                    //     $(".cutForm").css("right", "364px");
+                    //     // alert("inside cab 1420 else ");
+                    //     console.log("screenWidth : " + screenWidth)
+
+                    // }
+                    // else if (screenWidth >= 1420 && screenWidth < 1680) {
+                    //     $(".getCabForm").css("top", "300px");
+                    //     $(".getCabForm").css("left", "580px");
+                    //     $(".cutForm").css("top", "305px");
+                    //     $(".cutForm").css("right", "374px");
+                    //     //    alert("inside cab 1420 else ");
+                    //     //    console.log("screenWidth1420 : " + screenWidth);
+                    // }
+                    // else if (screenWidth >= 1680) {
+                    //     $(".getCabForm").css("top", "278px");
+                    //     $(".getCabForm").css("left", "670px");
+                    //     $(".cutForm").css("top", "283px");
+                    //     $(".cutForm").css("right", "372px");
+                    //     //    alert("inside cab 1420 else ");
+                    //     //    console.log("screenWidth1420 : " + screenWidth);
+                    // }
+
+                })
+                $("#promote_btn1").click(function () {
+                    // $(".promote_btn").css("background-color", "rgb(221, 196, 116)");
+                    // $(".cab_btn").css("background-color", "white");
+                    // $(".getCabForm").css("display", "block");
+                    // $(".cutForm").css("display", "block");
+                    // $(".page-template-onepage").css("height", "100%");
+                    // $(".page-template-onepage").css("overflow", "hidden");
+                    // $(".set_opacity_cab_btn_click").css("opacity", "0.1");
+                    // $(".mojocab_img2").css("opacity", "0.1");
+                    // $(".dynamicText").html("Promote Your Brand");
+                    // $(".getCabForm").css("top", "995px");
+                    localStorage.setItem("Form_Type", "Promote Your Brand");
+
+
+                    // let screenWidth = screen.width;
+                    // if (screenWidth >= 1024 && screenWidth < 1280) {
+                    //     $(".getCabForm").css("top", "823px");
+                    //     $(".getCabForm").css("left", "330px");
+                    //     $(".cutForm").css("top", "825px");
+                    //     $(".cutForm").css("right", "256px");
+                    // }
+
+                    // else if (screenWidth >= 1280 && screenWidth < 1420) {
+                    //     $(".getCabForm").css("top", "1039px");
+                    //     $(".getCabForm").css("left", "413px");
+                    //     $(".cutForm").css("top", "1040px");
+                    //     $(".cutForm").css("right", "384px");
+                    // }
+                    // else if (screenWidth >= 1420 && screenWidth < 1680) {
+                    //     $(".getCabForm").css("top", "1230px");
+                    //     $(".getCabForm").css("left", "570px");
+                    //     $(".cutForm").css("top", "1235px");
+                    //     $(".cutForm").css("right", "384px");
+                    //     // alert("inside promote 1420 else ")
+                    //     // console.log("screenWidth1420 : " + screenWidth);
+                    // }
+                    // else if (screenWidth >= 1680) {
+                    //     $(".getCabForm").css("top", "1217px");
+                    //     $(".getCabForm").css("left", "650px");
+                    //     $(".cutForm").css("top", "1221px");
+                    //     $(".cutForm").css("right", "393px");
+                    //     //    alert("inside cab 1420 else ");
+                    //     //    console.log("screenWidth1420 : " + screenWidth);
+                    // }
+
+                })
+                // $("#cutForm1").click(function () {
+                //     $(".getCabForm").css("display", "none");
+                //     $(".cutForm").css("display", "none");
+                //     $(".cab_btn").css("background-color", "white");
+                //     $(".promote_btn").css("background-color", "white");
+                //     $(".page-template-onepage").css("overflow", "visible");
+                //     $(".set_opacity_cab_btn_click").css("opacity", "1");
+                //     $(".mojocab_img2").css("opacity", "1");
+
+                // })
+
+                // $("#cab_submit_btn").click(function () {
+                //     let name = document.getElementById("cab_user_name").value;
+                //     let email = document.getElementById("cab_user_email").value;
+                //     let user = document.getElementById("cab_company_name").value;
+                //     // console.log("name : " + name);
+                //     // console.log("email : " + email);
+                //     // console.log("user : " + user);
+
+                //     if (name == "" && email == "" && user == "") {
+                //         // console.log("inside if .....");
+                //         alert("Fill your info...");
+                //     }
+                //     else {
+                //         $(".getCabForm").css("display", "none");
+                //         $(".cutForm").css("display", "none");
+                //         $(".page-template-onepage").css("overflow", "visible");
+                //         $(".set_opacity_cab_btn_click").css("opacity", "1");
+                //         $(".mojocab_img2").css("opacity", "1");
+                //         // alert("inside else ");
+                //         event.preventDefault();
+                //     }
+
+                // })
+                // $(".disableFormBtn").click(function () {
+                //     $(".getCabForm").css("display", "none");
+                //     $(".cutForm").css("display", "none");
+                //     $(".disableFormBtn").css("z-index", "1");
+                //     $(".page-template-onepage").css("overflow", "visible");
+                //     $(".set_opacity_cab_btn_click").css("opacity", "1");
+                //     $(".mojocab_img2").css("opacity", "1");
+                //     $(".cab_btn").css("background-color", "white");
+                //     $(".promote_btn").css("background-color", "white");
+
+                // })
+
+
+
+
+                // var Default = 11;
+                // var inc = 0;
+                // var minDefault = 0;
+                // var LinksArray = [{
+                //     "img": "img/press/timeofindia.PNG",
+                //     "link": "https://timesofindia.indiatimes.com/business/india-business/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38000-ft-up-in-the-sky/articleshow/88429873.cms"
+                // }, {
+                //     "img": "img/press/financial.PNG",
+                //     "link": "https://www.financialexpress.com/lifestyle/travel-tourism/spicejet-passengers-can-now-experience-dolby-atmos-sound-38000-feet-up-in-the-air/2388686/"
+                // }, {
+                //     "img": "img/press/dailyhunt.PNG",
+                //     "link": "https://m.dailyhunt.in/news/india/english/newsvoir-epaper-newsvoir/spicejet+flyers+can+now+enjoy+a+dolby+atmos+experience+38+000+ft+up+in+the+sky-newsid-n343952716?listname=newspaperLanding&topic=business&index=15&topicIndex=0&mode=pwa&action=click"
+                // }, {
+                //     "img": "img/press/lokmat.PNG",
+                //     "link": "https://www.lokmattimes.com/business/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38000-ft-up-in-the-sky/"
+                // }, {
+                //     "img": "img/press/flipboard.PNG",
+                //     "link": "https://flipboard.com/article/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38-000-ft-up-in-the-sky/a-ahg44R6EQHuw3ash-Mg6NQ%3Aa%3A106586776-685f3195aa%2Fbhaskarlive.in"
+                // },
+                // {
+                //     "img": "img/press/theprint.PNG",
+                //     "link": "https://theprint.in/ani-press-releases/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38000-ft-up-in-the-sky/786308/"
+                // }, {
+                //     "img": "img/press/mixpoint.PNG",
+                //     "link": "https://mixpoint.in/breaking-news/2021/12/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38000-ft-up-in-the-sky/"
+                // },
+                // {
+                //     "img": "img/press/newsDeal.PNG",
+                //     "link": "https://newsdeal.in/spicejet-passengers-can-now-experience-dolby-atmos-sound-38000-feet-up-in-the-air/"
+                // },
+                // {
+                //     "img": "img/press/dev.PNG",
+                //     "link": "https://www.devdiscourse.com/article/business/1858420-spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38000-ft-up-in-the-sky"
+                // }, {
+                //     "img": "img/press/asian_news.PNG",
+                //     "link": "https://asiannews.in/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38000-ft-up-in-the-sky/"
+                // }, {
+                //     "img": "img/press/gujarat.PNG",
+                //     "link": "https://connectgujarat.com/business/passengers-on-spicejet-may-now-stream-movies-and-listen-to-podcasts-in-dolby-atmos-sound-1345223"
+                // }, {
+                //     "img": "img/press/investment.PNG",
+                //     "link": "https://investmentguruindia.com/StockMarket/SpiceJet-inches-up-on-partnering-with-Dolby"
+                // }, {
+                //     "img": "img/press/technosport.PNG",
+                //     "link": "https://technosports.co.in/2021/12/22/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38000ft-up-in-the-sky/"
+                // }, {
+                //     "img": "img/press/ten_news.PNG",
+                //     "link": "https://tennews.in/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38000ft-up-in-the-sky/"
+                // }, {
+                //     "img": "img/press/khansir.PNG",
+                //     "link": "https://www.khansiracademy.in/spicejet-passengers-can-now-watch-movies-listen-podcast-in-dolby-atmos-sound-experience/"
+                // }, {
+                //     "img": "img/press/agrNews.PNG",
+                //     "link": "https://www.agrnews.in/p/newsvoir.html?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2fwww.agrnews.in%2fp%2fnewsvoir.html"
+                // }, {
+                //     "img": "img/press/tradeBrain.PNG",
+                //     "link": "https://tradebrains.in/features/biz-briefs-15/"
+                // }, {
+                //     "img": "img/press/aerospace.PNG",
+                //     "link": "https://www.iadb.in/2021/12/22/spicejet-flyers-can-now-enjoy-dolby-atmos-experience-38000-feet-up-in-the-air/"
+                // }, {
+                //     "img": "img/press/Punekar.jpg",
+                //     "link": "https://www.punekarnews.in/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38000-ft-up-in-the-sky/"
+                // }, {
+                //     "img": "img/press/buz_industry.PNG",
+                //     "link": "https://www.bizindustry.in/post/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38-000-ft-up-in-the-sky"
+                // }, {
+                //     "img": "img/press/latest_ly.PNG",
+                //     "link": "https://www.latestly.com/agency-news/latest-news-business-briefs-1000-ktm-390-adventure-bikes-sold-in-bengaluru-since-launch-3181296.html"
+                // }, {
+                //     "img": "img/press/mint.png",
+                //     "link": "https://www.livemint.com/companies/news/spicejet-introduces-mid-air-cab-bookings-in-this-city-fares-bookings-and-other-details-here-11628749850792.html"
+                // }, {
+                //     "img": "img/press/amar_ujala.jpg",
+                //     "link": "https://www.amarujala.com/business/business-diary/spicejet-introduces-mid-air-cab-bookings-passengers-can-now-book-taxis-during-the-flight"
+                // },
+                // {
+                //     "img": "img/press/aviation.PNG",
+                //     "link": "https://aviationa2z.com/index.php/2021/12/23/spicejet-flyers-will-now-enjoy-a-dolby-atmos-experience-38000-ft-up-in-the-sky/"
+                // }, {
+                //     "img": "img/press/biznext.PNG",
+                //     "link": "http://www.biznextindia.com/newsvoir/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=http%3a%2f%2fwww.biznextindia.com%2fnewsvoir%2f"
+                // }, {
+                //     "img": "img/press/bizwire.PNG",
+                //     "link": "http://www.bizwireexpress.com/showstoryNewsVoir.php?storyid=15301"
+                // }, {
+                //     "img": "img/press/standard.PNG",
+                //     "link": "https://www.business-standard.com/content/press-releases-ani/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38-000-ft-up-in-the-sky-121122300633_1.html"
+                // }, {
+                //     "img": "img/press/business.PNG",
+                //     "link": "http://businessnewsthisweek.com/newsvoir/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=http%3a%2f%2fbusinessnewsthisweek.com%2fnewsvoir%2f"
+                // }, {
+                //     "img": "img/press/views.PNG",
+                //     "link": "http://businessviews.in/news-voir-press-release-news-2/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=http%3a%2f%2fbusinessviews.in%2fnews-voir-press-release-news-2%2f"
+                // },
+                // {
+                //     "img": "img/press/clinicaly.PNG",
+                //     "link": "http://clinicallybharat.com/newsvoir/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=http%3a%2f%2fclinicallybharat.com%2fnewsvoir%2f"
+                // }, {
+                //     "img": "img/press/dailyNews.PNG",
+                //     "link": "https://thenewswatch.co.in/wp/newsvoir/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2fthenewswatch.co.in%2fwp%2fnewsvoir%2f"
+                // }, {
+                //     "img": "img/press/daily.PNG",
+                //     "link": "https://www.dailyflashnews.com/rss-feed/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2fwww.dailyflashnews.com%2f rss-feed%2f"
+                // }, {
+                //     "img": "img/press/e2news.PNG",
+                //     "link": "https://www.e2newz.com/press-releases/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2fwww.e2newz.com%2fpress-releases%2f"
+                // }, {
+                //     "img": "img/press/marudhar.PNG",
+                //     "link": "https://www.ekaainabharat.com/p/newsvoir.html?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2fwww.ekaainabharat.com%2fp%2fnewsvoir.html"
+                // }, {
+                //     "img": "img/press/world.PNG",
+                //     "link": "https://enterpriseworldnews.com/newsvoir/?c_article_id=18830&c_author_id=2633&originurl=https%3A%2F%2Fenterpriseworldnews.com%2Fnewsvoir%2F"
+                // }, {
+                //     "img": "img/press/face2.PNG",
+                //     "link": "http://www.face2news.com/news-feed/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=http%3a%2f%2fwww.face2news.com%2fnews-feed%2f"
+                // }, {
+                //     "img": "img/press/financ.PNG",
+                //     "link": "http://financialbharat.com/newsvoir/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=http%3a%2f%2ffinancialbharat.com%2fnewsvoir%2f"
+                // }, {
+                //     "img": "img/press/dariya.PNG",
+                //     "link": "https://www.5dariyanews.com/Latest-Headlines-Newsvoir.aspx?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2fwww.5dariyanews.com%2fLatest-Headlines-Newsvoir.aspx"
+                // }, {
+                //     "img": "img/press/free.PNG",
+                //     "link": "https://www.freepressjournal.in/business/spicejet-flyers-to-enjoy-dolby-atmos-experience-38000-feet-up-in-sky"
+                // }, {
+                //     "img": "img/press/go.PNG",
+                //     "link": "https://goearth.in/newsvoir/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2fgoearth.in%2fnewsvoir%2f"
+                // }, {
+                //     "img": "img/press/gadget.PNG",
+                //     "link": "https://www.gadget2.in/newspr1.php?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2fwww.gadget2.in%2fnewspr1.php"
+                // }, {
+                //     "img": "img/press/good.PNG",
+                //     "link": "https://goodreport.in/newsvoir/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2fgoodreport.in%2fnewsvoir%2f"
+                // }, {
+                //     "img": "img/press/hamara.PNG",
+                //     "link": "https://en.hamarasamachar.in/p/newsvoir.html?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2fen.hamarasamachar.in%2fp%2fnewsvoir.html"
+                // }, {
+                //     "img": "img/press/HKG.PNG",
+                //     "link": "https://www.hkgdailynews.com/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38000-ft-up-in-the-sky/"
+                // }, {
+                //     "img": "img/press/htds.PNG",
+                //     "link": "https://www.htsyndication.com/newsvoir/article/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38%2C000-ft.-up-in-the-sky/56987160"
+                // }, {
+                //     "img": "img/press/ibg.PNG",
+                //     "link": "https://www.ibgnews.com/newsvoir/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2fwww.ibgnews.com%2fnewsvoir%2f"
+                // }, {
+                //     "img": "img/press/ibtn9.PNG",
+                //     "link": "https://ibtn9.com/newsvoir/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2fibtn9.com%2fnewsvoir%2f"
+                // }, {
+                //     "img": "img/press/india.PNG",
+                //     "link": "https://indiaonlinenews.in/corporate-news/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2findiaonlinenews.in%2fcorporate-news%2f"
+                // }, {
+                //     "img": "img/press/invest.PNG",
+                //     "link": "https://investmentguruindia.com/home/newspr1?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2finvestmentguruindia.com%2fhome%2fnewspr1"
+                // }, {
+                //     "img": "img/press/iifl.PNG",
+                //     "link": "https://www.indiainfoline.com/newsvoir?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2fwww.indiainfoline.com%2fnewsvoir"
+                // }, {
+                //     "img": "img/press/indore.PNG",
+                //     "link": "http://indoredilse.com/news-voir/?c_article_id=18830&c_author_id=2633&originurl=http%3A%2F%2Findoredilse.com%2Fnews-voir%2F"
+                // }, {
+                //     "img": "img/press/indus.PNG",
+                //     "link": "http://indusvalleytimes.com/news/newsvoir/?c_article_id=18830&c_author_id=2633&c_article_id=18830&c_author_id=2633&pageid=2&originurl=http%3A%2F%2Findusvalleytimes.com%2Fnews%2Fnewsvoir%2F"
+                // }, {
+                //     "img": "img/press/intern.PNG",
+                //     "link": "https://www.internationalbrandequity.com/newsvoir/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=http%3a%2f%2fwww.internationalbrandequity.com%2fnewsvoir%2f"
+                // }, {
+                //     "img": "img/press/hydera.PNG",
+                //     "link": "http://www.hydnews.net/corporate-news/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=http%3a%2f%2fwww.hydnews.net%2fcorporate-news%2f"
+                // }, {
+                //     "img": "img/press/news.PNG",
+                //     "link": "https://localnewspaper.in/newswire/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2flocalnewspaper.in%2fnewswire%2f"
+                // }, {
+                //     "img": "img/press/media.PNG",
+                //     "link": "https://mediawala.live/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38000-ft-up-in-the-sky/"
+                // }, {
+                //     "img": "img/press/nation.PNG",
+                //     "link": "https://mynationnews.in/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38000-ft-up-in-the-sky/"
+                // }, {
+                //     "img": "img/press/mti.PNG",
+                //     "link": "https://mtinews.in/newsvoir/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=https%3a%2f%2fmtinews.in%2fnewsvoir%2f"
+                // }, {
+                //     "img": "img/press/mang.PNG",
+                //     "link": "https://www.mangaloremirror.com/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38000-ft-up-in-the-sky/"
+                // }, {
+                //     "img": "img/press/nashe.PNG",
+                //     "link": "http://nasheman.in/newsvoir/?c_article_id=18830&c_author_id=2633&pageid=2&originurl=http%3a%2f%2fnasheman.in%2fnewsvoir%2f"
+                // },
+                // {
+                //     "img": "img/press/newson.PNG",
+                //     "link": "https://newsonfloor.com/newsdetail/spicejet-flyers-can-now-enjoy-a-dolby-atmos-experience-38000-ft-up-in-the-sky-66676.htm"
+                // }, {
+                //     "img": "img/press/republic.png",
+                //     "link": "https://www.republicworld.com/business-news/india-business/spicejet-announces-first-of-its-kind-mid-air-cab-booking-feature-for-passengers.html"
+                // }, {
+                //     "img": "img/press/one_india.png",
+                //     "link": "https://www.oneindia.com/india/enjoy-zero-waiting-time-spicejet-flyers-can-now-book-cabs-mid-air-in-this-city-details-here-3298180.html"
+                // }, {
+                //     "img": "img/press/zee_business.jfif",
+                //     "link": "https://www.zeebiz.com/companies/news-air-passengers-alert-first-time-ever-book-cabs-on-the-fly-check-discount-step-to-book-and-more-benefits-162665"
+                // }, {
+                //     "img": "img/press/Moneycontrol.jpg.crdownload",
+                //     "link": "https://m.moneycontrol.com/hi/news/article_277761.html"
+                // }, {
+                //     "img": "img/press/asianet.jpg",
+                //     "link": "https://newsable.asianetnews.com/top-stories/delhi-spicejet-now-allows-you-to-book-your-airport-cabs-mid-air-dnm-qxpwua"
+                // }, {
+                //     "img": "img/press/decan.jpg",
+                //     "link": "https://www.deccanherald.com/business/this-airline-allows-you-to-book-your-cab-in-flight-1018871.html"
+                // }, {
+                //     "img": "img/press/outlook.jpg",
+                //     "link": "https://www.outlookindia.com/newsscroll/mzaalo-partners-with-mojo-boxx-to-provide-content-for-spicejets-inflight-entertainment-system/2012132"
+                // }, {
+                //     "img": "img/press/IndianExpress.jpg",
+                //     "link": "https://www.newindianexpress.com/business/2021/jan/17/mzaalo-partners-with-mojo-boxx-to-provide-content-for-spicejets-in-flight-entertainment-system-2251362.html"
+                // }, {
+                //     "img": "img/press/HT.png",
+                //     "link": "https://tech.hindustantimes.com/tech/news/mzaalo-partners-with-mojo-boxx-to-provide-content-for-spicejet-s-in-flight-entertainment-system-71610897637405.html"
+                // }, {
+                //     "img": "img/press/adu-logo.png",
+                //     "link": "https://www.aviation-defence-universe.com/mzaalo-enhances-in-flight-entertainment-for-spicejet-flyers/#:~:text=Mumbai%2C%20January%2017th%2C%202021%3A,Flight%20Experience%20platform%20called%20'SpiceScreen'"
+                // }, {
+                //     "img": "img/press/adgully.png",
+                //     "link": "https://www.adgully.com/mzaalo-enhances-in-flight-entertainment-for-spicejet-flyers-100005.html"
+                // }, {
+                //     "img": "img/press/MediaNews4U.png",
+                //     "link": "https://www.medianews4u.com/mzaalo-enhances-in-flight-entertainment-for-spicejet-flyers/"
+                // }, {
+                //     "img": "img/press/mediabrieflogoapril2018.jpg",
+                //     "link": "https://www.mediabrief.com/mzaalo-mojo-boxx-in-flight-entertainment-for-spicejet-flyers/"
+                // }, {
+                //     "img": "img/press/mediavataar-logo.png",
+                //     "link": "http://mediavataar.com/index.php/ott-news/item/16015-mzaalo-enhances-in-flight-entertainment-for-spicejet-flyers"
+                // }, {
+                //     "img": "img/press/AllInOn.png",
+                //     "link": "https://allinonenewsportal.com/mzaalo-partners-with-mojo-boxx-to-provide-content-for-spicejets-in-flight-entertainment-system/"
+                // }, {
+                //     "img": "img/press/world-news-monitor-logo.png",
+                //     "link": "https://world-news-monitor.com/environment/2021/01/18/mzaalo-partners-with-mojo-boxx-to-provide-content-for-spicejets-in-flight-entertainment-system/"
+                // }, {
+                //     "img": "img/press/dailyHunt_logo.svg",
+                //     "link": "https://m.dailyhunt.in/news/india/english/tvnews4u-epaper-tvnews/mzaalo+enhances+in+flight+entertainment+for+spicejet+flyers-newsid-n246361074"
+                // }, {
+                //     "img": "img/press/bollyinside.png",
+                //     "link": "https://www.bollyinside.com/news/india-news/mzaalo-partners-with-mojo-boxx-to-provide-content-for-spicejets-in-flight-entertainment-system/"
+                // }, {
+                //     "img": "img/press/devdiscourse_logo.svg",
+                //     "link": "https://www.devdiscourse.com/article/business/1410388-mzaalo-partners-with-mojo-boxx-to-provide-content-for-spicejets-in-flight-entertainment-system"
+                // }, {
+                //     "img": "img/press/theweek.PNG",
+                //     "link": "https://www.theweek.in/news/biz-tech/2021/08/12/spicejet-will-now-let-you-book-a-cab-mid-air.html"
+                // }, {
+                //     "img": "img/press/timeofindia.PNG",
+                //     "link": "https://timesofindia.indiatimes.com/business/india-business/landing-in-delhi-on-spicejet-book-your-airport-transfer-cab-mid-air/articleshow/85264886.cms"
+                // }, {
+                //     "img": "img/press/etnonnews.PNG",
+                //     "link": "https://www.timesnownews.com/business-economy/companies/article/spicejet-introduces-mid-air-cab-booking-service-for-passengers/823623"
+                // },
+                // ]
+
+                // console.log(LinksArray)
+                // pressLinks(LinksArray, Default, minDefault);
+                // $('#More1').click(function () {
+                //     $(".More").removeClass("active");
+                //     $(this).addClass("active");
+                //     minDefault = 0;
+                //     Default = 11;
+                //     pressLinks(LinksArray, Default, minDefault);
+                // })
+                // $('#More2').click(function () {
+                //     $(".More").removeClass("active");
+                //     $(this).addClass("active");
+                //     minDefault = 12;
+                //     Default = 23;
+                //     pressLinks(LinksArray, Default, minDefault);
+                // })
+                // $('#More3').click(function () {
+                //     $(".More").removeClass("active");
+                //     $(this).addClass("active");
+                //     minDefault = 24;
+                //     Default = 35;
+                //     pressLinks(LinksArray, Default, minDefault);
+                // })
+                // $('#More4').click(function () {
+                //     $(".More").removeClass("active");
+                //     $(this).addClass("active");
+                //     minDefault = 36;
+                //     Default = 47;
+                //     pressLinks(LinksArray, Default, minDefault);
+                // })
+                // $('#More5').click(function () {
+                //     $(".More").removeClass("active");
+                //     $(this).addClass("active");
+                //     minDefault = 48;
+                //     Default = 59;
+                //     pressLinks(LinksArray, Default, minDefault);
+                // })
+                // $('#More6').click(function () {
+                //     $(".More").removeClass("active");
+                //     $(this).addClass("active");
+                //     minDefault = 60;
+                //     Default = 71;
+                //     pressLinks(LinksArray, Default, minDefault);
+                // })
+                // $('#More7').click(function () {
+                //     $(".More").removeClass("active");
+                //     $(this).addClass("active");
+                //     minDefault = 72;
+                //     Default = 83;
+                //     pressLinks(LinksArray, Default, minDefault);
+                // })
+                // $('#More8').click(function () {
+                //     $(".More").removeClass("active");
+                //     $(this).addClass("active");
+                //     minDefault = 84;
+                //     Default = 95;
+                //     pressLinks(LinksArray, Default, minDefault);
+                // })
+               
+                // function pressLinks(Data, defaultnum, minNum) {
+                //     console.log(Data)
+                //     console.log(defaultnum)
+                   
+                //     for (let i = minNum; i <= defaultnum; i++) {
+                //         let mainDiv = document.createElement("div");
+                //         mainDiv.setAttribute("class", "pr-box");
+                //         let imgDiv = document.createElement("div");
+                //         imgDiv.setAttribute("class", "pr-img");
+                //         let image = document.createElement("img")
+                //         image.setAttribute("src", Data[i].img);
+                //         imgDiv.appendChild(image);
+                //         mainDiv.appendChild(imgDiv);
+                //         let readBtn = document.createElement("div");
+                //         readBtn.setAttribute("class", "pr-btn");
+                //         readBtn.innerHTML = "Read More";
+                //         mainDiv.appendChild(readBtn);
+                //         readBtn.onclick = function () {
+                //             console.log(Data[i].link);
+                //             $("#isrc").attr("src", Data[i].link);
+                //             $("#ifrem").css("display", "block");
+                //             $(".page-title-holder").css("display", "none");
+                           
+                //         }
+                //         document.getElementById("scrollable").appendChild(mainDiv);
+                //     }
+                // }
+
+                
+
+            </script>
+
+
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 2,
+    centeredSlides: true,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  var appendNumber = 4;
+  var prependNumber = 1;
+
+ 
+  
+    
+
+    function hwl(){
+        window.open(
+  'https://aerospace.honeywell.com/us/en/about-us/blogs/how-honeywell-helping-innovative-start-ups-shape-future-flight',
+  '_blank' // <- This is what makes it open in a new window.
+);
+    }
+  
+    
+</script>
+
+<script>
+      $("#showScreen").click(function(){
+       // alert("hey")
+        $('#content').css('display', 'none')
+        $('.popup').css('display', 'block')
+        $("#contactid").click(function(){
+    location.href = 'index.html'
+   })
+    })
+    $('#dropdownMenuButton').click(function(){
+        $('.dropdown-menu1').css("display", "block")
+    })
+   $('.dropdown-menu1 li').click(function(){
+    $('.dropdown-menu1').css("display", "none")
+   })
+   $('#showHome').click(function(){
+    $('.popup').css('display', 'none')
+    $('#content').css('display', 'block')
+   })
+   
+   
+</script>
+
+
+<script>
+    function closeForm() {
+        $('.form-popup-bg').display('is-visible');
+    }
+
+    $(document).ready(function ($) {
+
+        /* Contact Form Interactions */
+        $('#btnOpenForm').on('click', function (event) {
+            event.preventDefault();
+
+            $('.form-popup-bg').addClass('is-visible');
+        });
+
+        //close popup when clicking x or off popup
+        $('.form-popup-bg').on('click', function (event) {
+            if ($(event.target).is('.form-popup-bg') || $(event.target).is('#btnCloseForm')) {
+                event.preventDefault();
+                $(this).removeClass('is-visible');
+            }
+        });
+
+
+
+    });
+
+
+    var header = document.getElementById("url_type");
+    var btns = header.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            if (current.length > 0) {
+                current[0].className = current[0].className.replace(" active", "");
+            }
+            this.className += " active";
+        });
+    }
+    //////////////////////////////////////////////////////get info/////////////////////////////////////////////////
+    var cabb
+    $('.one').click(function () {
+        cabb = $(this).text()
+
+    })
+
+    var form = document.getElementById('form')
+    form.addEventListener('submit', function (e) {
+        e.preventDefault()
+        console.log(cabb);
+        var name = document.getElementById('name').value
+        var phone = document.getElementById('phone').value
+        var email = document.getElementById('email').value
+        var message = document.getElementById('message').value
+        var city = document.getElementById('city').value
+
+        var no_of_cabs = document.getElementById('no_of_cabs').value
+
+
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            "name": name,
+            "email": email,
+            "message": message,
+            "phone": phone,
+            "city": city,
+            "no_of_cabs": no_of_cabs,
+            "url_type": cabb
+        });
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("https://prodapi.mojoboxx.com/spicescreen/webapi/becomeapartner", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                
+                console.log(result)
+                
+                console.log(result["code"])
+                console.log(result["message"])
+                console.log(result["status"])
+                if(result["code"] == "200"){
+                  // alert("abhay")
+                   $('.form-popup-bgt').css("display","block");
+                //    $('.form-popup-bg').css("display","none");
+                $('.close-buttont').click(function () {
+                    $('.form-popup-bgt').css("display","none");
+                    $('.form-popup-bg').css("display","none");
+                })
+
+
+                }
+    })
+    })
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+    integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+    crossorigin="anonymous"></script>
+<!-- <script>
+    function closeFormt() {
+        $('.form-popup-bgt').removeClass('is-visible');
+    }
+
+    $(document).ready(function ($) {
+
+        /* Contact Form Interactions */
+        $('#btnOpenFormt').on('click', function (event) {
+            event.preventDefault();
+
+            $('.form-popup-bgt').addClass('is-visible');
+        });
+
+        //close popup when clicking x or off popup
+        $('.form-popup-bgt').on('click', function (event) {
+            if ($(event.target).is('.form-popup-bgt') || $(event.target).is('#btnCloseFormt')) {
+                event.preventDefault();
+                $(this).removeClass('is-visible');
+            }
+        });
+
+
+
+    });
+
+
+
+</script> -->
+
+
+</body>
+
+</html>
